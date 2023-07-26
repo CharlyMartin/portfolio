@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "1.7.14",
     "@tailwindcss/typography": "0.5.9",
+    "@vercel/analytics": "1.0.1",
     "autoprefixer": "10.4.14",
     "clsx": "1.2.1",
     "copy-to-clipboard": "3.3.3",
