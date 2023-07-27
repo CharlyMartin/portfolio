@@ -14,7 +14,7 @@ This first project was a win-win. It gave me a taste of what working in tech wou
 - I've worked with [Le Wagon](https://www.lewagon.com/) as a teacher countless times in France, China, Australia, and Canada. I even launched their first campus in Sydney, Australia!
 - I co-founded a Saas company, [Syncly](/projects/syncly), and led the development of the product for 2 years before we decided to shut it down.
 - I've launched a few side projects with good friends in the tech space, like [Lottie Studio](/projects/lottie-studio), a design studio powered by [Lottie](https://airbnb.design/lottie/), a really cool open-source animation library.
-- I've taken many online courses to keep learning and master core web development concepts.
+- I've taken many online courses to keep learning and master core web development concepts. [Deep JavaScript Foundations](https://frontendmasters.com/courses/deep-javascript-v3/) by [Kyle Simpson](https://github.com/getify) was life-changing.
 
 Actually, I did stop. For about 4 months in 2022, for the first time since I started freelancing. Working with computers for so long didn't turn me into one. I needed to take care of myself after two intense years running Syncly and taxing COVID lockdowns. This break gave me a fresh perspective on where to dedicate my time and skills moving forward.
 
