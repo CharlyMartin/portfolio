@@ -18,7 +18,7 @@ This first project was a win-win. It gave me a taste of what working in tech wou
 
 Actually, I did stop. For about 4 months in 2022, for the first time since I started freelancing. Working with computers for so long didn't turn me into one. I needed to take care of myself after two intense years running Syncly and taxing COVID lockdowns. This break gave me a fresh perspective on where to dedicate my time and skills moving forward.
 
-I want to work with people and companies who aim to protect and regenerate life on Earth. I'm also passionate about music and would love to work with companies in this space. More broadly, I want to work with a team of benevolent and talented people.
+I want to work with people and companies who aim to protect and regenerate biodiversity on Earth. I'm also passionate about music and would love to work with companies in this space. More broadly, I want to work with a team of benevolent and talented people.
 
 I have been building on the web for nearly a decade, which blows my mind as I write these lines. I specialise in frontend and design, the areas of the stack I enjoy the most. However, I would still consider fullstack position as I've built and worked with backend technologies many times. I've listed my tools of choice on the `/uses` [page](/uses).
 
