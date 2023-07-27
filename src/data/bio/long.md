@@ -1,4 +1,4 @@
-I fell into web development at an unfortunate moment: back in 2015 when I was about to graduate with my Master's in Management from [Toulouse Business School](https://www.tbs-education.com/program/master-in-management/program-overview/). I started playing with basic HTML and CSS during my free time to scratch my itching curiosity; it planted a seed and began to make me question my long-term career plans.
+I fell into web development at an unfortunate moment: back in 2015 when I was about to graduate with my Master's in Management from [Toulouse Business School](https://www.tbs-education.com/program/master-in-management/program-overview/). I started playing with basic HTML and CSS during my free time to scratch my itching curiosity. It sparked a new interest in me and began to make me question my career plans.
 
 Fast-forward to a few months later. I was about to move to Paris to look for my first job as a fresh graduate when my dad told me he had been diagnosed with cancer. A bad one. I canceled Paris, the job hunt, and put my career plans on hold. I moved back to my hometown to be by his side and help him through his treatment.
 
