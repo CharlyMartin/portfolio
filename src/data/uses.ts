@@ -38,8 +38,7 @@ const data: Use[] = [
     name: "Tailwind CSS",
     meta: "CSS Framework",
     favorite: true,
-    oneLiner:
-      "A utility-first CSS framework to build any design, directly in your markup.",
+    oneLiner: "A utility-first CSS framework to build any design.",
     description:
       "I love Tailwind! In a world of JavaScript everything, it stands out for its simplicity while being extremely powerful.",
     url: "https://tailwindcss.com/",
