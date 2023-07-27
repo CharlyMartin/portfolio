@@ -61,7 +61,7 @@ function getToday() {
   const date = new Date();
   const str = date.toLocaleDateString("en-US", {
     day: "numeric",
-    month: "long",
+    month: "short",
   });
 
   if (date.getDate() == 1 || date.getDate() == 21 || date.getDate() == 31) {
