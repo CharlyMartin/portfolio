@@ -5,4 +5,4 @@
 #   - ab testing
 ---
 
-Nearly **a decade of experience** working with startups and SMBs. I have a strong experience in frontend development, with a solid understanding of backend and crypto concepts as well as UI/UX design capabilities.
+I have **7 years or experience** working with entrepreneurs, startups and SMBs. I specialise in **frontend development**, with a solid understanding of backend concepts, some crypto knowledge and UI/UX design capabilities.

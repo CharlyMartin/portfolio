@@ -9,9 +9,6 @@ import { getBio } from "@/data/bio";
 import Prose from "@/components/atoms/prose";
 import { metadata as globalMeta } from "@/app/layout";
 
-const contacts = getContacts();
-const bio = getBio();
-
 export const metadata: Metadata = {
   ...globalMeta,
   title: "About",
@@ -20,6 +17,9 @@ export const metadata: Metadata = {
 };
 
 export default function About() {
+  const contacts = getContacts();
+  const bio = getBio();
+
   return (
     <Container>
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">

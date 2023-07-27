@@ -1,21 +1,25 @@
-I fell into web development at an unfortunate moment of my life: back in 2015, as I was about to graduate my Master's in Management from [Toulouse Business School](https://www.tbs-education.com/programs/master-degrees/). Writing some basic HTML and CSS was enough to mess with my mind, in a good way, and question my initial career plans.
+I fell into web development at an unfortunate moment: back in 2015 when I was about to graduate with my Master's in Management from [Toulouse Business School](https://www.tbs-education.com/program/master-in-management/program-overview/). I started playing with basic HTML and CSS during my free time to scratch my itching curiosity; it planted a seed and began to make me question my long-term career plans.
 
-As I was about to move to Paris to start looking for my first business position, my dad told me that he got diagnosed with cancer, and a bad one. I put my career plans on hold and moved back to my hometown to help him through his treatment.
+Fast-forward to a few months later. I was about to move to Paris to look for my first job as a fresh graduate when my dad told me he had been diagnosed with cancer. A bad one. I canceled Paris, the job hunt, and put my career plans on hold. I moved back to my hometown to be by his side and help him through his treatment.
 
-I ended up having a lot of time on my hand, so I kept learning about web technologies for hours a day. Thanks [Codecademy](https://www.codecademy.com/) for the free education! I was fascinated by the fact that I could build anything I wanted, with little to no money, without anyone's permission and from anywhere in the world. Very different from the corporate world I was about to enter.
+There were very few exciting job opportunities in suburban Bordeaux, and I had a lot of time on my hands. I put this downtime to use and resumed learning about web technologies, for hours a day. The more I did, the more I loved it. Thanks [Codecademy](https://www.codecademy.com/) for the free education! I was fascinated by the fact that I could build anything I wanted, with little to no money, without anyone's permission, and from anywhere in the world. Very different from the corporate world I was about to enter.
 
-I was lucky enough to attend one of the first sessions of [Le Wagon](https://www.lewagon.com/web-development-course), a coding school in France. It was the most challenging and rewarding course of my life. I never thought my brain could digest so much knowledge in such a short amount of time. By the end, I knew enough to build my own ideas, and other people's too.
+After a few months of online learning, I decided to take the plunge and go pro. I was lucky enough to attend one of the first sessions of [Le Wagon](https://www.lewagon.com/web-development-course), a coding school in France. It was the most challenging and rewarding course of my life. I never thought my brain could digest so much knowledge in such a short amount of time. It was the stepping stone I needed. By the end of the course, I knew enough to build my own ideas. And others' too.
 
-Around the same time, a great friend of mine was launching one of the first coworking cafés in France, [Hubsy](/projects/hubsy). He needed an app to manage bookings, I needed a project to work on, a match made in heaven. This first successful project got enough exposure among Hubsy's clients that I started getting requests from entrepreneurs. Before I knew it, I was a freelance web developer.
+Around the same time, a great friend of mine was launching one of the first coworking cafés in France, [Hubsy](https://www.hubsy.fr/). It was an immediate success. He needed an app to manage bookings, and I needed a project to work on, a match made in heaven. I started building an app for a booming business in Paris, working from my childhood bedroom. I couldn't believe it.
 
-And I haven't stopped since:
+This first project was a win-win. It gave me a taste of what working in tech would be like and gave my friend the tool he needed to run his venues effectively. Cherry on top, the website got some exposure among Hubsy's clients, primarily entrepreneurs, and I started getting requests from their clients. I accepted another project, and before I knew it, I was a freelance web developer. I haven't stopped since:
 
-- I've designed and built websites and apps for 20+ clients, all the while working remotely from places around the world. You can see all about it on the `/projects` [page](/projects).
-- I've worked with [Le Wagon](https://www.lewagon.com/) as a teacher countless times, in France, China, Australia and Canada. I even launched their first campus in Sydney, Australia!
-- I co-founded a Saas company, [Syncly](/projects/syncly), and lead the development of the product for 2 years, before we decided to shut it down.
-- I've launched a few side projects with good friends in the tech space, like [Lottie Studio](/projects/lottie-studio), a design studio powered by [Lottie](https://airbnb.design/lottie/), an really cool open-source animation library.
-- Actually, I did stop, for about 4 months in 2022. Working with computers didn't turn me into a robot, it turns out, and that I need to take care of myself, after two intense years of running Syncly and long Covid lockdowns.
+- I've designed and built websites and apps for 20+ clients while working remotely from around the world. You can see all about it on the `/projects` [page](/projects).
+- I've worked with [Le Wagon](https://www.lewagon.com/) as a teacher countless times in France, China, Australia, and Canada. I even launched their first campus in Sydney, Australia!
+- I co-founded a Saas company, [Syncly](/projects/syncly), and led the development of the product for 2 years before we decided to shut it down.
+- I've launched a few side projects with good friends in the tech space, like [Lottie Studio](/projects/lottie-studio), a design studio powered by [Lottie](https://airbnb.design/lottie/), a really cool open-source animation library.
+- I've taken many online courses to keep learning and master core web development concepts.
 
-I have now been building on the web for nearly a decade, which blows my mind as I'm writing these lines. A few years down the road, I decided to specialise in frontend and design, the areas of the stack I enjoy the most, but I still consider myself a fullstack developer. I've listed my tools of choice on the `/uses` [page](/uses).
+Actually, I did stop. For about 4 months in 2022, for the first time since I started freelancing. Working with computers for so long didn't turn me into one. I needed to take care of myself after two intense years running Syncly and taxing COVID lockdowns. This break gave me a fresh perspective on where to dedicate my time and skills moving forward.
 
-If you feel like I would be a good match for your project, I would love to hear from you and see how I can help. Get in touch!
+I want to work with people and companies who aim to protect and regenerate life on Earth. I'm also passionate about music and would love to work with companies in this space. More broadly, I want to work with a team of benevolent and talented people.
+
+I have been building on the web for nearly a decade, which blows my mind as I write these lines. I specialise in frontend and design, the areas of the stack I enjoy the most. However, I would still consider fullstack position as I've built and worked with backend technologies many times. I've listed my tools of choice on the `/uses` [page](/uses).
+
+If you feel I would be a good match for your project, I would love to hear from you and see how I can help. Get in touch!
