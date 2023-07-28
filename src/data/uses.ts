@@ -170,7 +170,7 @@ const data: Use[] = [
     meta: "Web API",
     oneLiner: "Communication API for SMS and Voice.",
     description:
-      "I used Twilio to creat sign up and login flows with SMS verification. They made that process a breeze.",
+      "I used Twilio to create onboarding flows with SMS verification. They made that process a breeze.",
     url: "https://www.twilio.com/",
     type: "sdk",
   },
@@ -248,7 +248,7 @@ const data: Use[] = [
     meta: "Web Framework",
     oneLiner: "The Ruby framework for building web applications.",
     description:
-      "Ah Ryby on Rails... This is where it all started for me. Even though I haven't used it in years, I still use its priceless principles and patterns in my work today. I still believe it's one of the best framework for building web applications.",
+      "Ah Ruby on Rails... This is where it all started for me. Even though I haven't used it in years, I still use its priceless principles and patterns in my work today. I still believe it's one of the best framework for building web applications.",
     url: "https://rubyonrails.org/",
     type: "framework",
   },

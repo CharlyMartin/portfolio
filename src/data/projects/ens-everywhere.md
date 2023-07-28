@@ -11,6 +11,8 @@ We built ENS Everywhere for the [ETHGlobal’s ETHOnline hackathon](https://onli
 
 We hacked the whole project in about a week, from ideation to development to pitching it to the judges. I built the frontend of the project in about 1.5 days, thanks to the power of Next.js and Chakra UI. Next.js allowed me to quickly scaffold the project, while Chakra UI gave me all the necessary UI components to put the UI together rapidly. A big plus, Chakra's great default theme makes building a beautiful and consistent UI easy.
 
+The website is not responsive, as we only demoed it on desktop. It's also not fully functional, it's a proof of concept.
+
 ## Results
 
 We were picked as one of the finalists and pitched the project to jury members, some of whom were part of the ENS governance. We ended up [winning multiple prizes](https://ethglobal.com/showcase/enseverywhere-q2rvq), including "Best NFT infrastructure" from [Optimism](https://www.optimism.io/). Great collaboration with the team and a fun project to work on!
