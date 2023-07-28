@@ -21,7 +21,7 @@ The sweet spot for difficulty in a new project is when there's only one area of 
 
 - Second challenge, **the complexity of the interface**. The same page can have many states and as many user inputs. I decided to learn about finite [state machines](https://xstate.js.org/) and state charts to manage all of them. I realised the complexity came from trying to keep a mental modal of the state tree in my head. Everything made a lot more sense once all states were logically connected in the machine.
 
-- Third challenge, **the precision of the math**. Most web apps don't need advanced calculations, just integers for pagination or numbered lists. With Microchain, we must handle numbers with up to 9 decimals or 10^9. Plain Javascript isn't precise enough to handle this kind of operation. I reached for [bn.js](https://github.com/indutny/bn.js/) to handle large or small numbers. It eventually got added to the Fuel SDK.
+- Third challenge, **the precision of the math**. Most web apps don't need advanced calculations, just integers for pagination or list indexes. With Microchain, we must handle numbers with up to 9 decimals or 10^9. Plain Javascript isn't precise enough for this kind of computations. I reached for [bn.js](https://github.com/indutny/bn.js/) to handle large or small numbers. It eventually got added to the Fuel SDK.
 
 - Finally, working with an **ecosystem of beta software** made the above even more challenging. We've been building on the Fuel testnet since V1, so we've been running into all sorts of bugs and issues along the way. Getting things right took a lot of digging, intuition, and David's immense crypto expertise.
 
