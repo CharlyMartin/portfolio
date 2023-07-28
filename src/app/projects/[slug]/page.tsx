@@ -59,8 +59,9 @@ export default function ProjectPage(props: Props) {
         <div className="basis-full lg:basis-4/6" id="left">
           <Image
             {...project.images[0]}
-            // alt={project.name}
+            placeholder="blur"
             className="image-border rounded-xl shadow"
+            priority
           />
 
           <div
