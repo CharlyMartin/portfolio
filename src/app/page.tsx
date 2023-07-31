@@ -33,9 +33,6 @@ export default function Home() {
   const favoriteUses = getUses({ favorite: true });
   const bio = getBio();
 
-  // border border-zinc-700/90
-  // mr-3 border-r border-zinc-700 pr-3
-
   return (
     <React.Fragment>
       <Container>
