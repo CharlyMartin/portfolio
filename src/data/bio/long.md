@@ -24,4 +24,4 @@ I have been building on the web for nearly a decade, which blows my mind as I wr
 
 I can join as contractor or employee. I only **work remotely** or from Lisbon, Portugal, and I'm more than happy to travel occasionally to meet the team.
 
-If you resonated my story and feel like I can be a good match for your project, I would love to hear from you! You can find my contact details below, talk to you soon :)
+If you resonated with my story and feel like I can be a good match for your project, I would love to hear from you! You can find my contact details below, talk to you soon :)
