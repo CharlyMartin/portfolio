@@ -46,13 +46,13 @@ export default function RootLayout(props: Props) {
     <html lang="en" className="dark antialiased">
       <body
         className={clsx(
-          "lg:px-18 h-full min-h-screen bg-zinc-50 dark:bg-black md:px-12 xl:px-28",
+          "h-full min-h-screen bg-zinc-50 dark:bg-black",
           inter.className
         )}
       >
-        <div className="mx-auto max-w-7xl" style={fullHeight}>
+        <div className="mx-auto max-w-6xl" style={fullHeight}>
           <div
-            className="h-full bg-white px-2.5 ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 sm:px-0"
+            className="h-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"
             style={fullHeight}
           >
             <Header />
