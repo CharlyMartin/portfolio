@@ -7,8 +7,8 @@ const data: Bio = {
   headline: "Senior Software Developer, ex-Founder & UI Designer",
   // headline: "Senior Software Developer 🧑‍💻, ex-Founder ⚙️ and UI Designer 💅",
   badge: {
-    long: "Looking for companies in the earth re-gen or music technology spaces",
-    short: "Earth re-gen / music tech",
+    long: "Looking for companies in the earth re-gen or music technology space",
+    short: "Earth re-gen / Music tech",
   },
   avatar: {
     src: image,
