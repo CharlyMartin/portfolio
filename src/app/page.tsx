@@ -3,6 +3,7 @@ import { Metadata } from "next";
 
 import Container from "@/components/blocks/container";
 import Title from "@/components/atoms/title";
+import Text from "@/components/atoms/text";
 import Section from "@/components/blocks/section";
 import Projects from "@/components/sections/projects";
 import SeeMore from "@/components/atoms/see-more";
@@ -32,10 +33,24 @@ export default function Home() {
   const favoriteUses = getUses({ favorite: true });
   const bio = getBio();
 
+  // border border-zinc-700/90
+  // mr-3 border-r border-zinc-700 pr-3
+
   return (
     <React.Fragment>
       <Container>
         <div className="max-w-2xl">
+          {/* Top badge */}
+          <span className="mb-3 inline-flex items-center rounded-full bg-zinc-300/30 px-3 py-1 text-sm text-zinc-600 dark:bg-zinc-700/30 dark:text-zinc-400">
+            <p className="mr-3 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
+              INTERESTS
+            </p>
+            <p className="block sm:hidden">{bio.badge.short}</p>
+            <p className="hidden sm:block">{bio.badge.long}</p>
+            <p className="pl-2 pr-1">🌳</p>
+            <p className="pl-1">💿</p>
+          </span>
+
           <Title>{bio.headline}</Title>
           <Prose html={bio.short.html} className="standalone mt-8 sm:mt-12" />
           <SeeMore href="/about" className="mt-2 inline">

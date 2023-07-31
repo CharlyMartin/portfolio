@@ -21,6 +21,7 @@ export type Contact = {
 export type Bio = {
   name: string;
   headline: string;
+  badge: { short: string; long: string };
   avatar: ImageProps;
 };
 
