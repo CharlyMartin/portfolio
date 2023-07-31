@@ -39,7 +39,7 @@ export default function ProjectPage(props: Props) {
 
   return (
     <Container>
-      <Back className="lg:absolute lg:-left-6 lg:top-1" />
+      <Back className="lg:-left-[102px] lg:top-1.5 xl:absolute" />
       <Title className="!mb-1">{project.name}</Title>
       <Text className="text-sm">{formattedDates}</Text>
 

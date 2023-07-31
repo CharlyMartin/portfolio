@@ -7,12 +7,12 @@ import { AVAILABILITY } from "@/data/config";
 
 const data: Record<Availability, any> = {
   available: {
-    text: "available for new opportunities",
+    text: "available for new remote opportunities",
     color: "bg-teal-500",
     ping: "bg-teal-400",
   },
   limited: {
-    text: "part-time availability for new opportunities",
+    text: "part-time availability for remote opportunities",
     color: "bg-orange-500",
     ping: "bg-orange-400",
   },
@@ -31,8 +31,11 @@ export default function Availability(props: Props) {
   const { text, color, ping } = data[AVAILABILITY];
 
   return (
-    <div className={clsx("flex items-center", className)} {...rest}>
-      <span className="relative mr-3 flex h-3 w-3">
+    <div
+      className={clsx("flex items-center sm:items-center", className)}
+      {...rest}
+    >
+      <span className="relative mr-2.5 flex h-3 w-3">
         <span
           className={clsx(
             "absolute inline-flex h-full w-full animate-ping rounded-full opacity-75",
@@ -50,31 +53,29 @@ export default function Availability(props: Props) {
         />
       </span>
 
-      <Text className="pb-0.5 text-sm">
-        {text} - {getToday()}
-      </Text>
+      <Text className="text-sm">{text}</Text>
     </div>
   );
 }
 
-function getToday() {
-  const date = new Date();
-  const str = date.toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "short",
-  });
+// function getToday() {
+//   const date = new Date();
+//   const str = date.toLocaleDateString("en-US", {
+//     day: "numeric",
+//     month: "short",
+//   });
 
-  if (date.getDate() == 1 || date.getDate() == 21 || date.getDate() == 31) {
-    return str + "st";
-  }
+//   if (date.getDate() == 1 || date.getDate() == 21 || date.getDate() == 31) {
+//     return str + "st";
+//   }
 
-  if (date.getDate() == 2 || date.getDate() == 22) {
-    return str + "nd";
-  }
+//   if (date.getDate() == 2 || date.getDate() == 22) {
+//     return str + "nd";
+//   }
 
-  if (date.getDate() == 3 || date.getDate() == 23) {
-    return str + "rd";
-  }
+//   if (date.getDate() == 3 || date.getDate() == 23) {
+//     return str + "rd";
+//   }
 
-  return str + "th";
-}
+//   return str + "th";
+// }
