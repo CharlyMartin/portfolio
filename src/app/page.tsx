@@ -41,7 +41,7 @@ export default function Home() {
       <Container>
         <div className="max-w-2xl">
           {/* Top badge */}
-          <span className="mb-3 inline-flex items-center rounded-full bg-zinc-300/30 px-3 py-1 text-sm text-zinc-600 dark:bg-zinc-700/30 dark:text-zinc-400">
+          <span className="mb-3 inline-flex items-baseline rounded-full bg-zinc-300/30 px-3 py-1 text-sm text-zinc-700 dark:bg-zinc-700/30 dark:text-zinc-400">
             <p className="mr-3 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
               INTERESTS
             </p>
