@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  webpack: function webpackConfig(config, webpackConfig) {
+    const { isServer } = webpackConfig;
+    if (isServer) {
+      require("./scripts/generate-sitemap.js");
+    }
 
-module.exports = nextConfig
+    return config;
+  },
+};
+
+module.exports = nextConfig;

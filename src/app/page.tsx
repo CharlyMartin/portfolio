@@ -3,7 +3,6 @@ import { Metadata } from "next";
 
 import Container from "@/components/blocks/container";
 import Title from "@/components/atoms/title";
-import Text from "@/components/atoms/text";
 import Section from "@/components/blocks/section";
 import Projects from "@/components/sections/projects";
 import SeeMore from "@/components/atoms/see-more";
