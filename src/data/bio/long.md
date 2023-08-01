@@ -18,10 +18,10 @@ After a few months, it was operational and making an impact on his operations. H
 
 Actually, I did stop. For about 4 months in 2022, for the first time since I started freelancing. Working with computers for so long didn't turn me into one. I needed to take care of myself after two intense years running Syncly and taxing COVID lockdowns. This break gave me a fresh perspective on where to dedicate my time and skills moving forward.
 
-Today, my main focus is to work with companies aiming to protect or regenerate ecosystems on our beautiful planet. Music is also a passion of mine. As a drummer and DJ, I would be thrilled to work with artists or companies in this space. More broadly, I want to work with benevolent and passionate people.
+Today, my main focus is to work with companies aiming to protect or regenerate ecosystems on our beautiful planet. Music is also a passion of mine. As a drummer and DJ, I would be thrilled to work with artists or companies in this space. More broadly, I want to work with benevolent and passionate people. I can join as contractor or employee. I only work remotely from Lisbon, Portugal, and I'm more than happy to travel occasionally to meet the team.
 
-I have been building on the web for nearly a decade, which blows my mind as I write these lines. I specialise in frontend and design, the areas of the stack I enjoy the most. However, I would still consider fullstack positions as I've worked with backend technologies many times. I listed my tools of choice on the `/uses` [page](/uses).
-
-I can join as contractor or employee. I only **work remotely** or from Lisbon, Portugal, and I'm more than happy to travel occasionally to meet the team.
+I specialise in frontend and design, the areas of the stack I enjoy the most. However, I would still consider fullstack positions as I've worked with backend technologies many times. I listed my tools of choice on the `/uses` [page](/uses).
 
 If you resonated with my story and feel like I can be a good match for your project, I would love to hear from you! You can find my contact details below, talk to you soon :)
+
+<!-- I have been building on the web for nearly a decade, which blows my mind as I write these lines.  -->
