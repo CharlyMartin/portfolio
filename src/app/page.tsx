@@ -49,12 +49,12 @@ export default function Home() {
 
           <Title>{bio.headline}</Title>
           <Prose html={bio.short.html} className="standalone mt-8 sm:mt-12" />
-          <SeeMore href="/about" className="mt-2 inline">
+          <SeeMore href="/about" className="mt-2.5 inline">
             Read more
           </SeeMore>
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-3 sm:mt-14">
+        <div className="mt-12 flex flex-wrap gap-3 sm:mt-16">
           <GetEmail />
           <DmOnTelegram />
         </div>
