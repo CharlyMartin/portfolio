@@ -1,5 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
+import Image from "next/image";
+import clsx from "clsx";
 
 import Container from "@/components/blocks/container";
 import Title from "@/components/atoms/title";
@@ -19,6 +21,13 @@ import { getBio } from "@/data/bio";
 import Prose from "@/components/atoms/prose";
 import { META } from "@/data/config";
 import { metadata as globalMeta } from "@/app/layout";
+
+import image1 from "@/images/home/beach.jpeg";
+import image2 from "@/images/home/forest.jpeg";
+import image3 from "@/images/home/dj.jpeg";
+import image4 from "@/images/home/sunset.jpeg";
+import image5 from "@/images/home/ocean.jpeg";
+import image6 from "@/images/home/her.jpeg";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -63,7 +72,9 @@ export default function Home() {
         </div>
       </Container>
 
-      <Separator />
+      <Photos />
+
+      {/* <Separator /> */}
 
       <Container id="work">
         <Section.Title icon={Icons.Work} title="Featured Projects" />
@@ -110,6 +121,50 @@ function FavoriteUse(props: FavoriteUseProps) {
 
       <Card.Description>{oneLiner}</Card.Description>
     </Card>
+  );
+}
+
+function Photos() {
+  // TODO:
+  // [ ] With or without border?
+  // [ ] With or without rotation?
+  // [ ] With or without shadow?
+  // [ ] Which images?
+
+  // let rotations = [
+  //   "rotate-2",
+  //   "-rotate-2",
+  //   "rotate-2",
+  //   "rotate-2",
+  //   "-rotate-2",
+  //   "rotate-2",
+  // ];
+
+  const images = [image1, image2, image3, image4, image5, image6];
+
+  return (
+    <div className="my-16 sm:my-20">
+      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+        {images.map(function renderImage(image, i) {
+          return (
+            <div
+              key={image.src}
+              className={clsx(
+                "relative aspect-[10/10] w-36 flex-none -rotate-1 overflow-hidden rounded-xl border-2 border-zinc-100 bg-zinc-100 dark:bg-zinc-800 sm:w-52 sm:rounded-2xl"
+                // rotations[i % rotations.length]
+              )}
+            >
+              <Image
+                src={image}
+                alt=""
+                sizes="(min-width: 640px) 18rem, 11rem"
+                className="absolute inset-0 h-full w-full  object-cover"
+              />
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
