@@ -202,7 +202,7 @@ const data: Project[] = [
     id: 8,
     name: "Mayoneese",
     slug: "mayoneese",
-    description: "TODO",
+    description: "The curated music newsletter that makes you come alive.",
     logo: {
       src: mayoneeseLogo,
       style: { backgroundColor: "#EDBA2F", padding: "8px" },
