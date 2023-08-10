@@ -1,7 +1,5 @@
 import React from "react";
 import { Metadata } from "next";
-import Image from "next/image";
-import clsx from "clsx";
 
 import Container from "@/components/blocks/container";
 import Title from "@/components/atoms/title";
@@ -21,21 +19,7 @@ import { getBio } from "@/data/bio";
 import Prose from "@/components/atoms/prose";
 import { META } from "@/data/config";
 import { metadata as globalMeta } from "@/app/layout";
-
-import imageBeach from "@/images/home/beach.jpeg";
-import imageConcert from "@/images/home/concert.jpeg";
-import imageDJ from "@/images/home/dj.jpeg";
-import imageDrum from "@/images/home/drum.jpeg";
-import imageForest from "@/images/home/forest.jpeg";
-import imageHer from "@/images/home/her.jpeg";
-import imageHome from "@/images/home/home.jpeg";
-import imageHome2 from "@/images/home/home-2.jpeg";
-import imageHotel from "@/images/home/hotel.jpeg";
-import imageNicaragua from "@/images/home/nicaragua.jpeg";
-import imageOcean from "@/images/home/ocean.jpeg";
-import imagePool from "@/images/home/pool.jpeg";
-import imageSunset from "@/images/home/sunset.jpeg";
-import imageTrees from "@/images/home/trees.jpeg";
+import Photos from "@/components/sections/photos";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -81,8 +65,6 @@ export default function Home() {
       </Container>
 
       <Photos />
-
-      {/* <Separator /> */}
 
       <Container id="work">
         <Section.Title icon={Icons.Work} title="Featured Projects" />
@@ -131,88 +113,3 @@ function FavoriteUse(props: FavoriteUseProps) {
     </Card>
   );
 }
-
-function Photos() {
-  // TODO:
-  // [ ] With or without border?
-  // [ ] With or without rotation?
-  // [ ] With or without shadow?
-  // [ ] Which images?
-
-  // let rotations = [
-  //   "rotate-2",
-  //   "-rotate-2",
-  //   "rotate-2",
-  //   "rotate-2",
-  //   "-rotate-2",
-  //   "rotate-2",
-  // ];
-
-  const images = [
-    imageBeach,
-    imageConcert,
-    imageDJ,
-    imageDrum,
-    imageForest,
-    imageHer,
-    imageHome,
-    imageHome2,
-    imageHotel,
-    imageNicaragua,
-    imageOcean,
-    imagePool,
-    imageSunset,
-    imageTrees,
-  ];
-
-  // -my-4 justify-center
-  // overflow-hidden
-
-  return (
-    <div className="my-16 sm:my-20">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {images.map(function renderImage(image, i) {
-          return (
-            <div
-              key={image.src}
-              className={clsx(
-                "relative aspect-[10/10] w-36 flex-none -rotate-1 overflow-hidden rounded-xl border-2 border-zinc-100 bg-zinc-100 dark:bg-zinc-800 sm:w-52 sm:rounded-2xl"
-                // rotations[i % rotations.length]
-              )}
-            >
-              <Image
-                src={image}
-                alt=""
-                sizes="(min-width: 640px) 18rem, 11rem"
-                className="absolute inset-0 h-full w-full  object-cover"
-              />
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-// function SocialIcons() {
-//   const contacts = getContacts();
-
-//   return (
-//     <div className="mt-9 flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-4">
-//       <div className="flex items-center justify-center gap-6 sm:ml-1.5 sm:gap-3">
-//         {contacts.map((contact, i) => {
-//           const { url, icon: Icon, name, action } = contact;
-//           return (
-//             <SocialLink
-//               key={i}
-//               href={url}
-//               aria-label={action}
-//               icon={Icon}
-//               title={name}
-//             />
-//           );
-//         })}
-//       </div>
-//     </div>
-//   );
-// }
