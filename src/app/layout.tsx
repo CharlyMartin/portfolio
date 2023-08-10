@@ -57,10 +57,11 @@ export default function RootLayout(props: Props) {
           </div>
 
           {/* Content */}
-          <div className={clsx("relative w-full", p)}>
+          <div className={clsx("relative w-full overflow-x-hidden", p)}>
             <Header />
             <main>{children}</main>
             <Footer />
+            <br />
             <br />
             <br />
             <br />
