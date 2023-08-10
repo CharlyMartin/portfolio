@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <header className="mb-20 sm:mb-24 md:mb-28">
       <div className="pt-6">
-        <Container className="w-full">
+        <Container>
           <div className="flex gap-4">
             <div className="flex flex-1">
               <Avatar.Container>

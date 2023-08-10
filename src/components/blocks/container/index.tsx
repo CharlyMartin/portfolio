@@ -7,7 +7,10 @@ export default function Container(props: Props) {
 
   return (
     <div
-      className={clsx("px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20", className)}
+      className={clsx(
+        "container px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20",
+        className
+      )}
       {...rest}
     >
       <div className="relative">{children}</div>

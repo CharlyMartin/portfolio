@@ -38,23 +38,26 @@ type Props = {
   children: React.ReactNode;
 };
 
+const p = "sm:px-6 md:px-10 lg:px-14 xl:px-20";
+
 export default function RootLayout(props: Props) {
   const { children } = props;
-  const fullHeight = { height: "inherit", minHeight: "inherit" };
 
   return (
-    <html lang="en" className="dark antialiased">
+    <html lang="en" className="dark h-full antialiased">
       <body
-        className={clsx(
-          "h-full min-h-screen bg-zinc-50 dark:bg-black",
-          inter.className
-        )}
+        className={clsx("h-full bg-zinc-50 dark:bg-black", inter.className)}
       >
-        <div className="mx-auto max-w-6xl" style={fullHeight}>
-          <div
-            className="h-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"
-            style={fullHeight}
-          >
+        <div className="w-full">
+          {/* Background */}
+          <div className={clsx("fixed inset-0 flex justify-center", p)}>
+            <div className="container flex">
+              <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className={clsx("relative w-full", p)}>
             <Header />
             <main>{children}</main>
             <Footer />
