@@ -22,12 +22,20 @@ import Prose from "@/components/atoms/prose";
 import { META } from "@/data/config";
 import { metadata as globalMeta } from "@/app/layout";
 
-import image1 from "@/images/home/beach.jpeg";
-import image2 from "@/images/home/forest.jpeg";
-import image3 from "@/images/home/dj.jpeg";
-import image4 from "@/images/home/sunset.jpeg";
-import image5 from "@/images/home/ocean.jpeg";
-import image6 from "@/images/home/her.jpeg";
+import imageBeach from "@/images/home/beach.jpeg";
+import imageConcert from "@/images/home/concert.jpeg";
+import imageDJ from "@/images/home/dj.jpeg";
+import imageDrum from "@/images/home/drum.jpeg";
+import imageForest from "@/images/home/forest.jpeg";
+import imageHer from "@/images/home/her.jpeg";
+import imageHome from "@/images/home/home.jpeg";
+import imageHome2 from "@/images/home/home-2.jpeg";
+import imageHotel from "@/images/home/hotel.jpeg";
+import imageNicaragua from "@/images/home/nicaragua.jpeg";
+import imageOcean from "@/images/home/ocean.jpeg";
+import imagePool from "@/images/home/pool.jpeg";
+import imageSunset from "@/images/home/sunset.jpeg";
+import imageTrees from "@/images/home/trees.jpeg";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -140,7 +148,25 @@ function Photos() {
   //   "rotate-2",
   // ];
 
-  const images = [image1, image2, image3, image4, image5, image6];
+  const images = [
+    imageBeach,
+    imageConcert,
+    imageDJ,
+    imageDrum,
+    imageForest,
+    imageHer,
+    imageHome,
+    imageHome2,
+    imageHotel,
+    imageNicaragua,
+    imageOcean,
+    imagePool,
+    imageSunset,
+    imageTrees,
+  ];
+
+  // -my-4 justify-center
+  // overflow-hidden
 
   return (
     <div className="my-16 sm:my-20">
