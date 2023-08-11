@@ -24,12 +24,11 @@ export default function About() {
     <Container>
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
         <div className="lg:pl-20">
-          <div className="max-w-xs lg:max-w-none">
+          <div className="mx-auto w-full max-w-md -rotate-1 ring-2 ring-zinc-100 drop-shadow-xl dark:ring-zinc-900">
             <Image
               {...bio.avatar}
               alt="Avatar of the author"
-              sizes="(min-width: 1024px) 32rem, 20rem"
-              className="aspect-square rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+              className="aspect-square rounded-2xl "
             />
           </div>
         </div>
