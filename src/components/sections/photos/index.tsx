@@ -15,6 +15,7 @@ import imageOcean from "@/images/home/ocean.jpeg";
 // import imagePool from "@/images/home/pool.jpeg";
 // import imageSunset from "@/images/home/sunset.jpeg";
 // import imageTrees from "@/images/home/trees.jpeg";
+// import imageDune from "@/images/home/dune.jpeg";
 
 export default function Photos() {
   const images = [imageNicaragua, imageDJ, imageHome, imageDrum, imageOcean];
