@@ -30,7 +30,7 @@ export default function Photos() {
               style={{
                 top: `${i % 2 ? "-" : "+"}8px`,
                 animationName: "fade-in",
-                animationDelay: `${840 + i * 80}ms`,
+                animationDelay: `${640 + i * 100}ms`,
                 animationDuration: "1s",
                 animationFillMode: "both", // applies opacity before and after the animation runs
               }}
