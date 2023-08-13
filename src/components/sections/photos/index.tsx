@@ -27,7 +27,13 @@ export default function Photos() {
             <div
               key={image.src}
               className="relative aspect-[7/10] w-32 flex-none -rotate-1 overflow-hidden rounded-xl ring-2 ring-zinc-100 drop-shadow-xl dark:ring-zinc-900 sm:aspect-[9/10] sm:w-48 lg:w-72 lg:rounded-2xl"
-              style={{ top: `${i % 2 ? "-" : "+"}8px` }}
+              style={{
+                top: `${i % 2 ? "-" : "+"}8px`,
+                animationName: "fade-in",
+                animationDelay: `${840 + i * 80}ms`,
+                animationDuration: "1s",
+                animationFillMode: "both", // applies opacity before and after the animation runs
+              }}
             >
               <Image
                 src={image}
