@@ -1,7 +1,7 @@
 @tailwind components;
 
 @layer components {
-  .image-border {
-    @apply shadow-zinc-800/5 ring-2 ring-zinc-900/5 dark:border-2 dark:border-zinc-100 dark:ring-0;
+  .image-ring {
+    @apply shadow-lg shadow-zinc-300/20 ring-2 ring-zinc-100 dark:shadow-zinc-900/50 dark:ring-zinc-900/5;
   }
 }

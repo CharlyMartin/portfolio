@@ -60,7 +60,7 @@ export default function ProjectPage(props: Props) {
           <Image
             {...project.images[0]}
             placeholder="blur"
-            className="image-border rounded-xl shadow"
+            className="image-ring rounded-xl"
             priority
           />
 

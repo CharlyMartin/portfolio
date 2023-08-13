@@ -71,7 +71,7 @@ function ImageBackground(props: ImageCircleProps) {
     <div
       className={clsx(
         className,
-        "image-border flex h-14 w-14 items-center justify-center overflow-hidden rounded-full shadow-md"
+        "flex h-14 w-14 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-2 ring-zinc-200/20 dark:ring-zinc-700"
       )}
       {...rest}
     >

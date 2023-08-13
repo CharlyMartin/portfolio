@@ -24,15 +24,11 @@ export default function About() {
     <Container>
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
         <div className="lg:pl-20">
-          <div className="mx-auto w-full max-w-md -rotate-1 ring-2 ring-zinc-100 drop-shadow-xl dark:ring-zinc-900">
-            <Image
-              {...bio.avatar}
-              alt="Avatar of the author"
-              className="aspect-square rounded-2xl "
-            />
+          <div className="image-ring mx-auto aspect-square w-full max-w-md -rotate-1 overflow-hidden rounded-2xl ">
+            <Image {...bio.avatar} alt="Avatar of the author" className="" />
           </div>
         </div>
-        <div className="lg:order-first lg:row-span-2">
+        <div className="w-full lg:order-first lg:row-span-2">
           <Title>
             Hi, I’m Charly. I live in sunny Lisbon ☀️ where I design and build
             apps.
