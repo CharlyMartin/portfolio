@@ -37,3 +37,6 @@ next-env.d.ts
 
 # IDE
 .vscode/*
+
+# Drafts
+./src/data/articles/drafts
