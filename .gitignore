@@ -39,4 +39,4 @@ next-env.d.ts
 .vscode/*
 
 # Drafts
-./src/data/articles/drafts
+src/data/articles/drafts
