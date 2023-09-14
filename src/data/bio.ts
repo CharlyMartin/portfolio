@@ -1,5 +1,5 @@
 import { parseFileContent } from "@/lib/parse-markdown";
-import type { Bio } from "@/types";
+import type { Bio, FileContent } from "@/types";
 import image from "@/images/avatar.jpeg";
 
 const data: Bio = {
@@ -17,14 +17,13 @@ const data: Bio = {
 };
 
 type BioWithHtml = Bio & {
-  short: ReturnType<typeof parseFileContent>;
-  long: ReturnType<typeof parseFileContent>;
+  short: FileContent;
+  long: FileContent;
 };
 
-export function getBio(): BioWithHtml {
-  return {
-    ...data,
-    short: parseFileContent("bio", "short"),
-    long: parseFileContent("bio", "long"),
-  };
+export async function getBio(): Promise<BioWithHtml> {
+  const short = await parseFileContent("bio", "short");
+  const long = await parseFileContent("bio", "long");
+
+  return { ...data, short, long };
 }

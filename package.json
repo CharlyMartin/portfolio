@@ -37,11 +37,13 @@
     "marked": "5.1.0",
     "prettier-plugin-tailwindcss": "0.3.0",
     "rehype-external-links": "3.0.0",
+    "rehype-pretty-code": "0.10.1",
     "rehype-stringify": "10.0.0",
     "remark-external-links": "9.0.1",
     "remark-gfm": "3.0.1",
     "remark-parse": "10.0.2",
     "remark-rehype": "10.1.0",
+    "shiki": "0.14.4",
     "typescript": "5.0.4",
     "unified": "11.0.3",
     "unist-util-visit": "5.0.0"

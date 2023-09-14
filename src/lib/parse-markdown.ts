@@ -9,20 +9,20 @@ import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
+import rehypePrettyCode from "rehype-pretty-code";
 import { visit } from "unist-util-visit";
 
 import { addUtm } from "./add-utm";
+import { FileContent } from "@/types";
 
 const root = process.cwd();
 
 type Location = "projects" | "bio" | "articles";
 
-type Return = {
-  metadata: Record<string, string>;
-  html: string;
-};
-
-export function parseFileContent(location: Location, slug: string): Return {
+export async function parseFileContent(
+  location: Location,
+  slug: string
+): Promise<FileContent> {
   const source = readFileSync(
     join(root, "src/data/", location, `${slug}.md`),
     "utf8"
@@ -34,6 +34,11 @@ export function parseFileContent(location: Location, slug: string): Return {
     .use(remarkParse as any)
     .use(remarkGfm as any)
     .use(remarkRehype as any)
+    .use(rehypePrettyCode, {
+      grid: true,
+      theme: "material-theme-darker",
+      keepBackground: false,
+    }) // https://github.com/atomiks/rehype-pretty-code
     .use(rehypeExternalLinks, {
       rel: ["noopener", "noreferrer"],
       target: "_blank",
@@ -41,7 +46,7 @@ export function parseFileContent(location: Location, slug: string): Return {
     .use(addUtmPlugin)
     .use(rehypeStringify);
 
-  const file = processor.processSync(content);
+  const file = await processor.process(content);
 
   return {
     metadata: data,

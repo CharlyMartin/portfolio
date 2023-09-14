@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     "Senior software developer with nearly a decade of experience working with startups and entrepreneurs.",
 };
 
-export default function Home() {
+export default async function Home() {
   const projects = getProjects({ highlight: true });
   const favoriteUses = getUses({ favorite: true });
-  const bio = getBio();
+  const bio = await getBio();
 
   return (
     <React.Fragment>

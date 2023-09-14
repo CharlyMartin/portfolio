@@ -19,7 +19,7 @@ import { Project, Use } from "@/types";
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { params } = props;
 
-  const project = getProject(params.slug);
+  const project = await getProject(params.slug);
 
   return {
     title: project.file.metadata.title,
@@ -31,10 +31,10 @@ type Props = {
   params: { slug: string };
 };
 
-export default function ProjectPage(props: Props) {
+export default async function ProjectPage(props: Props) {
   const { params } = props;
 
-  const project = getProject(params.slug);
+  const project = await getProject(params.slug);
   const formattedDates = formatProjectDates(project.dates);
 
   return (
