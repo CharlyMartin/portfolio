@@ -16,6 +16,7 @@ import {
   HiChevronRight,
   HiChevronDown,
   HiXMark,
+  HiOutlineFolderOpen,
 } from "react-icons/hi2";
 
 // https://icons8.com/
@@ -37,6 +38,7 @@ const Icons = {
   ChevronRight: HiChevronRight,
   ChevronDown: HiChevronDown,
   X: HiXMark,
+  Article: HiOutlineFolderOpen,
 };
 
 export default Icons;

@@ -1,7 +1,6 @@
 import React from "react";
 import type { ImageProps } from "next/image";
 import type { LinkProps } from "next/link";
-import { parseFileContent } from "@/lib/parse-markdown";
 
 // INTERNAL USE
 export type Availability = "available" | "limited" | "busy";
@@ -25,7 +24,12 @@ export type Bio = {
   avatar: ImageProps;
 };
 
-type Area = "web2" | "web3";
+type Area = "web2" | "web3" | "ai";
+
+export type FileContent = {
+  metadata: Record<string, string>;
+  html: string;
+};
 
 // DATA MODEL (exposed via API routes)
 export type Project = {
@@ -47,7 +51,7 @@ export type Project = {
 };
 
 export type ProjectWithDeps = Omit<Project, "roles" | "people" | "stack"> & {
-  file: ReturnType<typeof parseFileContent>;
+  file: FileContent;
   roles: Skill[];
   stack: Use[];
   people?: Array<People & { role: Skill }>;
@@ -55,7 +59,7 @@ export type ProjectWithDeps = Omit<Project, "roles" | "people" | "stack"> & {
 
 export type ProjectPreview = Pick<
   Project,
-  "id" | "name" | "description" | "logo" | "dates" | "slug"
+  "id" | "name" | "description" | "logo" | "dates" | "slug" | "areas"
 >;
 
 export type Use = {

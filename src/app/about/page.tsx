@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     "Hi, I’m Charly. I live in sunny Lisbon where I design and build apps",
 };
 
-export default function About() {
+export default async function About() {
   const contacts = getContacts();
-  const bio = getBio();
+  const bio = await getBio();
 
   return (
     <Container>

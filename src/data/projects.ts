@@ -298,8 +298,8 @@ export function getProjects(filters?: Filters): ProjectPreview[] {
     })
     .filter((project) => project.display)
     .map((project) => {
-      const { id, name, description, logo, dates, slug } = project;
-      return { id, name, description, logo, dates, slug };
+      const { id, name, description, logo, dates, slug, areas } = project;
+      return { id, name, description, logo, dates, slug, areas };
     })
     .sort((a, z) => {
       if (!a.dates.end) return -1;
@@ -308,7 +308,7 @@ export function getProjects(filters?: Filters): ProjectPreview[] {
     });
 }
 
-export function getProject(slug: string): ProjectWithDeps {
+export async function getProject(slug: string): Promise<ProjectWithDeps> {
   const project = data.find((project) => project.slug == slug);
 
   if (!project) {
@@ -329,7 +329,7 @@ export function getProject(slug: string): ProjectWithDeps {
     });
 
   const stack = project.stack.map(getUse);
-  const file = parseFileContent("projects", project.slug);
+  const file = await parseFileContent("projects", project.slug);
 
   return { ...project, roles, stack, file, people };
 }

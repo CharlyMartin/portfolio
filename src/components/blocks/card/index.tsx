@@ -37,10 +37,15 @@ type CardTitleProps<T extends React.ElementType> = {
 function CardTitle<T extends React.ElementType = "h2">(
   props: CardTitleProps<T>
 ) {
-  const { as: Component = "h2", href, children } = props;
+  const { as: Component = "h2", href, children, className } = props;
 
   return (
-    <Component className="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+    <Component
+      className={clsx(
+        "text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100",
+        className
+      )}
+    >
       {href ? <CardLink href={href}>{children}</CardLink> : children}
     </Component>
   );
@@ -49,13 +54,19 @@ function CardTitle<T extends React.ElementType = "h2">(
 // Card Description
 type CardDescriptionProps = {
   children: React.ReactNode;
+  className?: string;
 };
 
 export function CardDescription(props: CardDescriptionProps) {
-  const { children } = props;
+  const { children, className } = props;
 
   return (
-    <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+    <p
+      className={clsx(
+        "relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400",
+        className
+      )}
+    >
       {children}
     </p>
   );
@@ -91,10 +102,10 @@ export function CardCta(props: CardCtaProps) {
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
+      className="relative z-10 mt-4 flex items-center text-sm font-medium text-zinc-400 transition-colors group-hover:text-teal-500 dark:text-zinc-500"
     >
       {children}
-      <Icons.ChevronRight className="ml-1 h-4 w-4 stroke-current" />
+      <Icons.ChevronRight className="ml-1 h-3.5 w-3.5 stroke-current" />
     </div>
   );
 }
@@ -133,7 +144,7 @@ export function CardEyebrow<T extends React.ElementType = "p">(
           className="absolute inset-y-0 left-0 flex items-center"
           aria-hidden="true"
         >
-          <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
+          <span className="h-3.5 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
         </span>
       )}
       {children}

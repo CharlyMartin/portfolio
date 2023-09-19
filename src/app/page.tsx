@@ -20,6 +20,8 @@ import Prose from "@/components/atoms/prose";
 import { META } from "@/data/config";
 import { metadata as globalMeta } from "@/app/layout";
 import Photos from "@/components/sections/photos";
+import { getArticlesMeta } from "@/data/articles";
+import Article from "@/components/blocks/article";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -28,28 +30,21 @@ export const metadata: Metadata = {
     "Senior software developer with nearly a decade of experience working with startups and entrepreneurs.",
 };
 
-export default function Home() {
+export default async function Home() {
   const projects = getProjects({ highlight: true });
   const favoriteUses = getUses({ favorite: true });
-  const bio = getBio();
+  const articlesMeta = await getArticlesMeta({ highlight: true });
+  const bio = await getBio();
 
   return (
     <React.Fragment>
       <Container>
         <div className="max-w-2xl">
-          {/* Top badge */}
-          <span className="mb-3 inline-flex items-baseline rounded-full bg-zinc-300/30 px-3 py-1 text-sm text-zinc-700 dark:bg-zinc-700/30 dark:text-zinc-400">
-            <p className="mr-3 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
-              INTERESTS
-            </p>
-            <p className="block sm:hidden">{bio.badge.short}</p>
-            <p className="hidden sm:block">{bio.badge.long}</p>
-            <p className="pl-2 pr-1">🌳</p>
-            <p className="pl-1">💿</p>
-          </span>
+          <Interests short={bio.badge.short} long={bio.badge.long} />
 
           <Title>{bio.headline}</Title>
           <Prose html={bio.short.html} className="standalone mt-8 sm:mt-12" />
+
           <SeeMore href="/about" className="mt-2.5 inline">
             Read more
           </SeeMore>
@@ -76,6 +71,26 @@ export default function Home() {
       </Container>
 
       <Separator />
+
+      {!!articlesMeta.length && (
+        <Container id="articles">
+          <Section.Title icon={Icons.Article} title="Featured Articles" />
+          <div
+            role="list"
+            className="mt-10 grid grid-cols-1 gap-x-16 gap-y-10 sm:grid-cols-2"
+          >
+            {articlesMeta.map((article, i) => {
+              return <Article.Square {...article} key={i} />;
+            })}
+          </div>
+
+          <SeeMore href="/articles" className="mt-12">
+            See all articles
+          </SeeMore>
+        </Container>
+      )}
+
+      {!!articlesMeta.length && <Separator />}
 
       <Container id="stack">
         <Section.Title icon={Icons.Stack} title="Favourite Stack" />
@@ -111,5 +126,26 @@ function FavoriteUse(props: FavoriteUseProps) {
 
       <Card.Description>{oneLiner}</Card.Description>
     </Card>
+  );
+}
+
+type InterestProps = {
+  short: string;
+  long: string;
+};
+
+function Interests(props: InterestProps) {
+  const { short, long } = props;
+
+  return (
+    <span className="mb-3 inline-flex items-baseline rounded-full bg-zinc-300/30 px-3 py-1 text-sm text-zinc-700 dark:bg-zinc-700/30 dark:text-zinc-400">
+      <p className="mr-3 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
+        INTERESTS
+      </p>
+      <p className="block sm:hidden">{short}</p>
+      <p className="hidden sm:block">{long}</p>
+      <p className="pl-2 pr-1">🌳</p>
+      <p className="pl-1">💿</p>
+    </span>
   );
 }

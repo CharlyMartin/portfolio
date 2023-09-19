@@ -17,7 +17,7 @@ export default function PageLayout(props: Props) {
         <Title>{title}</Title>
         <Text>{text}</Text>
       </div>
-      <div className="mt-16 sm:mt-20">{children}</div>
+      <div className="mt-16 sm:mt-20 md:mt-28">{children}</div>
     </Container>
   );
 }
