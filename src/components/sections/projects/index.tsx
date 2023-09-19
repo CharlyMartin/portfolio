@@ -21,13 +21,7 @@ export default function Projects(props: Props) {
       {...rest}
     >
       {data.map(function renderProjects(project, i) {
-        return (
-          <Project
-            key={i}
-            link={{ href: "projects/" + project.slug }}
-            {...project}
-          />
-        );
+        return <Project key={i} {...project} />;
       })}
     </ul>
   );
