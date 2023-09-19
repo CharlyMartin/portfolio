@@ -72,23 +72,25 @@ export default async function Home() {
 
       <Separator />
 
-      <Container id="articles">
-        <Section.Title icon={Icons.Article} title="Featured Articles" />
-        <div
-          role="list"
-          className="mt-10 grid grid-cols-1 gap-x-16 gap-y-10 sm:grid-cols-2"
-        >
-          {articlesMeta.map((article, i) => {
-            return <Article.Square {...article} key={i} />;
-          })}
-        </div>
+      {!!articlesMeta.length && (
+        <Container id="articles">
+          <Section.Title icon={Icons.Article} title="Featured Articles" />
+          <div
+            role="list"
+            className="mt-10 grid grid-cols-1 gap-x-16 gap-y-10 sm:grid-cols-2"
+          >
+            {articlesMeta.map((article, i) => {
+              return <Article.Square {...article} key={i} />;
+            })}
+          </div>
 
-        <SeeMore href="/articles" className="mt-12">
-          See all articles
-        </SeeMore>
-      </Container>
+          <SeeMore href="/articles" className="mt-12">
+            See all articles
+          </SeeMore>
+        </Container>
+      )}
 
-      <Separator />
+      {!!articlesMeta.length && <Separator />}
 
       <Container id="stack">
         <Section.Title icon={Icons.Stack} title="Favourite Stack" />
