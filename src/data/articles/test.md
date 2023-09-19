@@ -1,6 +1,6 @@
 ---
 title: "Test Test Tile"
-description: lorem ipsum dolor sit amet consectetur adipiscing elit dolor lorem ipsum
+description: lorem ipsum dolor sit amet consectetur adipiscing elit dolor lorem ipsum. lorem ipsum dolor sit amet consectetur adipiscing elit dolor lorem ipsum. lorem ipsum dolor sit amet consectetur adipiscing elit dolor lorem ipsum
 date: 2020-05-01
 tags: [life, tech]
 highlight: true # highlight the post in the featured post widget

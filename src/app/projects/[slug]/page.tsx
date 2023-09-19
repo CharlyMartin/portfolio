@@ -16,6 +16,8 @@ import { getProject } from "@/data/projects";
 import { formatProjectDates } from "@/lib/format-date";
 import { Project, Use } from "@/types";
 import Badge from "@/components/atoms/badge";
+import Card from "@/components/blocks/card";
+import TitleWithDate from "@/components/blocks/title-with-date";
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { params } = props;
@@ -36,13 +38,15 @@ export default async function ProjectPage(props: Props) {
   const { params } = props;
 
   const project = await getProject(params.slug);
-  const formattedDates = formatProjectDates(project.dates);
 
   return (
     <Container>
       <Back className="lg:-left-[102px] lg:top-1.5 xl:absolute" />
-      <Title className="!mb-1">{project.name}</Title>
-      <Text className="text-sm">{formattedDates}</Text>
+
+      <TitleWithDate
+        title={project.name}
+        date={formatProjectDates(project.dates)}
+      />
 
       <div className="mt-8">
         {project.roles.map((item, i) => {

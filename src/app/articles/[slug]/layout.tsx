@@ -1,11 +1,7 @@
 import React from "react";
 
-import Container from "@/components/blocks/container";
-// import Title from "@/components/atoms/title";
-// import GetEmail from "@/components/blocks/get-email";
-import Separator from "@/components/atoms/separator";
-// import Availability from "@/components/blocks/availability";
-// import DmOnTelegram from "@/components/blocks/dm-on-telegram";
+// import Container from "@/components/blocks/container";
+// import Separator from "@/components/atoms/separator";
 
 type Props = {
   children: React.ReactNode;
@@ -19,11 +15,17 @@ export default function ArticlePageLayout(props: Props) {
     <React.Fragment>
       {children}
 
-      <Separator />
+      {/* <Separator />
 
       <Container>
-        <p>TODO</p>
-      </Container>
+        <div className="mx-auto max-w-2xl">
+          <p>Todo: Add comments section</p>
+        </div>
+      </Container> */}
+
+      <br />
+      <br />
+      <br />
     </React.Fragment>
   );
 }
