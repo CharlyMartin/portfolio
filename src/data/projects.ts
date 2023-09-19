@@ -298,8 +298,8 @@ export function getProjects(filters?: Filters): ProjectPreview[] {
     })
     .filter((project) => project.display)
     .map((project) => {
-      const { id, name, description, logo, dates, slug } = project;
-      return { id, name, description, logo, dates, slug };
+      const { id, name, description, logo, dates, slug, areas } = project;
+      return { id, name, description, logo, dates, slug, areas };
     })
     .sort((a, z) => {
       if (!a.dates.end) return -1;

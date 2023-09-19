@@ -15,6 +15,7 @@ import { getHostname } from "@/lib/get-hostname";
 import { getProject } from "@/data/projects";
 import { formatProjectDates } from "@/lib/format-date";
 import { Project, Use } from "@/types";
+import Badge from "@/components/atoms/badge";
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { params } = props;
@@ -47,7 +48,7 @@ export default async function ProjectPage(props: Props) {
         {project.roles.map((item, i) => {
           const { name } = item;
           return (
-            <Badge className="mb-3 mr-3" key={i}>
+            <Badge className="mb-3 mr-3" size="lg" key={i}>
               {name}
             </Badge>
           );
@@ -136,24 +137,6 @@ function ListItem(props: ListItemProps) {
         </span>
       )}
     </li>
-  );
-}
-
-type BadgeProps = React.ComponentProps<"span">;
-
-function Badge(props: BadgeProps) {
-  const { children, className } = props;
-
-  // h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10
-  return (
-    <span
-      className={clsx(
-        "inline-flex items-center rounded-full bg-zinc-100 px-3.5 py-1.5 text-sm font-medium text-zinc-800 shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800 dark:bg-zinc-800/90 dark:text-zinc-100 dark:ring-white/10",
-        className
-      )}
-    >
-      {children}
-    </span>
   );
 }
 
