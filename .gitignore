@@ -40,3 +40,6 @@ next-env.d.ts
 
 # Drafts
 src/data/articles/drafts
+
+# Auto-generated
+public/sitemap.xml
