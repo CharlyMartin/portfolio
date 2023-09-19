@@ -40,19 +40,11 @@ export default async function Home() {
     <React.Fragment>
       <Container>
         <div className="max-w-2xl">
-          {/* Top badge */}
-          <span className="mb-3 inline-flex items-baseline rounded-full bg-zinc-300/30 px-3 py-1 text-sm text-zinc-700 dark:bg-zinc-700/30 dark:text-zinc-400">
-            <p className="mr-3 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
-              INTERESTS
-            </p>
-            <p className="block sm:hidden">{bio.badge.short}</p>
-            <p className="hidden sm:block">{bio.badge.long}</p>
-            <p className="pl-2 pr-1">🌳</p>
-            <p className="pl-1">💿</p>
-          </span>
+          <Interests short={bio.badge.short} long={bio.badge.long} />
 
           <Title>{bio.headline}</Title>
           <Prose html={bio.short.html} className="standalone mt-8 sm:mt-12" />
+
           <SeeMore href="/about" className="mt-2.5 inline">
             Read more
           </SeeMore>
@@ -87,15 +79,7 @@ export default async function Home() {
           className="mt-10 grid grid-cols-1 gap-x-16 gap-y-10 sm:grid-cols-2"
         >
           {articlesMeta.map((article, i) => {
-            return (
-              <Article
-                title={article.title}
-                description={article.description}
-                slug={article.slug}
-                date="2021-06-01"
-                key={i}
-              />
-            );
+            return <Article.Square {...article} key={i} />;
           })}
         </div>
 
@@ -140,5 +124,26 @@ function FavoriteUse(props: FavoriteUseProps) {
 
       <Card.Description>{oneLiner}</Card.Description>
     </Card>
+  );
+}
+
+type InterestProps = {
+  short: string;
+  long: string;
+};
+
+function Interests(props: InterestProps) {
+  const { short, long } = props;
+
+  return (
+    <span className="mb-3 inline-flex items-baseline rounded-full bg-zinc-300/30 px-3 py-1 text-sm text-zinc-700 dark:bg-zinc-700/30 dark:text-zinc-400">
+      <p className="mr-3 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
+        INTERESTS
+      </p>
+      <p className="block sm:hidden">{short}</p>
+      <p className="hidden sm:block">{long}</p>
+      <p className="pl-2 pr-1">🌳</p>
+      <p className="pl-1">💿</p>
+    </span>
   );
 }
