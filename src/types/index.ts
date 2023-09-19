@@ -24,7 +24,7 @@ export type Bio = {
   avatar: ImageProps;
 };
 
-type Area = "web2" | "web3";
+type Area = "web2" | "web3" | "ai";
 
 export type FileContent = {
   metadata: Record<string, string>;
@@ -59,7 +59,7 @@ export type ProjectWithDeps = Omit<Project, "roles" | "people" | "stack"> & {
 
 export type ProjectPreview = Pick<
   Project,
-  "id" | "name" | "description" | "logo" | "dates" | "slug"
+  "id" | "name" | "description" | "logo" | "dates" | "slug" | "areas"
 >;
 
 export type Use = {
