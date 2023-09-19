@@ -14,7 +14,7 @@ export default function TitleWithDate(props: Props) {
   return (
     <React.Fragment>
       <Title className="!mb-1">{title}</Title>
-      <Text className="text-sm text-zinc-400 dark:text-zinc-400">{date}</Text>
+      <Text className="text-xs text-zinc-400 dark:text-zinc-400">{date}</Text>
     </React.Fragment>
   );
 }

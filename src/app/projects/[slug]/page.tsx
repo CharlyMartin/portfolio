@@ -4,8 +4,6 @@ import { Metadata } from "next";
 import clsx from "clsx";
 
 import Container from "@/components/blocks/container";
-import Title from "@/components/atoms/title";
-import Text from "@/components/atoms/text";
 import Back from "@/components/atoms/back";
 import Section from "@/components/blocks/section";
 import Button from "@/components/atoms/button";
@@ -16,7 +14,6 @@ import { getProject } from "@/data/projects";
 import { formatProjectDates } from "@/lib/format-date";
 import { Project, Use } from "@/types";
 import Badge from "@/components/atoms/badge";
-import Card from "@/components/blocks/card";
 import TitleWithDate from "@/components/blocks/title-with-date";
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
@@ -48,7 +45,7 @@ export default async function ProjectPage(props: Props) {
         date={formatProjectDates(project.dates)}
       />
 
-      <div className="mt-8">
+      <div className="mt-6">
         {project.roles.map((item, i) => {
           const { name } = item;
           return (

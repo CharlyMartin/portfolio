@@ -13,7 +13,6 @@ type Props = {
 
 export default function ProjectPageLayout(props: Props) {
   const { children } = props;
-  // To improve design-wise
 
   return (
     <React.Fragment>
