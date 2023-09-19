@@ -20,6 +20,8 @@ import Prose from "@/components/atoms/prose";
 import { META } from "@/data/config";
 import { metadata as globalMeta } from "@/app/layout";
 import Photos from "@/components/sections/photos";
+import { getArticlesMeta } from "@/data/articles";
+import Article from "@/components/blocks/article";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -31,6 +33,7 @@ export const metadata: Metadata = {
 export default async function Home() {
   const projects = getProjects({ highlight: true });
   const favoriteUses = getUses({ favorite: true });
+  const articlesMeta = await getArticlesMeta({ highlight: true });
   const bio = await getBio();
 
   return (
@@ -72,6 +75,32 @@ export default async function Home() {
 
         <SeeMore href="/projects" className="mt-12">
           See all projects
+        </SeeMore>
+      </Container>
+
+      <Separator />
+
+      <Container id="articles">
+        <Section.Title icon={Icons.Article} title="Featured Articles" />
+        <div
+          role="list"
+          className="mt-10 grid grid-cols-1 gap-x-16 gap-y-10 sm:grid-cols-2"
+        >
+          {articlesMeta.map((article, i) => {
+            return (
+              <Article
+                title={article.title}
+                description={article.description}
+                slug={article.slug}
+                date="2021-06-01"
+                key={i}
+              />
+            );
+          })}
+        </div>
+
+        <SeeMore href="/articles" className="mt-12">
+          See all articles
         </SeeMore>
       </Container>
 
