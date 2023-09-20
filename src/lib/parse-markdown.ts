@@ -7,6 +7,7 @@ import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
+import rehypePrismPlus from "rehype-prism-plus";
 import { visit } from "unist-util-visit";
 
 import { addUtm } from "./add-utm";
@@ -31,6 +32,7 @@ export async function parseFileContent(
     .use(remarkParse as any)
     .use(remarkGfm as any)
     .use(remarkRehype as any)
+    .use(rehypePrismPlus)
     .use(rehypeExternalLinks, {
       rel: ["noopener", "noreferrer"],
       target: "_blank",
