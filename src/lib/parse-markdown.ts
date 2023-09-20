@@ -32,7 +32,9 @@ export async function parseFileContent(
     .use(remarkParse as any)
     .use(remarkGfm as any)
     .use(remarkRehype as any)
-    .use(rehypePrismPlus)
+    .use(rehypePrismPlus, {
+      showLineNumbers: true,
+    })
     .use(rehypeExternalLinks, {
       rel: ["noopener", "noreferrer"],
       target: "_blank",

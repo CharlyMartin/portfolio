@@ -44,9 +44,9 @@ module.exports = {
             "--tw-prose-captions": "var(--tw-prose-invert-captions)",
             "--tw-prose-code": "var(--tw-prose-invert-code)",
             "--tw-prose-code-bg": "var(--tw-prose-invert-code-bg)",
-            "--tw-prose-pre-code": "var(--tw-prose-invert-pre-code)",
-            "--tw-prose-pre-bg": "var(--tw-prose-invert-pre-bg)",
-            "--tw-prose-pre-border": "var(--tw-prose-invert-pre-border)",
+            // "--tw-prose-pre-code": "var(--tw-prose-invert-pre-code)",
+            // "--tw-prose-pre-bg": "var(--tw-prose-invert-pre-bg)",
+            // "--tw-prose-pre-border": "var(--tw-prose-invert-pre-border)",
             "--tw-prose-th-borders": "var(--tw-prose-invert-th-borders)",
             "--tw-prose-td-borders": "var(--tw-prose-invert-td-borders)",
           },
@@ -110,23 +110,29 @@ module.exports = {
             },
 
             // Headings
-            "h2, h3": {
+            "h2, h3, h4": {
               color: "var(--tw-prose-headings)",
               fontWeight: theme("fontWeight.semibold"),
             },
             h2: {
-              fontSize: theme("fontSize.xl")[0],
+              fontSize: theme("fontSize.2xl")[0],
               lineHeight: theme("lineHeight.7"),
               marginTop: theme("spacing.12"),
               marginBottom: theme("spacing.4"),
             },
             h3: {
+              fontSize: theme("fontSize.lg")[0],
+              lineHeight: theme("lineHeight.7"),
+              marginTop: theme("spacing.16"),
+              marginBottom: theme("spacing.4"),
+            },
+            h4: {
               fontSize: theme("fontSize.base")[0],
               lineHeight: theme("lineHeight.7"),
               marginTop: theme("spacing.16"),
               marginBottom: theme("spacing.4"),
             },
-            ":is(h2, h3) + *": {
+            ":is(h2, h3, h4) + *": {
               marginTop: 0,
             },
 

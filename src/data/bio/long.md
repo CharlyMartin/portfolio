@@ -10,7 +10,7 @@ Around the same time, a great friend of mine launched one of the first coworking
 
 After a few months, it was operational and making an impact on his operations. Hubsy's clientele was mainly composed of entrepreneurs and early-stage startups. Some also needed help with their websites, and I started getting requests. I accepted another project, and before I knew it, I was a freelance web developer. And I haven't stopped since:
 
-- I've designed and built websites and apps for 20+ clients while working remotely from around the world. You can see all about it on the `/projects` [page](/projects).
+- I've designed and built websites and apps for 20+ clients while working remotely from around the world. You can see all about it on the [projects page](/projects).
 - I've worked with [Le Wagon](https://www.lewagon.com/) as a teacher countless times in France, China, Australia, and Canada. I even launched their first campus in Sydney, Australia!
 - I co-founded a Saas company, [Syncly](/projects/syncly), and led the development of the product for 2 years before we decided to shut it down.
 - I've launched a few side projects with good friends in the tech space, like [Lottie Studio](/projects/lottie-studio), a design studio powered by [Lottie](https://airbnb.design/lottie/), a really cool open-source animation library.
@@ -20,7 +20,7 @@ Actually, I did stop. For about 4 months in 2022, for the first time since I sta
 
 Today, my main focus is to work with companies aiming to protect or regenerate ecosystems on our beautiful planet. Music is also a passion of mine. As a drummer and DJ, I would be thrilled to work with artists or companies in this space. More broadly, I want to work with benevolent and passionate people. I can join as contractor or employee. I only work remotely from Lisbon, Portugal, and I'm more than happy to travel occasionally to meet the team.
 
-I specialise in frontend and design, the areas of the stack I enjoy the most. However, I would still consider fullstack positions as I've worked with backend technologies many times. I listed my tools of choice on the `/uses` [page](/uses).
+I specialise in frontend and design, the areas of the stack I enjoy the most. However, I would still consider fullstack positions as I've worked with backend technologies many times. I listed my tools of choice on the [uses page](/uses).
 
 If you resonated with my story and feel like I can be a good match for your project, I would love to hear from you! You can find my contact details below, talk to you soon :)
 
