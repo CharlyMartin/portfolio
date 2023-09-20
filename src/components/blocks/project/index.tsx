@@ -13,7 +13,7 @@ export default function Project(props: Props) {
   const formattedDates = formatProjectDates(dates, { month: "short" });
 
   return (
-    <Card>
+    <Card className="min-h-full">
       <div className="flex w-full items-start justify-between">
         <div className="z-10 mb-6">
           {logo && (

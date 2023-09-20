@@ -44,9 +44,9 @@ module.exports = {
             "--tw-prose-captions": "var(--tw-prose-invert-captions)",
             "--tw-prose-code": "var(--tw-prose-invert-code)",
             "--tw-prose-code-bg": "var(--tw-prose-invert-code-bg)",
-            "--tw-prose-pre-code": "var(--tw-prose-invert-pre-code)",
-            "--tw-prose-pre-bg": "var(--tw-prose-invert-pre-bg)",
-            "--tw-prose-pre-border": "var(--tw-prose-invert-pre-border)",
+            // "--tw-prose-pre-code": "var(--tw-prose-invert-pre-code)",
+            // "--tw-prose-pre-bg": "var(--tw-prose-invert-pre-bg)",
+            // "--tw-prose-pre-border": "var(--tw-prose-invert-pre-border)",
             "--tw-prose-th-borders": "var(--tw-prose-invert-th-borders)",
             "--tw-prose-td-borders": "var(--tw-prose-invert-td-borders)",
           },
@@ -65,11 +65,11 @@ module.exports = {
             "--tw-prose-hr": theme("colors.zinc.100"),
             "--tw-prose-quote-borders": theme("colors.zinc.200"),
             "--tw-prose-captions": theme("colors.zinc.400"),
-            "--tw-prose-code": theme("colors.zinc.700"),
+            "--tw-prose-code": theme("colors.red.700"),
             "--tw-prose-code-bg": theme("colors.zinc.300 / 0.2"),
-            "--tw-prose-pre-code": theme("colors.zinc.100"),
-            "--tw-prose-pre-bg": theme("colors.zinc.900"),
-            "--tw-prose-pre-border": "transparent",
+            // "--tw-prose-pre-code": theme("colors.zinc.100"),
+            // "--tw-prose-pre-bg": theme("colors.zinc.900"),
+            // "--tw-prose-pre-border": "transparent",
             "--tw-prose-th-borders": theme("colors.zinc.200"),
             "--tw-prose-td-borders": theme("colors.zinc.100"),
 
@@ -85,11 +85,11 @@ module.exports = {
             "--tw-prose-invert-hr": theme("colors.zinc.700 / 0.4"),
             "--tw-prose-invert-quote-borders": theme("colors.zinc.500"),
             "--tw-prose-invert-captions": theme("colors.zinc.500"),
-            "--tw-prose-invert-code": theme("colors.zinc.300"),
+            "--tw-prose-invert-code": theme("colors.red.300"),
             "--tw-prose-invert-code-bg": theme("colors.zinc.200 / 0.05"),
-            "--tw-prose-invert-pre-code": theme("colors.zinc.100"),
-            "--tw-prose-invert-pre-bg": "rgb(0 0 0 / 0.4)",
-            "--tw-prose-invert-pre-border": theme("colors.zinc.200 / 0.1"),
+            // "--tw-prose-invert-pre-code": theme("colors.zinc.100"),
+            // "--tw-prose-invert-pre-bg": "rgb(0 0 0 / 0.4)",
+            // "--tw-prose-invert-pre-border": theme("colors.zinc.200 / 0.1"),
             "--tw-prose-invert-th-borders": theme("colors.zinc.700"),
             "--tw-prose-invert-td-borders": theme("colors.zinc.800"),
 
@@ -110,23 +110,29 @@ module.exports = {
             },
 
             // Headings
-            "h2, h3": {
+            "h2, h3, h4": {
               color: "var(--tw-prose-headings)",
               fontWeight: theme("fontWeight.semibold"),
             },
             h2: {
-              fontSize: theme("fontSize.xl")[0],
+              fontSize: theme("fontSize.2xl")[0],
               lineHeight: theme("lineHeight.7"),
               marginTop: theme("spacing.12"),
               marginBottom: theme("spacing.4"),
             },
             h3: {
+              fontSize: theme("fontSize.lg")[0],
+              lineHeight: theme("lineHeight.7"),
+              marginTop: theme("spacing.16"),
+              marginBottom: theme("spacing.4"),
+            },
+            h4: {
               fontSize: theme("fontSize.base")[0],
               lineHeight: theme("lineHeight.7"),
               marginTop: theme("spacing.16"),
               marginBottom: theme("spacing.4"),
             },
-            ":is(h2, h3) + *": {
+            ":is(h2, h3, h4) + *": {
               marginTop: 0,
             },
 
@@ -225,27 +231,26 @@ module.exports = {
               marginBottom: theme("spacing.3"),
             },
 
-            // Code blocks
-            pre: {
-              color: "var(--tw-prose-pre-code)",
-              fontSize: theme("fontSize.sm")[0],
-              fontWeight: theme("fontWeight.medium"),
-              backgroundColor: "var(--tw-prose-pre-bg)",
-              borderRadius: theme("borderRadius.3xl"),
-              padding: theme("spacing.8"),
-              overflowX: "auto",
-              border: "1px solid",
-              borderColor: "var(--tw-prose-pre-border)",
-            },
-            "pre code": {
-              display: "inline",
-              color: "inherit",
-              fontSize: "inherit",
-              fontWeight: "inherit",
-              backgroundColor: "transparent",
-              borderRadius: 0,
-              padding: 0,
-            },
+            // pre: {
+            //   color: "var(--tw-prose-pre-code)",
+            //   fontSize: theme("fontSize.sm")[0],
+            //   fontWeight: theme("fontWeight.medium"),
+            //   backgroundColor: "var(--tw-prose-pre-bg)",
+            //   borderRadius: theme("borderRadius.3xl"),
+            //   padding: theme("spacing.8"),
+            //   overflowX: "auto",
+            //   border: "1px solid",
+            //   borderColor: "var(--tw-prose-pre-border)",
+            // },
+            // "pre code": {
+            //   display: "inline",
+            //   color: "inherit",
+            //   fontSize: "inherit",
+            //   fontWeight: "inherit",
+            //   backgroundColor: "transparent",
+            //   borderRadius: 0,
+            //   padding: 0,
+            // },
 
             // Horizontal rules
             hr: {

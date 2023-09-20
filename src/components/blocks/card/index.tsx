@@ -102,7 +102,7 @@ export function CardCta(props: CardCtaProps) {
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 mt-4 flex items-center text-sm font-medium text-zinc-400 transition-colors group-hover:text-teal-500 dark:text-zinc-500"
+      className="relative z-10 mt-6 flex items-center text-sm font-medium text-zinc-400 transition-colors group-hover:text-teal-500 dark:text-zinc-500"
     >
       {children}
       <Icons.ChevronRight className="ml-1 h-3.5 w-3.5 stroke-current" />
