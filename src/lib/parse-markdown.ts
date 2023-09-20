@@ -1,15 +1,12 @@
-// https://www.npmjs.com/package/gray-matter
-
 import { readFileSync } from "fs";
 import { join } from "path";
-import matter from "gray-matter";
+import matter from "gray-matter"; // https://www.npmjs.com/package/gray-matter
 import { unified } from "unified";
 import rehypeExternalLinks from "rehype-external-links";
 import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
-import rehypePrettyCode from "rehype-pretty-code";
 import { visit } from "unist-util-visit";
 
 import { addUtm } from "./add-utm";
@@ -34,11 +31,6 @@ export async function parseFileContent(
     .use(remarkParse as any)
     .use(remarkGfm as any)
     .use(remarkRehype as any)
-    .use(rehypePrettyCode, {
-      grid: true,
-      theme: "material-theme-darker",
-      keepBackground: false,
-    }) // https://github.com/atomiks/rehype-pretty-code
     .use(rehypeExternalLinks, {
       rel: ["noopener", "noreferrer"],
       target: "_blank",
