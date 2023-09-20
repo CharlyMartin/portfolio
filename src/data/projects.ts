@@ -124,7 +124,8 @@ const data: Project[] = [
     id: 4,
     name: "Relief",
     slug: "relief",
-    description: "The app that destroys your debt forever.",
+    description:
+      "The app navigating you through financial hurdles in a simple way.",
     logo: { src: reliefLogo, style: { padding: "12px" } },
     images: [{ src: reliefImg, alt: "Relief Image" }],
     dates: { start: new Date(2021, 3), end: new Date(2021, 4) },
@@ -222,7 +223,7 @@ const data: Project[] = [
     name: "Motolangage",
     slug: "motolangage",
     description:
-      "A language learning experiment by the National Institute of Health and Medical Research.",
+      "A language learning experiment by the French National Institute Research.",
     images: [{ src: motolangageImg, alt: "Motolangage Image" }],
     dates: { start: new Date(2019, 6), end: new Date(2019, 10) },
     url: "https://www.inserm.fr/en/home/",
