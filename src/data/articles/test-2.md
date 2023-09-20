@@ -10,7 +10,9 @@ highlight: false # highlight the post in the featured post widget
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor. Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor. _Lorem ipsum dolor sit_ amet consectetur adipiscing elit lorem ipsum dolor. Lorem ipsum dolor sit amet consectetur adipiscing **elit lorem** ipsum dolor. Lorem ipsum dolor sit amet consectetur adipiscing elit lorem ipsum dolor
 
-```js title="An Example"
+This is some `inline-code` for the road.
+
+```js {1,3-4} showLineNumbers
 import { useFloating } from "@floating-ui/react";
 
 function MyComponent() {
