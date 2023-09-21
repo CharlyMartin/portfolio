@@ -73,7 +73,9 @@ module.exports = {
             "--tw-prose-th-borders": theme("colors.zinc.200"),
             "--tw-prose-td-borders": theme("colors.zinc.100"),
 
-            "--tw-prose-invert-body": theme("colors.zinc.400"),
+            "--tw-prose-invert-body": theme("colors.zinc.300 / 0.75"),
+            // "--tw-prose-invert-body": theme("colors.zinc.400"),
+
             "--tw-prose-invert-headings": theme("colors.zinc.200"),
             "--tw-prose-invert-links": theme("colors.teal.400"),
             "--tw-prose-invert-links-hover": theme("colors.teal.400"),
@@ -117,19 +119,19 @@ module.exports = {
             h2: {
               fontSize: theme("fontSize.2xl")[0],
               lineHeight: theme("lineHeight.7"),
-              marginTop: theme("spacing.12"),
+              marginTop: theme("spacing.16"),
               marginBottom: theme("spacing.4"),
             },
             h3: {
               fontSize: theme("fontSize.lg")[0],
               lineHeight: theme("lineHeight.7"),
-              marginTop: theme("spacing.16"),
+              marginTop: theme("spacing.12"),
               marginBottom: theme("spacing.4"),
             },
             h4: {
               fontSize: theme("fontSize.base")[0],
               lineHeight: theme("lineHeight.7"),
-              marginTop: theme("spacing.16"),
+              marginTop: theme("spacing.10"),
               marginBottom: theme("spacing.4"),
             },
             ":is(h2, h3, h4) + *": {
@@ -205,12 +207,12 @@ module.exports = {
               listStyleType: "decimal",
             },
             "ul, ol": {
+              marginTop: theme("spacing[3.5]"),
               paddingLeft: theme("spacing.6"),
             },
             li: {
-              marginTop: theme("spacing.6"),
-              marginBottom: theme("spacing.6"),
-              paddingLeft: theme("spacing[3.5]"),
+              marginBottom: theme("spacing.3"),
+              paddingLeft: theme("spacing.3"),
             },
             "li::marker": {
               fontSize: theme("fontSize.sm")[0],
