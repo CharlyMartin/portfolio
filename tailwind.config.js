@@ -87,7 +87,7 @@ module.exports = {
             "--tw-prose-invert-hr": theme("colors.zinc.700 / 0.4"),
             "--tw-prose-invert-quote-borders": theme("colors.zinc.500"),
             "--tw-prose-invert-captions": theme("colors.zinc.500"),
-            "--tw-prose-invert-code": theme("colors.red.300"),
+            "--tw-prose-invert-code": theme("colors.red.400"),
             "--tw-prose-invert-code-bg": theme("colors.zinc.200 / 0.05"),
             // "--tw-prose-invert-pre-code": theme("colors.zinc.100"),
             // "--tw-prose-invert-pre-bg": "rgb(0 0 0 / 0.4)",
