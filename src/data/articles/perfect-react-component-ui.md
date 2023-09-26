@@ -2,6 +2,9 @@
 title: "The Perfect React (UI) Component"
 description: lorem ipsum dolor sit amet consectetur adipiscing elit dolor lorem ipsum. lorem ipsum dolor sit amet consectetur adipiscing elit dolor lorem ipsum. lorem ipsum dolor sit amet consectetur adipiscing elit dolor lorem ipsum
 date: 2023-06-14
+# image: https://res.cloudinary.com/dmtrk3yns/image/upload/v1623148689/og-image.png
+# Instead of date - use created and updated
+# Maybe use zod to validate the metadata schema - fail build if invalid
 tags: [tech, react, ui, component, design, best practices]
 ---
 
@@ -39,105 +42,125 @@ A button component is a great example because:
 
 My `<Button>` component looks like this:
 
+<!-- Test this code in a codesanbox see if it works fine -->
+
 ```tsx
 import React from "react";
 import cn from "classnames";
 import type { IconType } from "react-icons";
 
-import Loader from "./loader";
+import Spinner from "@/components/spinner";
 
 type Props = {
-  variant?: "primary" | "secondary" | "cancel";
-  size?: "sm" | "md" | "lg";
+  variant?: "primary" | "secondary"; // As many variants as you need
+  size?: "sm" | "md" | "lg"; // // As many sizes as you need
   loading?: boolean;
   iconLeft?: IconType;
   iconRight?: IconType;
 } & React.ComponentProps<"button">;
 
-const chars = ["-", "\\", "|", "/", "-", "\\", "|", "/"];
-
 export default function Button(props: Props) {
   const {
+    className,
     variant = "primary",
     size = "md",
-    className,
     children,
     loading,
     disabled,
     ...rest
   } = props;
 
+  const isDisabled = disabled || loading;
+
   return (
     <button
       className={cn(
-        "w-full font-sans",
+        "button",
         variant == "primary" && "btn-primary", // Mutually exclusive union operators
         variant == "secondary" && "btn-secondary",
-        variant == "cancel" && "btn-cancel",
-        disabled && "btn-primary btn-disabled",
-        (disabled || loading) && "cursor-not-allowed",
-        size == "sm" && "rounded-md px-2 py-1 text-xs",
+        isDisabled && "cursor-not-allowed",
+        size == "sm" && "w-auto rounded-sm px-2 py-1 text-xs",
         size == "md" && "w-auto rounded-md p-2 px-3 text-sm",
-        size == "lg" && "rounded-lg px-3 py-2.5 text-base",
+        size == "lg" && "w-full rounded-lg px-3 py-2.5 text-base",
         className
       )}
-      disabled={disabled || loading}
+      disabled={isDisabled}
       {...rest}
     >
-      {renderChildren(props)}
+      {renderChildren({ size, ...props })}
+      // So that side's default is passed to renderChildren
     </button>
   );
 }
 
-function renderChildren(props: ButtonProps) {
-  const { loading, children, icon, size = "xl" } = props;
+// disabled && "btn-disabled", // Is this necessary? Or can it be replace with the disabled pseudo class?
 
-  if (loading) return <Loader chars={chars} />;
-  if (!icon) return children;
+function renderChildren(props: Props) {
+  const {
+    loading,
+    size,
+    children,
+    iconLeft: IconLeft,
+    iconRight: IconRight,
+  } = props;
 
-  const { src: Icon, side } = icon;
-
-  const iconSize = cn(
-    size == "xs" && "10px",
-    size == "sm" && "12px",
-    size == "md" && "14px",
-    size == "lg" && "16px",
-    size == "xl" && "18px"
-  );
-
-  const iconMargin = cn(
-    size == "xs" && "0.25rem",
-    size == "sm" && "0.25rem",
-    size == "md" && "0.25rem",
-    size == "lg" && "0.375rem",
-    size == "xl" && "0.375rem"
-  );
+  if (loading) return <Spinner />;
+  if (!IconLeft || !IconRight) return children;
 
   return (
-    <span className="flex items-center justify-center">
-      {side == "left" && (
-        <Icon
-          style={{ marginRight: iconMargin, marginTop: "1px" }}
-          size={iconSize}
-        />
+    <span
+      className={cn(
+        "flex items-center justify-center",
+        (size = "sm" && "space-x-1"),
+        (size = "md" && "space-x-2"),
+        (size = "lg" && "space-x-3")
       )}
+    >
+      {IconLeft && <IconLeft size="1em" />}
       {children}
-      {side == "right" && (
-        <Icon
-          style={{ marginLeft: iconMargin, marginTop: "1px" }}
-          size={iconSize}
-        />
-      )}
+      {IconRight && <Icon size="1em" />}
     </span>
   );
 }
 ```
 
-<!-- Also show the Tailwind CSS file -->
+And the companion CSS file looks like this:
+
+```css
+@tailwind components;
+
+@layer components {
+  /* General */
+  .button {
+    @apply font-sans transition-colors duration-150 ease-in-out;
+  }
+
+  .button:disabled {
+    @apply cursor-not-allowed opacity-70;
+  }
+
+  /* Primary */
+  .btn-primary {
+    @apply bg-teal-500 text-black;
+  }
+
+  .btn-primary:hover:not([disabled]) {
+    @apply bg-teal-600;
+  }
+
+  /* Secondary */
+  .btn-secondary {
+    @apply border-2 border-teal-500 bg-transparent text-teal-500;
+  }
+  .btn-secondary:hover:not([disabled]) {
+    @apply bg-teal-50;
+  }
+}
+```
 
 ### Tools
 
-Before we jump in the code, here's a list of the essential tools I'm using to build components. My stack of choice is:
+Before we jump into code explanations, here's a list of the essential tools I'm using to build components. My stack of choice is:
 
 - [Next.js](https://nextjs.org/) - a React framework with tons of built-in configuration making frontend development and deployment a breeze
 - [Typescript](https://www.typescriptlang.org/) - for type safety and enable better IDE support like autocompletion and error checking
@@ -162,21 +185,22 @@ import React from "react";
 import cn from "classnames";
 import type { IconType } from "react-icons";
 
-import Loader from "./loader";
+import Spinner from "@/components/spinner";
 ```
 
-Whenever I need to import a module, I add it to the bottom of the relevant list. I don't try to reorder this list as I add new imports, for cleaner git diffs. I just like to have `import React from "react"` at the top of the file, even though Next.js doesn't require us to import React. It [automatically adds it when jsx is detected](https://github.com/vercel/next.js/issues/12964#issuecomment-629642157) - or `tsx`.
+Whenever I need to import a module, I add it to the bottom of the relevant list. I don't try to reorder this list as I add new imports, for cleaner git diffs.
 
-But I still like to import it at the top of the file, for consistency. And more often than not, I end up using some React module, like `useState`, or some type, like `React.ComponentProps`. By having React imported at the top automatically, I don't have to move it up the list when I end up needing it. And it makes the component more portable, should I need to copy/paste it in another React environment. I think it's a good habit to have.
+I also like to have `import React from "react"` at the top of the file, even though Next.js doesn't require us to do so - it is clever enough to [automatically adds it when jsx is detected](https://github.com/vercel/next.js/issues/12964#issuecomment-629642157). But I still like to import it at the top of the file, for consistency. And more often than not, I end up using some React module, like `useState`, or some types like `React.ComponentProps`. By having React imported at the top automatically, I don't have to move it up the list when I end up needing it. And it makes the component more portable, should I need to copy/paste it outside a Next.js project.
 
-Finally, I like to explicity `import type` when I import a type. It's not required, and TypeScript is smart enough to know whether a module is a type, but I find it easier to scan, for readability purposes.
+Finally, I like to explicity `import type` when I import a type. It's not required, and TypeScript is smart enough to know what imported modules, but I find it easier to read.
 
 ### Typing Props
 
-This is where TypeScript shines. Typing props is a great way to list what inputs are needed to make this component work. And allows the IDE to provide autocompletion as you use thet component later one.
+This is where TypeScript with React shines. Typing the `props` object is great way to list what inputs are needed to make the component work. And it allows the IDE to provide autocompletion when you - or one of your team members - integrate the component later on.
 
 ```tsx
 import React from "react";
+
 import type { IconType } from "react-icons";
 
 type Props = {
@@ -188,25 +212,23 @@ type Props = {
 } & React.ComponentProps<"button">;
 ```
 
-I use types over interfaces, because I find `TypeA && TypeB` more intuitive than `InterfaceA extends InterfaceB`. It's a personal perference, and I believe the consensus in the TypeScript community. In this case, all the props are optional. I will explain why later on.
+First, I like to use types over interfaces, I find `TypeA && TypeB` more intuitive and consise than `InterfaceA extends InterfaceB`. It's a personal perference, and I believe the consensus in the TypeScript community.
 
-<!-- HERE! -->
+This type definition itself is rather simple, I list a bunch of variants and sizes. What is worth mentioning is th last line: `& React.ComponentProps<"button">`. This is where the magic happens, it automatically adds to our type all the native HTML attributes for a given element, like `className`, `type`, `disabled`, `onClick`, etc.
 
-Always extend the native HTML element props, so that you can pass any prop to the component. This is especially useful for the `Button` component, which is a wrapper around the native `button` element.
+When I stated using Typescipt, I made the mistake of typing all these attributes manually. Not only is it a tedious process, it's most likely wrong. For instance, I would type the click handler as `() => void;`, when it reality it is `MouseEventHandler<T> | undefined;`. Quite a difference, and this is just one instance, there are hundreds of attributes. You get all of them available for free and correctly typed by adding this type union.
 
-I usually call it `Props`, not `ButtonProps`, and declare it next to the component. If for some reason I need this type outside of the module, I export it and rename it in the import, to avoid name collision with the local component.
+Last thing worth nothing, I call this type declaration `Props`, not `ButtonProps`, and declare it next to the component. If for some reason I need to use this type outside of the module, I export it and rename on the go, to avoid name collision with the local component, as shown below.
 
 ```tsx
-import React from "react";
-
-import { Props as ButtonProps } from "./button";
+import { Props as ButtonProps } from "@/components/button";
 
 type Props = {
   // ... list of props
   message: ButtonProps["children"];
 };
 
-export default function WrapperComponent(props: Props) {
+export default function Section(props: Props) {
   const { message, ...otherProps } = props;
 
   return (
@@ -218,22 +240,28 @@ export default function WrapperComponent(props: Props) {
 }
 ```
 
-## Function Declaration
+### Function declarations over expressions
 
-This is a side note, not specific to UI components, but I like to use function declaration instead of function expression for my components. because it makes it easier to name the function, which is useful for debugging.
+This is a side note, not specific to UI components: I like to use function declaration instead of function expression for my components. I usually only use arrow functions for callbacks, and function declarations for everything else. There's a readability aspect to it, but also some cool things you can only do with function declarations.
 
-`export default function Button` in one go.
+Like you saw in the sample code above, I'm able to declare the `renderChildren` function under the `Button` component declaration. The `renderChildren` function is an implementation detail, it's only used locally in component, so I "hide" it by putting it at the end of the file. We're able to do it thanks to how the JavaScript compiler works.
 
-## Destructuing Props
+Hence, I can write the most important function, the component declaration, as the first function of the file. Plus I am able to `export default function Button` in one go, something I couldn't do with a function expressions.
+
+### Destructuing props
+
+<!-- HERE -->
 
 I like to destructure props at the top of the component's body to clearly list the variables that will be used below.
+
+You might have noticed in the type definition above that all props are optional.
 
 Destructuing props is also great to set default values. It's good to have flexible components that can accept many props and have many variants. It's even better to have sensible defaults so that components render what you want in most cases, that is the most use case in your app.
 
 Apps I've work on usually have the primary variant used a lot, and a secondary button used for some "destructuve" actions like close modals or cancel actions. I tend to think most apps So I set the variant to `primary` and size to `lg` by default. It yields the desired result in most cases, and it's easy to override when needed.
 
 ```tsx
-export default function Button(props: ButtonProps) {
+export default function Button(props: Props) {
   const { variant = "primary", size = "lg", ...rest } = props;
 
   return <button {...rest}>...</button>;
@@ -278,3 +306,7 @@ Return an actual button element, not a div. This has many accessibility implicat
 <!-- Destructuring Props -->
 
 <!-- consistent formatting -->
+
+<!-- Create ESling rules with all the preferences below -->
+
+<!-- Add a quick note on double equal vs triple equal. If the type is known, and with TypeScript that are definitely know, they do the same as ===. So I use the == -->
