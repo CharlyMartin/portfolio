@@ -93,7 +93,7 @@ export type Use = {
     | "Blockchain SDK"
     | "Animation Library"
     | "BigNum Library"
-    | "Data Fetching"
+    | "Async State Management"
     | "Form Management"
     | "Routing"
     | "Shell Tool"

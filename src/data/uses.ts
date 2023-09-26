@@ -294,7 +294,7 @@ const data: Use[] = [
   {
     id: 30,
     name: "Apollo Client",
-    meta: "Data Fetching",
+    meta: "Async State Management",
     oneLiner: "Popular GraphQL client.",
     description: "Appolo Client is as good as react-query, but for GraphQL.",
     url: "https://www.apollographql.com/",
@@ -322,9 +322,9 @@ const data: Use[] = [
     id: 33,
     name: "XState",
     meta: "State Management",
-    oneLiner: "Popular library for state management and statecharts",
+    oneLiner: "Popular library for state machines and statecharts",
     description:
-      "XState is pretty awesome! Finite state machines are a mind shift from the traditional state management libraries, but a worthwhile one.",
+      "XState is pretty awesome! Finite state machines are a mind shift from the traditional state management libraries, but a worthwhile one. It forces you to clearly map out the different states and transitions of your application, which is a great thing!",
     url: "https://xstate.js.org/",
     type: "library",
   },
@@ -372,19 +372,21 @@ const data: Use[] = [
   {
     id: 38,
     name: "React Query",
-    meta: "Data Fetching",
-    oneLiner: "Popular data fetching library, by the Tanstack team.",
-    description: "The most popular data fetching library for React projects.",
+    meta: "Async State Management",
+    oneLiner: "Popular async state management library, by the Tanstack team.",
+    description:
+      "The most popular async state management library for React projects. Trying to handle network requests and data caching without it feels so primitive now.",
     url: "https://tanstack.com/query/latest",
     type: "library",
   },
   {
     id: 39,
     name: "SWR",
-    meta: "Data Fetching",
-    oneLiner: "Popular data fetching library, by the team behind Next.js.",
+    meta: "Async State Management",
+    oneLiner:
+      "Popular  async state management library, by the team behind Next.js.",
     description:
-      "I found out about SWR, and data fetching libraries, as I was browsing the Next.js docs. I was impressed by all the features of the tool and the simplicity of the API. Trying to handle network requests without it feels so primitive now.",
+      "I found out about SWR as I was browsing the Next.js docs. I was impressed by all the features of the tool and the simplicity of the API.",
     url: "https://swr.vercel.app/",
     type: "library",
   },
