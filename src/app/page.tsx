@@ -19,7 +19,7 @@ import { getBio } from "@/data/bio";
 import Prose from "@/components/atoms/prose";
 import { META } from "@/data/config";
 import { metadata as globalMeta } from "@/app/layout";
-import Photos from "@/components/sections/photos";
+// import Photos from "@/components/sections/photos";
 import { getArticlesMeta } from "@/data/articles";
 import Article from "@/components/blocks/article";
 
@@ -59,7 +59,8 @@ export default async function Home() {
         </div>
       </Container>
 
-      <Photos />
+      <Separator />
+      {/* <Photos /> */}
 
       <Container id="work">
         <Section.Title icon={Icons.Work} title="Featured Projects" />
