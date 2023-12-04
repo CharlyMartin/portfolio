@@ -1,6 +1,6 @@
 import type { Skill } from "@/types";
 
-const data: Skill[] = [
+const data: Array<Skill> = [
   { id: 1, name: "Frontend", position: "Frontend Developer" },
   { id: 2, name: "Backend", position: "Backend Developer" },
   { id: 3, name: "DevOps", position: "DevOps" },
@@ -18,7 +18,7 @@ const data: Skill[] = [
   { id: 15, name: "Machine Learning", position: "ML Developer" },
 ];
 
-export function getSkill(id: number): Skill {
+export function getSkill(id: number) {
   const skill = data.find((skill) => skill.id == id);
 
   if (!skill) {

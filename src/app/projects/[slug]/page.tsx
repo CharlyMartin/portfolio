@@ -173,7 +173,7 @@ function Status(props: StatusProps) {
   );
 }
 
-function sortStack(stack: Use[]): Use[] {
+function sortStack(stack: Array<Use>) {
   // Sort stack by the following order:
   // 1. Languages
   // 3. Libraries

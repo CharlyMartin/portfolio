@@ -1,6 +1,6 @@
 import { Route } from "@/types";
 
-export const routes: Route[] = [
+export const routes: Array<Route> = [
   { link: { href: "/" }, label: "Home" },
   { link: { href: "/projects" }, label: "Projects" },
   // { link: { href: "/training" }, label: "Training" }, // V2

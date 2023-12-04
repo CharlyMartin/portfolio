@@ -3,7 +3,7 @@ import { Contact } from "@/types";
 
 export const EMAIL = "charly@hey.com";
 
-const data: Contact[] = [
+const data: Array<Contact> = [
   {
     name: "telegram",
     url: "https://t.me/charlymartin",
@@ -30,6 +30,6 @@ const data: Contact[] = [
   },
 ];
 
-export function getContacts(): Contact[] {
+export function getContacts() {
   return data;
 }

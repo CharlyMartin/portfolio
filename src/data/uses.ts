@@ -1,6 +1,6 @@
 import type { Use } from "@/types";
 
-const data: Use[] = [
+const data: Array<Use> = [
   {
     id: 1,
     name: "TypeScript",
@@ -543,7 +543,7 @@ const data: Use[] = [
   },
 ];
 
-export function getUse(id: number): Use {
+export function getUse(id: number) {
   const use = data.find((use) => use.id == id);
 
   if (!use) {
@@ -558,7 +558,7 @@ type Filters = {
   favorite?: Use["favorite"];
 };
 
-export function getUses(filters?: Filters): Use[] {
+export function getUses(filters?: Filters) {
   const { type, favorite } = filters || {};
 
   if (type && favorite) {

@@ -52,7 +52,7 @@ import cofactoryLogo from "@/images/projects/cofactory/logo.jpg";
 import cofactoryImg from "@/images/projects/cofactory/app-2.png";
 
 // Data
-const data: Project[] = [
+const data: Array<Project> = [
   {
     id: 1,
     name: "Lottie Studio",
@@ -317,7 +317,7 @@ type Filters = {
 };
 
 // Getters
-export function getProjects(filters?: Filters): ProjectPreview[] {
+export function getProjects(filters?: Filters): Array<ProjectPreview> {
   const { highlight } = filters || {};
 
   return data

@@ -38,12 +38,12 @@ export type Project = {
   slug: string;
   description: string;
   logo?: { src: ImageProps["src"]; style?: React.CSSProperties };
-  images: ImageProps[];
+  images: Array<ImageProps>;
   dates: { start: Date; end?: Date };
   highlight?: boolean; // Whether or not to highlight the project on the home page
   url?: string; // The URL of the project. If not provided, the project is shown as "archived".
   status: "live" | "wip" | "private" | "archived";
-  areas: Area[]; // Whether I worked on the web2 or web3 part
+  areas: Array<Area>; // Whether I worked on the web2 or web3 part
   display: boolean; // Whether or not to display the project on the projects page
   stack: Array<Use["id"]>;
   roles: Array<Skill["id"]>;
@@ -52,8 +52,8 @@ export type Project = {
 
 export type ProjectWithDeps = Omit<Project, "roles" | "people" | "stack"> & {
   file: FileContent;
-  roles: Skill[];
-  stack: Use[];
+  roles: Array<Skill>;
+  stack: Array<Use>;
   people?: Array<People & { role: Skill }>;
 };
 

@@ -5,7 +5,7 @@ import Project from "@/components/blocks/project";
 import type { ProjectPreview } from "@/types";
 
 type Props = {
-  data: ProjectPreview[];
+  data: Array<ProjectPreview>;
 } & React.ComponentProps<"ul">;
 
 export default function Projects(props: Props) {

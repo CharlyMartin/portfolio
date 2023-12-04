@@ -1,6 +1,6 @@
 import type { People } from "@/types";
 
-const data: People[] = [
+const data: Array<People> = [
   {
     id: 1,
     name: "André Navarre",
@@ -143,7 +143,7 @@ const data: People[] = [
   },
 ];
 
-export function getPerson(id: number): People {
+export function getPerson(id: number) {
   const person = data.find((person) => person.id == id);
 
   if (!person) {
