@@ -178,6 +178,7 @@ const data: Array<Project> = [
     logo: { src: myStudioloLogo, style: { padding: "12px" } },
     images: [{ src: myStudioloImg, alt: "My Studiolo Image" }],
     dates: { start: new Date(2019, 2), end: new Date(2019, 8) },
+    url: "https://www.mystudiolo.com/",
     display: true,
     highlight: false,
     roles: [1],
@@ -245,7 +246,7 @@ const data: Array<Project> = [
     roles: [1],
     stack: [10, 9, 2, 28, 41, 43],
     people: [{ id: 9, role: { id: 2 } }],
-    status: "private",
+    status: "archived",
     areas: ["web2"],
   },
   {
@@ -262,6 +263,7 @@ const data: Array<Project> = [
     dates: { start: new Date(2022, 7), end: new Date(2023, 7) },
     display: true,
     highlight: true,
+    url: "https://microchain.systems/",
     roles: [1, 4],
     stack: [1, 2, 4, 33, 34, 35, 37, 38, 40, 46],
     people: [
@@ -269,7 +271,7 @@ const data: Array<Project> = [
       { id: 16, role: { id: 14 } },
       { id: 17, role: { id: 14 } },
     ],
-    status: "wip",
+    status: "live",
     areas: ["web3"],
   },
   {

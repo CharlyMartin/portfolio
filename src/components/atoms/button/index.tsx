@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 
 export type Props = {
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "unstyled";
   size?: "sm" | "md";
   className?: string;
 } & React.ComponentPropsWithoutRef<"button">;
