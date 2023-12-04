@@ -38,7 +38,7 @@ const data: Array<Use> = [
     name: "Tailwind CSS",
     meta: "CSS Framework",
     favorite: true,
-    oneLiner: "A utility-first CSS framework to build any design.",
+    oneLiner: "The CSS framework to build any design.",
     description:
       "I love Tailwind! In a world of JavaScript everything, it stands out for its simplicity while being extremely powerful.",
     url: "https://tailwindcss.com/",
@@ -147,8 +147,9 @@ const data: Array<Use> = [
   {
     id: 15,
     name: "Prisma",
+    favorite: true,
     meta: "ORM",
-    oneLiner: "Next-generation Node.js and TypeScript ORM.",
+    oneLiner: "Next-generation TypeScript ORM.",
     description:
       "Prisma is the perfect ORM companion for my Next.js projects, if I ever need to make use of Next's API routes.",
     url: "https://www.prisma.io/",
@@ -372,8 +373,9 @@ const data: Array<Use> = [
   {
     id: 38,
     name: "React Query",
+    favorite: true,
     meta: "Async State Management",
-    oneLiner: "Popular async state management library, by the Tanstack team.",
+    oneLiner: "The React async state management library.",
     description:
       "The most popular async state management library for React projects. Trying to handle network requests and data caching without it feels so primitive now.",
     url: "https://tanstack.com/query/latest",
@@ -524,6 +526,7 @@ const data: Array<Use> = [
   {
     id: 54,
     name: "tRPC",
+    favorite: true,
     meta: "Data Fetching",
     oneLiner: "End-to-end typesafe APIs made easy.",
     description:

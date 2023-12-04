@@ -98,7 +98,7 @@ export default async function Home() {
 
         <ul
           role="list"
-          className="mt-10 grid grid-cols-1 gap-x-16 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-10 grid grid-cols-1 gap-x-16 gap-y-8 sm:grid-cols-2 lg:grid-cols-3"
         >
           {favoriteUses.map((use, i) => {
             return <FavoriteUse {...use} key={i} />;
@@ -123,7 +123,7 @@ function FavoriteUse(props: FavoriteUseProps) {
       <h2 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
         {name}
       </h2>
-      {meta && <Card.Eyebrow className="mb-2">{meta}</Card.Eyebrow>}
+      {meta && <Card.Eyebrow className="mb-1.5">{meta}</Card.Eyebrow>}
 
       <Card.Description>{oneLiner}</Card.Description>
     </Card>
