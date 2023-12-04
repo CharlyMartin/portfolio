@@ -14,7 +14,7 @@ import { getProject } from "@/data/projects";
 import { formatProjectDates } from "@/lib/format-date";
 import { Project, Use } from "@/types";
 import Badge from "@/components/atoms/badge";
-import TitleWithDate from "@/components/blocks/title-with-date";
+import PageTitle from "@/components/blocks/page-title";
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { params } = props;
@@ -40,9 +40,9 @@ export default async function ProjectPage(props: Props) {
     <Container>
       <Back className="lg:-left-[102px] lg:top-1.5 xl:absolute" />
 
-      <TitleWithDate
+      <PageTitle
         title={project.name}
-        date={formatProjectDates(project.dates)}
+        subtitle={[formatProjectDates(project.dates), project.hq]}
       />
 
       <div className="mt-6">

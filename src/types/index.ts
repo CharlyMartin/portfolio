@@ -36,6 +36,7 @@ export type Project = {
   id: number;
   name: string;
   slug: string;
+  hq: string;
   description: string;
   logo?: { src: ImageProps["src"]; style?: React.CSSProperties };
   images: Array<ImageProps>;

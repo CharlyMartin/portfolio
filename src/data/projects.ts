@@ -57,6 +57,7 @@ const data: Array<Project> = [
     id: 1,
     name: "Lottie Studio",
     slug: "lottie-studio",
+    hq: "Montreal, Canada",
     description:
       "The design studio for high-quality web and native animations.",
     logo: {
@@ -81,6 +82,7 @@ const data: Array<Project> = [
     id: 2,
     name: "Syncly",
     slug: "syncly",
+    hq: "Paris, France",
     description:
       "The real-time meeting room booking engine designed to boost sales.",
     logo: {
@@ -105,6 +107,7 @@ const data: Array<Project> = [
     id: 3,
     name: "Immunefi",
     slug: "immunefi",
+    hq: "Lisbon, Portugal",
     description:
       "Web3's leading bug bounty platform, protecting billions in user funds.",
     logo: { src: immunefiLogo },
@@ -128,6 +131,7 @@ const data: Array<Project> = [
     id: 4,
     name: "Relief",
     slug: "relief",
+    hq: "Miami, USA",
     description:
       "The app navigating you through financial hurdles in a simple way.",
     logo: { src: reliefLogo, style: { padding: "12px" } },
@@ -145,6 +149,7 @@ const data: Array<Project> = [
     id: 5,
     name: "OpenWork",
     slug: "openwork",
+    hq: "Paris, France",
     description: "The payroll company that protects freelancers anywhere.",
     logo: { src: openworkLogo, style: { padding: "10px" } },
     images: [{ src: openworkImg, alt: "OpenWork Image" }],
@@ -168,6 +173,7 @@ const data: Array<Project> = [
     id: 6,
     name: "My Studiolo",
     slug: "my-studiolo",
+    hq: "Paris, France",
     description: "The modern management tool for art collectors.",
     logo: { src: myStudioloLogo, style: { padding: "12px" } },
     images: [{ src: myStudioloImg, alt: "My Studiolo Image" }],
@@ -190,6 +196,7 @@ const data: Array<Project> = [
     id: 7,
     name: "Hubsy",
     slug: "hubsy",
+    hq: "Paris, France",
     description: "TODO",
     logo: { src: hubsyLogo, style: { padding: "8px" } },
     images: [{ src: hubsyImg, alt: "Hubsy Image" }],
@@ -207,6 +214,7 @@ const data: Array<Project> = [
     id: 8,
     name: "Mayoneese",
     slug: "mayoneese",
+    hq: "Paris, France",
     description: "The curated music newsletter that makes you come alive.",
     logo: {
       src: mayoneeseLogo,
@@ -226,6 +234,7 @@ const data: Array<Project> = [
     id: 9,
     name: "Motolangage",
     slug: "motolangage",
+    hq: "Paris, France",
     description:
       "A language learning experiment by the French National Institute Research.",
     images: [{ src: motolangageImg, alt: "Motolangage Image" }],
@@ -243,6 +252,7 @@ const data: Array<Project> = [
     id: 10,
     name: "Microchain Systems",
     slug: "microchain-systems",
+    hq: "Lisbon, Portugal",
     description: "The first DEX on the Fuel Network, currently on testnet.",
     logo: {
       src: microchainLogo,
@@ -266,6 +276,7 @@ const data: Array<Project> = [
     id: 11,
     name: "ENS Everywhere",
     slug: "ens-everywhere",
+    hq: "Lisbon, Portugal",
     description:
       "Register your native L2 ENS domain for a fraction of the cost.",
     logo: {
@@ -290,6 +301,7 @@ const data: Array<Project> = [
     id: 12,
     name: "Cofactory",
     slug: "cofactory",
+    hq: "San Francisco, USA",
     description: " The future of value creation in an AI-based economy.",
     logo: {
       src: cofactoryLogo,

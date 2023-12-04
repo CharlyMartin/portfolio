@@ -8,7 +8,7 @@ import Back from "@/components/atoms/back";
 import { getArticle } from "@/data/articles";
 import Prose from "@/components/atoms/prose";
 import { formatArticleDate } from "@/lib/format-date";
-import TitleWithDate from "@/components/blocks/title-with-date";
+import PageTitle from "@/components/blocks/page-title";
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { params } = props;
@@ -35,9 +35,9 @@ export default async function ArticlePage(props: Props) {
     <Container>
       <div className="mx-auto max-w-2xl">
         <Back className="lg:-left-[102px] lg:top-1.5 xl:absolute" />
-        <TitleWithDate
+        <PageTitle
           title={metadata.title}
-          date={formatArticleDate(new Date(metadata.date))}
+          subtitle={formatArticleDate(new Date(metadata.date))}
         />
 
         <Prose html={html} />
