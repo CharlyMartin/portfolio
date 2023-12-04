@@ -62,7 +62,7 @@ export default async function ProjectPage(props: Props) {
           <Image
             {...project.images[0]}
             placeholder="blur"
-            className="image-ring rounded-xl"
+            className="image-ring rounded-2xl"
             priority
           />
 

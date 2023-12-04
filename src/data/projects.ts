@@ -49,7 +49,7 @@ import ensImg from "@/images/projects/ens-everywhere/app-1.png";
 
 // 12. Cofactory
 import cofactoryLogo from "@/images/projects/cofactory/logo.jpg";
-import cofactoryImg from "@/images/projects/cofactory/app-2.png";
+import cofactoryImg from "@/images/projects/cofactory/figma-1.png";
 
 // Data
 const data: Array<Project> = [
