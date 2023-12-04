@@ -1,6 +1,6 @@
 import type { People } from "@/types";
 
-const data: People[] = [
+const data: Array<People> = [
   {
     id: 1,
     name: "André Navarre",
@@ -120,9 +120,30 @@ const data: People[] = [
     url: "https://rahul-kothari.github.io/",
     skills: [2, 14],
   },
+  {
+    id: 18,
+    name: " Kostandin Angjellari",
+    description: "TODO",
+    url: "https://www.linkedin.com/in/kostandinang/",
+    skills: [1, 2, 3, 6, 15],
+  },
+  {
+    id: 19,
+    name: "Rishabh Rai",
+    description: "TODO",
+    url: "https://www.linkedin.com/in/rishabh-rai-mobile-application-developer-specialized-in-flutter/",
+    skills: [4, 5],
+  },
+  {
+    id: 20,
+    name: " Kaustubh Shukla",
+    description: "TODO",
+    url: "https://www.linkedin.com/in/kausmos/",
+    skills: [2, 5],
+  },
 ];
 
-export function getPerson(id: number): People {
+export function getPerson(id: number) {
   const person = data.find((person) => person.id == id);
 
   if (!person) {

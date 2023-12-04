@@ -10,11 +10,11 @@ export default function Badge(props: Props) {
   return (
     <span
       className={clsx(
-        "inline-flex items-center text-zinc-600 shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:text-zinc-300 dark:ring-white/20",
+        "inline-flex items-center bg-zinc-200/50 font-medium dark:bg-zinc-700/80",
         size == "sm" &&
-          "rounded-md bg-transparent px-1.5 text-xs font-medium shadow-sm",
+          "rounded-md px-1.5 text-xs text-zinc-800 dark:text-zinc-50",
         size == "lg" &&
-          "rounded-lg bg-zinc-50 px-2 py-1 text-sm shadow dark:bg-zinc-800",
+          "rounded-lg px-2.5 py-1 text-sm text-zinc-700 dark:text-zinc-100",
         className
       )}
     >
@@ -22,5 +22,3 @@ export default function Badge(props: Props) {
     </span>
   );
 }
-
-// shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800 dark:bg-zinc-800/90 dark:text-zinc-100 dark:ring-white/10

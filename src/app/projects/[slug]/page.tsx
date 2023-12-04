@@ -14,7 +14,8 @@ import { getProject } from "@/data/projects";
 import { formatProjectDates } from "@/lib/format-date";
 import { Project, Use } from "@/types";
 import Badge from "@/components/atoms/badge";
-import TitleWithDate from "@/components/blocks/title-with-date";
+import PageTitle from "@/components/blocks/page-title";
+import ProjectStatus from "@/components/blocks/project-status";
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { params } = props;
@@ -35,18 +36,17 @@ export default async function ProjectPage(props: Props) {
   const { params } = props;
 
   const project = await getProject(params.slug);
+  const { name, dates, hq, roles, people, images, file, stack, url, status } =
+    project;
 
   return (
     <Container>
       <Back className="lg:-left-[102px] lg:top-1.5 xl:absolute" />
 
-      <TitleWithDate
-        title={project.name}
-        date={formatProjectDates(project.dates)}
-      />
+      <PageTitle title={name} subtitle={[formatProjectDates(dates), hq]} />
 
-      <div className="mt-6">
-        {project.roles.map((item, i) => {
+      <div className="my-8 md:my-12">
+        {roles.map((item, i) => {
           const { name } = item;
           return (
             <Badge className="mb-3 mr-3" size="lg" key={i}>
@@ -56,19 +56,19 @@ export default async function ProjectPage(props: Props) {
         })}
       </div>
 
-      <div className="flex flex-col gap-6 pt-12 lg:flex-row lg:gap-12">
+      <div className="flex flex-col gap-6 lg:flex-row lg:gap-12">
         {/* Left */}
         <div className="basis-full lg:basis-4/6" id="left">
           <Image
-            {...project.images[0]}
+            {...images[0]}
             placeholder="blur"
-            className="image-ring rounded-xl"
+            className="image-ring rounded-2xl"
             priority
           />
 
           <div
             className="prose dark:prose-invert"
-            dangerouslySetInnerHTML={{ __html: project.file.html }}
+            dangerouslySetInnerHTML={{ __html: file.html }}
           />
         </div>
 
@@ -80,39 +80,29 @@ export default async function ProjectPage(props: Props) {
             subtitle="The technologies I worked with"
           >
             <ul className="space-y-1.5">
-              {sortStack(project.stack).map((item, i) => {
+              {sortStack(stack).map((item, i) => {
                 const { name, meta } = item;
                 return <ListItem left={name} right={meta} key={i} />;
               })}
             </ul>
           </Section>
 
-          {project.people && (
+          {people && (
             <Section
               title="Team"
               icon={Icons.Team}
               subtitle="The fantastic people I worked with"
             >
               <ul className="space-y-1.5">
-                {project.people.map((item, i) => {
+                {people.map((item, i) => {
                   const { name, role } = item;
                   return <ListItem left={name} right={role.name} key={i} />;
                 })}
               </ul>
             </Section>
           )}
-          <div>
-            {project.url && (
-              <A href={project.url}>
-                <Button variant="secondary" className="mb-2 w-full">
-                  {getHostname(project.url)}
-                  <Icons.Link className="mt-0.5 h-4 w-4" />
-                </Button>
-              </A>
-            )}
 
-            <Status status={project.status} />
-          </div>
+          <ProjectStatus url={url} status={status} />
         </div>
       </div>
     </Container>
@@ -141,39 +131,7 @@ function ListItem(props: ListItemProps) {
   );
 }
 
-type StatusProps = {
-  status: Project["status"];
-} & React.ComponentProps<"div">;
-
-function Status(props: StatusProps) {
-  const { status, ...rest } = props;
-
-  return (
-    <div
-      className={clsx(
-        "rounded-lg px-3 py-1 text-center text-sm font-medium",
-        status == "live" &&
-          "bg-green-200/20 text-green-600 dark:bg-green-900/10 dark:text-green-500",
-        status == "archived" &&
-          "bg-red-200/20 text-red-600 dark:bg-red-900/10 dark:text-red-500",
-        status == "wip" &&
-          "bg-purple-200/20 text-purple-600 dark:bg-purple-900/10 dark:text-purple-500",
-        status == "private" &&
-          "bg-blue-200/20 text-blue-600 dark:bg-blue-900/10 dark:text-blue-500"
-      )}
-      {...rest}
-    >
-      <span>
-        {status == "archived" && "Archived"}
-        {status == "wip" && "Coming Soon!"}
-        {status == "live" && "Live"}
-        {status == "private" && "Private"}
-      </span>
-    </div>
-  );
-}
-
-function sortStack(stack: Use[]): Use[] {
+function sortStack(stack: Array<Use>) {
   // Sort stack by the following order:
   // 1. Languages
   // 3. Libraries

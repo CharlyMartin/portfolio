@@ -10,13 +10,15 @@ import { routes } from "@/data/routes";
 type Props = React.ComponentPropsWithoutRef<"nav">;
 
 export default function DesktopNavigation(props: Props) {
+  const pathname = usePathname();
+
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
         {routes.map((route, i) => {
-          const { link, label } = route;
+          const { link, label, isCurrent } = route;
           return (
-            <NavItem key={i} link={link}>
+            <NavItem key={i} link={link} isActive={isCurrent(pathname)}>
               {label}
             </NavItem>
           );
@@ -30,14 +32,11 @@ export default function DesktopNavigation(props: Props) {
 type NavItemProps = {
   link: LinkProps;
   children: React.ReactNode;
+  isActive: boolean;
 } & React.ComponentPropsWithoutRef<"li">;
 
 function NavItem(props: NavItemProps) {
-  const { link, children, ...rest } = props;
-
-  const pathname = usePathname();
-  // Fix to make sure it works on /projects/:id
-  const isActive = pathname == link.href;
+  const { link, children, isActive, ...rest } = props;
 
   return (
     <li {...rest}>

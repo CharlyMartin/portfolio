@@ -43,14 +43,20 @@ export default async function Home() {
           <Interests short={bio.badge.short} long={bio.badge.long} />
 
           <Title>{bio.headline}</Title>
-          <Prose html={bio.short.html} className="standalone mt-8 sm:mt-12" />
+          <Prose html={bio.short.html} className="standalone mt-4 sm:mt-6" />
 
-          <SeeMore href="/about" className="mt-2.5 inline">
-            Read more
+          <SeeMore href="/about" className="mt-4 inline sm:mt-3">
+            Read full bio
+          </SeeMore>
+          <SeeMore
+            href="/projects"
+            className="ml-3 mt-4 inline sm:ml-2 sm:mt-3"
+          >
+            See my work
           </SeeMore>
         </div>
 
-        <div className="mt-12 flex flex-wrap gap-3 sm:mt-16">
+        <div className="mt-14 flex flex-wrap gap-3 sm:mt-20">
           <GetEmail />
           <DmOnTelegram />
         </div>
@@ -98,7 +104,7 @@ export default async function Home() {
 
         <ul
           role="list"
-          className="mt-10 grid grid-cols-1 gap-x-16 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-10 grid grid-cols-1 gap-x-16 gap-y-8 sm:grid-cols-2 lg:grid-cols-3"
         >
           {favoriteUses.map((use, i) => {
             return <FavoriteUse {...use} key={i} />;
@@ -123,7 +129,7 @@ function FavoriteUse(props: FavoriteUseProps) {
       <h2 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
         {name}
       </h2>
-      {meta && <Card.Eyebrow className="mb-2">{meta}</Card.Eyebrow>}
+      {meta && <Card.Eyebrow className="mb-1.5">{meta}</Card.Eyebrow>}
 
       <Card.Description>{oneLiner}</Card.Description>
     </Card>
@@ -139,7 +145,7 @@ function Interests(props: InterestProps) {
   const { short, long } = props;
 
   return (
-    <span className="mb-3 inline-flex items-baseline rounded-full bg-zinc-300/30 px-3 py-1 text-sm text-zinc-700 dark:bg-zinc-700/30 dark:text-zinc-400">
+    <span className="mb-3 inline-flex items-baseline rounded-full bg-zinc-200/40 px-3 py-1 text-sm text-zinc-700 dark:bg-zinc-700/30 dark:text-zinc-400">
       <p className="mr-3 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
         INTERESTS
       </p>

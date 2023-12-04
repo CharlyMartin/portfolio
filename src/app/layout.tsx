@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
+import TailwindScreenSize from "@/components/atoms/tailwind-screen-size";
 import { BASE_URL, META } from "@/data/config";
 import "../css/index.css";
 
@@ -44,7 +45,7 @@ export default function RootLayout(props: Props) {
   const { children } = props;
 
   return (
-    <html lang="en" className="dark h-full antialiased">
+    <html lang="en" className="h-full antialiased">
       <body
         className={clsx("h-full bg-zinc-50 dark:bg-black", inter.className)}
       >
@@ -68,6 +69,7 @@ export default function RootLayout(props: Props) {
           </div>
         </div>
         <Analytics />
+        <TailwindScreenSize />
       </body>
     </html>
   );

@@ -47,12 +47,17 @@ import microchainImg from "@/images/projects/microchain-systems/app-1.png";
 import ensLogo from "@/images/projects/ens-everywhere/logo.png";
 import ensImg from "@/images/projects/ens-everywhere/app-1.png";
 
+// 12. Cofactory
+import cofactoryLogo from "@/images/projects/cofactory/logo.jpg";
+import cofactoryImg from "@/images/projects/cofactory/figma-1.png";
+
 // Data
-const data: Project[] = [
+const data: Array<Project> = [
   {
     id: 1,
     name: "Lottie Studio",
     slug: "lottie-studio",
+    hq: "Montreal, Canada",
     description:
       "The design studio for high-quality web and native animations.",
     logo: {
@@ -77,6 +82,7 @@ const data: Project[] = [
     id: 2,
     name: "Syncly",
     slug: "syncly",
+    hq: "Paris, France",
     description:
       "The real-time meeting room booking engine designed to boost sales.",
     logo: {
@@ -101,6 +107,7 @@ const data: Project[] = [
     id: 3,
     name: "Immunefi",
     slug: "immunefi",
+    hq: "Lisbon, Portugal",
     description:
       "Web3's leading bug bounty platform, protecting billions in user funds.",
     logo: { src: immunefiLogo },
@@ -124,6 +131,7 @@ const data: Project[] = [
     id: 4,
     name: "Relief",
     slug: "relief",
+    hq: "Miami, USA",
     description:
       "The app navigating you through financial hurdles in a simple way.",
     logo: { src: reliefLogo, style: { padding: "12px" } },
@@ -141,6 +149,7 @@ const data: Project[] = [
     id: 5,
     name: "OpenWork",
     slug: "openwork",
+    hq: "Paris, France",
     description: "The payroll company that protects freelancers anywhere.",
     logo: { src: openworkLogo, style: { padding: "10px" } },
     images: [{ src: openworkImg, alt: "OpenWork Image" }],
@@ -164,10 +173,12 @@ const data: Project[] = [
     id: 6,
     name: "My Studiolo",
     slug: "my-studiolo",
+    hq: "Paris, France",
     description: "The modern management tool for art collectors.",
     logo: { src: myStudioloLogo, style: { padding: "12px" } },
     images: [{ src: myStudioloImg, alt: "My Studiolo Image" }],
     dates: { start: new Date(2019, 2), end: new Date(2019, 8) },
+    url: "https://www.mystudiolo.com/",
     display: true,
     highlight: false,
     roles: [1],
@@ -186,6 +197,7 @@ const data: Project[] = [
     id: 7,
     name: "Hubsy",
     slug: "hubsy",
+    hq: "Paris, France",
     description: "TODO",
     logo: { src: hubsyLogo, style: { padding: "8px" } },
     images: [{ src: hubsyImg, alt: "Hubsy Image" }],
@@ -203,6 +215,7 @@ const data: Project[] = [
     id: 8,
     name: "Mayoneese",
     slug: "mayoneese",
+    hq: "Paris, France",
     description: "The curated music newsletter that makes you come alive.",
     logo: {
       src: mayoneeseLogo,
@@ -211,7 +224,7 @@ const data: Project[] = [
     images: [{ src: mayoneeseImg, alt: "Mayoneese Image." }],
     dates: { start: new Date(2018, 9), end: new Date(2019, 6) },
     url: "https://mayoneese.netlify.app/",
-    display: true,
+    display: false,
     highlight: false,
     roles: [1, 3, 4, 5, 8],
     stack: [10, 26, 21, 29, 9],
@@ -222,32 +235,35 @@ const data: Project[] = [
     id: 9,
     name: "Motolangage",
     slug: "motolangage",
+    hq: "Paris, France",
     description:
       "A language learning experiment by the French National Institute Research.",
     images: [{ src: motolangageImg, alt: "Motolangage Image" }],
     dates: { start: new Date(2019, 6), end: new Date(2019, 10) },
     url: "https://www.inserm.fr/en/home/",
-    display: true,
+    display: false,
     highlight: false,
     roles: [1],
     stack: [10, 9, 2, 28, 41, 43],
     people: [{ id: 9, role: { id: 2 } }],
-    status: "private",
+    status: "archived",
     areas: ["web2"],
   },
   {
     id: 10,
     name: "Microchain Systems",
     slug: "microchain-systems",
+    hq: "Lisbon, Portugal",
     description: "The first DEX on the Fuel Network, currently on testnet.",
     logo: {
       src: microchainLogo,
       style: { backgroundColor: "#EEECE7" },
     },
     images: [{ src: microchainImg, alt: "Microchain Systems Image" }],
-    dates: { start: new Date(2022, 7) },
+    dates: { start: new Date(2022, 7), end: new Date(2023, 7) },
     display: true,
     highlight: true,
+    url: "https://microchain.systems/",
     roles: [1, 4],
     stack: [1, 2, 4, 33, 34, 35, 37, 38, 40, 46],
     people: [
@@ -255,13 +271,14 @@ const data: Project[] = [
       { id: 16, role: { id: 14 } },
       { id: 17, role: { id: 14 } },
     ],
-    status: "wip",
+    status: "live",
     areas: ["web3"],
   },
   {
     id: 11,
     name: "ENS Everywhere",
     slug: "ens-everywhere",
+    hq: "Lisbon, Portugal",
     description:
       "Register your native L2 ENS domain for a fraction of the cost.",
     logo: {
@@ -282,6 +299,31 @@ const data: Project[] = [
     status: "archived",
     areas: ["web3"],
   },
+  {
+    id: 12,
+    name: "Cofactory",
+    slug: "cofactory",
+    hq: "San Francisco, USA",
+    description: " The future of value creation in an AI-based economy.",
+    logo: {
+      src: cofactoryLogo,
+      style: { backgroundColor: "#000", padding: "10px" },
+    },
+    images: [{ src: cofactoryImg, alt: "Cofactory Image" }],
+    dates: { start: new Date(2023, 9), end: new Date(2023, 11) },
+    url: "https://cofactory.ai/",
+    display: true,
+    highlight: true,
+    roles: [1, 2, 11, 12],
+    stack: [1, 3, 4, 15, 40, 16, 53, 54, 55],
+    people: [
+      { id: 18, role: { id: 2 } },
+      { id: 19, role: { id: 5 } },
+      { id: 20, role: { id: 15 } },
+    ],
+    status: "live",
+    areas: ["ai"],
+  },
 ];
 
 type Filters = {
@@ -289,7 +331,7 @@ type Filters = {
 };
 
 // Getters
-export function getProjects(filters?: Filters): ProjectPreview[] {
+export function getProjects(filters?: Filters): Array<ProjectPreview> {
   const { highlight } = filters || {};
 
   return data

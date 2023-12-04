@@ -1,6 +1,6 @@
 import type { Use } from "@/types";
 
-const data: Use[] = [
+const data: Array<Use> = [
   {
     id: 1,
     name: "TypeScript",
@@ -38,7 +38,7 @@ const data: Use[] = [
     name: "Tailwind CSS",
     meta: "CSS Framework",
     favorite: true,
-    oneLiner: "A utility-first CSS framework to build any design.",
+    oneLiner: "The CSS framework to build any design.",
     description:
       "I love Tailwind! In a world of JavaScript everything, it stands out for its simplicity while being extremely powerful.",
     url: "https://tailwindcss.com/",
@@ -70,7 +70,7 @@ const data: Use[] = [
     oneLiner:
       "MacBook Air combined with the M1 chip. An incredibly portable laptop.",
     description:
-      "I've been on the Mackbook Pro bandwagon since 2009, but the M1 chip is such a game changer that a MacBook Air is now more than enough for modern web development.",
+      "I've been on the Mackbook Pro bandwagon since 2009, but the M1 chip is such a game changer that a MacBook Air (with some extra RAM) is now more than enough for modern web development.",
     url: "https://www.apple.com/macbook-air/",
     type: "workspace",
   },
@@ -147,8 +147,9 @@ const data: Use[] = [
   {
     id: 15,
     name: "Prisma",
+    favorite: true,
     meta: "ORM",
-    oneLiner: "Next-generation Node.js and TypeScript ORM.",
+    oneLiner: "Next-generation TypeScript ORM.",
     description:
       "Prisma is the perfect ORM companion for my Next.js projects, if I ever need to make use of Next's API routes.",
     url: "https://www.prisma.io/",
@@ -372,8 +373,9 @@ const data: Use[] = [
   {
     id: 38,
     name: "React Query",
+    favorite: true,
     meta: "Async State Management",
-    oneLiner: "Popular async state management library, by the Tanstack team.",
+    oneLiner: "The React async state management library.",
     description:
       "The most popular async state management library for React projects. Trying to handle network requests and data caching without it feels so primitive now.",
     url: "https://tanstack.com/query/latest",
@@ -511,9 +513,40 @@ const data: Use[] = [
     url: "https://iterm2.com/",
     type: "devtool",
   },
+  {
+    id: 53,
+    name: "Auth.js",
+    meta: "Authentication Library",
+    oneLiner: "Authentication for the Web",
+    description:
+      "Auth.js - previously NextAuth.js - is incredibly intuitive and covers most, if not all, authentication use cases. It's not my go to authentication library for my Next.js projects.",
+    url: "https://authjs.dev/",
+    type: "library",
+  },
+  {
+    id: 54,
+    name: "tRPC",
+    favorite: true,
+    meta: "Data Fetching",
+    oneLiner: "End-to-end typesafe APIs made easy.",
+    description:
+      "tRPC is incredibly powerful! I had a big wow moment when I first tried it. Data fetching is usually where type safety ends in frontend projects, but tRPC not only makes it possible, but also easy and enjoyable.",
+    url: "https://trpc.io/",
+    type: "library",
+  },
+  {
+    id: 55,
+    name: "Vercel AI SDK",
+    meta: "AI Tool",
+    oneLiner: "The library for streaming AI responses and chat UIs",
+    description:
+      "It would be much harder to build a snappy chat UI without Vercel AI SDK. It's a great tool that work with a wide variety of AI providers. And the SDK works on the frontend and backend, which is pretty neat!",
+    url: "https://sdk.vercel.ai/docs",
+    type: "sdk",
+  },
 ];
 
-export function getUse(id: number): Use {
+export function getUse(id: number) {
   const use = data.find((use) => use.id == id);
 
   if (!use) {
@@ -528,7 +561,7 @@ type Filters = {
   favorite?: Use["favorite"];
 };
 
-export function getUses(filters?: Filters): Use[] {
+export function getUses(filters?: Filters) {
   const { type, favorite } = filters || {};
 
   if (type && favorite) {
