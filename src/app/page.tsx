@@ -43,10 +43,13 @@ export default async function Home() {
           <Interests short={bio.badge.short} long={bio.badge.long} />
 
           <Title>{bio.headline}</Title>
-          <Prose html={bio.short.html} className="standalone mt-8 sm:mt-12" />
+          <Prose html={bio.short.html} className="standalone mt-4 sm:mt-6" />
 
-          <SeeMore href="/about" className="mt-2.5 inline">
-            Read more
+          <SeeMore href="/about" className="mt-4 inline sm:mt-3">
+            Read full bio
+          </SeeMore>
+          <SeeMore href="/projects" className="ml-3 mt-4 inline sm:mt-3">
+            See my work
           </SeeMore>
         </div>
 

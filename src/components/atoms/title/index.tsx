@@ -13,7 +13,7 @@ export default function Title(props: Props) {
     {
       className: clsx(
         as == "h1" &&
-          "text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl mb-6",
+          "text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl mb-4 sm: mb-6",
         as == "h2" && "font-semibold text-zinc-800 dark:text-zinc-100 mb-1.5",
         className
       ),
