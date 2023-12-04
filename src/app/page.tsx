@@ -48,7 +48,10 @@ export default async function Home() {
           <SeeMore href="/about" className="mt-4 inline sm:mt-3">
             Read full bio
           </SeeMore>
-          <SeeMore href="/projects" className="ml-3 mt-4 inline sm:mt-3">
+          <SeeMore
+            href="/projects"
+            className="ml-3 mt-4 inline sm:ml-2 sm:mt-3"
+          >
             See my work
           </SeeMore>
         </div>
@@ -142,7 +145,7 @@ function Interests(props: InterestProps) {
   const { short, long } = props;
 
   return (
-    <span className="mb-3 inline-flex items-baseline rounded-full bg-zinc-300/30 px-3 py-1 text-sm text-zinc-700 dark:bg-zinc-700/30 dark:text-zinc-400">
+    <span className="mb-3 inline-flex items-baseline rounded-full bg-zinc-200/40 px-3 py-1 text-sm text-zinc-700 dark:bg-zinc-700/30 dark:text-zinc-400">
       <p className="mr-3 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
         INTERESTS
       </p>
