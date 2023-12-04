@@ -8,6 +8,7 @@ export type Availability = "available" | "limited" | "busy";
 export type Route = {
   link: LinkProps;
   label: string;
+  isCurrent: (href: string) => boolean;
 };
 
 export type Contact = {
