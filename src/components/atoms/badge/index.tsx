@@ -10,7 +10,7 @@ export default function Badge(props: Props) {
   return (
     <span
       className={clsx(
-        "inline-flex items-center bg-zinc-200/50 font-medium dark:bg-zinc-600/80",
+        "inline-flex items-center bg-zinc-200/50 font-medium dark:bg-zinc-700/80",
         size == "sm" &&
           "rounded-md px-1.5 text-xs text-zinc-800 dark:text-zinc-50",
         size == "lg" &&
