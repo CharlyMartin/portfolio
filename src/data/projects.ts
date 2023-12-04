@@ -47,6 +47,10 @@ import microchainImg from "@/images/projects/microchain-systems/app-1.png";
 import ensLogo from "@/images/projects/ens-everywhere/logo.png";
 import ensImg from "@/images/projects/ens-everywhere/app-1.png";
 
+// 12. Cofactory
+import cofactoryLogo from "@/images/projects/cofactory/logo.jpg";
+import cofactoryImg from "@/images/projects/cofactory/app-2.png";
+
 // Data
 const data: Project[] = [
   {
@@ -245,7 +249,7 @@ const data: Project[] = [
       style: { backgroundColor: "#EEECE7" },
     },
     images: [{ src: microchainImg, alt: "Microchain Systems Image" }],
-    dates: { start: new Date(2022, 7) },
+    dates: { start: new Date(2022, 7), end: new Date(2023, 7) },
     display: true,
     highlight: true,
     roles: [1, 4],
@@ -281,6 +285,25 @@ const data: Project[] = [
     ],
     status: "archived",
     areas: ["web3"],
+  },
+  {
+    id: 12,
+    name: "Cofactory",
+    slug: "cofactory",
+    description: " The future of value creation in an AI-based economy.",
+    logo: {
+      src: cofactoryLogo,
+      style: { backgroundColor: "#000", padding: "10px" },
+    },
+    images: [{ src: cofactoryImg, alt: "Cofactory Image" }],
+    dates: { start: new Date(2023, 9), end: new Date(2023, 11) },
+    url: "https://cofactory.ai/",
+    display: true,
+    highlight: true,
+    roles: [1],
+    stack: [1],
+    status: "live",
+    areas: ["ai"],
   },
 ];
 
