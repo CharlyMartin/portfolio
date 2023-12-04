@@ -129,9 +129,9 @@ const data: Array<People> = [
   },
   {
     id: 19,
-    name: "Rishabh",
+    name: "Rishabh Rai",
     description: "TODO",
-    url: "",
+    url: "https://www.linkedin.com/in/rishabh-rai-mobile-application-developer-specialized-in-flutter/",
     skills: [4, 5],
   },
   {
