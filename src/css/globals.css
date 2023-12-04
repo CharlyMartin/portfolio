@@ -17,7 +17,7 @@
 }
 
 *::selection {
-  @apply bg-teal-100 dark:bg-teal-900 dark:text-zinc-300;
+  @apply bg-teal-100 dark:bg-teal-700/70;
 }
 
 /* body {
