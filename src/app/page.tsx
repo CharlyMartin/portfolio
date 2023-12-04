@@ -53,7 +53,7 @@ export default async function Home() {
           </SeeMore>
         </div>
 
-        <div className="mt-12 flex flex-wrap gap-3 sm:mt-16">
+        <div className="mt-14 flex flex-wrap gap-3 sm:mt-20">
           <GetEmail />
           <DmOnTelegram />
         </div>
