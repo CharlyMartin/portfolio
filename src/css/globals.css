@@ -16,6 +16,10 @@
   }
 }
 
+*::selection {
+  @apply bg-teal-100 dark:bg-teal-900 dark:text-zinc-300;
+}
+
 /* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
