@@ -44,7 +44,7 @@ export default function RootLayout(props: Props) {
   const { children } = props;
 
   return (
-    <html lang="en" className="dark h-full antialiased">
+    <html lang="en" className="h-full antialiased">
       <body
         className={clsx("h-full bg-zinc-50 dark:bg-black", inter.className)}
       >
