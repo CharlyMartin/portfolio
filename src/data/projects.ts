@@ -301,7 +301,12 @@ const data: Project[] = [
     display: true,
     highlight: true,
     roles: [1],
-    stack: [1],
+    stack: [1, 3, 4, 15, 40, 16, 53, 54, 55],
+    people: [
+      { id: 18, role: { id: 2 } },
+      { id: 19, role: { id: 5 } },
+      { id: 20, role: { id: 15 } },
+    ],
     status: "live",
     areas: ["ai"],
   },

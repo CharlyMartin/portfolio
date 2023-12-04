@@ -511,6 +511,36 @@ const data: Use[] = [
     url: "https://iterm2.com/",
     type: "devtool",
   },
+  {
+    id: 53,
+    name: "Auth.js",
+    meta: "Authentication Library",
+    oneLiner: "Authentication for the Web",
+    description:
+      "Auth.js - previously NextAuth.js - is incredibly intuitive and covers most, if not all, authentication use cases. It's not my go to authentication library for my Next.js projects.",
+    url: "https://authjs.dev/",
+    type: "library",
+  },
+  {
+    id: 54,
+    name: "tRPC",
+    meta: "Data Fetching",
+    oneLiner: "End-to-end typesafe APIs made easy.",
+    description:
+      "tRPC is incredibly powerful! I had a big wow moment when I first tried it. Data fetching is usually where type safety ends in frontend projects, but tRPC not only makes it possible, but also easy and enjoyable.",
+    url: "https://trpc.io/",
+    type: "library",
+  },
+  {
+    id: 55,
+    name: "Vercel AI SDK",
+    meta: "AI Tool",
+    oneLiner: "The library for streaming AI responses and chat UIs",
+    description:
+      "It would be much harder to build a snappy chat UI without Vercel AI SDK. It's a great tool that work with a wide variety of AI providers. And the SDK works on the frontend and backend, which is pretty neat!",
+    url: "https://sdk.vercel.ai/docs",
+    type: "sdk",
+  },
 ];
 
 export function getUse(id: number): Use {

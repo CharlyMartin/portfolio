@@ -120,6 +120,27 @@ const data: People[] = [
     url: "https://rahul-kothari.github.io/",
     skills: [2, 14],
   },
+  {
+    id: 18,
+    name: " Kostandin Angjellari",
+    description: "TODO",
+    url: "https://www.linkedin.com/in/kostandinang/",
+    skills: [1, 2, 3, 6, 15],
+  },
+  {
+    id: 19,
+    name: "Rishabh",
+    description: "TODO",
+    url: "",
+    skills: [4, 5],
+  },
+  {
+    id: 20,
+    name: " Kaustubh Shukla",
+    description: "TODO",
+    url: "https://www.linkedin.com/in/kausmos/",
+    skills: [2, 5],
+  },
 ];
 
 export function getPerson(id: number): People {

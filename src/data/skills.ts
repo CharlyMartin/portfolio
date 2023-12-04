@@ -15,6 +15,7 @@ const data: Skill[] = [
   { id: 12, name: "Product Management", position: "Product Manager" },
   { id: 13, name: "Copywriting", position: "Copywriter" },
   { id: 14, name: "Smart Contracts", position: "Smart Contract Developer" },
+  { id: 15, name: "Machine Learning", position: "ML Developer" },
 ];
 
 export function getSkill(id: number): Skill {
