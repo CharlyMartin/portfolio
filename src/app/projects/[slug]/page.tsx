@@ -45,7 +45,7 @@ export default async function ProjectPage(props: Props) {
         subtitle={[formatProjectDates(project.dates), project.hq]}
       />
 
-      <div className="mt-6">
+      <div className="my-8 md:my-12">
         {project.roles.map((item, i) => {
           const { name } = item;
           return (
@@ -56,7 +56,7 @@ export default async function ProjectPage(props: Props) {
         })}
       </div>
 
-      <div className="flex flex-col gap-6 pt-12 lg:flex-row lg:gap-12">
+      <div className="flex flex-col gap-6 lg:flex-row lg:gap-12">
         {/* Left */}
         <div className="basis-full lg:basis-4/6" id="left">
           <Image

@@ -312,7 +312,7 @@ const data: Array<Project> = [
     url: "https://cofactory.ai/",
     display: true,
     highlight: true,
-    roles: [1],
+    roles: [1, 2, 11, 12],
     stack: [1, 3, 4, 15, 40, 16, 53, 54, 55],
     people: [
       { id: 18, role: { id: 2 } },
