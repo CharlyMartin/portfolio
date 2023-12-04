@@ -70,7 +70,7 @@ const data: Array<Use> = [
     oneLiner:
       "MacBook Air combined with the M1 chip. An incredibly portable laptop.",
     description:
-      "I've been on the Mackbook Pro bandwagon since 2009, but the M1 chip is such a game changer that a MacBook Air is now more than enough for modern web development.",
+      "I've been on the Mackbook Pro bandwagon since 2009, but the M1 chip is such a game changer that a MacBook Air (with some extra RAM) is now more than enough for modern web development.",
     url: "https://www.apple.com/macbook-air/",
     type: "workspace",
   },
