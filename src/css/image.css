@@ -2,6 +2,6 @@
 
 @layer components {
   .image-ring {
-    @apply rounded-2xl border border-zinc-200 shadow-md shadow-zinc-300/20 dark:border-zinc-700 dark:shadow-zinc-900/50;
+    @apply rounded-2xl border border-zinc-300 shadow-md shadow-zinc-300/20 dark:border-zinc-600 dark:shadow-zinc-900/50;
   }
 }
