@@ -84,7 +84,7 @@ const data: Array<Project> = [
     slug: "syncly",
     hq: "Paris, France",
     description:
-      "The real-time meeting room booking engine designed to boost sales.",
+      "The real-time booking engine designed to boost meeting room sales.",
     logo: {
       src: synclyLogo,
       style: { backgroundColor: "#f3f3ff" },
@@ -94,7 +94,7 @@ const data: Array<Project> = [
     url: "https://www.syncly.fr",
     display: true,
     highlight: true,
-    roles: [1, 2, 3, 4, 5, 6, 7, 8, 11],
+    roles: [1, 2, 3, 4, 5, 6, 8, 11, 12, 13],
     stack: [1, 3, 12, 13, 14, 16, 18, 19, 39, 40],
     people: [
       { id: 3, role: { id: 1 } },

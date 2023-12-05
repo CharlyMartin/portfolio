@@ -7,7 +7,7 @@ const data: Array<Skill> = [
   { id: 4, name: "UI Design", position: "UI Designer" },
   { id: 5, name: "UX Design", position: "UX Designer" },
   { id: 6, name: "Database Design", position: "Database Designer" },
-  { id: 7, name: "API Design", position: "API Designer" },
+  // { id: 7, name: "API Design", position: "API Designer" },
   { id: 8, name: "Branding", position: "Brand Designer" },
   { id: 9, name: "Testing", position: "Tester" },
   { id: 10, name: "Motion Design", position: "Motion Designer" },
