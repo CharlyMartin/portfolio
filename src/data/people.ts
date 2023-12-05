@@ -141,6 +141,13 @@ const data: Array<People> = [
     url: "https://www.linkedin.com/in/kausmos/",
     skills: [2, 5],
   },
+  {
+    id: 21,
+    name: "Chappy Asel",
+    description: "TODO",
+    url: "https://www.linkedin.com/in/chappyasel/",
+    skills: [1, 2, 3, 4, 5, 11, 12, 13],
+  },
 ];
 
 export function getPerson(id: number) {

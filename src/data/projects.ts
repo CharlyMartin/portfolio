@@ -320,6 +320,7 @@ const data: Array<Project> = [
       { id: 18, role: { id: 2 } },
       { id: 19, role: { id: 5 } },
       { id: 20, role: { id: 15 } },
+      { id: 21, role: { id: 12 } },
     ],
     status: "live",
     areas: ["ai"],
