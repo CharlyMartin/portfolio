@@ -50,7 +50,7 @@ function SectionOutline(props: OutlineProps) {
   return (
     <div
       className={clsx(
-        "rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40",
+        "rounded-2xl border border-zinc-200/60 p-6 dark:border-zinc-700/50",
         className
       )}
       {...rest}
