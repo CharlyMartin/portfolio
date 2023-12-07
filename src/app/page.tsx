@@ -52,7 +52,7 @@ export default async function Home() {
       </Container>
 
       <div className="overflow-scroll px-3 py-4 sm:hidden">
-        <div className="flex w-[116vw] space-x-3">
+        <div className="flex w-[150vw] space-x-3">
           <SeeMore href="/about" className="">
             Read full bio
           </SeeMore>
