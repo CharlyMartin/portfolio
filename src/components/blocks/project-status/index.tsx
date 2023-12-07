@@ -38,35 +38,3 @@ export default function ProjectStatus(props: Props) {
     </Button>
   );
 }
-
-type StatusProps = {
-  status: Project["status"];
-} & React.ComponentProps<"div">;
-
-function Status(props: StatusProps) {
-  const { status, ...rest } = props;
-
-  return (
-    <div
-      className={clsx(
-        "rounded-lg px-3 py-1 text-center text-sm font-medium",
-        status == "live" &&
-          "bg-green-200/20 text-green-600 dark:bg-green-900/10 dark:text-green-500",
-        status == "archived" &&
-          "bg-red-200/20 text-red-600 dark:bg-red-900/10 dark:text-red-500",
-        status == "wip" &&
-          "bg-purple-200/20 text-purple-600 dark:bg-purple-900/10 dark:text-purple-500"
-        // status == "private" &&
-        //   "bg-blue-200/20 text-blue-600 dark:bg-blue-900/10 dark:text-blue-500"
-      )}
-      {...rest}
-    >
-      <span>
-        {status == "archived" && "Archived"}
-        {status == "wip" && "Coming Soon!"}
-        {status == "live" && "Live"}
-        {/* {status == "private" && "Private"} */}
-      </span>
-    </div>
-  );
-}

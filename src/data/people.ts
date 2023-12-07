@@ -122,7 +122,7 @@ const data: Array<People> = [
   },
   {
     id: 18,
-    name: " Kostandin Angjellari",
+    name: "Kostandin Angjellari",
     description: "TODO",
     url: "https://www.linkedin.com/in/kostandinang/",
     skills: [1, 2, 3, 6, 15],
@@ -136,7 +136,7 @@ const data: Array<People> = [
   },
   {
     id: 20,
-    name: " Kaustubh Shukla",
+    name: "Kaustubh Shukla",
     description: "TODO",
     url: "https://www.linkedin.com/in/kausmos/",
     skills: [2, 5],

@@ -69,6 +69,7 @@ export type Use = {
   name: string;
   oneLiner: string;
   description?: string;
+  highlight?: boolean;
   favorite?: boolean;
   meta:
     | "Programming Language"
@@ -104,8 +105,8 @@ export type Use = {
     | "AI Tool"
     | "Bundler"
     | "Code Collaboration"
-    | "External Monitor";
-  url?: string;
+    | "Design Tool";
+  url: string;
   type:
     | "language"
     | "library"

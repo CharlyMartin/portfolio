@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const projects = getProjects({ highlight: true });
-  const favoriteUses = getUses({ favorite: true });
+  const favoriteUses = getUses({ highlight: true });
   const articlesMeta = await getArticlesMeta({ highlight: true });
   const bio = await getBio();
 
@@ -45,17 +45,28 @@ export default async function Home() {
           <Title>{bio.headline}</Title>
           <Prose html={bio.short.html} className="standalone mt-4 sm:mt-6" />
 
-          <SeeMore href="/about" className="mt-4 inline sm:mt-3">
+          <div className="hidden pt-3 sm:block">
+            <SeeMore href="/about">Read full bio</SeeMore>
+          </div>
+        </div>
+      </Container>
+
+      {/* Mobile link slider */}
+      <div className="overflow-scroll px-3 py-4 sm:hidden">
+        <div className="flex w-[155vw] space-x-3">
+          <SeeMore href="/about" className="">
             Read full bio
           </SeeMore>
-          <SeeMore
-            href="/projects"
-            className="ml-3 mt-4 inline sm:ml-2 sm:mt-3"
-          >
+          <SeeMore href="/projects" className="">
             See my work
           </SeeMore>
+          <SeeMore href="/uses" className="">
+            Check my stack
+          </SeeMore>
         </div>
+      </div>
 
+      <Container>
         <div className="mt-14 flex flex-wrap gap-3 sm:mt-20">
           <GetEmail />
           <DmOnTelegram />
