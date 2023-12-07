@@ -105,7 +105,7 @@ export type Use = {
     | "AI Tool"
     | "Bundler"
     | "Code Collaboration"
-    | "External Monitor";
+    | "Design Tool";
   url: string;
   type:
     | "language"

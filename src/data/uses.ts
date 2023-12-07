@@ -9,7 +9,7 @@ const data: Array<Use> = [
     meta: "Programming Language",
     oneLiner: "A typed superset of JavaScript.",
     description:
-      "My go-to language for most projects these days. It takes some time to get the types right at the beginning, but it always pays off as the project grows.",
+      "Unlike some of my favourite tools, TypeScript didn't impress me at first when I first used it in 2019. I felt like it was getting in the way of my development, as JavaScript is very flexible. But as I worked on increasingly bigger codebases, I got to love TypeScript. Getting the types right initially takes some time, but it always pays off as the project grows. It's my go-to language for all projects now.",
     highlight: true,
     url: "https://www.typescriptlang.org/",
     type: "language",
@@ -30,7 +30,7 @@ const data: Array<Use> = [
     meta: "Web Framework",
     oneLiner: "The React Framework for Production.",
     description:
-      "After using standalone React for a while and running into the same configuration and optimisation hurdles (routing, code splitting, lazy loading, SSR, ...), I found Next.js v9 back in the day and was hooked by its simplicity. Every new major version manages to make the tool even simpler to use, which is not always the case in the JavaScript ecosystem. Next.js is my go-to choice for any web project, my new Ruby on Rails.",
+      "After using standalone React for a while and running into the same configuration and optimisation hurdles (routing, code splitting, lazy loading, SSR, ...), I discovered Next.js v9 back in the day and was hooked by its simplicity. I've been using it ever since. Every new major version manages to make the tool even simpler to use, which is not always the case in the JavaScript ecosystem. Next.js is my go-to choice for any web project, my new Ruby on Rails.",
     highlight: true,
     url: "https://nextjs.org/",
     type: "framework",
@@ -42,7 +42,7 @@ const data: Array<Use> = [
     highlight: true,
     oneLiner: "The CSS framework to build any design.",
     description:
-      "I love Tailwind! In a world of JavaScript everything, it stands out for its simplicity while being extremely powerful.",
+      "I love Tailwind CSS and the people behind it. Their book Refactoring UI is a must-read for anyone getting into design. It made me better at building user interfaces in a couple of hours. I can say the same about using Tailwind CSS. Its intuitive class convention and beautiful theme set developers up for success like few other frameworks do. And in a world of JavaScript everything, it stands out for its simplicity while still being extremely powerful.",
     url: "https://tailwindcss.com/",
     type: "library",
   },
@@ -67,13 +67,12 @@ const data: Array<Use> = [
   },
   {
     id: 7,
-    name: `15" M2 MacBook Air (2023)`,
+    name: `M2 MacBook Air 15" (2023)`,
     meta: "Hardware",
     oneLiner:
       "MacBook Air combined with the M2 chip. An incredibly portable laptop.",
     description:
-      "I've been on the Mackbook Pro bandwagon since 2009, but the latest M chip series is such a game changer that a MacBook Air (with some extra RAM) is now more than enough for modern web development.",
-    favorite: true,
+      "I've been on the Mackbook Pro bandwagon since 2009, but the latest Apple M chips are such a game changer that a MacBook Air (with some extra RAM) is now more than enough for modern web development.",
     url: "https://www.apple.com/macbook-air/",
     type: "workspace",
   },
@@ -113,7 +112,7 @@ const data: Array<Use> = [
     meta: "Code Formatter",
     oneLiner: "An opinionated code formatter.",
     description:
-      "Prettier changed my (dev) life. I discovered it around the same time as React, as I was transitioning from the Ruby world to the - much vaster - JavaScript world. It’s incredible enough as a solo developer and indispensable for team work. And the tailwind formatter plugin makes using Tailwind much structured and pleasant. I remember days when I used to format code manually, I can't believe it was a thing Thank you, Prettier.",
+      "Prettier changed my (dev) life. I discovered it around the same time I got into React, as I was transitioning from the Ruby world to the - much vaster - JavaScript world. It's incredibly useful as a solo developer and indispensable for teamwork. And the Tailwind plugin took my Tailwind CSS game to a new level. I remember the days when I formatted code manually; I can't believe I used to do that... Thank you, Prettier.",
     url: "https://prettier.io/",
     favorite: true,
     type: "devtool",
@@ -155,7 +154,9 @@ const data: Array<Use> = [
     meta: "ORM",
     oneLiner: "Next-generation TypeScript ORM.",
     description:
-      "Prisma is the perfect ORM companion for my Next.js projects, if I ever need to make use of Next's API routes. And the native TypeScript support makes database interactions so much safer.",
+      "Prisma is the perfect ORM companion for my Next.js projects. Thanks to my days using Active Records, it was fairly easy to start with Prisma, but the TypeScript support got me hooked and turned me into a fan! TypeScript elevates Prisma to a new level and makes database operation predictable, safe, and intuitive. As a frontend developer, it makes me feel in control rather than dreading touching the database.",
+    // description:
+    //   "Prisma is the perfect ORM companion for my Next.js projects, if I ever need to make use of Next's API routes. And the native TypeScript support makes database interactions so much safer.",
     url: "https://www.prisma.io/",
     type: "library",
   },
@@ -165,7 +166,7 @@ const data: Array<Use> = [
     meta: "Web API",
     oneLiner: "The most popular payment API.",
     description:
-      "It would be hard to imagine a world where Stripe doesn't exist. Their API documentation is the gold standard for web APIs. I started using their API back in 2018, a few times a year since then. Whenever I come back to their documentation, they managed to make it even more enjoyable and intuitive. Bravo, Stripe!",
+      "It would be hard to imagine a world where Stripe doesn't exist. Their web API documentation is the gold standard of developer experience. I started using their API in 2018, and I remember being impressed by how much I could do as a one-person show. It's one of the products with the most significant effort/reward ratio... Imagine building a payment portal from scratch, a developer's nightmare. Whenever I come back to Stripe for new clients' projects, they somehow manage to make their service even more enjoyable and intuitive to use. Bravo, Stripe!",
     favorite: true,
     url: "https://stripe.com/",
     type: "sdk",
@@ -330,7 +331,7 @@ const data: Array<Use> = [
     meta: "State Management",
     oneLiner: "Popular library for state machines and statecharts",
     description:
-      "XState is pretty awesome! Finite state machines are a mind shift from the traditional state management libraries, but a worthwhile one. It forces you to clearly map out the different states and transitions of your application, which is a great thing!",
+      "Like TypeScript, it took some time to understand XState and unleash its full potential. But once I did, I was hooked! Finite state machines are a mind shift from traditional state management libraries but a worthwhile investment for anyone building complex UIs. It simplifies the complexity like few other tools. Its author, David Khourshid, is an excellent teacher and demystified the world of state machines in a fun way. I recommend watching his videos.",
     url: "https://xstate.js.org/",
     favorite: true,
     type: "library",
@@ -383,7 +384,7 @@ const data: Array<Use> = [
     meta: "Async State Management",
     oneLiner: "The React async state management library.",
     description:
-      "The most popular async state management library for React projects. Trying to handle network requests and data caching without it feels so primitive now.",
+      "React Query is THE way to interact with any asynchronous state, usually a server. It takes care of all the complexity that goes into managing remote data, namely caching and refreshing. The amount of thinking that went into making React Query intuitive and easy to use is extraordinary. I can't imagine building a web application without it nowadays; it would feel primitive.",
     url: "https://tanstack.com/query/latest",
     type: "library",
   },
@@ -404,7 +405,7 @@ const data: Array<Use> = [
     meta: "Form Management",
     oneLiner: "Popular form library built with React hooks.",
     description:
-      "Managing complex forms is one of the hardest things in web development. React Hook Form makes it so much easier and scalable.",
+      "Few things are more complicated than building complex forms in React. The form state can quickly become a monstrous mess. I imagine this is why React Hook Form was invented after React introduced hooks in 2019. Along with React Final Form, React Hook Form is the easiest and most performant way to handle complex form data. I use it whenever I build a form. Even for forms as simple as one text input and submit button, the investment of setting up React Hook Form over React states pays off instantly.",
     favorite: true,
     url: "https://react-hook-form.com/",
     type: "library",
@@ -477,7 +478,7 @@ const data: Array<Use> = [
     oneLiner: "The most popular AI code editor assistant",
     favorite: true,
     description:
-      "Gitub Copilot is one of these tools with such a massive wow factor you only have every few years. Somedays, I feel like I am the co-pilot of Github Copilot, as it seems to increasingly know what I want to do. Mind blowing!",
+      "Gitub Copilot is one of these tools with a massive wow factor, the kind you only have every few years. It's mind-blowing. Somedays, I feel like I am the copilot of Github Copilot, as it seems to increasingly know what I want to do. ",
     url: "https://github.com/features/copilot/",
     type: "devtool",
   },
@@ -493,11 +494,11 @@ const data: Array<Use> = [
   },
   {
     id: 50,
-    name: "Samsung Smart Monitor M7 UHD",
-    meta: "External Monitor",
+    name: `Smart Monitor 32" M7 UHD`,
+    meta: "Hardware",
     oneLiner: "External monitor",
     description:
-      "I've been dreaming of having a 4K external monitor like this during all my travel years. It is now the case! It makes frontend development so much enjoyable.",
+      "I dreamed of having a high-resolution external monitor like this during all my travel years. It is now the case! It makes frontend development so much enjoyable.",
     url: "https://www.samsung.com/pt/monitors/high-resolution/smart-m7-32-inch-smart-tv-experience-ls32bm700uuxen/",
     type: "workspace",
   },
@@ -519,7 +520,7 @@ const data: Array<Use> = [
     description:
       "I've never used the default MacOs terminal, but whenever I see someone's screen with it, I feel like I am looking at a computer from the 80s. iTerm feels like the way to go.",
     url: "https://iterm2.com/",
-    favorite: true,
+    // favorite: true,
     type: "devtool",
   },
   {
@@ -540,7 +541,7 @@ const data: Array<Use> = [
     meta: "Data Fetching",
     oneLiner: "End-to-end typesafe APIs made easy.",
     description:
-      "tRPC is incredibly powerful! I had a big wow moment when I first tried it. Data fetching is usually where type safety ends in frontend projects, but tRPC not only makes it possible, but also easy and enjoyable.",
+      "I thought nothing could beat React Query at working with APIs. I was wrong. I believe tRPC is the latest frontier of developer experience on that front. I had a big wow moment when I first tried it. Data fetching is usually where type safety ends in frontend projects. tRPC not only makes it possible but incredibly fast.",
     url: "https://trpc.io/",
     type: "library",
   },
@@ -553,6 +554,56 @@ const data: Array<Use> = [
       "It would be much harder to build a snappy chat UI without Vercel AI SDK. It's a great tool that work with a wide variety of AI providers. And the SDK works on the frontend and backend, which is pretty neat!",
     url: "https://sdk.vercel.ai/docs",
     type: "sdk",
+  },
+  {
+    id: 56,
+    name: "Figma",
+    meta: "Design Tool",
+    oneLiner: "The most popular design tool",
+    description: "How I prototype and design everything.",
+    url: "https://www.figma.com/",
+    type: "productivity",
+  },
+  {
+    id: 57,
+    name: "Magic Keyboard",
+    meta: "Hardware",
+    oneLiner: "The keyboard for MacBooks",
+    description:
+      "I love how compact and portable this keyboard is, a great travel companion.",
+    url: "https://www.apple.com/shop/product/MK2A3LL/A/magic-keyboard-us-english",
+    type: "workspace",
+  },
+  {
+    id: 58,
+    name: "MX Vertical",
+    meta: "Hardware",
+    oneLiner: "The ergonomic mouse",
+    description:
+      "I used to use the Magic Mouse, and would always have wrist pain after a few hours of work. The MX Vertical solved that problem, it's a pleasure to use.",
+    url: "https://www.logitech.com/en-eu/products/mice/mx-vertical-ergonomic-mouse.910-005448.html",
+    type: "workspace",
+  },
+  {
+    id: 59,
+    name: "Roost Laptop Stand",
+    meta: "Hardware",
+    oneLiner: "The portable laptop stand",
+    description:
+      "This tiny, beautifully engineered laptop stand saved my neck and back during my years of working and nomading. It might seem costly at first but has probably saved me months, if not years, of physiotherapy. Roost turned any place into my office for the day in 30 seconds. It has made working remotely way more enjoyable. I even remember people asking about it when I used it in public places. I should have asked for a referral link! I still enjoy it occasionally when I work from a cafe, and it's still the best.",
+    url: "https://www.therooststand.com/",
+    favorite: true,
+    type: "workspace",
+  },
+  {
+    id: 60,
+    name: "Fig",
+    meta: "Shell Tool",
+    oneLiner: "The terminal for developers",
+    description:
+      "Fig makes your terminal come alive with autocomplete and some AI magic. It's a great tool for productivity and learning new commands.",
+    url: "https://fig.io/",
+    type: "devtool",
   },
 ];
 
