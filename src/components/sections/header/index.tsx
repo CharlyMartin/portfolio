@@ -8,7 +8,7 @@ import MobileNavigation from "../../blocks/navigation/mobile";
 
 export default function Header() {
   return (
-    <header className="mb-20 sm:mb-24 md:mb-28">
+    <header className="mb-16 sm:mb-24 md:mb-28">
       <div className="pt-6">
         <Container>
           <div className="flex gap-4">
