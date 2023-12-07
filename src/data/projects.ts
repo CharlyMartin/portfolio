@@ -244,7 +244,7 @@ const data: Array<Project> = [
     display: false,
     highlight: false,
     roles: [1],
-    stack: [10, 9, 2, 28, 41, 43],
+    stack: [10, 9, 2, 28, 41],
     people: [{ id: 9, role: { id: 2 } }],
     status: "archived",
     areas: ["web2"],

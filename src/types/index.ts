@@ -69,6 +69,7 @@ export type Use = {
   name: string;
   oneLiner: string;
   description?: string;
+  highlight?: boolean;
   favorite?: boolean;
   meta:
     | "Programming Language"
@@ -105,7 +106,7 @@ export type Use = {
     | "Bundler"
     | "Code Collaboration"
     | "External Monitor";
-  url?: string;
+  url: string;
   type:
     | "language"
     | "library"

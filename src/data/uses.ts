@@ -1,5 +1,7 @@
 import type { Use } from "@/types";
 
+// Add long description for highlighted or favorite uses
+
 const data: Array<Use> = [
   {
     id: 1,
@@ -8,7 +10,7 @@ const data: Array<Use> = [
     oneLiner: "A typed superset of JavaScript.",
     description:
       "My go-to language for most projects these days. It takes some time to get the types right at the beginning, but it always pays off as the project grows.",
-    favorite: true,
+    highlight: true,
     url: "https://www.typescriptlang.org/",
     type: "language",
   },
@@ -18,7 +20,7 @@ const data: Array<Use> = [
     meta: "UI Library",
     oneLiner: "A JavaScript library for building user interfaces.",
     description:
-      "React got me into frontend development. I taught myself React early 2018 and I have mostly been focusing on frontend development since then.",
+      "React blew my mind away and got me into frontend development. I taught myself the basics early 2018 and hit the ground running with projects. I have mainly been working with the React ecosystem since then.",
     url: "https://reactjs.org/",
     type: "library",
   },
@@ -28,8 +30,8 @@ const data: Array<Use> = [
     meta: "Web Framework",
     oneLiner: "The React Framework for Production.",
     description:
-      "After using plain React for a while and running into the same configuration issues (routing, code splitting, lazy loading, SSR, ...), I found Next.js and was hooked! Unless there's a need for plain React, I default to using Next.js.",
-    favorite: true,
+      "After using standalone React for a while and running into the same configuration and optimisation hurdles (routing, code splitting, lazy loading, SSR, ...), I found Next.js v9 back in the day and was hooked by its simplicity. Every new major version manages to make the tool even simpler to use, which is not always the case in the JavaScript ecosystem. Next.js is my go-to choice for any web project, my new Ruby on Rails.",
+    highlight: true,
     url: "https://nextjs.org/",
     type: "framework",
   },
@@ -37,7 +39,7 @@ const data: Array<Use> = [
     id: 4,
     name: "Tailwind CSS",
     meta: "CSS Framework",
-    favorite: true,
+    highlight: true,
     oneLiner: "The CSS framework to build any design.",
     description:
       "I love Tailwind! In a world of JavaScript everything, it stands out for its simplicity while being extremely powerful.",
@@ -65,12 +67,13 @@ const data: Array<Use> = [
   },
   {
     id: 7,
-    name: "MacBook Air M1 (2020)",
+    name: `15" M2 MacBook Air (2023)`,
     meta: "Hardware",
     oneLiner:
-      "MacBook Air combined with the M1 chip. An incredibly portable laptop.",
+      "MacBook Air combined with the M2 chip. An incredibly portable laptop.",
     description:
-      "I've been on the Mackbook Pro bandwagon since 2009, but the M1 chip is such a game changer that a MacBook Air (with some extra RAM) is now more than enough for modern web development.",
+      "I've been on the Mackbook Pro bandwagon since 2009, but the latest M chip series is such a game changer that a MacBook Air (with some extra RAM) is now more than enough for modern web development.",
+    favorite: true,
     url: "https://www.apple.com/macbook-air/",
     type: "workspace",
   },
@@ -110,8 +113,9 @@ const data: Array<Use> = [
     meta: "Code Formatter",
     oneLiner: "An opinionated code formatter.",
     description:
-      "Prettier changed my (dev) life. I remember days when I used to format code manually, I can't believe it was a thing. Prettier is the extension I install first when I start a new project.",
+      "Prettier changed my (dev) life. I discovered it around the same time as React, as I was transitioning from the Ruby world to the - much vaster - JavaScript world. It’s incredible enough as a solo developer and indispensable for team work. And the tailwind formatter plugin makes using Tailwind much structured and pleasant. I remember days when I used to format code manually, I can't believe it was a thing Thank you, Prettier.",
     url: "https://prettier.io/",
+    favorite: true,
     type: "devtool",
   },
   {
@@ -147,11 +151,11 @@ const data: Array<Use> = [
   {
     id: 15,
     name: "Prisma",
-    favorite: true,
+    highlight: true,
     meta: "ORM",
     oneLiner: "Next-generation TypeScript ORM.",
     description:
-      "Prisma is the perfect ORM companion for my Next.js projects, if I ever need to make use of Next's API routes.",
+      "Prisma is the perfect ORM companion for my Next.js projects, if I ever need to make use of Next's API routes. And the native TypeScript support makes database interactions so much safer.",
     url: "https://www.prisma.io/",
     type: "library",
   },
@@ -161,7 +165,8 @@ const data: Array<Use> = [
     meta: "Web API",
     oneLiner: "The most popular payment API.",
     description:
-      "It would be hard to imagine a world where Stripe doesn't exist. Their API documentation is the gold standard for web APIs.",
+      "It would be hard to imagine a world where Stripe doesn't exist. Their API documentation is the gold standard for web APIs. I started using their API back in 2018, a few times a year since then. Whenever I come back to their documentation, they managed to make it even more enjoyable and intuitive. Bravo, Stripe!",
+    favorite: true,
     url: "https://stripe.com/",
     type: "sdk",
   },
@@ -249,7 +254,7 @@ const data: Array<Use> = [
     meta: "Web Framework",
     oneLiner: "The Ruby framework for building web applications.",
     description:
-      "Ah Ruby on Rails... This is where it all started for me. Even though I haven't used it in years, I still use its priceless principles and patterns in my work today. I still believe it's one of the best framework for building web applications.",
+      "Ah Ruby on Rails... This is where it all started for me. Even though I haven't used it in years, I still use its priceless principles and patterns in my work today. I still believe it's one of the best framework for building web applications faster.",
     url: "https://rubyonrails.org/",
     type: "framework",
   },
@@ -327,6 +332,7 @@ const data: Array<Use> = [
     description:
       "XState is pretty awesome! Finite state machines are a mind shift from the traditional state management libraries, but a worthwhile one. It forces you to clearly map out the different states and transitions of your application, which is a great thing!",
     url: "https://xstate.js.org/",
+    favorite: true,
     type: "library",
   },
   {
@@ -373,7 +379,7 @@ const data: Array<Use> = [
   {
     id: 38,
     name: "React Query",
-    favorite: true,
+    highlight: true,
     meta: "Async State Management",
     oneLiner: "The React async state management library.",
     description:
@@ -399,6 +405,7 @@ const data: Array<Use> = [
     oneLiner: "Popular form library built with React hooks.",
     description:
       "Managing complex forms is one of the hardest things in web development. React Hook Form makes it so much easier and scalable.",
+    favorite: true,
     url: "https://react-hook-form.com/",
     type: "library",
   },
@@ -420,14 +427,14 @@ const data: Array<Use> = [
     url: "https://final-form.org/react",
     type: "library",
   },
-  {
-    id: 43,
-    name: "Laravel",
-    meta: "Web Framework",
-    oneLiner: "The most popular PHP framework for building web apps.",
-    url: "https://laravel.com/",
-    type: "framework",
-  },
+  // {
+  //   id: 43,
+  //   name: "Laravel",
+  //   meta: "Web Framework",
+  //   oneLiner: "The most popular PHP framework for building web apps.",
+  //   url: "https://laravel.com/",
+  //   type: "framework",
+  // },
   {
     id: 44,
     name: "Z - jump around",
@@ -435,7 +442,7 @@ const data: Array<Use> = [
     oneLiner: "Shell script to move around the file system",
     description:
       "Z is a tiny shell script but such a cool one. It makes moving around the file system so much easier. I 'z' my way around directories instead of 'cd'ing like a caveman.",
-    url: "",
+    url: "https://github.com/rupa/z",
     type: "devtool",
   },
   {
@@ -468,8 +475,9 @@ const data: Array<Use> = [
     name: "Github Copilot",
     meta: "AI Tool",
     oneLiner: "The most popular AI code editor assistant",
+    favorite: true,
     description:
-      "Somedays, I feel like I am the co-pilot of Github Copilot, as it seems to incresingly know what I want to do. Mind blowing!",
+      "Gitub Copilot is one of these tools with such a massive wow factor you only have every few years. Somedays, I feel like I am the co-pilot of Github Copilot, as it seems to increasingly know what I want to do. Mind blowing!",
     url: "https://github.com/features/copilot/",
     type: "devtool",
   },
@@ -511,6 +519,7 @@ const data: Array<Use> = [
     description:
       "I've never used the default MacOs terminal, but whenever I see someone's screen with it, I feel like I am looking at a computer from the 80s. iTerm feels like the way to go.",
     url: "https://iterm2.com/",
+    favorite: true,
     type: "devtool",
   },
   {
@@ -521,12 +530,13 @@ const data: Array<Use> = [
     description:
       "Auth.js - previously NextAuth.js - is incredibly intuitive and covers most, if not all, authentication use cases. It's not my go to authentication library for my Next.js projects.",
     url: "https://authjs.dev/",
+    // highlight: true,
     type: "library",
   },
   {
     id: 54,
     name: "tRPC",
-    favorite: true,
+    highlight: true,
     meta: "Data Fetching",
     oneLiner: "End-to-end typesafe APIs made easy.",
     description:
@@ -558,18 +568,18 @@ export function getUse(id: number) {
 
 type Filters = {
   type?: Use["type"];
-  favorite?: Use["favorite"];
+  highlight?: Use["highlight"];
 };
 
 export function getUses(filters?: Filters) {
-  const { type, favorite } = filters || {};
+  const { type, highlight } = filters || {};
 
-  if (type && favorite) {
-    return data.filter((use) => use.type == type && use.favorite);
+  if (type && highlight) {
+    return data.filter((use) => use.type == type && use.highlight);
   }
 
   if (type) return data.filter((use) => use.type == type);
-  if (favorite) return data.filter((use) => use.favorite);
+  if (highlight) return data.filter((use) => use.highlight);
 
   return data;
 }

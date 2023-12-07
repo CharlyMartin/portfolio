@@ -17,6 +17,9 @@ import {
   HiChevronDown,
   HiXMark,
   HiOutlineFolderOpen,
+  HiMiniStar,
+  HiArrowRightCircle,
+  HiHeart,
 } from "react-icons/hi2";
 
 // https://icons8.com/
@@ -32,6 +35,7 @@ const Icons = {
   Clipboard: FiCopy,
   Check: FiCheck,
   ArrowRightOutline: HiOutlineArrowRight,
+  ArrowRightCircle: HiArrowRightCircle,
   Back: FiArrowLeft,
   Moon: HiOutlineMoon,
   Sun: HiOutlineSun,
@@ -39,6 +43,8 @@ const Icons = {
   ChevronDown: HiChevronDown,
   X: HiXMark,
   Article: HiOutlineFolderOpen,
+  Star: HiMiniStar,
+  Heart: HiHeart,
 };
 
 export default Icons;
