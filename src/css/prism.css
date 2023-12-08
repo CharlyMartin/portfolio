@@ -26,12 +26,12 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-  padding: theme("spacing.8");
+  padding: theme("spacing.6");
   margin: theme("spacing.2") 0;
   overflow: auto;
-  border-radius: theme("borderRadius.lg");
-  margin-left: -80px;
-  margin-right: -80px;
+  border-radius: theme("borderRadius.xl");
+  margin-left: calc(-1 * theme("spacing.16"));
+  margin-right: calc(-1 * theme("spacing.16"));
 }
 
 @media (max-width: 768px) {
@@ -454,8 +454,8 @@ pre > code.diff-highlight .token.token.inserted:not(.prefix) *::selection {
 }
 
 .highlight-line {
-  margin-left: -14px;
-  padding-left: 10px;
+  margin-left: calc(-1 * theme("spacing[2.5]"));
+  padding-left: theme("spacing[1.5]");
   /* margin-right: -16px; */
   background-color: theme("colors.zinc.700 / 0.9"); /* Set highlight bg color */
   border-left: 4px solid theme("colors.blue.500"); /* Set highlight accent border color */
@@ -465,8 +465,7 @@ pre > code.diff-highlight .token.token.inserted:not(.prefix) *::selection {
   display: inline-block;
   width: 1rem;
   text-align: right;
-  margin-right: 2rem;
-  /* margin-left: -8px; */
+  margin-right: theme("spacing.6");
   color: theme("colors.zinc.500"); /* Line number color */
   content: attr(line);
 }

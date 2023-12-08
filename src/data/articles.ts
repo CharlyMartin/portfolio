@@ -1,4 +1,5 @@
 import { globSync } from "fast-glob";
+import { z } from "zod";
 
 import { parseFileContent } from "@/lib/parse-markdown";
 
@@ -6,12 +7,13 @@ type Filters = {
   highlight?: boolean;
 };
 
-type Metadata = {
-  title: string;
-  description: string;
-  date: string;
-  highlight?: boolean;
-};
+const metadataSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  created: z.date(),
+  updated: z.date().optional(),
+  highlight: z.boolean().optional(),
+});
 
 export async function getArticlesMeta(filters?: Filters) {
   const { highlight } = filters || {};
@@ -20,15 +22,16 @@ export async function getArticlesMeta(filters?: Filters) {
   const metas = [];
 
   for (const slug of slugs) {
-    const { metadata } = await parseFileContent("articles", slug);
-    metas.push({ slug, ...(metadata as unknown as Metadata) });
+    const content = await parseFileContent("articles", `${slug}/index`);
+    const metadata = metadataSchema.parse(content.metadata);
+    metas.push({ slug, ...metadata });
   }
 
-  // @ts-ignore
-  metas.sort((a, z) => new Date(z.date) - new Date(a.date));
+  metas.sort((a, z) => {
+    return z.created.getTime() - a.created.getTime();
+  });
 
   if (highlight) {
-    // @ts-ignore: highlight is defined in the article header
     return metas.filter((meta) => meta.highlight);
   }
 
@@ -36,16 +39,13 @@ export async function getArticlesMeta(filters?: Filters) {
 }
 
 export async function getArticle(slug: string) {
-  return parseFileContent("articles", slug);
+  return parseFileContent("articles", `${slug}/index`);
 }
 
 function getAllSlugs(): Array<string> {
-  const files = globSync("*.md", {
-    cwd: "./src/data/articles",
-  });
+  const files = globSync("**/index.md", { cwd: "./src/data/articles" });
 
   return files.map((file) => {
-    const slug = file.replace(".md", "");
-    return slug;
+    return file.replace("/index.md", "");
   });
 }

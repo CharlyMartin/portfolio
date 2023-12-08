@@ -9,18 +9,15 @@ import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import rehypePrismPlus from "rehype-prism-plus";
 import { visit } from "unist-util-visit";
+// import { z } from "zod";
 
 import { addUtm } from "./add-utm";
-import { FileContent } from "@/types";
 
 const root = process.cwd();
 
 type Location = "projects" | "bio" | "articles";
 
-export async function parseFileContent(
-  location: Location,
-  slug: string
-): Promise<FileContent> {
+export async function parseFileContent(location: Location, slug: string) {
   const source = readFileSync(
     join(root, "src/data/", location, `${slug}.md`),
     "utf8"
@@ -44,10 +41,7 @@ export async function parseFileContent(
 
   const file = await processor.process(content);
 
-  return {
-    metadata: data,
-    html: String(file),
-  };
+  return { metadata: data, html: String(file) };
 }
 
 function addUtmPlugin() {

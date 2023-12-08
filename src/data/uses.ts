@@ -605,6 +605,16 @@ const data: Array<Use> = [
     url: "https://fig.io/",
     type: "devtool",
   },
+  // {
+  //   id: 61,
+  //   name: "Zod",
+  //   meta: "Validation Library",
+  //   oneLiner: "The most popular validation library",
+  //   description:
+  //     "Zod is a great validation library that works well with TypeScript. It's a great alternative to Yup.",
+  //   url: "https://zod.dev/",
+  //   type: "library",
+  // },
 ];
 
 export function getUse(id: number) {
