@@ -14,7 +14,7 @@ export default function Badge(props: Props) {
         size == "sm" &&
           "rounded-md px-1.5 text-xs text-zinc-800 dark:text-zinc-50",
         size == "lg" &&
-          "rounded-lg px-2.5 py-1 text-sm text-zinc-700 dark:text-zinc-100",
+          "rounded-lg px-2 py-0.5 text-sm text-zinc-700 dark:text-zinc-100 sm:px-2.5 sm:py-1",
         className
       )}
     >

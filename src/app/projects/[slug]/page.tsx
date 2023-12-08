@@ -50,7 +50,7 @@ export default async function ProjectPage(props: Props) {
         {roles.map((item, i) => {
           const { name } = item;
           return (
-            <Badge className="mb-3 mr-3" size="lg" key={i}>
+            <Badge className="mb-2 mr-2 sm:mb-3 sm:mr-3" size="lg" key={i}>
               {name}
             </Badge>
           );

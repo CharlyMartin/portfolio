@@ -53,7 +53,7 @@ export default async function Home() {
 
       {/* Mobile link slider */}
       <div className="overflow-scroll px-3 py-4 sm:hidden">
-        <div className="flex w-[155vw] space-x-3">
+        <div className="flex w-[125vw] space-x-3">
           <SeeMore href="/about" className="">
             Read full bio
           </SeeMore>
