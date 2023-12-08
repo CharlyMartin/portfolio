@@ -27,11 +27,6 @@ export type Bio = {
 
 type Area = "web2" | "web3" | "ai";
 
-type FileContent = {
-  metadata: Record<string, string>;
-  html: string;
-};
-
 // DATA MODEL (exposed via API routes)
 export type Project = {
   id: number;
@@ -51,13 +46,6 @@ export type Project = {
   roles: Array<Skill["id"]>;
   people?: Array<{ id: People["id"]; role: { id: Skill["id"] } }>;
 };
-
-// export type ProjectWithDeps = Omit<Project, "roles" | "people" | "stack"> & {
-//   file: FileContent;
-//   roles: Array<Skill>;
-//   stack: Array<Use>;
-//   people?: Array<People & { role: Skill }>;
-// };
 
 export type ProjectPreview = Pick<
   Project,
