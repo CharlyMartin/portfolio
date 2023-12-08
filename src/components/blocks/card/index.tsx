@@ -132,10 +132,10 @@ export function CardEyebrow<T extends React.ElementType = "p">(
   return (
     <Component
       className={clsx(
-        className,
         "relative z-10 flex items-center text-sm text-zinc-400 dark:text-zinc-500",
         top && "order-first mb-3",
-        decorate && "pl-3.5"
+        decorate && "pl-3.5",
+        className
       )}
       {...rest}
     >
