@@ -43,7 +43,7 @@ export default async function Home() {
           <Interests short={bio.badge.short} long={bio.badge.long} />
 
           <Title>{bio.headline}</Title>
-          <Prose html={bio.short.html} className="standalone mt-4 sm:mt-6" />
+          <Prose html={bio.short} className="standalone mt-4 sm:mt-6" />
 
           <div className="hidden pt-3 sm:block">
             <SeeMore href="/about">Read full bio</SeeMore>

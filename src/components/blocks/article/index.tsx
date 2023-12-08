@@ -4,20 +4,20 @@ import { formatArticleDate } from "@/lib/format-date";
 type Props = {
   slug: string;
   title: string;
-  date: string | Date;
+  created: Date;
   description: string;
 };
 
 function ArticlePreviewSquare(props: Props) {
-  const { title, slug, date, description } = props;
+  const { title, slug, created, description } = props;
 
-  const d = formatArticleDate(new Date(date));
+  const date = formatArticleDate(new Date(created));
 
   return (
     <Card as="article">
       <Card.Title href={`/articles/${slug}`}>{title}</Card.Title>
-      <Card.Eyebrow as="time" dateTime={d} decorate top>
-        {d}
+      <Card.Eyebrow as="time" dateTime={date} decorate top>
+        {date}
       </Card.Eyebrow>
       <Card.Description>{description}</Card.Description>
       <Card.Cta>Read article</Card.Cta>
@@ -26,23 +26,26 @@ function ArticlePreviewSquare(props: Props) {
 }
 
 function ArticlePreviewLine(props: Props) {
-  const { slug, title, date, description } = props;
+  const { slug, title, created, description } = props;
 
-  const d = formatArticleDate(new Date(date));
+  const date = formatArticleDate(new Date(created));
 
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
         <Card.Title href={`/articles/${slug}`}>{title}</Card.Title>
-        <Card.Eyebrow as="time" dateTime={d} className="md:hidden" decorate top>
-          {d}
+        <Card.Eyebrow
+          as="time"
+          dateTime={date}
+          className="md:hidden"
+          decorate
+          top
+        >
+          {date}
         </Card.Eyebrow>
         <Card.Description>{description}</Card.Description>
         <Card.Cta>Read article</Card.Cta>
       </Card>
-      <Card.Eyebrow as="time" dateTime={d} className="md:bloc mt-0.5" top>
-        {d}
-      </Card.Eyebrow>
     </article>
   );
 }

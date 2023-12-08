@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Metadata } from "next";
-import clsx from "clsx";
+// import clsx from "clsx";
 
 import Container from "@/components/blocks/container";
 import Back from "@/components/atoms/back";
@@ -20,8 +20,12 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const project = await getProject(params.slug);
 
   return {
-    title: project.file.metadata.title,
-    description: project.file.metadata.description,
+    title: project.name,
+    description: `${
+      project.name
+    } was done by Charly Martin along with ${project.people
+      ?.map((item) => item.name)
+      ?.join(", ")}.`,
   };
 }
 
@@ -33,7 +37,7 @@ export default async function ProjectPage(props: Props) {
   const { params } = props;
 
   const project = await getProject(params.slug);
-  const { name, dates, hq, roles, people, images, file, stack, url, status } =
+  const { name, dates, hq, roles, people, images, html, stack, url, status } =
     project;
 
   return (
@@ -65,7 +69,7 @@ export default async function ProjectPage(props: Props) {
 
           <div
             className="prose dark:prose-invert"
-            dangerouslySetInnerHTML={{ __html: file.html }}
+            dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
 

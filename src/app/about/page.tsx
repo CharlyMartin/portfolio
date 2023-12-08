@@ -25,7 +25,7 @@ export default async function About() {
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
         <div className="lg:pl-20">
           <div className="image-ring mx-auto aspect-square w-full max-w-md -rotate-1 overflow-hidden rounded-2xl ">
-            <Image {...bio.avatar} alt="Avatar of the author" className="" />
+            <Image {...bio.avatar} alt="Avatar of the author" />
           </div>
         </div>
         <div className="w-full lg:order-first lg:row-span-2">
@@ -33,7 +33,7 @@ export default async function About() {
             Hi, I’m Charly. I live in sunny Lisbon ☀️ where I design and build
             apps.
           </Title>
-          <Prose html={bio.long.html} />
+          <Prose html={bio.long} />
         </div>
         <div className="lg:pl-20">
           <ul role="list" className="space-y-5">

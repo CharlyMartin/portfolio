@@ -27,7 +27,7 @@ export type Bio = {
 
 type Area = "web2" | "web3" | "ai";
 
-export type FileContent = {
+type FileContent = {
   metadata: Record<string, string>;
   html: string;
 };
@@ -52,12 +52,12 @@ export type Project = {
   people?: Array<{ id: People["id"]; role: { id: Skill["id"] } }>;
 };
 
-export type ProjectWithDeps = Omit<Project, "roles" | "people" | "stack"> & {
-  file: FileContent;
-  roles: Array<Skill>;
-  stack: Array<Use>;
-  people?: Array<People & { role: Skill }>;
-};
+// export type ProjectWithDeps = Omit<Project, "roles" | "people" | "stack"> & {
+//   file: FileContent;
+//   roles: Array<Skill>;
+//   stack: Array<Use>;
+//   people?: Array<People & { role: Skill }>;
+// };
 
 export type ProjectPreview = Pick<
   Project,

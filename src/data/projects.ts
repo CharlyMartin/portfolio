@@ -1,5 +1,5 @@
 import { parseFileContent } from "@/lib/parse-markdown";
-import type { Project, ProjectPreview, ProjectWithDeps } from "@/types";
+import type { Project, ProjectPreview } from "@/types";
 import { getSkill } from "@/data/skills";
 import { getPerson } from "@/data/people";
 import { getUse } from "./uses";
@@ -142,6 +142,7 @@ const data: Array<Project> = [
     highlight: false,
     roles: [1, 3],
     stack: [10, 3, 12, 17, 40],
+    people: [{ id: 22, role: { id: 11 } }],
     status: "live",
     areas: ["web2"],
   },
@@ -352,7 +353,7 @@ export function getProjects(filters?: Filters): Array<ProjectPreview> {
     });
 }
 
-export async function getProject(slug: string): Promise<ProjectWithDeps> {
+export async function getProject(slug: string) {
   const project = data.find((project) => project.slug == slug);
 
   if (!project) {
@@ -375,5 +376,5 @@ export async function getProject(slug: string): Promise<ProjectWithDeps> {
   const stack = project.stack.map(getUse);
   const file = await parseFileContent("projects", project.slug);
 
-  return { ...project, roles, stack, file, people };
+  return { ...project, roles, stack, html: file.html, people };
 }
