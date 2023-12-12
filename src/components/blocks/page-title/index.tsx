@@ -16,7 +16,7 @@ export default function PageTitle(props: Props) {
   return (
     <React.Fragment>
       <Title className="!mb-1.5 ">{title}</Title>
-      <Text className="text-sm !text-zinc-500/80 dark:!text-zinc-400 sm:text-base">
+      <Text className="text-sm !text-zinc-500 dark:!text-zinc-400 sm:text-base">
         {list.join(" • ")}
       </Text>
     </React.Fragment>
