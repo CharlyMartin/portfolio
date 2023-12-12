@@ -12,7 +12,7 @@ export type Route = {
 };
 
 export type Contact = {
-  name: string;
+  name: "telegram" | "github" | "linkedin" | "email";
   url: string;
   action: string;
   icon: React.FunctionComponent<any>;

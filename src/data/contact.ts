@@ -24,7 +24,9 @@ const data: Array<Contact> = [
   },
   {
     name: "email",
-    url: `mailto:${EMAIL}?subject=Contact from your Portfolio&body=Hi Charly,`,
+    url: `mailto:${EMAIL}?subject=${encodeURIComponent(
+      "Contact from your Portfolio"
+    )}&body=${encodeURIComponent("Hi Charly,")}`,
     action: "Open email app",
     icon: Icons.Email,
   },
@@ -32,4 +34,10 @@ const data: Array<Contact> = [
 
 export function getContacts() {
   return data;
+}
+
+export function getContact(name: Contact["name"]) {
+  const contact = data.find((contact) => contact.name == name);
+  if (!contact) throw new Error(`Contact ${name} not found`);
+  return contact;
 }
