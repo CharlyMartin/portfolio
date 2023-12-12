@@ -21,10 +21,10 @@ export default function ProjectPageLayout(props: Props) {
       <Separator />
 
       <Container>
-        <Title as="h2" className="mb-6">
+        <Title as="h2">
           {"Let's team up and build something meaningful together!"}
         </Title>
-        <Availability />
+        <Availability className="mb-6" />
 
         <div className="flex flex-wrap gap-3">
           <GetEmail />
