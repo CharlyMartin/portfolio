@@ -1,3 +1,4 @@
+import React from "react";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import clsx from "clsx";
@@ -5,7 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
-import TailwindScreenSize from "@/components/atoms/tailwind-screen-size";
+import ScreenSizeIndicator from "@/components/atoms/screen-size-indicator";
 import { BASE_URL, META } from "@/data/config";
 import "../css/index.css";
 
@@ -69,7 +70,7 @@ export default function RootLayout(props: Props) {
           </div>
         </div>
         <Analytics />
-        <TailwindScreenSize />
+        <ScreenSizeIndicator />
       </body>
     </html>
   );
