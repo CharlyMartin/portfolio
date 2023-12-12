@@ -38,7 +38,7 @@ export default async function About() {
         <div className="lg:pl-20">
           <ul
             role="list"
-            className="flex items-center justify-evenly space-x-3 rounded-2xl bg-zinc-50 px-3 py-0.5 dark:bg-zinc-800 md:mx-16 lg:mx-8"
+            className="flex items-center justify-evenly rounded-xl bg-zinc-50 px-3 py-1 dark:bg-zinc-800 md:mx-16 lg:mx-12"
           >
             {contacts.map((contact, i) => {
               const { url, icon: Icon, action } = contact;
