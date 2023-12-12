@@ -40,6 +40,9 @@ export default async function ArticlePage(props: Props) {
           subtitle={formatArticleDate(new Date(metadata.created))}
         />
 
+        <br />
+        {/* To replace with a header picture later on */}
+
         <Prose html={html} />
       </div>
     </Container>
