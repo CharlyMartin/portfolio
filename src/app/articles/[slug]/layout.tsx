@@ -1,31 +1,37 @@
 import React from "react";
 
-// import Container from "@/components/blocks/container";
-// import Separator from "@/components/atoms/separator";
+import Container from "@/components/blocks/container";
+import Separator from "@/components/atoms/separator";
+import Title from "@/components/atoms/title";
+import DmOnTelegram from "@/components/blocks/dm-on-telegram";
+import OpenGitHub from "@/components/blocks/open-github";
 
 type Props = {
   children: React.ReactNode;
+  params: { slug: string };
 };
 
 export default function ArticlePageLayout(props: Props) {
-  const { children } = props;
-  // To improve design-wise
+  const { children, params } = props;
 
   return (
     <React.Fragment>
       {children}
 
-      {/* <Separator />
+      <Separator />
 
       <Container>
         <div className="mx-auto max-w-2xl">
-          <p>Todo: Add comments section</p>
-        </div>
-      </Container> */}
+          <Title as="h2" className="mb-6">
+            Enjoyed this article? Want to add something? Get in touch!
+          </Title>
 
-      <br />
-      <br />
-      <br />
+          <div className="flex flex-wrap gap-3">
+            <OpenGitHub slug={`/src/data/articles/${params.slug}/index.md`} />
+            <DmOnTelegram />
+          </div>
+        </div>
+      </Container>
     </React.Fragment>
   );
 }

@@ -53,7 +53,7 @@ module.exports = {
         },
         DEFAULT: {
           css: {
-            "--tw-prose-body": theme("colors.zinc.700"),
+            "--tw-prose-body": theme("colors.zinc.600 / 0.8"),
             "--tw-prose-headings": theme("colors.zinc.900"),
             "--tw-prose-links": theme("colors.teal.500"),
             "--tw-prose-links-hover": theme("colors.teal.600"),
@@ -65,8 +65,8 @@ module.exports = {
             "--tw-prose-hr": theme("colors.zinc.100"),
             "--tw-prose-quote-borders": theme("colors.zinc.200"),
             "--tw-prose-captions": theme("colors.zinc.400"),
-            "--tw-prose-code": theme("colors.red.700"),
-            "--tw-prose-code-bg": theme("colors.zinc.300 / 0.2"),
+            "--tw-prose-code": theme("colors.zinc.800"),
+            "--tw-prose-code-bg": theme("colors.zinc.300 / 0.3"),
             // "--tw-prose-pre-code": theme("colors.zinc.100"),
             // "--tw-prose-pre-bg": theme("colors.zinc.900"),
             // "--tw-prose-pre-border": "transparent",
@@ -105,6 +105,7 @@ module.exports = {
             p: {
               marginTop: theme("spacing.7"),
               marginBottom: theme("spacing.7"),
+              fontWeight: theme("fontWeight.medium"),
             },
 
             ".standalone p": {
@@ -163,7 +164,8 @@ module.exports = {
               color: "var(--tw-prose-bold)",
               fontWeight: theme("fontWeight.semibold"),
             },
-            code: {
+            // Inline code blocks
+            ":not(pre) > code": {
               display: "inline-block",
               color: "var(--tw-prose-code)",
               fontSize: theme("fontSize.sm")[0],
@@ -173,6 +175,16 @@ module.exports = {
               paddingLeft: theme("spacing.1"),
               paddingRight: theme("spacing.1"),
             },
+            // code: {
+            //   display: "inline-block",
+            //   color: "var(--tw-prose-code)",
+            //   fontSize: theme("fontSize.sm")[0],
+            //   fontWeight: theme("fontWeight.medium"),
+            //   backgroundColor: "var(--tw-prose-code-bg)",
+            //   borderRadius: theme("borderRadius.lg"),
+            //   paddingLeft: theme("spacing.1"),
+            //   paddingRight: theme("spacing.1"),
+            // },
             "a code": {
               color: "inherit",
             },

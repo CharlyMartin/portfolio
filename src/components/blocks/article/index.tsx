@@ -46,6 +46,14 @@ function ArticlePreviewLine(props: Props) {
         <Card.Description>{description}</Card.Description>
         <Card.Cta>Read article</Card.Cta>
       </Card>
+      <Card.Eyebrow
+        as="time"
+        dateTime={date}
+        className="mt-0.5 hidden md:block"
+        top
+      >
+        {date}
+      </Card.Eyebrow>
     </article>
   );
 }

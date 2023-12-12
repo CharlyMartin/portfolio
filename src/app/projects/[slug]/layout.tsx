@@ -24,9 +24,9 @@ export default function ProjectPageLayout(props: Props) {
         <Title as="h2">
           {"Let's team up and build something meaningful together!"}
         </Title>
-        <Availability />
+        <Availability className="mb-6" />
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3">
           <GetEmail />
           <DmOnTelegram />
         </div>

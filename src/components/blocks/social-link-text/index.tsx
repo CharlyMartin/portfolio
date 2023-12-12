@@ -5,19 +5,24 @@ import A from "@/components/atoms/a";
 type Props = {
   icon: React.FunctionComponent<any>;
   href: React.ComponentProps<"a">["href"];
+  action: string;
 } & React.ComponentProps<"li">;
 
 export default function SocialLinkText(props: Props) {
-  const { href, className, children, icon: Icon, onClick } = props;
+  const { href, className, action, icon: Icon } = props;
   return (
-    <li className={clsx(className, "flex")} onClick={onClick}>
-      <A
-        href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+    <A href={href} title={action}>
+      <li
+        className={clsx(
+          "group rounded-2xl p-3 transition hover:bg-zinc-100/70 dark:hover:bg-zinc-700/60",
+          className
+        )}
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
-        <span className="ml-4">{children}</span>
-      </A>
-    </li>
+        <Icon
+          size={24}
+          className="fill-zinc-400 transition group-hover:fill-zinc-500 dark:fill-zinc-400 dark:group-hover:fill-zinc-300"
+        />
+      </li>
+    </A>
   );
 }

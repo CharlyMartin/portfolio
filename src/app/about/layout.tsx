@@ -2,7 +2,6 @@ import React from "react";
 
 import Container from "@/components/blocks/container";
 import Title from "@/components/atoms/title";
-import Text from "@/components/atoms/text";
 import GetEmail from "@/components/blocks/get-email";
 import Separator from "@/components/atoms/separator";
 import DmOnTelegram from "@/components/blocks/dm-on-telegram";
@@ -21,12 +20,11 @@ export default function ProjectPageLayout(props: Props) {
       <Separator />
 
       <Container>
-        <Title as="h2">
-          {"Have any questions? Feel free to get in touch!"}
+        <Title as="h2" className="mb-6">
+          Have any questions? Get in touch!
         </Title>
-        <Text>I reply to all emails and requests.</Text>
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3">
           <GetEmail />
           <DmOnTelegram />
         </div>

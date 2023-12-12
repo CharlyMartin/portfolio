@@ -27,7 +27,7 @@ pre[class*="language-"] {
 /* Code blocks */
 pre[class*="language-"] {
   padding: theme("spacing.6");
-  margin: theme("spacing.2") 0;
+  margin: theme("spacing.12") 0;
   overflow: auto;
   border-radius: theme("borderRadius.xl");
   margin-left: calc(-1 * theme("spacing.16"));
@@ -74,7 +74,7 @@ pre[class*="language-"] code {
 .token.comment,
 .token.prolog,
 .token.cdata {
-  color: hsl(220, 10%, 40%);
+  color: theme("colors.zinc.400 / 0.8");
 }
 
 .token.doctype,

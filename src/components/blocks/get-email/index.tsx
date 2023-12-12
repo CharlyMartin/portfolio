@@ -13,8 +13,6 @@ export default function GetEmail(props: Props) {
   const { className, ...rest } = props;
   const { onCopy, hasCopied } = useClipboard(EMAIL);
 
-  const style = "h-[18px] w-[18px]";
-
   return (
     <Button
       className={clsx("w-full sm:w-[148px]", className)}
@@ -23,8 +21,8 @@ export default function GetEmail(props: Props) {
     >
       {hasCopied && "Copied!"}
       {!hasCopied && "Copy Email"}
-      {hasCopied && <Icons.Check className={style} />}
-      {!hasCopied && <Icons.Clipboard className={style} />}
+      {hasCopied && <Icons.Check size={18} />}
+      {!hasCopied && <Icons.Clipboard size={18} />}
     </Button>
   );
 }

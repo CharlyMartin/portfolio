@@ -1,4 +1,4 @@
-import { SiGithub, SiLinkedin, SiTelegram } from "react-icons/si";
+import { SiGithub, SiTelegram } from "react-icons/si";
 import {
   FiCopy,
   FiCheck,
@@ -21,11 +21,12 @@ import {
   HiArrowRightCircle,
   HiHeart,
 } from "react-icons/hi2";
+import { FaLinkedinIn } from "react-icons/fa6";
 
 // https://icons8.com/
 const Icons = {
   GitHub: SiGithub,
-  LinkedIn: SiLinkedin,
+  LinkedIn: FaLinkedinIn,
   Telegram: SiTelegram,
   Email: HiEnvelope,
   Work: HiOutlineBriefcase,
