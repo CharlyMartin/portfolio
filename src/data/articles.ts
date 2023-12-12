@@ -43,7 +43,7 @@ export async function getArticle(slug: string) {
 }
 
 function getAllSlugs(): Array<string> {
-  const files = globSync("**/index.md", { cwd: "./src/data/articles" });
+  const files = globSync("*/index.md", { cwd: "./src/data/articles" });
 
   return files.map((file) => {
     return file.replace("/index.md", "");
