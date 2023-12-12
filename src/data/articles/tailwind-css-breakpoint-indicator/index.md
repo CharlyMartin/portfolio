@@ -1,7 +1,7 @@
 ---
 title: "How I stopped guessing breakpoints in Tailwind CSS"
-description: lorem ipsum dolor sit amet consectetur adipiscing elit dolor lorem ipsum. lorem ipsum dolor sit amet consectetur adipiscing elit dolor lorem ipsum. lorem ipsum dolor sit amet consectetur adipiscing elit dolor lorem ipsum
-created: 2023-10-16
+description: Ever struggled with identifying active breakpoints in Tailwind CSS? This tiny React component helps me see which Tailwind breakpoint I'm developing for. No more guesswork.
+created: 2023-09-16
 highlight: false
 ---
 
