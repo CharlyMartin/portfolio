@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import clsx from "clsx";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
@@ -70,6 +71,7 @@ export default function RootLayout(props: Props) {
           </div>
         </div>
         <Analytics />
+        <SpeedInsights />
         <ScreenSizeIndicator />
       </body>
     </html>
