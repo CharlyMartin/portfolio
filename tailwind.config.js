@@ -225,6 +225,7 @@ module.exports = {
             li: {
               marginBottom: theme("spacing.3"),
               paddingLeft: theme("spacing.3"),
+              fontWeight: theme("fontWeight.medium"),
             },
             "li::marker": {
               fontSize: theme("fontSize.sm")[0],

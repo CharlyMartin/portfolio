@@ -65,7 +65,7 @@ const data: Array<Project> = [
       style: { backgroundColor: "#1b2126" },
     },
     images: [{ src: lottieImg, alt: "Lottie Studio Image" }],
-    dates: { start: new Date(2019, 10), end: new Date(2020, 0) },
+    dates: { start: new Date(2019, 10), end: new Date(2020, 1) },
     url: "https://lottiestudio.com/",
     display: true,
     highlight: true,

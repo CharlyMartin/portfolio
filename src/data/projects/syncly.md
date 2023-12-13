@@ -35,4 +35,4 @@ This system proved very reliable and turned out to be the competitive edge of Sy
 
 Cherry on top, we hid all this complexity behind a dead-simple UX flow that stood out from industry standards. When a new coworking venue signs up for Syncly, they can sync their availability with us on their own in a few simple steps. Other tools required reading some unappealing setup manual or waiting for the support team to do the installation.
 
-As a result, Syncly was the only tool to offer real-time availabilities on meeting rooms with integrated checkout and a modern booking experience. In 2022, after 2 long years up against COVID lockdowns, we decided to shut down the company. Syncly has collected about half a million euros in bookings for our customers over the course of nearly 3 years.
+Syncly was the only tool to offer real-time availabilities on meeting rooms with integrated checkout and a modern booking experience. As a result, Syncly was able to collect about 500,000 EUR in booking revenue for our customers in about 2 years, with a team of 2. In 2022, after 2 long years up against COVID lockdowns, we decided to shut down the company.
