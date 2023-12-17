@@ -42,7 +42,7 @@ export default function Gallery(props: Props) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-white" />
+          <div className="fixed inset-0 bg-white dark:bg-zinc-900" />
         </Transition.Child>
 
         <Transition.Child
@@ -67,25 +67,31 @@ export default function Gallery(props: Props) {
               <Dialog.Panel className="relative h-full w-full transform px-4 md:px-12 lg:px-16 xl:max-w-4xl xl:px-0 2xl:max-w-6xl">
                 <div
                   id="arrows"
-                  className="absolute inset-0 z-10 hidden bg-transparent xl:block"
+                  className="absolute inset-0 z-10 hidden xl:block"
                 >
                   <div className="relative flex h-full items-center justify-between">
                     <button
-                      className="relative -left-20 rounded-full bg-zinc-100 p-4 transition hover:bg-zinc-200"
+                      className="relative -left-20 rounded-full border-none bg-zinc-100 p-4 shadow-none transition hover:bg-zinc-200 dark:bg-zinc-700/50 dark:hover:bg-zinc-700"
                       onClick={back}
                     >
-                      <Icons.ChevronLeft size={28} className="text-zinc-800" />
+                      <Icons.ChevronLeft
+                        size={28}
+                        className="text-zinc-800 dark:text-zinc-200"
+                      />
                     </button>
 
                     <button
-                      className="relative left-20 rounded-full bg-zinc-100 p-4 transition hover:bg-zinc-200"
+                      className="relative left-20 rounded-full border-none bg-zinc-100 p-4 shadow-none transition hover:bg-zinc-200 dark:bg-zinc-700/50 dark:hover:bg-zinc-700"
                       onClick={next}
                     >
-                      <Icons.ChevronRight size={28} className="text-zinc-800" />
+                      <Icons.ChevronRight
+                        size={28}
+                        className="text-zinc-800 dark:text-zinc-200"
+                      />
                     </button>
 
                     <div
-                      className="absolute bottom-0 left-0 right-0 flex h-12 items-center justify-center bg-white"
+                      className="absolute bottom-0 left-0 right-0 flex h-12 items-center justify-center bg-white dark:bg-zinc-900"
                       id="dots"
                     >
                       {images.map((_image, i) => {
@@ -94,22 +100,22 @@ export default function Gallery(props: Props) {
                             role="button"
                             tabIndex={0}
                             key={i}
-                            className="group p-2 px-2.5"
+                            className="group cursor-pointer p-2 px-2.5"
                             onClick={() => updateHash(i)}
                           >
                             <div
                               className={clsx(
-                                "inline-block cursor-pointer rounded-full p-[1px] transition",
+                                "inline-block rounded-full p-[1px] transition",
                                 active != i && "bg-transparent",
-                                active == i && "bg-zinc-500"
+                                active == i && "bg-zinc-500 dark:bg-zinc-300"
                               )}
                             >
                               <div
                                 className={clsx(
                                   "h-2 w-2 rounded-full transition",
                                   active != i &&
-                                    "bg-zinc-300 group-hover:bg-zinc-500",
-                                  active == i && "bg-zinc-500"
+                                    "bg-zinc-300 group-hover:bg-zinc-500 dark:bg-zinc-500 dark:group-hover:bg-zinc-300",
+                                  active == i && "bg-zinc-500 dark:bg-zinc-300"
                                 )}
                               />
                             </div>
@@ -122,7 +128,7 @@ export default function Gallery(props: Props) {
 
                 <ul
                   id="slider"
-                  className="flex items-stretch justify-start space-x-2 pb-2 xl:pb-16"
+                  className="flex items-stretch justify-start space-x-2 pb-2 xl:pb-12"
                   style={{
                     overflowX: "scroll",
                     scrollSnapType: "x mandatory",
@@ -142,7 +148,7 @@ export default function Gallery(props: Props) {
                           {...image}
                           alt={image.alt}
                           placeholder="blur"
-                          className="w-full rounded-2xl border border-zinc-200/80 drop-shadow-sm"
+                          className="w-full rounded-2xl border border-zinc-200/80 drop-shadow-sm dark:border-zinc-700/70"
                           priority
                         />
                       </li>
