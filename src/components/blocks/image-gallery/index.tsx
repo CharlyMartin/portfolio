@@ -41,5 +41,4 @@ export default function ImageGallery(props: Props) {
 }
 
 // TODO
-// - [ ] On unmount, remove hash from url
-// - [ ] Add keyboard navigation
+// - [ ] Add keyboard navigation that also updates the hash
