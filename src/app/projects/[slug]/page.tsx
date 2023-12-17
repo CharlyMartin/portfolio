@@ -1,6 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import { Metadata } from "next";
+// import Image from "next/image";
 // import clsx from "clsx";
 
 import Container from "@/components/blocks/container";
@@ -13,6 +13,7 @@ import { Use } from "@/types";
 import Badge from "@/components/atoms/badge";
 import PageTitle from "@/components/blocks/page-title";
 import ProjectStatus from "@/components/blocks/project-status";
+import ImageGallery from "@/components/blocks/image-gallery";
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { params } = props;
@@ -42,7 +43,10 @@ export default async function ProjectPage(props: Props) {
 
   return (
     <Container>
-      <Back className="lg:-left-[102px] lg:top-1.5 xl:absolute" />
+      <Back
+        className="lg:-left-[102px] lg:top-1.5 xl:absolute"
+        href="/projects"
+      />
 
       <PageTitle title={name} subtitle={[formatProjectDates(dates), hq]} />
 
@@ -60,12 +64,13 @@ export default async function ProjectPage(props: Props) {
       <div className="flex flex-col gap-6 lg:flex-row lg:gap-12">
         {/* Left */}
         <div className="basis-full lg:basis-4/6" id="left">
-          <Image
+          {/* <Image
             {...images[0]}
             placeholder="blur"
             className="image-ring rounded-2xl"
             priority
-          />
+          /> */}
+          <ImageGallery images={images} />
 
           <div
             className="prose dark:prose-invert"

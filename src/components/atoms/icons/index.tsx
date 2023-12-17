@@ -20,6 +20,7 @@ import {
   HiMiniStar,
   HiArrowRightCircle,
   HiHeart,
+  HiChevronLeft,
 } from "react-icons/hi2";
 import { FaLinkedinIn } from "react-icons/fa6";
 
@@ -41,6 +42,7 @@ const Icons = {
   Moon: HiOutlineMoon,
   Sun: HiOutlineSun,
   ChevronRight: HiChevronRight,
+  ChevronLeft: HiChevronLeft,
   ChevronDown: HiChevronDown,
   X: HiXMark,
   Article: HiOutlineFolderOpen,
