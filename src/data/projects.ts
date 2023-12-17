@@ -5,32 +5,46 @@ import { getPerson } from "@/data/people";
 import { getUse } from "./uses";
 
 // 1. Lottie Studio
-import lottieImg from "@/images/projects/lottie-studio/landing-1.png";
 import lottieLogo from "@/images/projects/lottie-studio/logo.png";
+import lottieImg1 from "@/images/projects/lottie-studio/landing-1.png";
+import lottieImg2 from "@/images/projects/lottie-studio/landing-2.png";
 
 // 2. Syncly
-import synclyImg from "@/images/projects/syncly/app-8.png";
 import synclyLogo from "@/images/projects/syncly/logo.png";
+import synclyImg1 from "@/images/projects/syncly/app-8.png";
+import synclyImg2 from "@/images/projects/syncly/app-1.png";
+import synclyImg3 from "@/images/projects/syncly/app-2.png";
+import synclyImg4 from "@/images/projects/syncly/app-3.png";
+import synclyImg5 from "@/images/projects/syncly/app-4.png";
+import synclyImg6 from "@/images/projects/syncly/app-5.png";
+import synclyImg7 from "@/images/projects/syncly/app-6.png";
+import synclyImg8 from "@/images/projects/syncly/app-7.png";
 
 // 3. Immunefi
-import immunefiImg from "@/images/projects/immunefi/landing-1.png";
+import immunefiImg1 from "@/images/projects/immunefi/landing-1.png";
+import immunefiImg2 from "@/images/projects/immunefi/app-1.png";
+import immunefiImg3 from "@/images/projects/immunefi/app-2.png";
 import immunefiLogo from "@/images/projects/immunefi/logo.png";
 
 // 4. Relief
-import reliefImg from "@/images/projects/relief/landing-1.png";
 import reliefLogo from "@/images/projects/relief/logo.png";
+import reliefImg1 from "@/images/projects/relief/landing-1.png";
+import reliefImg2 from "@/images/projects/relief/app-1.png";
+import reliefImg3 from "@/images/projects/relief/app-2.png";
 
 // 5. OpenWork
 import openworkImg from "@/images/projects/openwork/landing-1.png";
 import openworkLogo from "@/images/projects/openwork/logo.png";
 
 // 6. MyStudiolo
-import myStudioloImg from "@/images/projects/my-studiolo/app-1.png";
 import myStudioloLogo from "@/images/projects/my-studiolo/logo.png";
+import myStudioloImg1 from "@/images/projects/my-studiolo/app-1.png";
+import myStudioloImg2 from "@/images/projects/my-studiolo/app-2.png";
+import myStudioloImg3 from "@/images/projects/my-studiolo/app-3.png";
 
 // 7. Hubsy
-import hubsyImg from "@/images/projects/hubsy/website-1.jpg";
 import hubsyLogo from "@/images/projects/hubsy/logo.png";
+import hubsyImg1 from "@/images/projects/hubsy/website-1.jpg";
 
 // 8. Mayoneese
 import mayoneeseLogo from "@/images/projects/mayoneese/logo.png";
@@ -41,15 +55,19 @@ import motolangageImg from "@/images/projects/motolangage/app-1.png";
 
 // 10. Microchain Systems
 import microchainLogo from "@/images/projects/microchain-systems/logo.png";
-import microchainImg from "@/images/projects/microchain-systems/app-1.png";
+import microchainImg1 from "@/images/projects/microchain-systems/app-1.png";
+import microchainImg2 from "@/images/projects/microchain-systems/app-2.png";
 
 // 11. ENS Everywhere
 import ensLogo from "@/images/projects/ens-everywhere/logo.png";
-import ensImg from "@/images/projects/ens-everywhere/app-1.png";
+import ensImg1 from "@/images/projects/ens-everywhere/app-1.png";
+import ensImg2 from "@/images/projects/ens-everywhere/app-2.png";
 
 // 12. Cofactory
 import cofactoryLogo from "@/images/projects/cofactory/logo.jpg";
-import cofactoryImg from "@/images/projects/cofactory/figma-1.png";
+import cofactoryImg1 from "@/images/projects/cofactory/figma-1.png";
+// import cofactoryImg2 from "@/images/projects/cofactory/figma-2.png";
+import cofactoryImg3 from "@/images/projects/cofactory/figma-3.png";
 
 // Data
 const data: Array<Project> = [
@@ -64,7 +82,10 @@ const data: Array<Project> = [
       src: lottieLogo,
       style: { backgroundColor: "#1b2126" },
     },
-    images: [{ src: lottieImg, alt: "Lottie Studio Image" }],
+    images: [
+      { src: lottieImg1, alt: "Lottie Studio Image" },
+      { src: lottieImg2, alt: "Lottie Studio Image" },
+    ],
     dates: { start: new Date(2019, 10), end: new Date(2020, 1) },
     url: "https://lottiestudio.com/",
     display: true,
@@ -89,7 +110,16 @@ const data: Array<Project> = [
       src: synclyLogo,
       style: { backgroundColor: "#f3f3ff" },
     },
-    images: [{ src: synclyImg, alt: "Syncly Image" }],
+    images: [
+      { src: synclyImg1, alt: "Syncly Image" },
+      { src: synclyImg2, alt: "Syncly Image" },
+      { src: synclyImg3, alt: "Syncly Image" },
+      { src: synclyImg4, alt: "Syncly Image" },
+      { src: synclyImg5, alt: "Syncly Image" },
+      { src: synclyImg6, alt: "Syncly Image" },
+      { src: synclyImg7, alt: "Syncly Image" },
+      { src: synclyImg8, alt: "Syncly Image" },
+    ],
     dates: { start: new Date(2019, 9), end: new Date(2021, 10) },
     url: "https://www.syncly.fr",
     display: true,
@@ -111,7 +141,11 @@ const data: Array<Project> = [
     description:
       "Web3's leading bug bounty platform, protecting billions in user funds.",
     logo: { src: immunefiLogo },
-    images: [{ src: immunefiImg, alt: "Immunefi Image" }],
+    images: [
+      { src: immunefiImg1, alt: "Immunefi Image" },
+      { src: immunefiImg2, alt: "Immunefi Image" },
+      { src: immunefiImg3, alt: "Immunefi Image" },
+    ],
     dates: { start: new Date(2021, 10), end: new Date(2022, 3) },
     url: "https://immunefi.com/",
     display: true,
@@ -135,7 +169,11 @@ const data: Array<Project> = [
     description:
       "The app navigating you through financial hurdles in a simple way.",
     logo: { src: reliefLogo, style: { padding: "12px" } },
-    images: [{ src: reliefImg, alt: "Relief Image" }],
+    images: [
+      { src: reliefImg1, alt: "Relief Image" },
+      { src: reliefImg2, alt: "Relief Image" },
+      { src: reliefImg3, alt: "Relief Image" },
+    ],
     dates: { start: new Date(2021, 3), end: new Date(2021, 4) },
     url: "https://www.relief.app/",
     display: true,
@@ -177,7 +215,11 @@ const data: Array<Project> = [
     hq: "Paris, France",
     description: "The modern management tool for art collectors.",
     logo: { src: myStudioloLogo, style: { padding: "12px" } },
-    images: [{ src: myStudioloImg, alt: "My Studiolo Image" }],
+    images: [
+      { src: myStudioloImg1, alt: "My Studiolo Image" },
+      { src: myStudioloImg2, alt: "My Studiolo Image" },
+      { src: myStudioloImg3, alt: "My Studiolo Image" },
+    ],
     dates: { start: new Date(2019, 2), end: new Date(2019, 8) },
     url: "https://www.mystudiolo.com/",
     display: true,
@@ -201,7 +243,7 @@ const data: Array<Project> = [
     hq: "Paris, France",
     description: "TODO",
     logo: { src: hubsyLogo, style: { padding: "8px" } },
-    images: [{ src: hubsyImg, alt: "Hubsy Image" }],
+    images: [{ src: hubsyImg1, alt: "Hubsy Image" }],
     dates: { start: new Date(2018, 9), end: new Date(2018, 11) },
     url: "https://www.hubsy.fr/",
     display: false,
@@ -260,7 +302,10 @@ const data: Array<Project> = [
       src: microchainLogo,
       style: { backgroundColor: "#EEECE7" },
     },
-    images: [{ src: microchainImg, alt: "Microchain Systems Image" }],
+    images: [
+      { src: microchainImg1, alt: "Microchain Systems Image" },
+      { src: microchainImg2, alt: "Microchain Systems Image" },
+    ],
     dates: { start: new Date(2022, 7), end: new Date(2023, 7) },
     display: true,
     highlight: true,
@@ -286,7 +331,7 @@ const data: Array<Project> = [
       src: ensLogo,
       style: { backgroundColor: "#F7FAFC", padding: "12px" },
     },
-    images: [{ src: ensImg, alt: "ENS Everywhere Image" }],
+    images: [{ src: ensImg1, alt: "ENS Everywhere Image" }],
     dates: { start: new Date(2022, 9), end: new Date(2022, 9) },
     url: "https://ens-everywhere.vercel.app/",
     display: true,
@@ -310,7 +355,11 @@ const data: Array<Project> = [
       src: cofactoryLogo,
       style: { backgroundColor: "#000", padding: "10px" },
     },
-    images: [{ src: cofactoryImg, alt: "Cofactory Image" }],
+    images: [
+      { src: cofactoryImg1, alt: "Cofactory Image" },
+      // { src: cofactoryImg2, alt: "Cofactory Image" },
+      { src: cofactoryImg3, alt: "Cofactory Image" },
+    ],
     dates: { start: new Date(2023, 9), end: new Date(2023, 11) },
     url: "https://cofactory.ai/",
     display: true,
