@@ -140,7 +140,7 @@ export default function Gallery(props: Props) {
 
                 <ul
                   id="slider"
-                  className="flex items-stretch justify-start space-x-2 pb-2 xl:pb-12"
+                  className="flex items-stretch justify-start space-x-2 pb-2 xl:pb-14"
                   style={{
                     overflowX: "scroll",
                     scrollSnapType: "x mandatory",
