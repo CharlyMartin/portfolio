@@ -30,6 +30,18 @@ export default function Gallery(props: Props) {
     return () => window.removeEventListener("hashchange", updateActive);
   }, [updateActive]);
 
+  // Prevent arrow navigation for now
+  // Find a way to sync it with the active index
+  React.useEffect(() => {
+    function disableArrowNavigation(e: KeyboardEvent) {
+      if (e.key === "ArrowRight") e.preventDefault();
+      if (e.key === "ArrowLeft") e.preventDefault();
+    }
+
+    window.addEventListener("keydown", disableArrowNavigation);
+    return () => window.removeEventListener("keydown", disableArrowNavigation);
+  }, []);
+
   return (
     <Transition.Root show={open} as={React.Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -53,7 +65,7 @@ export default function Gallery(props: Props) {
           leave="ease-in duration-200"
           leaveFrom="opacity-100 translate-y-0 sm:scale-100"
           leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-          beforeLeave={() => updateHash(0)}
+          afterLeave={() => updateHash(0)}
           beforeEnter={() => updateHash(0)}
         >
           <div className="fixed inset-0 z-10 w-screen">
@@ -140,7 +152,7 @@ export default function Gallery(props: Props) {
                     return (
                       <li
                         key={i}
-                        className="grow-1 shrink-0 basis-[98%]"
+                        className="grow-1 shrink-0 basis-full"
                         style={{ scrollSnapAlign: "start" }} // scroll-padding-top: 160px;
                         id={PREFIX + i}
                       >
@@ -148,7 +160,7 @@ export default function Gallery(props: Props) {
                           {...image}
                           alt={image.alt}
                           placeholder="blur"
-                          className="w-full rounded-2xl border border-zinc-200/80 drop-shadow-sm dark:border-zinc-700/70"
+                          className="w-full rounded-2xl border border-zinc-200/80 dark:border-zinc-700/70"
                           priority
                         />
                       </li>
