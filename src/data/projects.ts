@@ -65,9 +65,16 @@ import ensImg2 from "@/images/projects/ens-everywhere/app-2.png";
 
 // 12. Cofactory
 import cofactoryLogo from "@/images/projects/cofactory/logo.jpg";
-import cofactoryImg1 from "@/images/projects/cofactory/figma-1.png";
-// import cofactoryImg2 from "@/images/projects/cofactory/figma-2.png";
-import cofactoryImg3 from "@/images/projects/cofactory/figma-3.png";
+import cofactoryImg1 from "@/images/projects/cofactory/app-1.png";
+import cofactoryImg2 from "@/images/projects/cofactory/app-2.png";
+import cofactoryImg3 from "@/images/projects/cofactory/app-3.png";
+import cofactoryImg4 from "@/images/projects/cofactory/app-4.png";
+import cofactoryImg5 from "@/images/projects/cofactory/app-5.png";
+import cofactoryImg6 from "@/images/projects/cofactory/app-6.png";
+import cofactoryImg7 from "@/images/projects/cofactory/app-7.png";
+import cofactoryImg8 from "@/images/projects/cofactory/app-8.png";
+import cofactoryImg9 from "@/images/projects/cofactory/app-9.png";
+import cofactoryImg10 from "@/images/projects/cofactory/landing-2.png";
 
 // Data
 const data: Array<Project> = [
@@ -356,9 +363,16 @@ const data: Array<Project> = [
       style: { backgroundColor: "#000", padding: "10px" },
     },
     images: [
+      { src: cofactoryImg10, alt: "Cofactory Image" },
       { src: cofactoryImg1, alt: "Cofactory Image" },
-      // { src: cofactoryImg2, alt: "Cofactory Image" },
+      { src: cofactoryImg2, alt: "Cofactory Image" },
       { src: cofactoryImg3, alt: "Cofactory Image" },
+      { src: cofactoryImg4, alt: "Cofactory Image" },
+      { src: cofactoryImg5, alt: "Cofactory Image" },
+      { src: cofactoryImg6, alt: "Cofactory Image" },
+      { src: cofactoryImg7, alt: "Cofactory Image" },
+      { src: cofactoryImg8, alt: "Cofactory Image" },
+      { src: cofactoryImg9, alt: "Cofactory Image" },
     ],
     dates: { start: new Date(2023, 9), end: new Date(2023, 11) },
     url: "https://cofactory.ai/",
