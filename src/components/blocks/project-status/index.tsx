@@ -1,5 +1,5 @@
 import React from "react";
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 import A from "@/components/atoms/a";
 import Button from "@/components/atoms/button";
@@ -29,7 +29,7 @@ export default function ProjectStatus(props: Props) {
   return (
     <Button
       variant="unstyled"
-      className={clsx(
+      className={twMerge(
         "w-full cursor-not-allowed bg-zinc-50 font-medium text-zinc-400 dark:bg-zinc-800/50 dark:text-zinc-500"
       )}
     >

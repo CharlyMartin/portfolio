@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 import PageLayout from "@/components/blocks/page-layout";
 import { getUses } from "@/data/uses";
@@ -112,7 +112,7 @@ function Tool(props: Use) {
   return (
     <li className="group relative">
       <div
-        className={clsx(
+        className={twMerge(
           "absolute -inset-x-4 -inset-y-6 z-0 transition sm:-inset-x-6 sm:m-0.5 sm:rounded-2xl",
           fav &&
             "bg-emerald-50/30 group-hover:bg-emerald-50 dark:bg-emerald-950/30 group-hover:dark:bg-emerald-950/60",
@@ -133,7 +133,7 @@ function Tool(props: Use) {
               </div>
             )}
             <h2
-              className={clsx(
+              className={twMerge(
                 "text-base font-semibold tracking-tight",
                 !fav && "text-zinc-800 dark:text-zinc-100",
                 fav && "text-emerald-800 dark:text-emerald-100/90"
@@ -145,7 +145,7 @@ function Tool(props: Use) {
 
           {/* Link */}
           <div
-            className={clsx(
+            className={twMerge(
               "-mt-0.5 flex -translate-x-5 items-center pb-3 transition group-hover:translate-x-0",
               !fav && "text-zinc-400 dark:text-zinc-500/80",
               fav && "text-emerald-600/50 dark:text-emerald-600/80"
@@ -160,7 +160,7 @@ function Tool(props: Use) {
 
           {/* Description */}
           <p
-            className={clsx(
+            className={twMerge(
               "relative z-10 text-sm",
               !fav && "text-zinc-600 dark:text-zinc-400",
               fav && "text-emerald-700 dark:text-emerald-300/80"

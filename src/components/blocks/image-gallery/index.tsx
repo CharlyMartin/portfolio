@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 import Image, { ImageProps } from "next/image";
 
 import Gallery from "./gallery";
@@ -22,7 +22,7 @@ export default function ImageGallery(props: Props) {
         {...image}
         alt={image.alt}
         placeholder="blur"
-        className={clsx(
+        className={twMerge(
           "image-ring rounded-2xl",
           images.length > 1 && "cursor-zoom-in"
         )}

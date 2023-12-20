@@ -1,7 +1,5 @@
 import React from "react";
-// import Image from "next/image";
 import type { Metadata } from "next";
-// import clsx from "clsx";
 
 import Container from "@/components/blocks/container";
 import Back from "@/components/atoms/back";

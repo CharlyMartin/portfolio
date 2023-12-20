@@ -1,5 +1,5 @@
 import React from "react";
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 import Project from "@/components/blocks/project";
 import type { ProjectPreview } from "@/types";
@@ -14,7 +14,7 @@ export default function Projects(props: Props) {
   return (
     <ul
       role="list"
-      className={clsx(
+      className={twMerge(
         "grid grid-cols-1 gap-x-16 gap-y-20 sm:grid-cols-2 lg:grid-cols-3",
         className
       )}

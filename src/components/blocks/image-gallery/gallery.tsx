@@ -1,6 +1,6 @@
 import React from "react";
 import Image, { ImageProps } from "next/image";
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 import { Dialog, Transition } from "@headlessui/react";
 import Icons from "@/components/atoms/icons";
 import Button from "@/components/atoms/button";
@@ -20,6 +20,7 @@ export default function Gallery(props: Props) {
 
   // Sync hash with active state
   const updateActive = React.useCallback(function syncHash() {
+    console.log("syncHash");
     const hash = window.location.hash; // .hash returns empty string is non existent
     const index = hash.split("-")[1];
     if (index) setActive(Number(index));
@@ -34,13 +35,20 @@ export default function Gallery(props: Props) {
   // Find a way to sync it with the active index
   React.useEffect(() => {
     function disableArrowNavigation(e: KeyboardEvent) {
-      if (e.key === "ArrowRight") e.preventDefault();
-      if (e.key === "ArrowLeft") e.preventDefault();
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        next();
+      }
+
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        back();
+      }
     }
 
     window.addEventListener("keydown", disableArrowNavigation);
     return () => window.removeEventListener("keydown", disableArrowNavigation);
-  }, []);
+  });
 
   return (
     <Transition.Root show={open} as={React.Fragment}>
@@ -116,14 +124,14 @@ export default function Gallery(props: Props) {
                             onClick={() => updateHash(i)}
                           >
                             <div
-                              className={clsx(
+                              className={twMerge(
                                 "inline-block rounded-full p-[1px] transition",
                                 active != i && "bg-transparent",
                                 active == i && "bg-zinc-500 dark:bg-zinc-300"
                               )}
                             >
                               <div
-                                className={clsx(
+                                className={twMerge(
                                   "h-2 w-2 rounded-full transition",
                                   active != i &&
                                     "bg-zinc-300 group-hover:bg-zinc-500 dark:bg-zinc-500 dark:group-hover:bg-zinc-300",

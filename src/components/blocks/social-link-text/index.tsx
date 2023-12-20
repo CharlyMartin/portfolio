@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 import A from "@/components/atoms/a";
 
@@ -13,7 +13,7 @@ export default function SocialLinkText(props: Props) {
   return (
     <A href={href} title={action}>
       <li
-        className={clsx(
+        className={twMerge(
           "group rounded-xl p-2.5 transition hover:bg-zinc-100/70 dark:hover:bg-zinc-700/60",
           className
         )}

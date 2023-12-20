@@ -1,5 +1,5 @@
 import React from "react";
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export type Props = React.ComponentPropsWithoutRef<"p">;
 
@@ -9,7 +9,10 @@ export default function Text(props: Props) {
   return React.createElement(
     "p",
     {
-      className: clsx("text-base text-zinc-600 dark:text-zinc-400", className),
+      className: twMerge(
+        "text-base text-zinc-600 dark:text-zinc-400",
+        className
+      ),
       ...rest,
     },
     children

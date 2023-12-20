@@ -1,6 +1,6 @@
 "use client";
 
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 import Button from "@/components/atoms/button";
 import Icons from "@/components/atoms/icons";
@@ -19,7 +19,7 @@ export default function OpenGitHub(props: Props) {
   return (
     <A
       href={`${github.url}/portfolio/tree/main${slug}`}
-      className={clsx("w-full sm:w-auto", className)}
+      className={twMerge("w-full sm:w-auto", className)}
       {...rest}
     >
       <Button className="w-full">

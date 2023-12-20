@@ -1,6 +1,6 @@
 import React from "react";
 import Link, { LinkProps } from "next/link";
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 import Icons from "@/components/atoms/icons";
 
@@ -15,7 +15,7 @@ export default function Card<T extends React.ElementType = "div">(
 
   return (
     <Component
-      className={clsx(className, "group relative flex flex-col items-start")}
+      className={twMerge("group relative flex flex-col items-start", className)}
     >
       {children}
     </Component>
@@ -41,7 +41,7 @@ function CardTitle<T extends React.ElementType = "h2">(
 
   return (
     <Component
-      className={clsx(
+      className={twMerge(
         "text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100",
         className
       )}
@@ -62,7 +62,7 @@ export function CardDescription(props: CardDescriptionProps) {
 
   return (
     <p
-      className={clsx(
+      className={twMerge(
         "relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400",
         className
       )}
@@ -131,7 +131,7 @@ export function CardEyebrow<T extends React.ElementType = "p">(
 
   return (
     <Component
-      className={clsx(
+      className={twMerge(
         "relative z-10 flex items-center text-sm text-zinc-400 dark:text-zinc-500",
         top && "order-first mb-3",
         decorate && "pl-3.5",

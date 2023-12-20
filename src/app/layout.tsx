@@ -1,9 +1,9 @@
 import React from "react";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
-import clsx from "clsx";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { twJoin } from "tailwind-merge";
 
 import Header from "@/components/sections/header";
 import Footer from "@/components/sections/footer";
@@ -41,7 +41,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const p = "sm:px-6 md:px-10 lg:px-14 xl:px-20";
+const padding = "sm:px-6 md:px-10 lg:px-14 xl:px-20";
 
 export default function RootLayout(props: Props) {
   const { children } = props;
@@ -49,18 +49,18 @@ export default function RootLayout(props: Props) {
   return (
     <html lang="en" className="h-full antialiased">
       <body
-        className={clsx("h-full bg-zinc-50 dark:bg-black", inter.className)}
+        className={twJoin("h-full bg-zinc-50 dark:bg-black", inter.className)}
       >
         <div className="w-full">
           {/* Background */}
-          <div className={clsx("fixed inset-0 flex justify-center", p)}>
+          <div className={twJoin("fixed inset-0 flex justify-center", padding)}>
             <div className="container flex">
               <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
             </div>
           </div>
 
           {/* Content */}
-          <div className={clsx("relative w-full overflow-x-hidden", p)}>
+          <div className={twJoin("relative w-full overflow-x-hidden", padding)}>
             <Header />
             <main>{children}</main>
             <Footer />

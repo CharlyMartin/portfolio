@@ -1,6 +1,6 @@
 "use client";
 
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 import Button, { Props as ButtonProps } from "@/components/atoms/button";
 import Icons from "@/components/atoms/icons";
@@ -15,7 +15,7 @@ export default function GetEmail(props: Props) {
 
   return (
     <Button
-      className={clsx("w-full sm:w-[148px]", className)}
+      className={twMerge("w-full sm:w-[148px]", className)}
       onClick={onCopy}
       {...rest}
     >
