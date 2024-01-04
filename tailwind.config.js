@@ -53,13 +53,14 @@ module.exports = {
         },
         DEFAULT: {
           css: {
-            "--tw-prose-body": theme("colors.zinc.600 / 0.8"),
+            "--tw-prose-base-size": "1.064rem",
+            "--tw-prose-body": theme("colors.zinc.700 / 0.95"),
             "--tw-prose-headings": theme("colors.zinc.900"),
             "--tw-prose-links": theme("colors.teal.500"),
             "--tw-prose-links-hover": theme("colors.teal.600"),
             "--tw-prose-underline": theme("colors.teal.500 / 0.2"),
             "--tw-prose-underline-hover": theme("colors.teal.500"),
-            "--tw-prose-bold": theme("colors.zinc.800"),
+            "--tw-prose-bold": theme("colors.zinc.900"),
             "--tw-prose-counters": theme("colors.zinc.900"),
             "--tw-prose-bullets": theme("colors.zinc.900"),
             "--tw-prose-hr": theme("colors.zinc.100"),
@@ -73,22 +74,22 @@ module.exports = {
             "--tw-prose-th-borders": theme("colors.zinc.200"),
             "--tw-prose-td-borders": theme("colors.zinc.100"),
 
-            "--tw-prose-invert-body": theme("colors.zinc.300 / 0.75"),
+            "--tw-prose-invert-body": theme("colors.zinc.300 / 0.8"),
             // "--tw-prose-invert-body": theme("colors.zinc.400"),
 
-            "--tw-prose-invert-headings": theme("colors.zinc.200"),
+            "--tw-prose-invert-headings": theme("colors.zinc.100"),
             "--tw-prose-invert-links": theme("colors.teal.400"),
             "--tw-prose-invert-links-hover": theme("colors.teal.400"),
             "--tw-prose-invert-underline": theme("colors.teal.400 / 0.3"),
             "--tw-prose-invert-underline-hover": theme("colors.teal.400"),
-            "--tw-prose-invert-bold": theme("colors.zinc.300"),
+            "--tw-prose-invert-bold": theme("colors.zinc.200"),
             "--tw-prose-invert-counters": theme("colors.zinc.200"),
             "--tw-prose-invert-bullets": theme("colors.zinc.200"),
             "--tw-prose-invert-hr": theme("colors.zinc.700 / 0.4"),
             "--tw-prose-invert-quote-borders": theme("colors.zinc.500"),
             "--tw-prose-invert-captions": theme("colors.zinc.500"),
-            "--tw-prose-invert-code": theme("colors.red.400"),
-            "--tw-prose-invert-code-bg": theme("colors.zinc.200 / 0.05"),
+            "--tw-prose-invert-code": theme("colors.zinc.200"),
+            "--tw-prose-invert-code-bg": theme("colors.zinc.200 / 0.1"),
             // "--tw-prose-invert-pre-code": theme("colors.zinc.100"),
             // "--tw-prose-invert-pre-bg": "rgb(0 0 0 / 0.4)",
             // "--tw-prose-invert-pre-border": theme("colors.zinc.200 / 0.1"),
@@ -97,7 +98,8 @@ module.exports = {
 
             // Base
             color: "var(--tw-prose-body)",
-            lineHeight: theme("lineHeight.7"),
+            lineHeight: "1.75rem",
+
             "> *": {
               marginTop: theme("spacing.10"),
               marginBottom: theme("spacing.10"),
@@ -105,8 +107,12 @@ module.exports = {
             p: {
               marginTop: theme("spacing.7"),
               marginBottom: theme("spacing.7"),
-              fontWeight: theme("fontWeight.medium"),
+              fontSize: "var(--tw-prose-base-size)",
+              // fontWeight: theme("fontWeight.medium"),
             },
+            // "p em, li em": {
+            //   fontWeight: theme("fontWeight.normal"),
+            // },
 
             ".standalone p": {
               margin: theme("spacing.0"),
@@ -115,7 +121,8 @@ module.exports = {
             // Headings
             "h2, h3, h4": {
               color: "var(--tw-prose-headings)",
-              fontWeight: theme("fontWeight.semibold"),
+              fontWeight: theme("fontWeight.bold"),
+              letterSpacing: theme("letterSpacing.tight"),
             },
             h2: {
               fontSize: theme("fontSize.2xl")[0],
@@ -225,7 +232,8 @@ module.exports = {
             li: {
               marginBottom: theme("spacing.3"),
               paddingLeft: theme("spacing.3"),
-              fontWeight: theme("fontWeight.medium"),
+              fontSize: "var(--tw-prose-base-size)",
+              // fontWeight: theme("fontWeight.medium"),
             },
             "li::marker": {
               fontSize: theme("fontSize.sm")[0],
