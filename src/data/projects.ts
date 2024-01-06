@@ -137,7 +137,7 @@ const data: Array<Project> = [
       { id: 3, role: { id: 1 } },
       { id: 4, role: { id: 2 } },
     ],
-    status: "live",
+    status: "archived",
     areas: ["web2"],
   },
   {
