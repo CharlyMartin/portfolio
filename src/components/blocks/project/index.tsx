@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 
 import Card from "@/components/blocks/card";
@@ -78,7 +78,7 @@ function ImageBackground(props: ImageCircleProps) {
 
   return (
     <div
-      className={clsx(
+      className={twMerge(
         className,
         "flex h-12 w-12 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-2 ring-zinc-200/20 dark:ring-zinc-700"
       )}

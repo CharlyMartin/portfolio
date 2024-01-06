@@ -26,17 +26,22 @@ async function generateSitemap() {
   const xmlProjects = projectFileNames.map(addXMLProject).join("\n");
 
   // Articles
-  const articleFileNames = await glob(["*.md"], {
+  const articleFileNames = await glob(["*/index.md"], {
     cwd: path.join(process.cwd(), "src/data/articles"),
   });
 
-  const xmlArticles = articleFileNames.map(addXMLProject).join("\n");
+  const xmlArticles = articleFileNames.map(addXMLArticle).join("\n");
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${xmlPages}${xmlProjects}${xmlArticles}</urlset>`;
   fs.writeFileSync("public/sitemap.xml", sitemap);
 }
 
 generateSitemap();
+
+function addXMLArticle(article) {
+  const path = article.replace("/index.md", "");
+  return generateXMLTag(`/articles/${path}`);
+}
 
 function addXMLProject(project) {
   const path = project.replace(".md", "");
@@ -47,7 +52,7 @@ function addXMLPage(page) {
   return generateXMLTag(`/${page}`);
 }
 
-function generateXMLTag(url, frequency = "weekly") {
+function generateXMLTag(url, frequency = "monthly") {
   return `<url>
     <loc>${`${process.env.NEXT_PUBLIC_BASE_URL}${url}`}</loc>
     <changefreq>${frequency}</changefreq>

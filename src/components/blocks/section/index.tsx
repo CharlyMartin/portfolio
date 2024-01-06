@@ -1,5 +1,5 @@
 import React from "react";
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 type Props = {
   subtitle?: React.ReactNode;
@@ -49,7 +49,7 @@ function SectionOutline(props: OutlineProps) {
 
   return (
     <div
-      className={clsx(
+      className={twMerge(
         "rounded-2xl border border-zinc-200/60 p-6 dark:border-zinc-700/50",
         className
       )}

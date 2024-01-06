@@ -45,7 +45,7 @@ export default async function Home() {
           <Title>{bio.headline}</Title>
           <Prose html={bio.short} className="standalone mt-4 sm:mt-6" />
 
-          <div className="hidden pt-3 sm:block">
+          <div className="hidden pt-4 sm:block">
             <SeeMore href="/about">Read full bio</SeeMore>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default async function Home() {
 
       {/* Mobile link slider */}
       <div className="overflow-scroll px-3 py-4 sm:hidden">
-        <div className="flex w-[125vw] space-x-3">
+        <div className="flex w-[130vw] space-x-3">
           <SeeMore href="/about" className="">
             Read full bio
           </SeeMore>
@@ -156,14 +156,14 @@ function Interests(props: InterestProps) {
   const { short, long } = props;
 
   return (
-    <span className="mb-3 inline-flex items-baseline rounded-full bg-zinc-200/40 px-3 py-1 text-sm text-zinc-700 dark:bg-zinc-700/30 dark:text-zinc-400">
+    <span className="mb-3 inline-flex items-baseline rounded-full bg-zinc-200/40 px-4 py-1 text-sm text-zinc-700 dark:bg-zinc-700/30 dark:text-zinc-400">
       <p className="mr-3 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
         INTERESTS
       </p>
       <p className="block sm:hidden">{short}</p>
       <p className="hidden sm:block">{long}</p>
-      <p className="pl-2 pr-1">🌳</p>
-      <p className="pl-1">💿</p>
+      <p className="pl-2 pr-0.5">🌱</p>
+      <p className="pl-0.5">💿</p>
     </span>
   );
 }

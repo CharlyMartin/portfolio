@@ -1,6 +1,6 @@
 "use client";
 
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 import Link, { LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -42,7 +42,7 @@ function NavItem(props: NavItemProps) {
     <li {...rest}>
       <Link
         {...link}
-        className={clsx(
+        className={twMerge(
           "relative block px-3 py-2 transition",
           isActive
             ? "text-teal-500 dark:text-teal-400"

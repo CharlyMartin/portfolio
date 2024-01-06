@@ -1,5 +1,5 @@
-import clsx from "clsx";
 import React from "react";
+import { twMerge } from "tailwind-merge";
 
 type Props = {
   html: string;
@@ -10,7 +10,7 @@ export default function Prose(props: Props) {
 
   return (
     <div
-      className={clsx("prose dark:prose-invert", className)}
+      className={twMerge("prose dark:prose-invert", className)}
       dangerouslySetInnerHTML={{ __html: html }}
       {...rest}
     />

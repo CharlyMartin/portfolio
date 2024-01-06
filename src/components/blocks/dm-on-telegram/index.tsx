@@ -1,6 +1,6 @@
 "use client";
 
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 import Icons from "@/components/atoms/icons";
 import Button, { Props as ButtonProps } from "@/components/atoms/button";
@@ -15,7 +15,7 @@ export default function DmOnTelegram(props: Props) {
   const { className, ...rest } = props;
 
   return (
-    <A href={telegram.url} className={clsx("w-full sm:w-auto", className)}>
+    <A href={telegram.url} className={twMerge("w-full sm:w-auto", className)}>
       <Button variant="secondary" className="w-full" {...rest}>
         {telegram.action}
         <Icons.Telegram size={18} />

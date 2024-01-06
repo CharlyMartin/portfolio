@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 type Props = {
   size: "sm" | "lg";
@@ -9,7 +9,7 @@ export default function Badge(props: Props) {
 
   return (
     <span
-      className={clsx(
+      className={twMerge(
         "inline-flex items-center bg-zinc-200/50 font-medium dark:bg-zinc-700/80",
         size == "sm" &&
           "rounded-md px-1.5 text-xs text-zinc-800 dark:text-zinc-50",

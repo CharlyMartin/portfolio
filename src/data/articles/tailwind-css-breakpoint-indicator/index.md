@@ -1,8 +1,10 @@
 ---
-title: "How I stopped guessing breakpoints in Tailwind CSS"
+title: "How I Stopped Guessing Breakpoints in Tailwind CSS"
 description: Ever struggled with identifying active breakpoints in Tailwind CSS? This tiny React component helps me see which Tailwind breakpoint I'm developing for. No more guesswork.
 created: 2023-09-16
 highlight: false
+topic: "tech"
+# tags: [react, tailwindcss, best-practices]
 ---
 
 Tailwind CSS makes my life easy when it comes to building responsive user interfaces. But, I often find myself wondering which breakpoint is currently active and which CSS rules are being applied to the current screen size. Is my laptop screen `lg` or `xl`? Is `sm` for mobile or tablet? I can never remember.
@@ -60,4 +62,6 @@ export default function AppLayout(props: Props) {
 }
 ```
 
-Now, when I use a preset device size in Firefox's devtools, I know instantly which breakpoint is active without comparing the current width in pixel against Tailwind's breakpoints. I can immediately see that an iPhone 13 mini is `xs`; an iPad is `md` but `lg` in landscape; and and my 13" MacBook Air is `xl`. No guesswork required, no documentation to look up, no surprises. It just works.
+Now, when I use a preset device size in Firefox's devtools, I know instantly which breakpoint is active without comparing the current width in pixel against Tailwind's breakpoints. I can immediately see that an iPhone 13 mini is `xs`; an iPad is `md` but `lg` in landscape; and and my 13" MacBook Air is `xl`. No guesswork required, no documentation to look up, it just works.
+
+<!-- https://medium.com/@davidkelley87/stop-using-return-null-in-react-a2ebf08fc9cd -->

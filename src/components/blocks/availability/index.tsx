@@ -1,5 +1,5 @@
 import React from "react";
-import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 import Text from "@/components/atoms/text";
 import { Availability } from "@/types";
@@ -32,12 +32,12 @@ export default function Availability(props: Props) {
 
   return (
     <div
-      className={clsx("flex items-center sm:items-center", className)}
+      className={twMerge("flex items-center sm:items-center", className)}
       {...rest}
     >
       <span className="relative mr-2.5 flex h-3 w-3">
         <span
-          className={clsx(
+          className={twMerge(
             "absolute inline-flex h-full w-full animate-ping rounded-full opacity-75",
             ping
           )}
@@ -46,7 +46,7 @@ export default function Availability(props: Props) {
           }}
         />
         <span
-          className={clsx(
+          className={twMerge(
             "relative inline-flex h-3 w-3 rounded-full bg-sky-500",
             color
           )}
