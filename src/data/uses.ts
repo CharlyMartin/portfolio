@@ -73,7 +73,7 @@ const data: Array<Use> = [
       "MacBook Air combined with the M2 chip. An incredibly portable laptop.",
     description:
       "I've been on the Mackbook Pro bandwagon since 2009, but the latest Apple M chips are such a game changer that a MacBook Air (with some extra RAM) is now more than enough for modern web development.",
-    url: "https://www.apple.com/macbook-air/",
+    url: "https://www.apple.com/macbook-air-13-and-15-m2/",
     type: "workspace",
   },
   {
