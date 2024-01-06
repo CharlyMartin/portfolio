@@ -11,6 +11,11 @@ export const routes: Array<Route> = [
     label: "Projects",
     isCurrent: (href) => href.startsWith("/projects"),
   },
+  {
+    link: { href: "/articles" },
+    label: "Articles",
+    isCurrent: (href) => href.startsWith("/articles"),
+  },
   // { link: { href: "/training" }, label: "Training" }, // V2
   {
     link: { href: "/about" },
