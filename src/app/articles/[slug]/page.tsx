@@ -35,7 +35,11 @@ export default async function ArticlePage(props: Props) {
         <Back className="lg:-left-[102px] lg:top-1.5 xl:absolute" />
         <PageTitle
           title={metadata.title}
-          subtitle={formatArticleDate(new Date(metadata.created))}
+          subtitle={[
+            `Published on ${formatArticleDate(new Date(metadata.created))}`,
+            metadata.updated &&
+              `Updated on ${formatArticleDate(new Date(metadata.updated))}`,
+          ]}
         />
 
         <br />
