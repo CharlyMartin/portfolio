@@ -62,4 +62,6 @@ export default function AppLayout(props: Props) {
 }
 ```
 
-Now, when I use a preset device size in Firefox's devtools, I know instantly which breakpoint is active without comparing the current width in pixel against Tailwind's breakpoints. I can immediately see that an iPhone 13 mini is `xs`; an iPad is `md` but `lg` in landscape; and and my 13" MacBook Air is `xl`. No guesswork required, no documentation to look up, no surprises. It just works.
+Now, when I use a preset device size in Firefox's devtools, I know instantly which breakpoint is active without comparing the current width in pixel against Tailwind's breakpoints. I can immediately see that an iPhone 13 mini is `xs`; an iPad is `md` but `lg` in landscape; and and my 13" MacBook Air is `xl`. No guesswork required, no documentation to look up, it just works.
+
+<!-- https://medium.com/@davidkelley87/stop-using-return-null-in-react-a2ebf08fc9cd -->
