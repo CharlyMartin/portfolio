@@ -1,6 +1,6 @@
 ---
 title: "The Perfect React (UI) Component"
-description: TODO
+description: Writing this article is an effort to make explicit all the implicit decisions I make when building React components and document what I consider to be the best way to do so.
 created: 2023-11-14
 topic: "tech"
 # tags: [react, ui, component, design, best practices]
@@ -9,7 +9,7 @@ topic: "tech"
 
 I've been essentially working with [React](https://react.dev/) and its ecosystem for the last 5 years. Each project and developer has exposed me to new perspectives on how to write _good_ code. As a consequence, I've refined the way I write React components a lot. For the last year or so, my thinking has reached a stable state, and I instinctively follow the same patterns.
 
-Writing this article is an effort to make explicit all the implicit decisions I make when building React components and document what I consider the best way to do so. At least for now, until my thinking evolves again.
+Writing this article is an effort to make explicit all the implicit decisions I make when building React components and document what I consider to be the best way to do so. At least for now, until my thinking evolves again.
 
 ## The Button Example
 
@@ -390,7 +390,7 @@ Finally, I would like to point out that `renderChildren` is not a React componen
 
 ## That's it, folks!
 
-And there you have it, my perfect React component! If you wish to play with the code, I created a CodeSandbox demo. I hope you learned something new or at least enjoyed reading this article. I will come back to it and update it as I learn new things and change my mind on some of the points I made.
+And there you have it, my perfect React component! If you wish to play with the code, I created a CodeSandbox demo. I hope you learned something or at least enjoyed reading this article. I will come back to it and update it as I learn new things and change my mind on some of the points I made.
 
 Happy hacking!
 
