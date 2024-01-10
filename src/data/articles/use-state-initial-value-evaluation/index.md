@@ -1,7 +1,7 @@
 ---
 title: "React evaluates the initial value of useState more than I realised"
 description: TODO
-created: 2024-01-08
+created: 2024-01-11
 highlight: false
 topic: "code"
 ---
@@ -148,15 +148,19 @@ At runtime, primitives are executed immediately, that's why we see the logs in o
 
 When we pass a function to `useState`, it's not up to us, the code authors, to call it. It's React's job. We delegate the call responsibility to the hook. This is why React is able to call it only on mount and then stop. React simply cannot do it with primitive values because JavaScript doesn't work like that.
 
+The same mechanism happens with `useEffect`, for instance. The callback function might not run on every render, but the values in the dependency array do. To asses whether the callback function should run or not, React has to evaluate the whole dependency array on every render. I feel like we often forget about this detail. A lot of our focus goes into the callback function, but if we pass some expensive operations in the dependency array, we might be slowing down our app without realising it.
+
 <!-- It's like when we have to wrap `window.addEventListener` in a function delcaration and pass it to `useEffect`, for server-side rendering. The `window` object doesn't exist on the server, so we have to delegate the call to the hook once the code hits the browser. -->
 
 ## Implications
 
-In big React applications, I never manage the state directly with `useState`. I rely on robust state managers like [React Query](https://tanstack.com/query/latest), or [Redux](https://redux.js.org/) a few years back, to manage the complexity of the app's state. Hence, I never have to think much about how they initialise it. I trust the authors behind it, and open-source contributors, to do the right thing.
+So, now I (we?) understand these concepts better, how can we use this knowledge to write better React code?
 
-I usually only reach for `useState` to manage local UI state, like opening and closing modals, or toggling a dropdown. In these cases, performance is almost never a concern. Evaluating a boolean on every render is not going to slow down the app, even on a low-end device. Painting the UI is much more expensive.
+First off, a little tangent. In big React applications, I never manage the state directly with `useState`. I rely on robust state managers like [React Query](https://tanstack.com/query/latest), or [Redux](https://redux.js.org/) a few years back, to manage this complexity for me. Hence, I never have to think much about how these tools initialise state. I trust the authors behind it, and the various open-source contributors, to do the right thing.
 
-But if today I were to create a custom state manager for my app, I now would pay closer attention to this detail. For instance, if want to persist the state and I read from `localStorage` to initialise it:
+I usually only reach for `useState` to manage local UI state, like opening and closing modals, or toggling a dropdown. In these cases, performance is almost never a concern. Evaluating a boolean on every render is not going to slow down the app, even on a low-end device. Painting the UI is much more CPU expensive compared to it.
+
+End of tangent. If today I had to create a custom state manager for my app, I would now pay closer attention to this detail. For instance, if want to persist the state and I read from `localStorage` to initialise it:
 
 ```tsx
 function Component(props) {
@@ -169,7 +173,7 @@ function Component(props) {
 }
 ```
 
-Reading from `localStorage` is a synchronous operation that can be expensive and block the main thread. So it would be wise to wrap the `localStorage` call in a function declaration to avoid calling it on every render, especially since the result of the evaluation is never used past the first render.
+Reading from `localStorage` is a synchronous operation that can be expensive and block the main thread. So it would be wise to wrap this operation in a function declaration to avoid calling it on every render, especially since the result of the evaluation is never used past the first render.
 
 ```tsx
 function Component(props) {
@@ -207,13 +211,11 @@ function Child(props) {
 
 ## That's it, folks!
 
-Thank you for following my little, very specific experiment in the world of React state. In a nutshell:
+Thank you for following my little, very specific experiment in the world of React state and JavaScript runtime. I hope you learned something, or at least, you got a refresher on the fundamentals of React. I know I did!
 
-> The initial value of `useState` is evaluated on every re-render if it's a non-function value like a primitive, an object or an array.
+<!-- > The initial value of `useState` is evaluated on every re-render if it's a non-function value like a primitive, an object or an array.
 
-> The initial value of `useState` is only evaluated on mount if it's a function declaration.
-
-I hope you learned something, or at least, you got a refresher on the fundamentals of React. I know I did!
+> The initial value of `useState` is only evaluated on mount if it's a function declaration. -->
 
 <!-- As I learn and learn new things, I like to go back to the basics, instead of going down the rabbit hole of complexity. The basics get you 90% of the way. -->
 
