@@ -1,8 +1,8 @@
 ---
-title: "The Perfect React (UI) Component"
+title: "The perfect React (UI) component"
 description: Writing this article is an effort to make explicit all the implicit decisions I make when building React components and document what I consider to be the best way to do so.
 created: 2023-11-14
-topic: "tech"
+topic: "code"
 # tags: [react, ui, component, design, best practices]
 # link: https://codesandbox.io/p/sandbox/react-button-tailwind-62xm23
 ---

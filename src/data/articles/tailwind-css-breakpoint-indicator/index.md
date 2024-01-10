@@ -1,9 +1,9 @@
 ---
-title: "How I Stopped Guessing Breakpoints in Tailwind CSS"
+title: "How I stopped guessing breakpoints in Tailwind CSS"
 description: Ever struggled with identifying active breakpoints in Tailwind CSS? This tiny React component helps me see which Tailwind breakpoint I'm developing for. No more guesswork.
 created: 2023-09-16
 highlight: false
-topic: "tech"
+topic: "code"
 # tags: [react, tailwindcss, best-practices]
 ---
 
