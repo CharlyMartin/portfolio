@@ -2,9 +2,8 @@
 title: "Talk is cheap, and this is good news for your ideas"
 description: Talking is the cheapest investment we can, and should, make in any new business ideas. Avoiding it is best way to waste time and money.
 created: 2017-12-15
+highlight: false
 topic: "startup"
-# tags: [react, ui, component, design, best practices]
-# link: https://codesandbox.io/p/sandbox/react-button-tailwind-62xm23
 ---
 
 This story that inspired this article began on a sunny Sunday morning. I had just waken up and was heading downstairs to get breakfast. Thiago, one of my flatmates, was already in the living room sipping his coffee. I joined him at the table and we started discussing. After a few minutes, he paused for a moment and, with a serious look on his face, went like this:

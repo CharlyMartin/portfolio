@@ -2,6 +2,7 @@
 title: "React evaluates the initial value of useState more than I realised"
 description: TODO
 created: 2024-01-08
+highlight: false
 topic: "code"
 ---
 
