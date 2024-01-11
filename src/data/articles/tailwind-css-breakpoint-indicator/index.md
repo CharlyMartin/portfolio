@@ -1,10 +1,9 @@
 ---
-title: "How I Stopped Guessing Breakpoints in Tailwind CSS"
+title: "How I stopped guessing breakpoints in Tailwind CSS"
 description: Ever struggled with identifying active breakpoints in Tailwind CSS? This tiny React component helps me see which Tailwind breakpoint I'm developing for. No more guesswork.
 created: 2023-09-16
 highlight: false
-topic: "tech"
-# tags: [react, tailwindcss, best-practices]
+topic: "code"
 ---
 
 Tailwind CSS makes my life easy when it comes to building responsive user interfaces. But, I often find myself wondering which breakpoint is currently active and which CSS rules are being applied to the current screen size. Is my laptop screen `lg` or `xl`? Is `sm` for mobile or tablet? I can never remember.

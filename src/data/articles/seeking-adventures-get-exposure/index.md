@@ -2,9 +2,8 @@
 title: "Seeking new adventures? Get yourself some exposure"
 description: Whether you love your current path or wouldn’t mind a little change, it is always flattering to be offered to fly to new horizons. Unless you get yourself sufficient exposure, this is unlikely to happen.
 created: 2017-07-21
+highlight: false
 topic: "life"
-# tags: [react, ui, component, design, best practices]
-# link: https://codesandbox.io/p/sandbox/react-button-tailwind-62xm23
 ---
 
 I’m currently typing the final words of this post on a flight to Shanghai. It’s my first time in China, I’m both excited and scared, I have no idea what’s waiting for me at arrival. This time last month I still had no idea I would fly there. How all of this happened? Here’s the story.

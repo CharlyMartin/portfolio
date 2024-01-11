@@ -38,8 +38,9 @@ next-env.d.ts
 # IDE
 .vscode/*
 
-# Drafts
-src/data/articles/drafts
+# Articles
+src/data/articles/_drafts
+src/data/articles/_archive
 
 # Auto-generated
 public/sitemap.xml

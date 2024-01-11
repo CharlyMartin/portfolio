@@ -13,7 +13,7 @@ const metadataSchema = z.object({
   created: z.date(),
   updated: z.date().optional(),
   highlight: z.boolean().optional(),
-  topic: z.enum(["tech", "life", "startup"]), // Topic can be either "tech", "life" or "startup"
+  topic: z.enum(["code", "life", "startup"]),
 });
 
 export async function getArticlesMeta(filters?: Filters) {
