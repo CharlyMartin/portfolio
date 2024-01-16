@@ -11,7 +11,7 @@ const telegram = getContact("telegram");
 
 type Props = ButtonProps;
 
-export default function DmOnTelegram(props: Props) {
+export default function DmTelegram(props: Props) {
   const { className, ...rest } = props;
 
   return (

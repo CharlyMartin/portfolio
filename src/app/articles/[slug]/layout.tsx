@@ -3,7 +3,7 @@ import React from "react";
 import Container from "@/components/blocks/container";
 import Separator from "@/components/atoms/separator";
 import Title from "@/components/atoms/title";
-import DmOnTelegram from "@/components/blocks/dm-on-telegram";
+import DmTelegram from "@/components/blocks/dm-telegram";
 import OpenGitHub from "@/components/blocks/open-github";
 
 type Props = {
@@ -28,7 +28,7 @@ export default function ArticlePageLayout(props: Props) {
 
           <div className="flex flex-wrap gap-3">
             <OpenGitHub slug={`/src/data/articles/${params.slug}/index.md`} />
-            <DmOnTelegram />
+            <DmTelegram />
           </div>
         </div>
       </Container>

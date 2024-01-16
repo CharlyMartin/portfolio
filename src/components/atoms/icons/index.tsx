@@ -23,6 +23,7 @@ import {
   HiChevronLeft,
 } from "react-icons/hi2";
 import { FaLinkedinIn } from "react-icons/fa6";
+import { LuCalendarPlus } from "react-icons/lu";
 
 // https://icons8.com/
 const Icons = {
@@ -48,6 +49,7 @@ const Icons = {
   Article: HiOutlineFolderOpen,
   Star: HiMiniStar,
   Heart: HiHeart,
+  Calendar: LuCalendarPlus,
 };
 
 export default Icons;

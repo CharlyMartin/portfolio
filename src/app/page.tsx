@@ -8,7 +8,8 @@ import Projects from "@/components/sections/projects";
 import SeeMore from "@/components/atoms/see-more";
 import Separator from "@/components/atoms/separator";
 import GetEmail from "@/components/blocks/get-email";
-import DmOnTelegram from "@/components/blocks/dm-on-telegram";
+import DmTelegram from "@/components/blocks/dm-telegram";
+import BookCall from "@/components/blocks/book-call";
 import Icons from "@/components/atoms/icons";
 import Availability from "@/components/blocks/availability";
 import { getProjects } from "@/data/projects";
@@ -69,7 +70,8 @@ export default async function Home() {
       <Container>
         <div className="mt-14 flex flex-wrap gap-3 sm:mt-20">
           <GetEmail />
-          <DmOnTelegram />
+          <BookCall />
+          <DmTelegram />
         </div>
         <div className="flex justify-center pt-3 sm:block">
           <Availability />
