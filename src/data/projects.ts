@@ -104,7 +104,7 @@ const data: Array<Project> = [
       { id: 2, role: { id: 4 } },
     ],
     status: "live",
-    areas: ["web2"],
+    area: "web2",
   },
   {
     id: 2,
@@ -138,7 +138,7 @@ const data: Array<Project> = [
       { id: 4, role: { id: 2 } },
     ],
     status: "archived",
-    areas: ["web2"],
+    area: "web2",
   },
   {
     id: 3,
@@ -146,7 +146,7 @@ const data: Array<Project> = [
     slug: "immunefi",
     hq: "Lisbon, Portugal",
     description:
-      "Web3's leading bug bounty platform, protecting billions in user funds.",
+      "The leading bug bounty platform in Web3, protecting billions in user funds.",
     logo: { src: immunefiLogo },
     images: [
       { src: immunefiImg1, alt: "Immunefi Image" },
@@ -166,7 +166,7 @@ const data: Array<Project> = [
       { id: 15, role: { id: 12 } },
     ],
     status: "live",
-    areas: ["web2", "web3"],
+    area: "web3",
   },
   {
     id: 4,
@@ -189,7 +189,7 @@ const data: Array<Project> = [
     stack: [10, 3, 12, 17, 40],
     people: [{ id: 22, role: { id: 11 } }],
     status: "live",
-    areas: ["web2"],
+    area: "web2",
   },
   {
     id: 5,
@@ -213,7 +213,7 @@ const data: Array<Project> = [
       { id: 14, role: { id: 1 } },
     ],
     status: "live",
-    areas: ["web2"],
+    area: "web2",
   },
   {
     id: 6,
@@ -241,7 +241,7 @@ const data: Array<Project> = [
       { id: 11, role: { id: 1 } },
     ],
     status: "archived",
-    areas: ["web2"],
+    area: "web2",
   },
   {
     id: 7,
@@ -259,7 +259,7 @@ const data: Array<Project> = [
     stack: [10, 26, 21, 29, 9],
     people: [{ id: 3, role: { id: 11 } }],
     status: "live",
-    areas: ["web2"],
+    area: "web2",
   },
   {
     id: 8,
@@ -279,7 +279,7 @@ const data: Array<Project> = [
     roles: [1, 3, 4, 5, 8],
     stack: [10, 26, 21, 29, 9],
     status: "archived",
-    areas: ["web2"],
+    area: "web2",
   },
   {
     id: 9,
@@ -297,7 +297,7 @@ const data: Array<Project> = [
     stack: [10, 9, 2, 28, 41],
     people: [{ id: 9, role: { id: 2 } }],
     status: "archived",
-    areas: ["web2"],
+    area: "web2",
   },
   {
     id: 10,
@@ -325,7 +325,7 @@ const data: Array<Project> = [
       { id: 17, role: { id: 14 } },
     ],
     status: "live",
-    areas: ["web3"],
+    area: "web3",
   },
   {
     id: 11,
@@ -350,7 +350,7 @@ const data: Array<Project> = [
       { id: 16, role: { id: 14 } },
     ],
     status: "archived",
-    areas: ["web3"],
+    area: "web3",
   },
   {
     id: 12,
@@ -387,7 +387,7 @@ const data: Array<Project> = [
       { id: 21, role: { id: 12 } },
     ],
     status: "live",
-    areas: ["ai"],
+    area: "ai",
   },
 ];
 
@@ -406,8 +406,8 @@ export function getProjects(filters?: Filters): Array<ProjectPreview> {
     })
     .filter((project) => project.display)
     .map((project) => {
-      const { id, name, description, logo, dates, slug, areas } = project;
-      return { id, name, description, logo, dates, slug, areas };
+      const { id, name, description, logo, dates, slug, area } = project;
+      return { id, name, description, logo, dates, slug, area };
     })
     .sort((a, z) => {
       if (!a.dates.end) return -1;

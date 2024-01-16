@@ -22,7 +22,7 @@ export default function Projects(props: Props) {
     >
       {data.map(function renderProjects(project, i) {
         return (
-          <li className="min-h-[228px]" key={i}>
+          <li key={i}>
             <Project {...project} />
           </li>
         );

@@ -9,63 +9,59 @@ import Badge from "@/components/atoms/badge";
 type Props = ProjectPreview;
 
 export default function Project(props: Props) {
-  const { name, logo, description, dates, slug, areas } = props;
+  const { name, logo, description, dates, slug, area } = props;
   const formattedDates = formatProjectDates(dates, { month: "short" });
 
   return (
-    <Card className="min-h-full">
-      <div className="flex w-full items-start justify-between">
-        <div className="z-10 mb-6">
-          {logo && (
-            <ImageBackground
-              style={{
-                backgroundColor: "#fff",
-                padding: "14px",
-                ...logo.style,
-              }}
-            >
-              <div className="relative h-full w-full">
-                <Image
-                  src={logo.src}
-                  fill={true}
-                  alt={`${name}'s Logo`}
-                  unoptimized
-                />
-              </div>
-            </ImageBackground>
-          )}
+    <Card className="space-y-5">
+      {/* Logo */}
+      <div className="z-10 pb-2">
+        {logo && (
+          <ImageBackground
+            style={{
+              backgroundColor: "#fff",
+              padding: "14px",
+              ...logo.style,
+            }}
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src={logo.src}
+                fill={true}
+                alt={`${name}'s Logo`}
+                unoptimized
+              />
+            </div>
+          </ImageBackground>
+        )}
 
-          {!logo && (
-            <ImageBackground className="bg-teal-50">
-              <span className="text-2xl font-medium text-teal-600">
-                {name[0]}
-              </span>
-            </ImageBackground>
-          )}
-        </div>
+        {!logo && (
+          <ImageBackground className="bg-teal-50">
+            <span className="text-2xl font-medium text-teal-600">
+              {name[0]}
+            </span>
+          </ImageBackground>
+        )}
+      </div>
 
-        <div className="z-10 space-x-2">
-          {areas.slice(0, 2).map(function renderAreas(area, i) {
-            return (
-              <Badge size="sm" key={i}>
-                {area}
-              </Badge>
-            );
-          })}
+      {/* Title + badge + dates */}
+      <div className="flex flex-col space-y-1">
+        <Card.Title href={`/projects/${slug}`}>{name}</Card.Title>
+
+        <div className="flex items-center">
+          <Badge size="sm" className="z-10 mr-2.5">
+            {area}
+          </Badge>
+          <Card.Eyebrow as="time" dateTime={dates.end?.toLocaleDateString()}>
+            {formattedDates}
+          </Card.Eyebrow>
         </div>
       </div>
 
-      <Card.Title href={`/projects/${slug}`}>{name}</Card.Title>
-      <Card.Eyebrow
-        as="time"
-        dateTime={dates.end?.toLocaleDateString()}
-        className="mb-2"
-      >
-        {formattedDates}
-      </Card.Eyebrow>
-
+      {/* Description */}
       <Card.Description>{description}</Card.Description>
 
+      {/* CTA */}
       <Card.Cta>See project</Card.Cta>
     </Card>
   );

@@ -26,8 +26,6 @@ export type Bio = {
   avatar: ImageProps;
 };
 
-type Area = "web2" | "web3" | "ai";
-
 // DATA MODEL (exposed via API routes)
 export type Project = {
   id: number;
@@ -41,7 +39,7 @@ export type Project = {
   highlight?: boolean; // Whether or not to highlight the project on the home page
   url: string; // The URL of the project. If not provided, the project is shown as "archived".
   status: "live" | "wip" | "archived";
-  areas: Array<Area>; // Whether I worked on the web2 or web3 part
+  area: "web2" | "web3" | "ai"; // Whether I worked on the web2 or web3 part
   display: boolean; // Whether or not to display the project on the projects page
   stack: Array<Use["id"]>;
   roles: Array<Skill["id"]>;
@@ -50,7 +48,7 @@ export type Project = {
 
 export type ProjectPreview = Pick<
   Project,
-  "id" | "name" | "description" | "logo" | "dates" | "slug" | "areas"
+  "id" | "name" | "description" | "logo" | "dates" | "slug" | "area"
 >;
 
 export type Use = {

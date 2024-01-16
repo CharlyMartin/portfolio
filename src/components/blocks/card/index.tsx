@@ -132,7 +132,7 @@ export function CardEyebrow<T extends React.ElementType = "p">(
   return (
     <Component
       className={twMerge(
-        "relative z-10 flex items-center text-sm text-zinc-400 dark:text-zinc-500",
+        "relative z-10 flex items-center text-sm text-zinc-500/80 dark:text-zinc-400/80",
         top && "order-first mb-3",
         decorate && "pl-3.5",
         className
