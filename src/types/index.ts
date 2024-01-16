@@ -12,7 +12,8 @@ export type Route = {
 };
 
 export type Contact = {
-  name: "telegram" | "github" | "linkedin" | "email";
+  id: "telegram" | "github" | "linkedin" | "email" | "cal";
+  name: string;
   url: string;
   action: string;
   icon: React.FunctionComponent<any>;
