@@ -20,7 +20,7 @@ export default function GetEmail(props: Props) {
       {...rest}
     >
       {hasCopied && "Copied!"}
-      {!hasCopied && "Copy Email"}
+      {!hasCopied && "Copy email"}
       {hasCopied && <Icons.Check size={18} />}
       {!hasCopied && <Icons.Clipboard size={18} />}
     </Button>
