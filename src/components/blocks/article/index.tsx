@@ -1,11 +1,14 @@
 import Card from "@/components/blocks/card";
 import { formatArticleDate } from "@/lib/format-date";
+import Badge from "@/components/atoms/badge";
 
 type Props = {
   slug: string;
   title: string;
+  readingTime: number;
   created: Date;
   description: string;
+  topic: string;
 };
 
 function ArticlePreviewSquare(props: Props) {
@@ -26,7 +29,7 @@ function ArticlePreviewSquare(props: Props) {
 }
 
 function ArticlePreviewLine(props: Props) {
-  const { slug, title, created, description } = props;
+  const { slug, title, created, description, topic, readingTime } = props;
 
   const date = formatArticleDate(new Date(created));
 
@@ -44,8 +47,18 @@ function ArticlePreviewLine(props: Props) {
           {date}
         </Card.Eyebrow>
         <Card.Description>{description}</Card.Description>
+
+        <div className="mb-1.5 mt-2.5 flex items-center">
+          <Badge size="sm" className="z-10 mr-2.5">
+            {topic}
+          </Badge>
+          <Card.Eyebrow>{readingTime} minute read</Card.Eyebrow>
+        </div>
+
         <Card.Cta>Read article</Card.Cta>
       </Card>
+
+      {/* Item on the left on md+ */}
       <Card.Eyebrow
         as="time"
         dateTime={date}

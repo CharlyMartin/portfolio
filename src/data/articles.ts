@@ -2,6 +2,7 @@ import { globSync } from "fast-glob";
 import { z } from "zod";
 
 import { parseFileContent } from "@/lib/parse-markdown";
+import { getReadingTime } from "@/lib/get-reading-time";
 
 type Filters = {
   highlight?: boolean;
@@ -25,7 +26,8 @@ export async function getArticlesMeta(filters?: Filters) {
   for (const slug of slugs) {
     const content = await parseFileContent("articles", `${slug}/index`);
     const metadata = metadataSchema.parse(content.metadata);
-    metas.push({ slug, ...metadata });
+    const readingTime = getReadingTime(content.html);
+    metas.push({ slug, readingTime, ...metadata });
   }
 
   metas.sort((a, z) => {
