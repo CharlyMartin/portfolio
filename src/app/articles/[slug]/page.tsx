@@ -5,7 +5,7 @@ import Container from "@/components/blocks/container";
 import Back from "@/components/atoms/back";
 import { getArticle } from "@/data/articles";
 import Prose from "@/components/atoms/prose";
-import { formatArticleDate } from "@/lib/format-date";
+import { DATE_FORMATS, formatArticleDate } from "@/lib/format-date";
 import PageTitle from "@/components/blocks/page-title";
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
@@ -29,6 +29,16 @@ export default async function ArticlePage(props: Props) {
   const article = await getArticle(params.slug);
   const { metadata, html } = article;
 
+  const created = formatArticleDate(
+    metadata.created,
+    DATE_FORMATS.ARTICLE_LONG
+  );
+
+  const updated = formatArticleDate(
+    metadata.updated,
+    DATE_FORMATS.ARTICLE_LONG
+  );
+
   return (
     <Container>
       <div className="mx-auto max-w-2xl">
@@ -36,9 +46,8 @@ export default async function ArticlePage(props: Props) {
         <PageTitle
           title={metadata.title}
           subtitle={[
-            `Published on ${formatArticleDate(new Date(metadata.created))}`,
-            metadata.updated &&
-              `Updated on ${formatArticleDate(new Date(metadata.updated))}`,
+            `Published on ${created}`,
+            metadata.updated && `Updated on ${updated}`,
           ]}
         />
 

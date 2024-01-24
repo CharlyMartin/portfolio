@@ -6,7 +6,7 @@ import Back from "@/components/atoms/back";
 import Section from "@/components/blocks/section";
 import Icons from "@/components/atoms/icons";
 import { getProject } from "@/data/projects";
-import { formatProjectDates } from "@/lib/format-date";
+import { DATE_FORMATS, formatProjectDates } from "@/lib/format-date";
 import { Use } from "@/types";
 import Badge from "@/components/atoms/badge";
 import PageTitle from "@/components/blocks/page-title";
@@ -46,7 +46,10 @@ export default async function ProjectPage(props: Props) {
         href="/projects"
       />
 
-      <PageTitle title={name} subtitle={[formatProjectDates(dates), hq]} />
+      <PageTitle
+        title={name}
+        subtitle={[formatProjectDates(dates, DATE_FORMATS.PROJECT_LONG), hq]}
+      />
 
       <div className="my-8 md:my-12">
         {roles.map((item, i) => {

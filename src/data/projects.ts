@@ -1,3 +1,5 @@
+import { DateTime } from "luxon";
+
 import { parseFileContent } from "@/lib/parse-markdown";
 import type { Project, ProjectPreview } from "@/types";
 import { getSkill } from "@/data/skills";
@@ -61,7 +63,7 @@ import microchainImg2 from "@/images/projects/microchain-systems/app-2.png";
 // 11. ENS Everywhere
 import ensLogo from "@/images/projects/ens-everywhere/logo.png";
 import ensImg1 from "@/images/projects/ens-everywhere/app-1.png";
-import ensImg2 from "@/images/projects/ens-everywhere/app-2.png";
+// import ensImg2 from "@/images/projects/ens-everywhere/app-2.png";
 
 // 12. Cofactory
 import cofactoryLogo from "@/images/projects/cofactory/logo.jpg";
@@ -93,7 +95,10 @@ const data: Array<Project> = [
       { src: lottieImg1, alt: "Lottie Studio Image" },
       { src: lottieImg2, alt: "Lottie Studio Image" },
     ],
-    dates: { start: new Date(2019, 10), end: new Date(2020, 1) },
+    dates: {
+      start: DateTime.fromObject({ year: 2019, month: 9 }),
+      end: DateTime.fromObject({ year: 2020, month: 2 }),
+    },
     url: "https://lottiestudio.com/",
     display: true,
     highlight: true,
@@ -127,7 +132,10 @@ const data: Array<Project> = [
       { src: synclyImg7, alt: "Syncly Image" },
       { src: synclyImg8, alt: "Syncly Image" },
     ],
-    dates: { start: new Date(2019, 9), end: new Date(2021, 10) },
+    dates: {
+      start: DateTime.fromObject({ year: 2019, month: 10 }),
+      end: DateTime.fromObject({ year: 2021, month: 10 }),
+    },
     url: "https://www.syncly.fr",
     display: true,
     highlight: true,
@@ -153,7 +161,10 @@ const data: Array<Project> = [
       { src: immunefiImg2, alt: "Immunefi Image" },
       { src: immunefiImg3, alt: "Immunefi Image" },
     ],
-    dates: { start: new Date(2021, 10), end: new Date(2022, 3) },
+    dates: {
+      start: DateTime.fromObject({ year: 2021, month: 10 }),
+      end: DateTime.fromObject({ year: 2022, month: 3 }),
+    },
     url: "https://immunefi.com/",
     display: true,
     highlight: false,
@@ -181,7 +192,10 @@ const data: Array<Project> = [
       { src: reliefImg2, alt: "Relief Image" },
       { src: reliefImg3, alt: "Relief Image" },
     ],
-    dates: { start: new Date(2021, 3), end: new Date(2021, 4) },
+    dates: {
+      start: DateTime.fromObject({ year: 2021, month: 3 }),
+      end: DateTime.fromObject({ year: 2021, month: 4 }),
+    },
     url: "https://www.relief.app/",
     display: true,
     highlight: false,
@@ -199,7 +213,10 @@ const data: Array<Project> = [
     description: "The payroll company that protects freelancers anywhere.",
     logo: { src: openworkLogo, style: { padding: "10px" } },
     images: [{ src: openworkImg, alt: "OpenWork Image" }],
-    dates: { start: new Date(2020, 4), end: new Date(2021, 4) },
+    dates: {
+      start: DateTime.fromObject({ year: 2020, month: 4 }),
+      end: DateTime.fromObject({ year: 2021, month: 4 }),
+    },
     url: "https://www.openwork.co/",
     display: true,
     highlight: false,
@@ -227,7 +244,10 @@ const data: Array<Project> = [
       { src: myStudioloImg2, alt: "My Studiolo Image" },
       { src: myStudioloImg3, alt: "My Studiolo Image" },
     ],
-    dates: { start: new Date(2019, 2), end: new Date(2019, 8) },
+    dates: {
+      start: DateTime.fromObject({ year: 2019, month: 3 }),
+      end: DateTime.fromObject({ year: 2019, month: 9 }),
+    },
     url: "https://www.mystudiolo.com/",
     display: true,
     highlight: false,
@@ -251,7 +271,10 @@ const data: Array<Project> = [
     description: "TODO",
     logo: { src: hubsyLogo, style: { padding: "8px" } },
     images: [{ src: hubsyImg1, alt: "Hubsy Image" }],
-    dates: { start: new Date(2018, 9), end: new Date(2018, 11) },
+    dates: {
+      start: DateTime.fromObject({ year: 2018, month: 8 }),
+      end: DateTime.fromObject({ year: 2018, month: 12 }),
+    },
     url: "https://www.hubsy.fr/",
     display: false,
     highlight: false,
@@ -272,7 +295,10 @@ const data: Array<Project> = [
       style: { backgroundColor: "#EDBA2F", padding: "8px" },
     },
     images: [{ src: mayoneeseImg, alt: "Mayoneese Image." }],
-    dates: { start: new Date(2018, 9), end: new Date(2019, 6) },
+    dates: {
+      start: DateTime.fromObject({ year: 2018, month: 8 }),
+      end: DateTime.fromObject({ year: 2019, month: 5 }),
+    },
     url: "https://mayoneese.netlify.app/",
     display: false,
     highlight: false,
@@ -289,7 +315,10 @@ const data: Array<Project> = [
     description:
       "A language learning experiment by the French National Institute Research.",
     images: [{ src: motolangageImg, alt: "Motolangage Image" }],
-    dates: { start: new Date(2019, 6), end: new Date(2019, 10) },
+    dates: {
+      start: DateTime.fromObject({ year: 2019, month: 7 }),
+      end: DateTime.fromObject({ year: 2019, month: 11 }),
+    },
     url: "https://www.inserm.fr/en/home/",
     display: false,
     highlight: false,
@@ -313,7 +342,10 @@ const data: Array<Project> = [
       { src: microchainImg1, alt: "Microchain Systems Image" },
       { src: microchainImg2, alt: "Microchain Systems Image" },
     ],
-    dates: { start: new Date(2022, 7), end: new Date(2023, 7) },
+    dates: {
+      start: DateTime.fromObject({ year: 2022, month: 7 }),
+      end: DateTime.fromObject({ year: 2023, month: 7 }),
+    },
     display: true,
     highlight: true,
     url: "https://microchain.systems/",
@@ -339,7 +371,10 @@ const data: Array<Project> = [
       style: { backgroundColor: "#F7FAFC", padding: "12px" },
     },
     images: [{ src: ensImg1, alt: "ENS Everywhere Image" }],
-    dates: { start: new Date(2022, 9), end: new Date(2022, 9) },
+    dates: {
+      start: DateTime.fromObject({ year: 2022, month: 9 }),
+      end: DateTime.fromObject({ year: 2022, month: 9 }),
+    },
     url: "https://ens-everywhere.vercel.app/",
     display: true,
     highlight: false,
@@ -374,7 +409,10 @@ const data: Array<Project> = [
       { src: cofactoryImg8, alt: "Cofactory Image" },
       { src: cofactoryImg9, alt: "Cofactory Image" },
     ],
-    dates: { start: new Date(2023, 9), end: new Date(2023, 11) },
+    dates: {
+      start: DateTime.fromObject({ year: 2023, month: 9 }),
+      end: DateTime.fromObject({ year: 2023, month: 12 }),
+    },
     url: "https://cofactory.ai/",
     display: true,
     highlight: true,
