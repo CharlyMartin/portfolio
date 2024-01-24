@@ -162,8 +162,8 @@ const data: Array<Project> = [
       { src: immunefiImg3, alt: "Immunefi Image" },
     ],
     dates: {
-      start: DateTime.fromObject({ year: 2021, month: 10 }),
-      end: DateTime.fromObject({ year: 2022, month: 3 }),
+      start: DateTime.fromObject({ year: 2021, month: 11 }),
+      end: DateTime.fromObject({ year: 2022, month: 5 }),
     },
     url: "https://immunefi.com/",
     display: true,
