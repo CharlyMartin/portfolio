@@ -1,6 +1,7 @@
 import React from "react";
 import type { ImageProps } from "next/image";
 import type { LinkProps } from "next/link";
+import type { DateTime } from "luxon";
 
 // INTERNAL USE
 export type Availability = "available" | "limited" | "busy";
@@ -35,7 +36,7 @@ export type Project = {
   description: string;
   logo?: { src: ImageProps["src"]; style?: React.CSSProperties };
   images: Array<ImageProps>;
-  dates: { start: Date; end?: Date };
+  dates: { start: DateTime; end?: DateTime };
   highlight?: boolean; // Whether or not to highlight the project on the home page
   url: string; // The URL of the project. If not provided, the project is shown as "archived".
   status: "live" | "wip" | "archived";

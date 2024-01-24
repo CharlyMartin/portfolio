@@ -1,46 +1,47 @@
+import { DateTime } from "luxon";
+
 import { Project } from "@/types";
 
-export function formatProjectDates(
-  dates: Project["dates"],
-  opt?: Intl.DateTimeFormatOptions
-): string {
+type Options = Intl.DateTimeFormatOptions;
+
+export function formatProjectDates(dates: Project["dates"], options?: Options) {
   const { start, end } = dates;
-
-  const options: Intl.DateTimeFormatOptions = {
-    month: "long",
-    year: "numeric",
-    ...opt,
-  };
-
-  const formattedStart = formatDate(start, options);
+  const opt = options || {};
 
   // If no end date, show "Present"
-  if (!end) return `${formattedStart} to Present`;
+  if (!end) {
+    return `${start.toLocaleString(opt)} to Present`;
+  }
 
   // If dates are the same, only show one
-  if (start.getTime() == end.getTime()) return formattedStart;
+  if (start.toISO() == end.toISO()) {
+    return start.toLocaleString(opt);
+  }
 
-  // If years are the same, only show year once
-  if (start.getFullYear() == end.getFullYear()) {
-    const year = start.getFullYear();
-    const startMonth = formatDate(start, { month: "long", ...opt });
-    const endMonth = formatDate(end, { month: "long", ...opt });
+  // If years are the same, only show the year once
+  if (start.year == end.year) {
+    const startMonth = start.toLocaleString({ month: opt.month });
+    const endMonth = end.toLocaleString({ month: opt.month });
 
-    return `${startMonth} to ${endMonth} ${year}`;
+    return `${startMonth} to ${endMonth} ${start.year}`;
   }
 
   // Otherwise, show both dates
-  const formattedEnd = formatDate(end, options);
-  return `${formattedStart} to ${formattedEnd}`;
+  return `${start.toLocaleString(opt)} to ${end.toLocaleString(opt)}`;
 }
 
-export function formatArticleDate(date: Date) {
-  return formatDate(date, { day: "numeric", month: "long", year: "numeric" });
+export function formatArticleDate(date?: Date, options?: Options) {
+  if (!date) return "";
+
+  const d = DateTime.fromJSDate(date);
+
+  const opt = options || {};
+  return d.toLocaleString(opt);
 }
 
-function formatDate(date: Date, options?: Intl.DateTimeFormatOptions) {
-  return date.toLocaleDateString("en-AU", {
-    timeZone: "UTC",
-    ...options,
-  });
-}
+export const DATE_FORMATS: Record<string, Intl.DateTimeFormatOptions> = {
+  PROJECT_LONG: { month: "long", year: "numeric" },
+  PROJECT_SHORT: { month: "short", year: "numeric" },
+  ARTICLE_LONG: { day: "numeric", month: "long", year: "numeric" },
+  ARTICLE_SHORT: { day: "numeric", month: "short", year: "numeric" },
+};

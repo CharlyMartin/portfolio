@@ -2,7 +2,7 @@ import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 
 import Card from "@/components/blocks/card";
-import { formatProjectDates } from "@/lib/format-date";
+import { DATE_FORMATS, formatProjectDates } from "@/lib/format-date";
 import type { ProjectPreview } from "@/types";
 import Badge from "@/components/atoms/badge";
 
@@ -10,7 +10,7 @@ type Props = ProjectPreview;
 
 export default function Project(props: Props) {
   const { name, logo, description, dates, slug, area } = props;
-  const formattedDates = formatProjectDates(dates, { month: "short" });
+  const formattedDates = formatProjectDates(dates, DATE_FORMATS.PROJECT_SHORT);
 
   return (
     <Card className="space-y-5">
@@ -52,7 +52,7 @@ export default function Project(props: Props) {
           <Badge size="sm" className="z-10 mr-2.5">
             {area}
           </Badge>
-          <Card.Eyebrow as="time" dateTime={dates.end?.toLocaleDateString()}>
+          <Card.Eyebrow as="time" dateTime={dates.end?.toLocaleString()}>
             {formattedDates}
           </Card.Eyebrow>
         </div>
