@@ -1,5 +1,3 @@
-import { DateTime } from "luxon";
-
 import Card from "@/components/blocks/card";
 import { DATE_FORMATS, formatArticleDate } from "@/lib/format-date";
 import Badge from "@/components/atoms/badge";
@@ -33,7 +31,7 @@ function ArticlePreviewSquare(props: Props) {
 function ArticlePreviewLine(props: Props) {
   const { slug, title, created, description, topic, readingTime } = props;
 
-  const date = formatArticleDate(created, DATE_FORMATS.ARTICLE_SHORT);
+  const date = formatArticleDate(created, DATE_FORMATS.ARTICLE_LONG);
 
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
@@ -73,9 +71,9 @@ function ArticlePreviewLine(props: Props) {
   );
 }
 
-const Articles = {
+const Article = {
   Square: ArticlePreviewSquare,
   Line: ArticlePreviewLine,
 };
 
-export default Articles;
+export default Article;
