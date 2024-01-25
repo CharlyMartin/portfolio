@@ -36,10 +36,7 @@ export default async function About() {
           <Prose html={bio.long} />
         </div>
         <div className="lg:pl-20">
-          <ul
-            role="list"
-            className="rounded-2xl bg-zinc-50 p-3 dark:bg-zinc-800"
-          >
+          <ul role="list" className="lg:pt-4">
             {contacts.map((contact, i) => {
               const { url, icon: Icon, action } = contact;
 

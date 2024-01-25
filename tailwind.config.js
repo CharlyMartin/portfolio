@@ -98,7 +98,7 @@ module.exports = {
 
             // Base
             color: "var(--tw-prose-body)",
-            lineHeight: "1.75rem",
+            lineHeight: "1.9rem",
 
             "> *": {
               marginTop: theme("spacing.10"),
