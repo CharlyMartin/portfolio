@@ -17,8 +17,9 @@ const data: Array<Use> = [
   {
     id: 2,
     name: "React.js",
+    highlight: true,
     meta: "UI Library",
-    oneLiner: "A JavaScript library for building user interfaces.",
+    oneLiner: "The library for building user interfaces.",
     description:
       "React blew my mind away and got me into frontend development. I taught myself the basics early 2018 and hit the ground running with projects. I have mainly been working with the React ecosystem since then.",
     url: "https://reactjs.org/",
@@ -380,7 +381,6 @@ const data: Array<Use> = [
   {
     id: 38,
     name: "React Query",
-    highlight: true,
     meta: "Async State Management",
     oneLiner: "The React async state management library.",
     description:
