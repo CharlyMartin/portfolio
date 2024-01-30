@@ -149,10 +149,10 @@ function FavoriteUse(props: FavoriteUseProps) {
   );
 }
 
-type InterestProps = {
-  short: string;
-  long: string;
-};
+// type InterestProps = {
+//   short: string;
+//   long: string;
+// };
 
 // function Interests(props: InterestProps) {
 //   const { short, long } = props;
