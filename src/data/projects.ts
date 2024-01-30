@@ -13,14 +13,17 @@ import lottieImg2 from "@/images/projects/lottie-studio/landing-2.png";
 
 // 2. Syncly
 import synclyLogo from "@/images/projects/syncly/logo.png";
-import synclyImg1 from "@/images/projects/syncly/app-8.png";
-import synclyImg2 from "@/images/projects/syncly/app-1.png";
-import synclyImg3 from "@/images/projects/syncly/app-2.png";
-import synclyImg4 from "@/images/projects/syncly/app-3.png";
-import synclyImg5 from "@/images/projects/syncly/app-4.png";
-import synclyImg6 from "@/images/projects/syncly/app-5.png";
-import synclyImg7 from "@/images/projects/syncly/app-6.png";
-import synclyImg8 from "@/images/projects/syncly/app-7.png";
+import synclyBook1 from "@/images/projects/syncly/app-7.png";
+import synclyBook2 from "@/images/projects/syncly/app-8.png";
+import synclyBook3 from "@/images/projects/syncly/app-9.png";
+import synclyBook4 from "@/images/projects/syncly/app-10.png";
+import synclyBook5 from "@/images/projects/syncly/app-11.png";
+import synclyAdmin1 from "@/images/projects/syncly/app-1.png";
+import synclyAdmin2 from "@/images/projects/syncly/app-2.png";
+import synclyAdmin3 from "@/images/projects/syncly/app-3.png";
+import synclyAdmin4 from "@/images/projects/syncly/app-4.png";
+import synclyAdmin5 from "@/images/projects/syncly/app-5.png";
+import synclyAdmin6 from "@/images/projects/syncly/app-6.png";
 
 // 3. Immunefi
 import immunefiImg1 from "@/images/projects/immunefi/landing-1.png";
@@ -124,14 +127,17 @@ const data: Array<Project> = [
       style: { backgroundColor: "#f3f3ff" },
     },
     images: [
-      { src: synclyImg1, alt: "Syncly Image" },
-      { src: synclyImg2, alt: "Syncly Image" },
-      { src: synclyImg3, alt: "Syncly Image" },
-      { src: synclyImg4, alt: "Syncly Image" },
-      { src: synclyImg5, alt: "Syncly Image" },
-      { src: synclyImg6, alt: "Syncly Image" },
-      { src: synclyImg7, alt: "Syncly Image" },
-      { src: synclyImg8, alt: "Syncly Image" },
+      { src: synclyBook1, alt: "Syncly Image" },
+      { src: synclyBook2, alt: "Syncly Image" },
+      { src: synclyBook3, alt: "Syncly Image" },
+      { src: synclyBook4, alt: "Syncly Image" },
+      { src: synclyBook5, alt: "Syncly Image" },
+      { src: synclyAdmin1, alt: "Syncly Image" },
+      { src: synclyAdmin2, alt: "Syncly Image" },
+      { src: synclyAdmin3, alt: "Syncly Image" },
+      { src: synclyAdmin4, alt: "Syncly Image" },
+      { src: synclyAdmin5, alt: "Syncly Image" },
+      { src: synclyAdmin6, alt: "Syncly Image" },
     ],
     dates: {
       start: DateTime.fromObject({ year: 2019, month: 10 }),
