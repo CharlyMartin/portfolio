@@ -41,7 +41,7 @@ export default async function Home() {
     <React.Fragment>
       <Container>
         <div className="max-w-2xl">
-          <Interests short={bio.badge.short} long={bio.badge.long} />
+          {/* <Interests short={bio.badge.short} long={bio.badge.long} /> */}
 
           <Title>{bio.headline}</Title>
           <Prose html={bio.short} className="standalone mt-4 sm:mt-6" />
@@ -154,18 +154,18 @@ type InterestProps = {
   long: string;
 };
 
-function Interests(props: InterestProps) {
-  const { short, long } = props;
+// function Interests(props: InterestProps) {
+//   const { short, long } = props;
 
-  return (
-    <span className="mb-3 inline-flex items-baseline rounded-full bg-zinc-200/40 px-4 py-1 text-sm text-zinc-700 dark:bg-zinc-700/30 dark:text-zinc-400">
-      <p className="mr-3 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
-        INTERESTS
-      </p>
-      <p className="block sm:hidden">{short}</p>
-      <p className="hidden sm:block">{long}</p>
-      <p className="pl-2 pr-0.5">🌱</p>
-      <p className="pl-0.5">💿</p>
-    </span>
-  );
-}
+//   return (
+//     <span className="mb-3 inline-flex items-baseline rounded-full bg-zinc-200/40 px-4 py-1 text-sm text-zinc-700 dark:bg-zinc-700/30 dark:text-zinc-400">
+//       <p className="mr-3 text-xs font-semibold text-zinc-400 dark:text-zinc-500">
+//         INTERESTS
+//       </p>
+//       <p className="block sm:hidden">{short}</p>
+//       <p className="hidden sm:block">{long}</p>
+//       <p className="pl-2 pr-0.5">🌱</p>
+//       <p className="pl-0.5">💿</p>
+//     </span>
+//   );
+// }
