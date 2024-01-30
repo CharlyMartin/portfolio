@@ -41,6 +41,7 @@ export type Project = {
   url: string; // The URL of the project. If not provided, the project is shown as "archived".
   status: "live" | "wip" | "archived";
   area: "web2" | "web3" | "ai"; // Whether I worked on the web2 or web3 part
+  employment: "permanent" | "contract" | "side";
   display: boolean; // Whether or not to display the project on the projects page
   stack: Array<Use["id"]>;
   roles: Array<Skill["id"]>;

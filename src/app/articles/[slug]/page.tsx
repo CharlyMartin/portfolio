@@ -14,8 +14,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const article = await getArticle(params.slug);
 
   return {
-    title: article.metadata.title,
-    description: article.metadata.description,
+    title: article.title,
+    description: article.description,
   };
 }
 
@@ -27,27 +27,23 @@ export default async function ArticlePage(props: Props) {
   const { params } = props;
 
   const article = await getArticle(params.slug);
-  const { metadata, html } = article;
+  const { title, html, topic } = article;
 
-  const created = formatArticleDate(
-    metadata.created,
-    DATE_FORMATS.ARTICLE_LONG
-  );
-
-  const updated = formatArticleDate(
-    metadata.updated,
-    DATE_FORMATS.ARTICLE_LONG
-  );
+  const created = formatArticleDate(article.created, DATE_FORMATS.ARTICLE_LONG);
+  const updated = formatArticleDate(article.updated, DATE_FORMATS.ARTICLE_LONG);
 
   return (
     <Container>
       <div className="mx-auto max-w-2xl">
         <Back className="lg:-left-[102px] lg:top-1.5 xl:absolute" />
         <PageTitle
-          title={metadata.title}
+          title={title}
           subtitle={[
             `Published on ${created}`,
-            metadata.updated && `Updated on ${updated}`,
+            article.updated && `Updated on ${updated}`,
+            topic == "code" && "Code",
+            topic == "life" && "Life",
+            topic == "startup" && "Startups",
           ]}
         />
 

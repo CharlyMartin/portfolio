@@ -36,8 +36,19 @@ export default async function ProjectPage(props: Props) {
   const { params } = props;
 
   const project = await getProject(params.slug);
-  const { name, dates, hq, roles, people, images, html, stack, url, status } =
-    project;
+  const {
+    name,
+    dates,
+    hq,
+    roles,
+    people,
+    images,
+    html,
+    stack,
+    url,
+    status,
+    employment,
+  } = project;
 
   return (
     <Container>
@@ -48,7 +59,13 @@ export default async function ProjectPage(props: Props) {
 
       <PageTitle
         title={name}
-        subtitle={[formatProjectDates(dates, DATE_FORMATS.PROJECT_LONG), hq]}
+        subtitle={[
+          formatProjectDates(dates, DATE_FORMATS.PROJECT_LONG),
+          employment == "contract" && "Contract",
+          employment == "permanent" && "Permanent",
+          employment == "side" && "Side Project",
+          hq,
+        ]}
       />
 
       <div className="my-8 md:my-12">

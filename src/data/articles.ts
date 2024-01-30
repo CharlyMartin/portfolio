@@ -42,7 +42,11 @@ export async function getArticlesMeta(filters?: Filters) {
 }
 
 export async function getArticle(slug: string) {
-  return parseFileContent("articles", `${slug}/index`);
+  const content = await parseFileContent("articles", `${slug}/index`);
+  const metadata = metadataSchema.parse(content.metadata);
+  const readingTime = getReadingTime(content.html);
+
+  return { readingTime, ...metadata, html: content.html };
 }
 
 function getAllSlugs(): Array<string> {

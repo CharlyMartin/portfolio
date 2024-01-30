@@ -110,6 +110,7 @@ const data: Array<Project> = [
     ],
     status: "live",
     area: "web2",
+    employment: "side",
   },
   {
     id: 2,
@@ -147,6 +148,7 @@ const data: Array<Project> = [
     ],
     status: "archived",
     area: "web2",
+    employment: "permanent",
   },
   {
     id: 3,
@@ -178,6 +180,7 @@ const data: Array<Project> = [
     ],
     status: "live",
     area: "web3",
+    employment: "contract",
   },
   {
     id: 4,
@@ -204,6 +207,7 @@ const data: Array<Project> = [
     people: [{ id: 22, role: { id: 11 } }],
     status: "live",
     area: "web2",
+    employment: "contract",
   },
   {
     id: 5,
@@ -231,6 +235,7 @@ const data: Array<Project> = [
     ],
     status: "live",
     area: "web2",
+    employment: "contract",
   },
   {
     id: 6,
@@ -262,6 +267,7 @@ const data: Array<Project> = [
     ],
     status: "archived",
     area: "web2",
+    employment: "contract",
   },
   {
     id: 7,
@@ -283,6 +289,7 @@ const data: Array<Project> = [
     people: [{ id: 3, role: { id: 11 } }],
     status: "live",
     area: "web2",
+    employment: "contract",
   },
   {
     id: 8,
@@ -306,6 +313,7 @@ const data: Array<Project> = [
     stack: [10, 26, 21, 29, 9],
     status: "archived",
     area: "web2",
+    employment: "side",
   },
   {
     id: 9,
@@ -327,6 +335,7 @@ const data: Array<Project> = [
     people: [{ id: 9, role: { id: 2 } }],
     status: "archived",
     area: "web2",
+    employment: "contract",
   },
   {
     id: 10,
@@ -358,6 +367,7 @@ const data: Array<Project> = [
     ],
     status: "live",
     area: "web3",
+    employment: "contract",
   },
   {
     id: 11,
@@ -386,6 +396,7 @@ const data: Array<Project> = [
     ],
     status: "archived",
     area: "web3",
+    employment: "side",
   },
   {
     id: 12,
@@ -426,6 +437,7 @@ const data: Array<Project> = [
     ],
     status: "live",
     area: "ai",
+    employment: "contract",
   },
 ];
 
