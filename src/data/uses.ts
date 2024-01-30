@@ -476,7 +476,7 @@ const data: Array<Use> = [
     name: "Github Copilot",
     meta: "AI Tool",
     oneLiner: "The most popular AI code editor assistant",
-    favorite: true,
+    // favorite: true,
     description:
       "Gitub Copilot is one of these tools with a massive wow factor, the kind you only have every few years. It's mind-blowing. Somedays, I feel like I am the copilot of Github Copilot, as it seems to increasingly know what I want to do. ",
     url: "https://github.com/features/copilot/",
