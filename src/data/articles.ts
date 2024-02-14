@@ -2,7 +2,7 @@ import { globSync } from "fast-glob";
 import { z } from "zod";
 
 import { parseFileContent } from "@/lib/parse-markdown";
-import { getReadingTime } from "@/lib/get-reading-time";
+import { getWordCount } from "@/lib/get-word-count";
 
 type Filters = {
   highlight?: boolean;
@@ -26,8 +26,8 @@ export async function getArticlesMeta(filters?: Filters) {
   for (const slug of slugs) {
     const content = await parseFileContent("articles", `${slug}/index`);
     const metadata = metadataSchema.parse(content.metadata);
-    const readingTime = getReadingTime(content.html);
-    metas.push({ slug, readingTime, ...metadata });
+    const wordCount = getWordCount(content.html);
+    metas.push({ slug, wordCount, ...metadata });
   }
 
   metas.sort((a, z) => {
@@ -44,9 +44,9 @@ export async function getArticlesMeta(filters?: Filters) {
 export async function getArticle(slug: string) {
   const content = await parseFileContent("articles", `${slug}/index`);
   const metadata = metadataSchema.parse(content.metadata);
-  const readingTime = getReadingTime(content.html);
+  const wordCount = getWordCount(content.html);
 
-  return { readingTime, ...metadata, html: content.html };
+  return { wordCount, ...metadata, html: content.html };
 }
 
 function getAllSlugs(): Array<string> {

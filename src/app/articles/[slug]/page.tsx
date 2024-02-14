@@ -27,10 +27,11 @@ export default async function ArticlePage(props: Props) {
   const { params } = props;
 
   const article = await getArticle(params.slug);
-  const { title, html, topic } = article;
+  const { title, html, topic, wordCount } = article;
 
   const created = formatArticleDate(article.created, DATE_FORMATS.ARTICLE_LONG);
   const updated = formatArticleDate(article.updated, DATE_FORMATS.ARTICLE_LONG);
+  const formattedCount = new Intl.NumberFormat("en-US").format(wordCount);
 
   return (
     <Container>
@@ -44,6 +45,7 @@ export default async function ArticlePage(props: Props) {
             topic == "code" && "Code",
             topic == "life" && "Life",
             topic == "startup" && "Startups",
+            `${formattedCount} words`,
           ]}
         />
 

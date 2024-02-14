@@ -5,7 +5,7 @@ import Badge from "@/components/atoms/badge";
 type Props = {
   slug: string;
   title: string;
-  readingTime: number;
+  wordCount: number;
   created: Date;
   description: string;
   topic: string;
@@ -29,9 +29,10 @@ function ArticlePreviewSquare(props: Props) {
 }
 
 function ArticlePreviewLine(props: Props) {
-  const { slug, title, created, description, topic, readingTime } = props;
+  const { slug, title, created, description, topic, wordCount } = props;
 
   const date = formatArticleDate(created, DATE_FORMATS.ARTICLE_LONG);
+  const formattedCount = new Intl.NumberFormat("en-US").format(wordCount);
 
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
@@ -52,7 +53,7 @@ function ArticlePreviewLine(props: Props) {
           <Badge size="sm" className="z-10 mr-2.5">
             {topic}
           </Badge>
-          <Card.Eyebrow>{readingTime} minute read</Card.Eyebrow>
+          <Card.Eyebrow>{formattedCount} words</Card.Eyebrow>
         </div>
 
         <Card.Cta>Read article</Card.Cta>
