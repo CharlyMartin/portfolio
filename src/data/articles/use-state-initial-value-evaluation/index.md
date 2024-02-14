@@ -18,7 +18,7 @@ I decided to run a little experiment to see for myself how `useState` treats its
 
 ## Experiment 1 - Triggering re-renders locally
 
-For this [first experiment](https://codesandbox.io/p/sandbox/use-state-1-hnlnzj?file=%2Fsrc%2FApp.js), I've created two similar components rendering a single text input within a form. Nothing fancy. Both components render the same React elements, and both rely on `useState` to control the text input's value. They only differ in the way their state is initialised.
+For this [first experiment](https://stackblitz.com/edit/stackblitz-starters-cgfzdv?file=src%2Fapp.tsx), I've created two similar components rendering a single text input within a form. Nothing fancy. Both components render the same React elements, and both rely on `useState` to control the text input's value. They only differ in the way their state is initialised.
 
 The first one uses a primitive value, a string, and the second one, a function declaration. I've added console logs alongside each initialiser to see how often they are called. To "attach" a logger to a primitive value, I've used the [OR logical operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR), written as `||`. It evaluates expressions from left to right and returns the first truthy value. The first expression, `console.log`, evaluates to `undefined`, which is falsy, so the second expression is evaluated, and the operator returns `"Charly"`.
 
@@ -76,7 +76,7 @@ I've expanded on the experiment to find out.
 
 ## Experiment 2 - Triggering re-renders globally
 
-For the [second experiment](https://codesandbox.io/p/sandbox/use-state-2-w3pxfk?file=%2Fsrc%2FApp.js%3A1%2C1-52%2C1), I have made the initial value of the state dynamic using `Math.random()`. I've also added a button in the `App` component to trigger a re-render in both children components. Finally, I turned the text inputs into paragraph tags to simplify the code.
+For the [second experiment](https://stackblitz.com/edit/stackblitz-starters-uhht8a?file=src%2Fapp.tsx), I have made the initial value of the state dynamic using `Math.random()`. I've also added a button in the `App` component to trigger a re-render in both children components. Finally, I turned the text inputs into paragraph tags to simplify the code.
 
 The goal is to see how the state reacts when it gets a new initial value on re-renders. And with a randomised value, we are guaranteed to get a new value on each function call. Passing a dynamically generated value to `useState` is uncommon in React applications. It might be my first time trying it, so perhaps I've overlooked it and missed an important detail.
 

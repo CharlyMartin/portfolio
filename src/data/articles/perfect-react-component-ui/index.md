@@ -14,7 +14,7 @@ Writing this article is an effort to make explicit all the implicit decisions I 
 
 I'm going to use a button component to illustrate my points. I like this example because even though they look simple enough at first, they require a lot of attention to detail. They are a crucial part of any website and are present in almost every project. They paint the UI and handle key user interactions, sometimes even navigation. They can have many states (disabled, focus, active, etc.), usually come in a bunch variants and sizes, and have accessibility concerns. In short, you don't want to mess them up.
 
-Here's how my `<Button>` component looks like. You can play around with the code in [a CodeSandbox](https://codesandbox.io/p/sandbox/react-button-tailwind-62xm23) I created for this article. The prop interface is inspired by [Chakra UI](https://chakra-ui.com/docs/components/button/usage), a great component library for React.
+Here's how my `<Button>` component looks like. You can play around with the code in [this sandbox](https://stackblitz.com/edit/stackblitz-starters-ugbdid?file=src%2Fbutton.tsx) I created for this article. The prop interface is inspired by [Chakra UI](https://chakra-ui.com/docs/components/button/usage), a great component library for React.
 
 ```tsx
 import React from "react";
