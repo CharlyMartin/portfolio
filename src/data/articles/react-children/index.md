@@ -1,7 +1,7 @@
 ---
 title: "The deception of rendering React children"
-description: TODO.
-created: 2024-02-20
+description: All React developers learn early on that when a component re-renders, so do all of its children. But there's a nuance to this foundational concept that's not immediately obvious.
+created: 2024-02-22
 highlight: false
 topic: "code"
 ---
@@ -169,7 +169,7 @@ function parent(props) {
 }
 
 parent(child); // reference
-parent(child()); // call result
+parent(child()); // output
 ```
 
 ## How do we "fix" it?
