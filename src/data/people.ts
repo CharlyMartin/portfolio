@@ -180,7 +180,7 @@ const data: Array<People> = [
     id: 26,
     name: "Gary Moran",
     description: "TODO",
-    url: "https://www.linkedin.com/in/gary-moran-1a0b3a1b/",
+    url: "https://gmoxyz.ie/",
     skills: [8],
   },
 ];
