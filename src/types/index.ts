@@ -94,7 +94,8 @@ export type Use = {
     | "AI Tool"
     | "Bundler"
     | "Code Collaboration"
-    | "Design Tool";
+    | "Design Tool"
+    | "Build System";
   url: string;
   type:
     | "language"

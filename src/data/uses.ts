@@ -615,6 +615,17 @@ const data: Array<Use> = [
   //   url: "https://zod.dev/",
   //   type: "library",
   // },
+  {
+    id: 62,
+    name: "Turborepo",
+    meta: "Build System",
+    oneLiner:
+      "High-performance monorepo build system for JavaScript and TypeScript codebases.",
+    description:
+      "Turborepo is a great tool for managing monorepos. It makes it easy to build and deploy multiple packages in a single repository.",
+    url: "https://turborepo.dev/",
+    type: "devtool",
+  },
 ];
 
 export function getUse(id: number) {

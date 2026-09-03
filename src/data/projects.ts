@@ -81,6 +81,15 @@ import cofactoryImg8 from "@/images/projects/cofactory/app-8.png";
 import cofactoryImg9 from "@/images/projects/cofactory/app-9.png";
 import cofactoryImg10 from "@/images/projects/cofactory/landing-2.png";
 
+// 13. Filecoin Foundation
+import filecoinFoundationLogo from "@/images/projects/filecoin-foundation/logo.png";
+import filecoinFoundationImg1 from "@/images/projects/filecoin-foundation/filecoin-foundation-1.webp";
+import filecoinFoundationImg2 from "@/images/projects/filecoin-foundation/filecoin-foundation-2.webp";
+import filecoinFoundationImg3 from "@/images/projects/filecoin-foundation/filecoin-foundation-3.webp";
+import filecoinFoundationImg4 from "@/images/projects/filecoin-foundation/filecoin-foundation-4.webp";
+import filecoinFoundationImg5 from "@/images/projects/filecoin-foundation/filecoin-foundation-5.webp";
+import filecoinFoundationImg6 from "@/images/projects/filecoin-foundation/filecoin-foundation-6.webp";
+
 // Data
 const data: Array<Project> = [
   {
@@ -234,7 +243,7 @@ const data: Array<Project> = [
     stack: [1, 3, 29, 20, 31, 40],
     people: [
       { id: 8, role: { id: 4 } },
-      { id: 9, role: { id: 3 } },
+      { id: 9, role: { id: 16 } },
       { id: 12, role: { id: 2 } },
       { id: 13, role: { id: 1 } },
       { id: 14, role: { id: 1 } },
@@ -265,7 +274,7 @@ const data: Array<Project> = [
     roles: [1],
     stack: [1, 26, 16, 2, 27, 28, 14, 41, 22],
     people: [
-      { id: 9, role: { id: 11 } },
+      { id: 9, role: { id: 16 } },
       { id: 8, role: { id: 4 } },
       { id: 10, role: { id: 8 } },
       { id: 4, role: { id: 2 } },
@@ -348,7 +357,7 @@ const data: Array<Project> = [
     name: "Microchain Systems",
     slug: "microchain-systems",
     hq: "Lisbon, Portugal",
-    description: "The first DEX on the Fuel Network, currently on testnet.",
+    description: "The first open-source DEX on the Fuel Network",
     logo: {
       src: microchainLogo,
       style: { backgroundColor: "#EEECE7" },
@@ -444,6 +453,59 @@ const data: Array<Project> = [
     status: "live",
     area: "ai",
     employment: "contract",
+  },
+  {
+    id: 13,
+    name: "Filecoin Foundation",
+    slug: "filecoin-foundation",
+    hq: "San Francisco, USA",
+    description:
+      "The nonprofit growing the Filecoin network, the decentralized storage protocol.",
+    logo: {
+      src: filecoinFoundationLogo,
+      style: { padding: "0px", backgroundColor: "#08072e" },
+    },
+    images: [
+      { src: filecoinFoundationImg1, alt: "Filecoin Foundation Image" },
+      {
+        src: filecoinFoundationImg2,
+        alt: "Filecoin Foundation Image",
+      },
+      {
+        src: filecoinFoundationImg3,
+        alt: "Filecoin Foundation Image",
+      },
+      {
+        src: filecoinFoundationImg4,
+        alt: "Filecoin Foundation Image",
+      },
+      {
+        src: filecoinFoundationImg5,
+        alt: "Filecoin Foundation Image",
+      },
+      {
+        src: filecoinFoundationImg6,
+        alt: "Filecoin Foundation Image",
+      },
+    ],
+    dates: {
+      start: DateTime.fromObject({ year: 2024, month: 4 }),
+      end: DateTime.fromObject({ year: 2025, month: 5 }),
+    },
+    url: "https://fil.org/",
+    display: true,
+    highlight: true,
+    roles: [1, 2, 3],
+    stack: [62, 1, 3, 4, 36, 39, 40],
+    status: "live",
+    area: "web2",
+    employment: "contract",
+    people: [
+      { id: 23, role: { id: 16 } },
+      { id: 24, role: { id: 7 } },
+      { id: 25, role: { id: 1 } },
+      { id: 26, role: { id: 8 } },
+    ],
   },
 ];
 
