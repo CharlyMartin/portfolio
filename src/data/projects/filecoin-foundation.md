@@ -11,7 +11,7 @@ Filecoin Foundation stewards the growth of the Filecoin network, a decentralized
 
 I worked across the stack, rebuilding the site on [Next.js](https://nextjs.org/) and owning both the frontend architecture and a chunk of the backend work, now [open source](https://github.com/FilecoinFoundationWeb/filecoin-foundation/tree/main/apps/ff-site). Beyond the migration itself, I also automated a number of internal processes that used to be manual, freeing up time for the team to focus on content and ecosystem work rather than site upkeep.
 
-A good part of my time also went into UX work that had nothing to do with the site itself: dogfooding projects across the Filecoin ecosystem and writing up UX reports to help those teams improve the usability of their own products. It gave me a much broader view of the network than a typical "rebuild the marketing site" contract would have.
+A good part of my time also went into UX work that had nothing to do with the site itself: dogfooding projects across the Filecoin ecosystem and writing up UX reports to help those teams improve the usability of their own products. [The findings from those sessions are published here.](https://uxit.fil.org/) It gave me a much broader view of the network than a typical "rebuild the marketing site" contract would have.
 
 ## Challenges
 
