@@ -62,7 +62,7 @@ const data: Array<People> = [
     name: "Louis Roufinaud",
     description: "TODO",
     url: "https://twitter.com/LouisRouffineau",
-    skills: [1, 2, 3, 6, 7, 11],
+    skills: [1, 2, 3, 6, 7, 11, 16],
   },
   {
     id: 10,
@@ -154,6 +154,34 @@ const data: Array<People> = [
     description: "TODO",
     url: "https://www.linkedin.com/in/aureliensalomon/",
     skills: [4, 5, 11, 12],
+  },
+  {
+    id: 23,
+    name: "Mirha Masala",
+    description: "TODO",
+    url: "https://www.mirhamasala.com/",
+    skills: [1, 4, 11, 16],
+  },
+  {
+    id: 24,
+    name: "Filipa Ribeiro",
+    description: "TODO",
+    url: "https://www.linkedin.com/in/filipagribeiro/",
+    skills: [4, 5, 8],
+  },
+  {
+    id: 25,
+    name: "Barbara Peric",
+    description: "TODO",
+    url: "https://www.linkedin.com/in/barbaraperic/",
+    skills: [1],
+  },
+  {
+    id: 26,
+    name: "Gary Moran",
+    description: "TODO",
+    url: "https://www.linkedin.com/in/gary-moran-1a0b3a1b/",
+    skills: [8],
   },
 ];
 

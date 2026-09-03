@@ -1,5 +1,6 @@
 import type { Skill } from "@/types";
 
+// Maybe this should be broken up
 const data: Array<Skill> = [
   { id: 1, name: "Frontend", position: "Frontend Developer" },
   { id: 2, name: "Backend", position: "Backend Developer" },
@@ -7,7 +8,7 @@ const data: Array<Skill> = [
   { id: 4, name: "UI Design", position: "UI Designer" },
   { id: 5, name: "UX Design", position: "UX Designer" },
   { id: 6, name: "Database Design", position: "Database Designer" },
-  // { id: 7, name: "API Design", position: "API Designer" },
+  { id: 7, name: "Product Design", position: "Product Designer" },
   { id: 8, name: "Branding", position: "Brand Designer" },
   { id: 9, name: "Testing", position: "Tester" },
   { id: 10, name: "Motion Design", position: "Motion Designer" },
@@ -16,6 +17,7 @@ const data: Array<Skill> = [
   { id: 13, name: "Copywriting", position: "Copywriter" },
   { id: 14, name: "Smart Contracts", position: "Smart Contract Developer" },
   { id: 15, name: "Machine Learning", position: "ML Developer" },
+  { id: 16, name: "Eng Management", position: "Engineering Manager" },
 ];
 
 export function getSkill(id: number) {
