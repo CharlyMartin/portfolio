@@ -5,6 +5,7 @@ import image from "@/images/avatar.jpeg";
 const data: Bio = {
   name: "Charly",
   headline: "Senior Software Developer, ex-Founder & UI Designer",
+  // headline: "Software Engineer, ex-Founder & OSS Contributor",
   // headline: "Senior Software Developer 🧑‍💻, ex-Founder ⚙️ and UI Designer 💅",
   badge: {
     long: "Projects in the sustainability or music space",
