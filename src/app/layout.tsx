@@ -1,5 +1,5 @@
 import React from "react";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -13,13 +13,16 @@ import "../css/index.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport: Viewport = {
+  colorScheme: "dark",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     default: META.name,
     template: `%s | ${META.name}`,
   },
-  colorScheme: "dark",
   creator: "Charly Martin",
   openGraph: {
     type: "website",

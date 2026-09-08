@@ -6,7 +6,7 @@ import qino from ".";
 const ArticleSchema = z.object({
   title: z.string(),
   description: z.string(),
-  created: z.string().date(),
+  created: z.date(),
   updated: z.date().optional(),
   highlight: z.boolean().optional(),
   topic: z.enum(["code", "life", "startup"]),
