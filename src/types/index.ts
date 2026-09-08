@@ -56,7 +56,6 @@ export type ProjectPreview = Pick<
 >;
 
 export type Use = {
-  id: number;
   name: string;
   oneLiner: string;
   description?: string;

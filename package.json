@@ -19,7 +19,7 @@
     "next": "13.4.3",
     "postcss": "8.4.23",
     "postcss-focus-visible": "8.0.2",
-    "qino": "file:../../qino/qino-0.0.0.tgz",
+    "qino": "file:./qino-0.0.2.tgz",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "4.10.1",

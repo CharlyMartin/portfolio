@@ -44,3 +44,6 @@ src/data/articles/_archive
 
 # Auto-generated
 public/sitemap.xml
+
+# Custom
+*.tgz
