@@ -27,7 +27,7 @@ export default function ArticlePageLayout(props: Props) {
           </Title>
 
           <div className="flex flex-wrap gap-3">
-            <OpenGitHub slug={`/src/data/articles/${params.slug}/index.md`} />
+            <OpenGitHub slug={`/src/data/articles/${params.slug}.md`} />
             <DmTelegram />
           </div>
         </div>

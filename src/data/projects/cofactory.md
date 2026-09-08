@@ -1,6 +1,60 @@
 ---
 title: Cofactory
-description: The description of the project
+description: "The future of value creation in an AI-based economy."
+hq: "San Francisco, USA"
+logo:
+  src: /images/projects/cofactory-logo.jpg
+  style:
+    backgroundColor: "#000"
+    padding: "10px"
+images:
+  - /images/projects/cofactory-1.png
+  - /images/projects/cofactory-2.png
+  - /images/projects/cofactory-3.png
+  - /images/projects/cofactory-4.png
+  - /images/projects/cofactory-5.png
+  - /images/projects/cofactory-6.png
+  - /images/projects/cofactory-7.png
+  - /images/projects/cofactory-8.png
+  - /images/projects/cofactory-9.png
+  - /images/projects/cofactory-10.png
+dates:
+  start: "2023-09"
+  end: "2023-12"
+url: "https://cofactory.ai/"
+display: true
+highlight: true
+roles:
+  - "roles/frontend.json"
+  - "roles/backend.json"
+  - "roles/project-management.json"
+  - "roles/product-management.json"
+stack:
+  - "tools/language/typescript.json"
+  - "tools/framework/next.json"
+  - "tools/library/tailwind-css.json"
+  - "tools/library/prisma.json"
+  - "tools/library/react-hook-form.json"
+  - "tools/sdk/stripe-sdk.json"
+  - "tools/library/auth-js.json"
+  - "tools/library/trpc.json"
+  - "tools/sdk/vercel-ai-sdk.json"
+people:
+  - slug: "people/kostandin-angjellari.json"
+    role:
+      slug: "roles/backend.json"
+  - slug: "people/rishabh-rai.json"
+    role:
+      slug: "roles/ux-design.json"
+  - slug: "people/kaustubh-shukla.json"
+    role:
+      slug: "roles/machine-learning.json"
+  - slug: "people/chappy-asel.json"
+    role:
+      slug: "roles/product-management.json"
+status: live
+area: ai
+employment: contract
 ---
 
 ## Context

@@ -1,0 +1,7 @@
+{
+  "name": "Redux",
+  "meta": "State Management",
+  "oneLiner": "Popular state management library.",
+  "description": "I've always had a love-hate relationship with Redux. It's a great tool, but the boilerplate can be a bit much. I love the one-way data flow and predictability of the state tree, but I believe there are better alternatives today.",
+  "url": "https://redux.js.org/"
+}

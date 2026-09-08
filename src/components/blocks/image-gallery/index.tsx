@@ -2,17 +2,24 @@
 
 import React from "react";
 import { twMerge } from "tailwind-merge";
-import Image, { ImageProps } from "next/image";
+import Image from "next/image";
 
 import Gallery from "./gallery";
 
 type Props = {
-  images: Array<ImageProps>;
+  images: Array<{ src: string; width: number; height: number }>;
+  name: string;
 };
 
 export default function ImageGallery(props: Props) {
-  const { images } = props;
-  const image = images[0];
+  const { images, name } = props;
+
+  const galleryImages = images.map((image, i) => ({
+    ...image,
+    alt: `${name} Image ${i + 1}`,
+  }));
+
+  const image = galleryImages[0];
 
   const [open, setOpen] = React.useState<boolean>(false);
 
@@ -21,20 +28,19 @@ export default function ImageGallery(props: Props) {
       <Image
         {...image}
         alt={image.alt}
-        placeholder="blur"
         className={twMerge(
           "image-ring rounded-2xl",
-          images.length > 1 && "cursor-zoom-in"
+          galleryImages.length > 1 && "cursor-zoom-in"
         )}
         priority
         onClick={() => {
-          if (!images.length) return;
+          if (!galleryImages.length) return;
           setOpen(true);
         }}
       />
 
-      {images.length > 1 && (
-        <Gallery open={open} setOpen={setOpen} images={images} />
+      {galleryImages.length > 1 && (
+        <Gallery open={open} setOpen={setOpen} images={galleryImages} />
       )}
     </React.Fragment>
   );

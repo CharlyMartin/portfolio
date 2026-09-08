@@ -1,6 +1,61 @@
 ---
 title: Syncly
-description: The description of the project
+description: "The real-time booking engine designed to boost meeting room sales."
+hq: "Paris, France"
+logo:
+  src: /images/projects/syncly-logo.png
+  style:
+    backgroundColor: "#f3f3ff"
+images:
+  - /images/projects/syncly-1.png
+  - /images/projects/syncly-2.png
+  - /images/projects/syncly-3.png
+  - /images/projects/syncly-4.png
+  - /images/projects/syncly-5.png
+  - /images/projects/syncly-6.png
+  - /images/projects/syncly-7.png
+  - /images/projects/syncly-8.png
+  - /images/projects/syncly-9.png
+  - /images/projects/syncly-10.png
+  - /images/projects/syncly-11.png
+dates:
+  start: "2019-10"
+  end: "2021-10"
+url: "https://www.syncly.fr"
+display: true
+highlight: true
+roles:
+  - "roles/frontend.json"
+  - "roles/backend.json"
+  - "roles/devops.json"
+  - "roles/ui-design.json"
+  - "roles/ux-design.json"
+  - "roles/database-design.json"
+  - "roles/branding.json"
+  - "roles/project-management.json"
+  - "roles/product-management.json"
+  - "roles/copywriting.json"
+stack:
+  - "tools/language/typescript.json"
+  - "tools/framework/next.json"
+  - "tools/library/chakra-ui.json"
+  - "tools/framework/strapi.json"
+  - "tools/devtool/docker.json"
+  - "tools/sdk/stripe-sdk.json"
+  - "tools/sdk/google-auth-sdk.json"
+  - "tools/sdk/google-calendar-sdk.json"
+  - "tools/library/swr.json"
+  - "tools/library/react-hook-form.json"
+people:
+  - slug: "people/jeremy-marcillaud.json"
+    role:
+      slug: "roles/frontend.json"
+  - slug: "people/steven-bowen.json"
+    role:
+      slug: "roles/backend.json"
+status: archived
+area: web2
+employment: permanent
 ---
 
 ## Context

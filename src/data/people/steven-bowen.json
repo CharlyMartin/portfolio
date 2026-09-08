@@ -1,0 +1,11 @@
+{
+  "name": "Steven Bowen",
+  "url": "https://www.linkedin.com/in/sdbowen/",
+  "skills": [
+    "roles/frontend.json",
+    "roles/backend.json",
+    "roles/devops.json",
+    "roles/database-design.json",
+    "roles/product-design.json"
+  ]
+}

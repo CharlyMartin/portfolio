@@ -1,6 +1,38 @@
 ---
 title: Hubsy
-description: The description of the project
+description: "TODO"
+hq: "Paris, France"
+logo:
+  src: /images/projects/hubsy-logo.png
+  style:
+    padding: "8px"
+images:
+  - /images/projects/hubsy-1.jpg
+dates:
+  start: "2018-08"
+  end: "2018-12"
+url: "https://www.hubsy.fr/"
+display: false
+highlight: false
+roles:
+  - "roles/frontend.json"
+  - "roles/devops.json"
+  - "roles/ui-design.json"
+  - "roles/ux-design.json"
+  - "roles/branding.json"
+stack:
+  - "tools/language/javascript.json"
+  - "tools/framework/gatsby.json"
+  - "tools/sdk/airtable-sdk.json"
+  - "tools/language/graphql.json"
+  - "tools/language/css.json"
+people:
+  - slug: "people/jeremy-marcillaud.json"
+    role:
+      slug: "roles/project-management.json"
+status: live
+area: web2
+employment: contract
 ---
 
 ## Context

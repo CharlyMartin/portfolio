@@ -19,13 +19,14 @@
     "next": "13.4.3",
     "postcss": "8.4.23",
     "postcss-focus-visible": "8.0.2",
+    "qino": "file:../../qino/qino-0.0.0.tgz",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "4.10.1",
     "sharp": "0.32.3",
     "tailwind-merge": "2.1.0",
     "tailwindcss": "3.3.2",
-    "zod": "3.22.4"
+    "zod": "^3.24.0"
   },
   "devDependencies": {
     "@types/luxon": "3.4.2",

@@ -1,6 +1,39 @@
 ---
 title: Lottie Studio
-description: The description of the project
+description: "The design studio for high-quality web and native animations."
+hq: "Montreal, Canada"
+logo:
+  src: /images/projects/lottie-studio-logo.png
+  style:
+    backgroundColor: "#1b2126"
+images:
+  - /images/projects/lottie-studio-1.png
+  - /images/projects/lottie-studio-2.png
+dates:
+  start: "2019-09"
+  end: "2020-02"
+url: "https://lottiestudio.com/"
+display: true
+highlight: true
+roles:
+  - "roles/frontend.json"
+  - "roles/devops.json"
+stack:
+  - "tools/language/html.json"
+  - "tools/language/css.json"
+  - "tools/language/javascript.json"
+  - "tools/library/lottie-web.json"
+  - "tools/devtool/parcel.json"
+people:
+  - slug: "people/andre-navarre.json"
+    role:
+      slug: "roles/motion-design.json"
+  - slug: "people/alexis-doreau.json"
+    role:
+      slug: "roles/ui-design.json"
+status: live
+area: web2
+employment: side
 ---
 
 ## Context

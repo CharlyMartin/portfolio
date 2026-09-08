@@ -1,6 +1,54 @@
 ---
 title: Filecoin Foundation
-description: The description of the project
+description: "The nonprofit growing the Filecoin network, the decentralized storage protocol."
+hq: "San Francisco, USA"
+logo:
+  src: /images/projects/filecoin-foundation-logo.png
+  style:
+    padding: "0px"
+    backgroundColor: "#08072e"
+images:
+  - /images/projects/filecoin-foundation-1.webp
+  - /images/projects/filecoin-foundation-2.webp
+  - /images/projects/filecoin-foundation-3.webp
+  - /images/projects/filecoin-foundation-4.webp
+  - /images/projects/filecoin-foundation-5.webp
+  - /images/projects/filecoin-foundation-6.webp
+dates:
+  start: "2024-04"
+  end: "2025-05"
+url: "https://fil.org/"
+display: true
+highlight: true
+roles:
+  - "roles/frontend.json"
+  - "roles/backend.json"
+  - "roles/devops.json"
+stack:
+  - "tools/devtool/turborepo.json"
+  - "tools/language/typescript.json"
+  - "tools/framework/next.json"
+  - "tools/library/tailwind-css.json"
+  - "tools/library/headless-ui.json"
+  - "tools/library/swr.json"
+  - "tools/library/react-hook-form.json"
+  - "tools/library/zod.json"
+people:
+  - slug: "people/mirha-masala.json"
+    role:
+      slug: "roles/eng-management.json"
+  - slug: "people/filipa-ribeiro.json"
+    role:
+      slug: "roles/product-design.json"
+  - slug: "people/barbara-peric.json"
+    role:
+      slug: "roles/frontend.json"
+  - slug: "people/gary-moran.json"
+    role:
+      slug: "roles/branding.json"
+status: live
+area: web2
+employment: contract
 ---
 
 ## Context

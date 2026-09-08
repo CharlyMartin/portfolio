@@ -1,6 +1,47 @@
 ---
 title: Microchain Systems
-description: The description of the project
+description: "The first open-source DEX on the Fuel Network"
+hq: "Lisbon, Portugal"
+logo:
+  src: /images/projects/microchain-systems-logo.png
+  style:
+    backgroundColor: "#EEECE7"
+images:
+  - /images/projects/microchain-systems-1.png
+  - /images/projects/microchain-systems-2.png
+dates:
+  start: "2022-07"
+  end: "2023-07"
+url: "https://microchain.systems/"
+display: true
+highlight: true
+roles:
+  - "roles/frontend.json"
+  - "roles/ui-design.json"
+stack:
+  - "tools/language/typescript.json"
+  - "tools/library/react.json"
+  - "tools/library/tailwind-css.json"
+  - "tools/library/xstate.json"
+  - "tools/sdk/fuels.json"
+  - "tools/library/bn-js.json"
+  - "tools/library/radix-ui.json"
+  - "tools/library/react-query.json"
+  - "tools/library/react-hook-form.json"
+  - "tools/devtool/vite.json"
+people:
+  - slug: "people/kalle-moen.json"
+    role:
+      slug: "roles/product-management.json"
+  - slug: "people/david-mihal.json"
+    role:
+      slug: "roles/smart-contracts.json"
+  - slug: "people/rahul-kothari.json"
+    role:
+      slug: "roles/smart-contracts.json"
+status: live
+area: web3
+employment: contract
 ---
 
 ## Context

@@ -1,31 +1,31 @@
-import type { Skill } from "@/types";
+import fs from "fs";
+import path from "path";
 
-// Maybe this should be broken up
-const data: Array<Skill> = [
-  { id: 1, name: "Frontend", position: "Frontend Developer" },
-  { id: 2, name: "Backend", position: "Backend Developer" },
-  { id: 3, name: "DevOps", position: "DevOps" },
-  { id: 4, name: "UI Design", position: "UI Designer" },
-  { id: 5, name: "UX Design", position: "UX Designer" },
-  { id: 6, name: "Database Design", position: "Database Designer" },
-  { id: 7, name: "Product Design", position: "Product Designer" },
-  { id: 8, name: "Branding", position: "Brand Designer" },
-  { id: 9, name: "Testing", position: "Tester" },
-  { id: 10, name: "Motion Design", position: "Motion Designer" },
-  { id: 11, name: "Project Management", position: "Project Manager" },
-  { id: 12, name: "Product Management", position: "Product Manager" },
-  { id: 13, name: "Copywriting", position: "Copywriter" },
-  { id: 14, name: "Smart Contracts", position: "Smart Contract Developer" },
-  { id: 15, name: "Machine Learning", position: "ML Developer" },
-  { id: 16, name: "Eng Management", position: "Engineering Manager" },
-];
+import { globSync } from "fast-glob";
+import { z } from "zod";
 
-export function getSkill(id: number) {
-  const skill = data.find((skill) => skill.id == id);
+const metadataSchema = z.object({
+  name: z.string(),
+  position: z.string(),
+});
 
-  if (!skill) {
-    throw new Error(`No skill found with id: ${id}`);
+export function getSkill(slugPath: string) {
+  const slug = path.parse(slugPath).name;
+
+  if (!getAllSlugs().includes(slug)) {
+    throw new Error(`No skill found with slug: ${slug}`);
   }
 
-  return skill;
+  const source = fs.readFileSync(
+    path.join(process.cwd(), "src/data/roles", `${slug}.json`),
+    "utf8"
+  );
+
+  return metadataSchema.parse(JSON.parse(source));
+}
+
+function getAllSlugs(): Array<string> {
+  const files = globSync("*.json", { cwd: "./src/data/roles" });
+
+  return files.map((file) => file.replace(".json", ""));
 }

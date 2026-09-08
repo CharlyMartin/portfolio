@@ -1,6 +1,30 @@
 ---
 title: Motolangage
-description: The description of the project
+description: "A language learning experiment by the French National Institute Research."
+hq: "Paris, France"
+images:
+  - /images/projects/motolangage-1.png
+dates:
+  start: "2019-07"
+  end: "2019-11"
+url: "https://www.inserm.fr/en/home/"
+display: false
+highlight: false
+roles:
+  - "roles/frontend.json"
+stack:
+  - "tools/language/javascript.json"
+  - "tools/language/css.json"
+  - "tools/library/react.json"
+  - "tools/library/redux.json"
+  - "tools/library/react-router.json"
+people:
+  - slug: "people/louis-roufinaud.json"
+    role:
+      slug: "roles/backend.json"
+status: archived
+area: web2
+employment: contract
 ---
 
 ## Context

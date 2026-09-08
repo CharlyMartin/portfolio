@@ -1,6 +1,40 @@
 ---
 title: ENS Everywhere
-description: The description of the project
+description: "Register your native L2 ENS domain for a fraction of the cost."
+hq: "Lisbon, Portugal"
+logo:
+  src: /images/projects/ens-everywhere-logo.png
+  style:
+    backgroundColor: "#F7FAFC"
+    padding: "12px"
+images:
+  - /images/projects/ens-everywhere-1.png
+dates:
+  start: "2022-09"
+  end: "2022-09"
+url: "https://ens-everywhere.vercel.app/"
+display: true
+highlight: false
+roles:
+  - "roles/frontend.json"
+  - "roles/ui-design.json"
+  - "roles/devops.json"
+stack:
+  - "tools/language/typescript.json"
+  - "tools/framework/next.json"
+  - "tools/library/chakra-ui.json"
+  - "tools/sdk/ethers.json"
+  - "tools/library/react-hook-form.json"
+people:
+  - slug: "people/kalle-moen.json"
+    role:
+      slug: "roles/ux-design.json"
+  - slug: "people/david-mihal.json"
+    role:
+      slug: "roles/smart-contracts.json"
+status: archived
+area: web3
+employment: side
 ---
 
 ## Context

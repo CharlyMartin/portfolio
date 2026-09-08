@@ -1,0 +1,6 @@
+{
+  "name": "Parcel",
+  "meta": "Bundler",
+  "oneLiner": "A zero-configuration bundler for the rest of us",
+  "url": "https://parceljs.org/"
+}

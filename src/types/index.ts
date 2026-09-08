@@ -29,13 +29,15 @@ export type Bio = {
 
 // DATA MODEL (exposed via API routes)
 export type Project = {
-  id: number;
   name: string;
   slug: string;
   hq: string;
   description: string;
-  logo?: { src: ImageProps["src"]; style?: React.CSSProperties };
-  images: Array<ImageProps>;
+  logo?: {
+    src: string;
+    style?: { backgroundColor?: string; padding?: string };
+  };
+  images: Array<{ src: string; width: number; height: number }>;
   dates: { start: DateTime; end?: DateTime };
   highlight?: boolean; // Whether or not to highlight the project on the home page
   url: string; // The URL of the project. If not provided, the project is shown as "archived".
@@ -43,14 +45,14 @@ export type Project = {
   area: "web2" | "web3" | "ai"; // Whether I worked on the web2 or web3 part
   employment: "permanent" | "contract" | "side";
   display: boolean; // Whether or not to display the project on the projects page
-  stack: Array<Use["id"]>;
-  roles: Array<Skill["id"]>;
-  people?: Array<{ id: People["id"]; role: { id: Skill["id"] } }>;
+  stack: Array<string>;
+  roles: Array<string>;
+  people?: Array<{ slug: string; role: { slug: string } }>;
 };
 
 export type ProjectPreview = Pick<
   Project,
-  "id" | "name" | "description" | "logo" | "dates" | "slug" | "area"
+  "name" | "description" | "logo" | "dates" | "slug" | "area"
 >;
 
 export type Use = {
@@ -95,7 +97,8 @@ export type Use = {
     | "Bundler"
     | "Code Collaboration"
     | "Design Tool"
-    | "Build System";
+    | "Build System"
+    | "Validation Library";
   url: string;
   type:
     | "language"

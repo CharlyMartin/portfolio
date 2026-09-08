@@ -88,7 +88,7 @@ export default async function ProjectPage(props: Props) {
             className="image-ring rounded-2xl"
             priority
           /> */}
-          <ImageGallery images={images} />
+          <ImageGallery images={images} name={name} />
 
           <div
             className="prose dark:prose-invert"

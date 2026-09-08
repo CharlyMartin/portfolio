@@ -1,0 +1,10 @@
+{
+  "name": "Mirha Masala",
+  "url": "https://www.mirhamasala.com/",
+  "skills": [
+    "roles/frontend.json",
+    "roles/ui-design.json",
+    "roles/project-management.json",
+    "roles/eng-management.json"
+  ]
+}

@@ -1,6 +1,47 @@
 ---
 title: OpenWork
-description: The description of the project
+description: "The payroll company that protects freelancers anywhere."
+hq: "Paris, France"
+logo:
+  src: /images/projects/openwork-logo.png
+  style:
+    padding: "10px"
+images:
+  - /images/projects/openwork-1.png
+dates:
+  start: "2020-04"
+  end: "2021-04"
+url: "https://www.openwork.co/"
+display: true
+highlight: false
+roles:
+  - "roles/frontend.json"
+stack:
+  - "tools/language/typescript.json"
+  - "tools/framework/next.json"
+  - "tools/language/graphql.json"
+  - "tools/sdk/mapbox-sdk.json"
+  - "tools/sdk/intercom-sdk.json"
+  - "tools/library/react-hook-form.json"
+people:
+  - slug: "people/gautier-roquancourt.json"
+    role:
+      slug: "roles/ui-design.json"
+  - slug: "people/louis-roufinaud.json"
+    role:
+      slug: "roles/eng-management.json"
+  - slug: "people/gwenaelle-thouseau.json"
+    role:
+      slug: "roles/backend.json"
+  - slug: "people/adrien-rahier.json"
+    role:
+      slug: "roles/frontend.json"
+  - slug: "people/isabella-brookes.json"
+    role:
+      slug: "roles/frontend.json"
+status: live
+area: web2
+employment: contract
 ---
 
 ## Context

@@ -1,6 +1,35 @@
 ---
 title: Mayoneese
-description: The description of the project
+description: "The curated music newsletter that makes you come alive."
+hq: "Paris, France"
+logo:
+  src: /images/projects/mayoneese-logo.png
+  style:
+    backgroundColor: "#EDBA2F"
+    padding: "8px"
+images:
+  - /images/projects/mayoneese-1.png
+dates:
+  start: "2018-08"
+  end: "2019-05"
+url: "https://mayoneese.netlify.app/"
+display: false
+highlight: false
+roles:
+  - "roles/frontend.json"
+  - "roles/devops.json"
+  - "roles/ui-design.json"
+  - "roles/ux-design.json"
+  - "roles/branding.json"
+stack:
+  - "tools/language/javascript.json"
+  - "tools/framework/gatsby.json"
+  - "tools/sdk/airtable-sdk.json"
+  - "tools/language/graphql.json"
+  - "tools/language/css.json"
+status: archived
+area: web2
+employment: side
 ---
 
 ## Context

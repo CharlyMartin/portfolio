@@ -1,0 +1,7 @@
+{
+  "name": "Apollo Client",
+  "meta": "Async State Management",
+  "oneLiner": "Popular GraphQL client.",
+  "description": "Appolo Client is as good as react-query, but for GraphQL.",
+  "url": "https://www.apollographql.com/"
+}

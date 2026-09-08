@@ -26,7 +26,7 @@ async function generateSitemap() {
   const xmlProjects = projectFileNames.map(addXMLProject).join("\n");
 
   // Articles
-  const articleFileNames = await glob(["*/index.md"], {
+  const articleFileNames = await glob(["*.md"], {
     cwd: path.join(process.cwd(), "src/data/articles"),
   });
 
@@ -39,7 +39,7 @@ async function generateSitemap() {
 generateSitemap();
 
 function addXMLArticle(article) {
-  const path = article.replace("/index.md", "");
+  const path = article.replace(".md", "");
   return generateXMLTag(`/articles/${path}`);
 }
 

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const projects = getProjects({ highlight: true });
+  const projects = await getProjects({ highlight: true });
   const favoriteUses = getUses({ highlight: true });
   const articlesMeta = await getArticlesMeta({ highlight: true });
   const bio = await getBio();

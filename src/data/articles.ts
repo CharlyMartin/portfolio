@@ -24,7 +24,7 @@ export async function getArticlesMeta(filters?: Filters) {
   const metas = [];
 
   for (const slug of slugs) {
-    const content = await parseFileContent("articles", `${slug}/index`);
+    const content = await parseFileContent("articles", slug);
     const metadata = metadataSchema.parse(content.metadata);
     const wordCount = getWordCount(content.html);
     metas.push({ slug, wordCount, ...metadata });
@@ -42,7 +42,7 @@ export async function getArticlesMeta(filters?: Filters) {
 }
 
 export async function getArticle(slug: string) {
-  const content = await parseFileContent("articles", `${slug}/index`);
+  const content = await parseFileContent("articles", slug);
   const metadata = metadataSchema.parse(content.metadata);
   const wordCount = getWordCount(content.html);
 
@@ -50,9 +50,9 @@ export async function getArticle(slug: string) {
 }
 
 function getAllSlugs(): Array<string> {
-  const files = globSync("*/index.md", { cwd: "./src/data/articles" });
+  const files = globSync("*.md", { cwd: "./src/data/articles" });
 
   return files.map((file) => {
-    return file.replace("/index.md", "");
+    return file.replace(".md", "");
   });
 }

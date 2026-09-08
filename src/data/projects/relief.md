@@ -1,6 +1,37 @@
 ---
 title: Relief
-description: The description of the project
+description: "The app navigating you through financial hurdles in a simple way."
+hq: "Miami, USA"
+logo:
+  src: /images/projects/relief-logo.png
+  style:
+    padding: "12px"
+images:
+  - /images/projects/relief-1.png
+  - /images/projects/relief-2.png
+  - /images/projects/relief-3.png
+dates:
+  start: "2021-03"
+  end: "2021-04"
+url: "https://www.relief.app/"
+display: true
+highlight: false
+roles:
+  - "roles/frontend.json"
+  - "roles/devops.json"
+stack:
+  - "tools/language/javascript.json"
+  - "tools/framework/next.json"
+  - "tools/library/chakra-ui.json"
+  - "tools/sdk/twilio-sdk.json"
+  - "tools/library/react-hook-form.json"
+people:
+  - slug: "people/aurelien-salomon.json"
+    role:
+      slug: "roles/project-management.json"
+status: live
+area: web2
+employment: contract
 ---
 
 ## Context

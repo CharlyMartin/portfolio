@@ -1,6 +1,52 @@
 ---
 title: My Studiolo
-description: The description of the project
+description: "The modern management tool for art collectors."
+hq: "Paris, France"
+logo:
+  src: /images/projects/my-studiolo-logo.png
+  style:
+    padding: "12px"
+images:
+  - /images/projects/my-studiolo-1.png
+  - /images/projects/my-studiolo-2.png
+  - /images/projects/my-studiolo-3.png
+dates:
+  start: "2019-03"
+  end: "2019-09"
+url: "https://www.mystudiolo.com/"
+display: true
+highlight: false
+roles:
+  - "roles/frontend.json"
+stack:
+  - "tools/language/typescript.json"
+  - "tools/framework/gatsby.json"
+  - "tools/sdk/stripe-sdk.json"
+  - "tools/library/react.json"
+  - "tools/library/rebass.json"
+  - "tools/library/redux.json"
+  - "tools/devtool/docker.json"
+  - "tools/library/react-router.json"
+  - "tools/library/lottie-web.json"
+people:
+  - slug: "people/louis-roufinaud.json"
+    role:
+      slug: "roles/eng-management.json"
+  - slug: "people/gautier-roquancourt.json"
+    role:
+      slug: "roles/ui-design.json"
+  - slug: "people/chloe-barria.json"
+    role:
+      slug: "roles/branding.json"
+  - slug: "people/steven-bowen.json"
+    role:
+      slug: "roles/backend.json"
+  - slug: "people/simon-halimonov.json"
+    role:
+      slug: "roles/frontend.json"
+status: archived
+area: web2
+employment: contract
 ---
 
 ## Context

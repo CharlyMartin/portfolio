@@ -1,6 +1,48 @@
 ---
 title: Immunefi
-description: The description of the project
+description: "The leading bug bounty platform in Web3, protecting billions in user funds."
+hq: "Lisbon, Portugal"
+logo:
+  src: /images/projects/immunefi-logo.png
+images:
+  - /images/projects/immunefi-1.png
+  - /images/projects/immunefi-2.png
+  - /images/projects/immunefi-3.png
+dates:
+  start: "2021-11"
+  end: "2022-05"
+url: "https://immunefi.com/"
+display: true
+highlight: false
+roles:
+  - "roles/frontend.json"
+  - "roles/backend.json"
+stack:
+  - "tools/language/typescript.json"
+  - "tools/framework/next.json"
+  - "tools/library/tailwind-css.json"
+  - "tools/library/prisma.json"
+  - "tools/sdk/firebase-sdk.json"
+  - "tools/sdk/ethers.json"
+  - "tools/library/react-final-form.json"
+  - "tools/library/react-query.json"
+  - "tools/library/headless-ui.json"
+people:
+  - slug: "people/richard-kaufman-lopez.json"
+    role:
+      slug: "roles/frontend.json"
+  - slug: "people/luis-alfredo-lorenzo.json"
+    role:
+      slug: "roles/backend.json"
+  - slug: "people/pedro-esperanca.json"
+    role:
+      slug: "roles/frontend.json"
+  - slug: "people/kalle-moen.json"
+    role:
+      slug: "roles/product-management.json"
+status: live
+area: web3
+employment: contract
 ---
 
 ## Context

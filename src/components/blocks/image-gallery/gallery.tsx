@@ -167,7 +167,6 @@ export default function Gallery(props: Props) {
                         <Image
                           {...image}
                           alt={image.alt}
-                          placeholder="blur"
                           className="w-full rounded-2xl border border-zinc-200/80 dark:border-zinc-700/70"
                           priority
                         />
