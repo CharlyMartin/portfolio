@@ -1,17 +1,24 @@
 import React from "react";
 import type { Metadata } from "next";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypePrismPlus from "rehype-prism-plus";
+import rehypeExternalLinks from "rehype-external-links";
 
 import Container from "@/components/blocks/container";
 import Back from "@/components/atoms/back";
-import { getArticle } from "@/data/articles";
-import Prose from "@/components/atoms/prose";
+import { addUtmPlugin } from "@/lib/add-utm-plugin";
 import { DATE_FORMATS, formatArticleDate } from "@/lib/format-date";
 import PageTitle from "@/components/blocks/page-title";
+import { articleCollection } from "@qino/articles";
+
+export async function generateStaticParams() {
+  const slugs = await articleCollection.getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
-  const { params } = props;
-
-  const article = await getArticle(params.slug);
+  const article = await articleCollection.getOne(props.params.slug);
 
   return {
     title: article.title,
@@ -24,14 +31,12 @@ type Props = {
 };
 
 export default async function ArticlePage(props: Props) {
-  const { params } = props;
-
-  const article = await getArticle(params.slug);
-  const { title, html, topic, wordCount } = article;
+  const article = await articleCollection.getOne(props.params.slug);
+  const { title, body, topic, _stats } = article;
 
   const created = formatArticleDate(article.created, DATE_FORMATS.ARTICLE_LONG);
   const updated = formatArticleDate(article.updated, DATE_FORMATS.ARTICLE_LONG);
-  const formattedCount = new Intl.NumberFormat("en-US").format(wordCount);
+  const formattedCount = new Intl.NumberFormat("en-US").format(_stats.wordCount);
 
   return (
     <Container>
@@ -52,7 +57,22 @@ export default async function ArticlePage(props: Props) {
         <br />
         {/* To replace with a header picture later on */}
 
-        <Prose html={html} />
+        <div className="prose dark:prose-invert">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[
+              [rehypePrismPlus, { showLineNumbers: true }],
+              [
+                rehypeExternalLinks,
+                { rel: ["noopener", "noreferrer"], target: "_blank" },
+              ],
+              addUtmPlugin,
+            ]}
+            skipHtml
+          >
+            {body}
+          </ReactMarkdown>
+        </div>
       </div>
     </Container>
   );

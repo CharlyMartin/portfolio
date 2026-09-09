@@ -17,7 +17,7 @@ export const articleCollection = qino.createCollection({
   directory: "/articles",
   schema: ArticleSchema,
   extension: ".md",
-  augment: ({ body }) => ({
-    _stats: markdown.stats(body),
+  augment: (article) => ({
+    _stats: markdown.stats(article.body),
   }),
 });

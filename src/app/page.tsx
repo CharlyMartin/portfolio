@@ -21,7 +21,7 @@ import Prose from "@/components/atoms/prose";
 import { META } from "@/data/config";
 import { metadata as globalMeta } from "@/app/layout";
 // import Photos from "@/components/sections/photos";
-import { getArticlesMeta } from "@/data/articles";
+import { getHighligthedArticles } from "@/data/articles";
 import Article from "@/components/blocks/article";
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 export default async function Home() {
   const projects = await getProjects({ highlight: true });
   const favoriteUses = getUses({ highlight: true });
-  const articlesMeta = await getArticlesMeta({ highlight: true });
+  const articles = await getHighligthedArticles();
   const bio = await getBio();
 
   return (
@@ -92,15 +92,25 @@ export default async function Home() {
 
       <Separator />
 
-      {!!articlesMeta.length && (
+      {!!articles.length && (
         <Container id="articles">
           <Section.Title icon={Icons.Article} title="Featured Articles" />
           <div
             role="list"
             className="mt-10 grid grid-cols-1 gap-x-16 gap-y-10 sm:grid-cols-2"
           >
-            {articlesMeta.map((article, i) => {
-              return <Article.Square {...article} key={i} />;
+            {articles.map((article) => {
+              return (
+                <Article.Square
+                  title={article.title}
+                  description={article.description}
+                  created={article.created}
+                  slug={article._meta.slug}
+                  topic={article.topic}
+                  wordCount={article._stats.wordCount}
+                  key={article._meta.slug}
+                />
+              );
             })}
           </div>
 
@@ -110,7 +120,7 @@ export default async function Home() {
         </Container>
       )}
 
-      {!!articlesMeta.length && <Separator />}
+      {!!articles.length && <Separator />}
 
       <Container id="stack">
         <Section.Title icon={Icons.Stack} title="Favourite Stack" />

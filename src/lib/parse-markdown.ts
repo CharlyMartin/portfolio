@@ -8,10 +8,9 @@ import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import rehypePrismPlus from "rehype-prism-plus";
-import { visit } from "unist-util-visit";
 // import { z } from "zod";
 
-import { addUtm } from "./add-utm";
+import { addUtmPlugin } from "./add-utm-plugin";
 
 const root = process.cwd();
 
@@ -26,9 +25,9 @@ export async function parseFileContent(location: Location, slug: string) {
   const { data, content } = matter(source);
 
   const processor = unified()
-    .use(remarkParse as any)
-    .use(remarkGfm as any)
-    .use(remarkRehype as any)
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype)
     .use(rehypePrismPlus, {
       showLineNumbers: true,
     })
@@ -42,15 +41,4 @@ export async function parseFileContent(location: Location, slug: string) {
   const file = await processor.process(content);
 
   return { metadata: data, html: String(file) };
-}
-
-function addUtmPlugin() {
-  return function plugin(tree: any) {
-    visit(tree, "element", function updateUrl(node) {
-      // Only add utm info to external links
-      if (node.tagName == "a" && !node.properties.href.startsWith("/")) {
-        node.properties.href = addUtm(node.properties.href);
-      }
-    });
-  };
 }

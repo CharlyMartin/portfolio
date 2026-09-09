@@ -14,8 +14,6 @@ export const metadata: Metadata = {
 };
 
 export default async function ArticlesPage() {
-  // const metas = await getArticlesMeta();
-
   const articles = await articleCollection.getAll();
 
   return (
