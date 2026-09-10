@@ -5,12 +5,22 @@ import Card from "@/components/blocks/card";
 import { DATE_FORMATS, formatProjectDates } from "@/lib/format-date";
 import type { ProjectPreview } from "@/types";
 import Badge from "@/components/atoms/badge";
+import { DateTime } from "luxon";
 
-type Props = ProjectPreview;
+type Props = ProjectPreview & {
+  luxonDates: {
+    start: DateTime;
+    end?: DateTime;
+  };
+};
 
 export default function Project(props: Props) {
-  const { name, logo, description, dates, slug, area } = props;
-  const formattedDates = formatProjectDates(dates, DATE_FORMATS.PROJECT_SHORT);
+  const { title, logo, description, luxonDates, area, _meta } = props;
+
+  const formattedDates = formatProjectDates(
+    luxonDates,
+    DATE_FORMATS.PROJECT_SHORT
+  );
 
   return (
     <Card className="space-y-5">
@@ -28,7 +38,7 @@ export default function Project(props: Props) {
               <Image
                 src={logo.src}
                 fill={true}
-                alt={`${name}'s Logo`}
+                alt={`${title}'s Logo`}
                 unoptimized
               />
             </div>
@@ -38,7 +48,7 @@ export default function Project(props: Props) {
         {!logo && (
           <ImageBackground className="bg-teal-50">
             <span className="text-2xl font-medium text-teal-600">
-              {name[0]}
+              {title[0]}
             </span>
           </ImageBackground>
         )}
@@ -46,13 +56,13 @@ export default function Project(props: Props) {
 
       {/* Title + badge + dates */}
       <div className="flex flex-col space-y-1">
-        <Card.Title href={`/projects/${slug}`}>{name}</Card.Title>
+        <Card.Title href={`/projects/${_meta.slug}`}>{title}</Card.Title>
 
         <div className="flex items-center">
           <Badge size="sm" className="z-10 mr-2.5">
             {area}
           </Badge>
-          <Card.Eyebrow as="time" dateTime={dates.end?.toLocaleString()}>
+          <Card.Eyebrow as="time" dateTime={luxonDates.end?.toLocaleString()}>
             {formattedDates}
           </Card.Eyebrow>
         </div>

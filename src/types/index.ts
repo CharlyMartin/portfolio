@@ -2,6 +2,8 @@ import React from "react";
 import type { ImageProps } from "next/image";
 import type { LinkProps } from "next/link";
 import type { DateTime } from "luxon";
+import { ProjectSchema } from "@qino/projects";
+import { z } from "zod";
 
 // INTERNAL USE
 export type Availability = "available" | "limited" | "busy";
@@ -28,32 +30,16 @@ export type Bio = {
 };
 
 // DATA MODEL (exposed via API routes)
-export type Project = {
-  name: string;
-  slug: string;
-  hq: string;
-  description: string;
-  logo?: {
-    src: string;
-    style?: { backgroundColor?: string; padding?: string };
-  };
-  images: Array<{ src: string; width: number; height: number }>;
-  dates: { start: DateTime; end?: DateTime };
-  highlight?: boolean; // Whether or not to highlight the project on the home page
-  url: string; // The URL of the project. If not provided, the project is shown as "archived".
-  status: "live" | "wip" | "archived";
-  area: "web2" | "web3" | "ai"; // Whether I worked on the web2 or web3 part
-  employment: "permanent" | "contract" | "side";
-  display: boolean; // Whether or not to display the project on the projects page
-  stack: Array<string>;
-  roles: Array<string>;
-  people?: Array<{ slug: string; role: { slug: string } }>;
-};
+export type Project = z.infer<typeof ProjectSchema>;
 
 export type ProjectPreview = Pick<
   Project,
-  "name" | "description" | "logo" | "dates" | "slug" | "area"
->;
+  "title" | "description" | "logo" | "dates" | "area"
+> & {
+  _meta: {
+    slug: string;
+  };
+};
 
 export type Use = {
   name: string;

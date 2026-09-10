@@ -1,21 +1,20 @@
 import { z } from "zod";
 
 import qino from ".";
-import { JsonSlugSchema } from "./projects";
 
-import { toolsTree } from "./tools";
+import { rolesCollection } from "./roles";
 
 const PersonSchema = z.object({
   name: z.string().min(1),
   url: z.string().url(),
-  skills: z.array(JsonSlugSchema),
+  skills: z.array(z.string()),
 });
 
 export const peopleCollection = qino.createCollection({
   directory: "/people",
   schema: PersonSchema,
-  extension: ".md",
+  extension: ".json",
   relations: {
-    "skills[*]": toolsTree,
+    "skills[*]": rolesCollection,
   },
 });

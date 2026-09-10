@@ -12,7 +12,6 @@ import DmTelegram from "@/components/blocks/dm-telegram";
 import BookCall from "@/components/blocks/book-call";
 import Icons from "@/components/atoms/icons";
 import Availability from "@/components/blocks/availability";
-import { getProjects } from "@/data/projects";
 import { getUses } from "@/data/uses";
 import Card from "@/components/blocks/card";
 import { Use } from "@/types";
@@ -23,6 +22,7 @@ import { metadata as globalMeta } from "@/app/layout";
 // import Photos from "@/components/sections/photos";
 import { getHighligthedArticles } from "@/data/articles";
 import Article from "@/components/blocks/article";
+import { projectsCollection } from "@qino/projects";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const projects = await getProjects({ highlight: true });
+  const projects = await projectsCollection.getAll({ view: "highlight" });
   const favoriteUses = getUses({ highlight: true });
   const articles = await getHighligthedArticles();
   const bio = await getBio();

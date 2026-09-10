@@ -1,10 +1,14 @@
 import { DateTime } from "luxon";
 
-import { Project } from "@/types";
-
 type Options = Intl.DateTimeFormatOptions;
 
-export function formatProjectDates(dates: Project["dates"], options?: Options) {
+export function formatProjectDates(
+  dates: {
+    start: DateTime;
+    end?: DateTime;
+  },
+  options?: Options
+) {
   const { start, end } = dates;
   const opt = options || {};
 

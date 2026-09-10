@@ -5,25 +5,32 @@ import Container from "@/components/blocks/container";
 import Back from "@/components/atoms/back";
 import Section from "@/components/blocks/section";
 import Icons from "@/components/atoms/icons";
-import { getProject } from "@/data/projects";
+
 import { DATE_FORMATS, formatProjectDates } from "@/lib/format-date";
 import { Use } from "@/types";
 import Badge from "@/components/atoms/badge";
 import PageTitle from "@/components/blocks/page-title";
 import ProjectStatus from "@/components/blocks/project-status";
 import ImageGallery from "@/components/blocks/image-gallery";
+import { projectsCollection } from "@qino/projects";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeExternalLinks from "rehype-external-links";
+import { addUtmPlugin } from "@/lib/add-utm-plugin";
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { params } = props;
 
-  const project = await getProject(params.slug);
+  const project = await projectsCollection.getOne(params.slug, {
+    view: "page",
+  });
 
   return {
-    title: project.name,
+    title: project.title,
     description: `${
-      project.name
+      project.title
     } was done by Charly Martin along with ${project.people
-      ?.map((item) => item.name)
+      ?.map((item) => item.slug.name)
       ?.join(", ")}.`,
   };
 }
@@ -35,15 +42,18 @@ type Props = {
 export default async function ProjectPage(props: Props) {
   const { params } = props;
 
-  const project = await getProject(params.slug);
+  const project = await projectsCollection.getOne(params.slug, {
+    view: "page",
+  });
+
   const {
-    name,
-    dates,
+    title: name,
+    luxonDates,
     hq,
     roles,
     people,
-    images,
-    html,
+    imagesWithDimenstions,
+    body,
     stack,
     url,
     status,
@@ -60,7 +70,7 @@ export default async function ProjectPage(props: Props) {
       <PageTitle
         title={name}
         subtitle={[
-          formatProjectDates(dates, DATE_FORMATS.PROJECT_LONG),
+          formatProjectDates(luxonDates, DATE_FORMATS.PROJECT_LONG),
           employment == "contract" && "Contract",
           employment == "permanent" && "Permanent",
           employment == "side" && "Side Project",
@@ -88,12 +98,23 @@ export default async function ProjectPage(props: Props) {
             className="image-ring rounded-2xl"
             priority
           /> */}
-          <ImageGallery images={images} name={name} />
+          <ImageGallery images={imagesWithDimenstions} name={name} />
 
-          <div
-            className="prose dark:prose-invert"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          <div className="prose dark:prose-invert">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[
+                [
+                  rehypeExternalLinks,
+                  { rel: ["noopener", "noreferrer"], target: "_blank" },
+                ],
+                addUtmPlugin,
+              ]}
+              skipHtml
+            >
+              {body}
+            </ReactMarkdown>
+          </div>
         </div>
 
         {/* Right */}
@@ -104,7 +125,7 @@ export default async function ProjectPage(props: Props) {
             subtitle="The technologies I worked with"
           >
             <ul className="space-y-1.5">
-              {sortStack(stack).map((item, i) => {
+              {stack.map((item, i) => {
                 const { name, meta } = item;
                 return <ListItem left={name} right={meta} key={i} />;
               })}
@@ -119,8 +140,14 @@ export default async function ProjectPage(props: Props) {
             >
               <ul className="space-y-1.5">
                 {people.map((item, i) => {
-                  const { name, role } = item;
-                  return <ListItem left={name} right={role.name} key={i} />;
+                  // Investigate how role is fetched here
+                  return (
+                    <ListItem
+                      left={item.slug.name}
+                      right={item.role.slug.name}
+                      key={i}
+                    />
+                  );
                 })}
               </ul>
             </Section>
@@ -155,30 +182,30 @@ function ListItem(props: ListItemProps) {
   );
 }
 
-function sortStack(stack: Array<Use>) {
-  // Sort stack by the following order:
-  // 1. Languages
-  // 3. Libraries
-  // 4. SDK
-  // 5. Rest
-  return stack.sort((a, b) => {
-    const aType = a.type;
-    const bType = b.type;
+// function sortStack(stack: Array<Use>) {
+//   // Sort stack by the following order:
+//   // 1. Languages
+//   // 3. Libraries
+//   // 4. SDK
+//   // 5. Rest
+//   return stack.sort((a, b) => {
+//     const aType = a.type;
+//     const bType = b.type;
 
-    if (aType == bType) return 0;
+//     if (aType == bType) return 0;
 
-    if (aType == "language") return -1;
-    if (bType == "language") return 1;
+//     if (aType == "language") return -1;
+//     if (bType == "language") return 1;
 
-    if (aType == "framework") return -1;
-    if (bType == "framework") return 1;
+//     if (aType == "framework") return -1;
+//     if (bType == "framework") return 1;
 
-    if (aType == "library") return -1;
-    if (bType == "library") return 1;
+//     if (aType == "library") return -1;
+//     if (bType == "library") return 1;
 
-    if (aType == "sdk") return -1;
-    if (bType == "sdk") return 1;
+//     if (aType == "sdk") return -1;
+//     if (bType == "sdk") return 1;
 
-    return 0;
-  });
-}
+//     return 0;
+//   });
+// }

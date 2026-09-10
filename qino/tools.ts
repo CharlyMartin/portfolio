@@ -7,8 +7,10 @@ const ToolsSchema = z
     name: z.string().min(1),
     meta: z.string().min(1),
     oneLiner: z.string().min(1),
-    description: z.string().min(1),
+    description: z.string().min(1).optional(),
     url: z.string().url(),
+    highlight: z.boolean().optional(),
+    favorite: z.boolean().optional(),
   })
   .strict();
 
