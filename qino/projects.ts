@@ -56,16 +56,18 @@ export const projectsCollection = qino.createCollection({
     "people[*].slug": peopleCollection,
     "people[*].role.slug": rolesCollection,
   },
-  views: {
-    index: {
+  views: (view) => ({
+    index: view({
       resolveRelations: 1,
       augment: async (project) => {
         return {
           luxonDates: toLuxonDates(project.dates),
         };
       },
-    },
-    page: {
+      filter: (entry) => entry.display,
+      sort: (a, b) => sortDatesDesc(a.luxonDates, b.luxonDates),
+    }),
+    page: view({
       resolveRelations: 2,
       augment: async (project) => {
         return {
@@ -75,16 +77,17 @@ export const projectsCollection = qino.createCollection({
           luxonDates: toLuxonDates(project.dates),
         };
       },
-    },
-    highlight: {
-      // To implement: add a filter to only get the highlighted projects
+    }),
+    highlight: view({
       augment: async (project) => {
         return {
           luxonDates: toLuxonDates(project.dates),
         };
       },
-    },
-  },
+      filter: (entry) => entry.highlight,
+      sort: (a, b) => sortDatesDesc(a.luxonDates, b.luxonDates),
+    }),
+  }),
 });
 
 async function withImageDimensions(src: string) {
@@ -103,4 +106,19 @@ function toLuxonDates(dates: { start: string; end?: string }) {
     start: DateTime.fromISO(dates.start),
     end: dates.end ? DateTime.fromISO(dates.end) : undefined,
   };
+}
+
+export type ProjectDates = {
+  start: DateTime;
+  end?: DateTime;
+};
+
+function sortDatesDesc(a: ProjectDates, b: ProjectDates) {
+  if (!a.end) return -1;
+  if (!b.end) return 1;
+
+  const endDiff = b.end.toMillis() - a.end.toMillis();
+  if (endDiff != 0) return endDiff;
+
+  return b.start.toMillis() - a.start.toMillis();
 }

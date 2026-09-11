@@ -5,13 +5,10 @@ import Card from "@/components/blocks/card";
 import { DATE_FORMATS, formatProjectDates } from "@/lib/format-date";
 import type { ProjectPreview } from "@/types";
 import Badge from "@/components/atoms/badge";
-import { DateTime } from "luxon";
+import { ProjectDates } from "@qino/projects";
 
 type Props = ProjectPreview & {
-  luxonDates: {
-    start: DateTime;
-    end?: DateTime;
-  };
+  luxonDates: ProjectDates;
 };
 
 export default function Project(props: Props) {

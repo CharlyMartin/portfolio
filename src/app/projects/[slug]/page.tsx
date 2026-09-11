@@ -7,7 +7,6 @@ import Section from "@/components/blocks/section";
 import Icons from "@/components/atoms/icons";
 
 import { DATE_FORMATS, formatProjectDates } from "@/lib/format-date";
-import { Use } from "@/types";
 import Badge from "@/components/atoms/badge";
 import PageTitle from "@/components/blocks/page-title";
 import ProjectStatus from "@/components/blocks/project-status";
@@ -17,6 +16,11 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeExternalLinks from "rehype-external-links";
 import { addUtmPlugin } from "@/lib/add-utm-plugin";
+
+export async function generateStaticParams() {
+  const slugs = await projectsCollection.getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { params } = props;

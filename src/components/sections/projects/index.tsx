@@ -3,15 +3,13 @@ import { twMerge } from "tailwind-merge";
 
 import Project from "@/components/blocks/project";
 import type { ProjectPreview } from "@/types";
-import { DateTime } from "luxon";
+
+import { ProjectDates } from "@qino/projects";
 
 type Props = {
   data: Array<
     ProjectPreview & {
-      luxonDates: {
-        start: DateTime;
-        end?: DateTime;
-      };
+      luxonDates: ProjectDates;
     }
   >;
 } & React.ComponentProps<"ul">;

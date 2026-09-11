@@ -31,12 +31,20 @@ type Props = {
 };
 
 export default async function ArticlePage(props: Props) {
-  const article = await articleCollection.getOne(props.params.slug);
-  const { title, body, topic, _stats } = article;
+  const { title, body, topic, created, updated, _stats } =
+    await articleCollection.getOne(props.params.slug);
 
-  const created = formatArticleDate(article.created, DATE_FORMATS.ARTICLE_LONG);
-  const updated = formatArticleDate(article.updated, DATE_FORMATS.ARTICLE_LONG);
-  const formattedCount = new Intl.NumberFormat("en-US").format(_stats.wordCount);
+  const formattedCreated = formatArticleDate(
+    created,
+    DATE_FORMATS.ARTICLE_LONG
+  );
+  const formattedUpdated = formatArticleDate(
+    updated,
+    DATE_FORMATS.ARTICLE_LONG
+  );
+  const formattedCount = new Intl.NumberFormat("en-US").format(
+    _stats.wordCount
+  );
 
   return (
     <Container>
@@ -45,8 +53,8 @@ export default async function ArticlePage(props: Props) {
         <PageTitle
           title={title}
           subtitle={[
-            `Published on ${created}`,
-            article.updated && `Updated on ${updated}`,
+            `Published on ${formattedCreated}`,
+            updated && `Updated on ${formattedUpdated}`,
             topic == "code" && "Code",
             topic == "life" && "Life",
             topic == "startup" && "Startups",
