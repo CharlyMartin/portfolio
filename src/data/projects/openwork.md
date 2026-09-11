@@ -17,12 +17,12 @@ highlight: false
 roles:
   - "roles/frontend.json"
 stack:
-  - "tools/language/typescript.json"
-  - "tools/framework/next.json"
-  - "tools/language/graphql.json"
-  - "tools/sdk/mapbox-sdk.json"
-  - "tools/sdk/intercom-sdk.json"
-  - "tools/library/react-hook-form.json"
+  - "tools/typescript.json"
+  - "tools/next.json"
+  - "tools/graphql.json"
+  - "tools/mapbox-sdk.json"
+  - "tools/intercom-sdk.json"
+  - "tools/react-hook-form.json"
 people:
   - slug: "people/gautier-roquancourt.json"
     role:

@@ -1,0 +1,9 @@
+{
+  "name": "Prisma",
+  "highlight": true,
+  "meta": "ORM",
+  "type": "library",
+  "oneLiner": "Next-generation TypeScript ORM.",
+  "description": "Prisma is the perfect ORM companion for my Next.js projects. Thanks to my days using Active Records, it was fairly easy to start with Prisma, but the TypeScript support got me hooked and turned me into a fan! TypeScript elevates Prisma to a new level and makes database operation predictable, safe, and intuitive. As a frontend developer, it makes me feel in control rather than dreading touching the database.",
+  "url": "https://www.prisma.io/"
+}

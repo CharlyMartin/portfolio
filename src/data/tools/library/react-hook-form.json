@@ -1,8 +1,0 @@
-{
-  "name": "React Hook Form",
-  "meta": "Form Management",
-  "oneLiner": "Popular form library built with React hooks.",
-  "description": "Few things are more complicated than building complex forms in React. The form state can quickly become a monstrous mess. I imagine this is why React Hook Form was invented after React introduced hooks in 2019. Along with React Final Form, React Hook Form is the easiest and most performant way to handle complex form data. I use it whenever I build a form. Even for forms as simple as one text input and submit button, the investment of setting up React Hook Form over React states pays off instantly.",
-  "favorite": true,
-  "url": "https://react-hook-form.com/"
-}

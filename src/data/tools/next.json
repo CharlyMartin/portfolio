@@ -1,0 +1,9 @@
+{
+  "name": "Next.js",
+  "meta": "Web Framework",
+  "type": "framework",
+  "oneLiner": "The React Framework for Production.",
+  "description": "After using standalone React for a while and running into the same configuration and optimisation hurdles (routing, code splitting, lazy loading, SSR, ...), I discovered Next.js v9 back in the day and was hooked by its simplicity. I've been using it ever since. Every new major version manages to make the tool even simpler to use, which is not always the case in the JavaScript ecosystem. Next.js is my go-to choice for any web project, my new Ruby on Rails.",
+  "highlight": true,
+  "url": "https://nextjs.org/"
+}

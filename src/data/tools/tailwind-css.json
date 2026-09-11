@@ -1,0 +1,9 @@
+{
+  "name": "Tailwind CSS",
+  "meta": "CSS Framework",
+  "type": "library",
+  "highlight": true,
+  "oneLiner": "The CSS framework to build any design.",
+  "description": "I love Tailwind CSS and the people behind it. Their book Refactoring UI is a must-read for anyone getting into design. It made me better at building user interfaces in a couple of hours. I can say the same about using Tailwind CSS. Its intuitive class convention and beautiful theme set developers up for success like few other frameworks do. And in a world of JavaScript everything, it stands out for its simplicity while still being extremely powerful.",
+  "url": "https://tailwindcss.com/"
+}

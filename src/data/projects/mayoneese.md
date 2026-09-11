@@ -22,11 +22,11 @@ roles:
   - "roles/ux-design.json"
   - "roles/branding.json"
 stack:
-  - "tools/language/javascript.json"
-  - "tools/framework/gatsby.json"
-  - "tools/sdk/airtable-sdk.json"
-  - "tools/language/graphql.json"
-  - "tools/language/css.json"
+  - "tools/javascript.json"
+  - "tools/gatsby.json"
+  - "tools/airtable-sdk.json"
+  - "tools/graphql.json"
+  - "tools/css.json"
 status: archived
 area: web2
 employment: side

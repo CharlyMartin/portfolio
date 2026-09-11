@@ -1,0 +1,7 @@
+{
+  "name": "React Final Form",
+  "meta": "Form Management",
+  "type": "library",
+  "oneLiner": "The react adapter for the popular final-form library.",
+  "url": "https://final-form.org/react"
+}

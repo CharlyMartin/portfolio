@@ -1,0 +1,8 @@
+{
+  "name": "Radix UI",
+  "meta": "Component Library",
+  "type": "library",
+  "oneLiner": "Unstyled, accessible components for building high‑quality design systems and web apps in React.",
+  "description": "I love the level of details that went into making Radix UI. I use wherever Headless UI doesn't cut it.",
+  "url": "https://www.radix-ui.com/"
+}

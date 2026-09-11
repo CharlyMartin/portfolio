@@ -1,8 +1,0 @@
-{
-  "name": "Prettier",
-  "meta": "Code Formatter",
-  "oneLiner": "An opinionated code formatter.",
-  "description": "Prettier changed my (dev) life. I discovered it around the same time I got into React, as I was transitioning from the Ruby world to the - much vaster - JavaScript world. It's incredibly useful as a solo developer and indispensable for teamwork. And the Tailwind plugin took my Tailwind CSS game to a new level. I remember the days when I formatted code manually; I can't believe I used to do that... Thank you, Prettier.",
-  "url": "https://prettier.io/",
-  "favorite": true
-}

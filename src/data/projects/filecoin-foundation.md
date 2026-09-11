@@ -25,14 +25,14 @@ roles:
   - "roles/backend.json"
   - "roles/devops.json"
 stack:
-  - "tools/devtool/turborepo.json"
-  - "tools/language/typescript.json"
-  - "tools/framework/next.json"
-  - "tools/library/tailwind-css.json"
-  - "tools/library/headless-ui.json"
-  - "tools/library/swr.json"
-  - "tools/library/react-hook-form.json"
-  - "tools/library/zod.json"
+  - "tools/turborepo.json"
+  - "tools/typescript.json"
+  - "tools/next.json"
+  - "tools/tailwind-css.json"
+  - "tools/headless-ui.json"
+  - "tools/swr.json"
+  - "tools/react-hook-form.json"
+  - "tools/zod.json"
 people:
   - slug: "people/mirha-masala.json"
     role:

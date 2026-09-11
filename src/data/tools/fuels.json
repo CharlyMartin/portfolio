@@ -1,0 +1,7 @@
+{
+  "name": "Fuels",
+  "meta": "Blockchain SDK",
+  "type": "sdk",
+  "oneLiner": "The library for interacting with the Fuel blockchain.",
+  "url": "https://fuellabs.github.io/fuels-ts/"
+}

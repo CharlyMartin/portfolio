@@ -1,0 +1,8 @@
+{
+  "name": "Google Calendar SDK",
+  "meta": "Web API",
+  "type": "sdk",
+  "oneLiner": "The web API for the most popular calendar app.",
+  "description": "I've worked a lot with Google's Calendar API when implementing a real-time, bi-directional calendar sync. Their webhook system is tricky to work with, but we made it work!",
+  "url": "https://developers.google.com/calendar"
+}

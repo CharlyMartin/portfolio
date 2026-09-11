@@ -19,15 +19,15 @@ highlight: false
 roles:
   - "roles/frontend.json"
 stack:
-  - "tools/language/typescript.json"
-  - "tools/framework/gatsby.json"
-  - "tools/sdk/stripe-sdk.json"
-  - "tools/library/react.json"
-  - "tools/library/rebass.json"
-  - "tools/library/redux.json"
-  - "tools/devtool/docker.json"
-  - "tools/library/react-router.json"
-  - "tools/library/lottie-web.json"
+  - "tools/typescript.json"
+  - "tools/gatsby.json"
+  - "tools/stripe-sdk.json"
+  - "tools/react.json"
+  - "tools/rebass.json"
+  - "tools/redux.json"
+  - "tools/docker.json"
+  - "tools/react-router.json"
+  - "tools/lottie-web.json"
 people:
   - slug: "people/louis-roufinaud.json"
     role:

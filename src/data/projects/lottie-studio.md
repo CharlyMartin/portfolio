@@ -19,11 +19,11 @@ roles:
   - "roles/frontend.json"
   - "roles/devops.json"
 stack:
-  - "tools/language/html.json"
-  - "tools/language/css.json"
-  - "tools/language/javascript.json"
-  - "tools/library/lottie-web.json"
-  - "tools/devtool/parcel.json"
+  - "tools/html.json"
+  - "tools/css.json"
+  - "tools/javascript.json"
+  - "tools/lottie-web.json"
+  - "tools/parcel.json"
 people:
   - slug: "people/andre-navarre.json"
     role:

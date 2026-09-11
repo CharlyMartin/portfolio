@@ -20,11 +20,11 @@ roles:
   - "roles/frontend.json"
   - "roles/devops.json"
 stack:
-  - "tools/language/javascript.json"
-  - "tools/framework/next.json"
-  - "tools/library/chakra-ui.json"
-  - "tools/sdk/twilio-sdk.json"
-  - "tools/library/react-hook-form.json"
+  - "tools/javascript.json"
+  - "tools/next.json"
+  - "tools/chakra-ui.json"
+  - "tools/twilio-sdk.json"
+  - "tools/react-hook-form.json"
 people:
   - slug: "people/aurelien-salomon.json"
     role:

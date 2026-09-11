@@ -6,6 +6,15 @@ const ToolsSchema = z
   .object({
     name: z.string().min(1),
     meta: z.string().min(1),
+    type: z.enum([
+      "language",
+      "library",
+      "framework",
+      "devtool",
+      "productivity",
+      "workspace",
+      "sdk",
+    ]),
     oneLiner: z.string().min(1),
     description: z.string().min(1).optional(),
     url: z.string().url(),
@@ -14,9 +23,15 @@ const ToolsSchema = z
   })
   .strict();
 
-export const toolsTree = qino.createTree({
+export type Tool = z.infer<typeof ToolsSchema>;
+
+export const toolsCollection = qino.createCollection({
   directory: "/tools",
   schema: ToolsSchema,
   extension: ".json",
-  titleField: "name",
+  views: (view) => ({
+    highlight: view({
+      filter: (entry) => Boolean(entry.highlight),
+    }),
+  }),
 });

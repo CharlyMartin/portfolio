@@ -1,0 +1,8 @@
+{
+  "name": "Zod",
+  "meta": "Validation Library",
+  "type": "library",
+  "oneLiner": "The most popular validation library",
+  "description": "Zod has been my go-to validation library for years, the TypeScript native integration is grandiose.",
+  "url": "https://zod.dev/"
+}

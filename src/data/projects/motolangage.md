@@ -13,11 +13,11 @@ highlight: false
 roles:
   - "roles/frontend.json"
 stack:
-  - "tools/language/javascript.json"
-  - "tools/language/css.json"
-  - "tools/library/react.json"
-  - "tools/library/redux.json"
-  - "tools/library/react-router.json"
+  - "tools/javascript.json"
+  - "tools/css.json"
+  - "tools/react.json"
+  - "tools/redux.json"
+  - "tools/react-router.json"
 people:
   - slug: "people/louis-roufinaud.json"
     role:

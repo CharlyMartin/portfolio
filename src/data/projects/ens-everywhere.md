@@ -20,11 +20,11 @@ roles:
   - "roles/ui-design.json"
   - "roles/devops.json"
 stack:
-  - "tools/language/typescript.json"
-  - "tools/framework/next.json"
-  - "tools/library/chakra-ui.json"
-  - "tools/sdk/ethers.json"
-  - "tools/library/react-hook-form.json"
+  - "tools/typescript.json"
+  - "tools/next.json"
+  - "tools/chakra-ui.json"
+  - "tools/ethers.json"
+  - "tools/react-hook-form.json"
 people:
   - slug: "people/kalle-moen.json"
     role:

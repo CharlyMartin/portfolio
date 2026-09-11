@@ -1,7 +1,0 @@
-{
-  "name": "SWR",
-  "meta": "Async State Management",
-  "oneLiner": "Popular  async state management library, by the team behind Next.js.",
-  "description": "I found out about SWR as I was browsing the Next.js docs. I was impressed by all the features of the tool and the simplicity of the API.",
-  "url": "https://swr.vercel.app/"
-}

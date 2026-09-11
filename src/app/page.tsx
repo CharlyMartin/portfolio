@@ -12,9 +12,7 @@ import DmTelegram from "@/components/blocks/dm-telegram";
 import BookCall from "@/components/blocks/book-call";
 import Icons from "@/components/atoms/icons";
 import Availability from "@/components/blocks/availability";
-import { getUses } from "@/data/uses";
 import Card from "@/components/blocks/card";
-import { Use } from "@/types";
 import { getBio } from "@/data/bio";
 import Prose from "@/components/atoms/prose";
 import { META } from "@/data/config";
@@ -23,6 +21,7 @@ import { metadata as globalMeta } from "@/app/layout";
 import Article from "@/components/blocks/article";
 import { projectsCollection } from "@qino/projects";
 import { articleCollection } from "@qino/articles";
+import { toolsCollection } from "@qino/tools";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -32,10 +31,11 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const projects = await projectsCollection.getAll({ view: "highlight" });
-  const favoriteUses = getUses({ highlight: true });
-  const articles = await articleCollection.getAll({ view: "highlight" });
-  const bio = await getBio();
+  const favProjects = await projectsCollection.getAll({ view: "highlight" });
+  const favoriteTools = await toolsCollection.getAll({ view: "highlight" });
+  const favArticles = await articleCollection.getAll({ view: "highlight" });
+
+  const bio = await getBio(); // create singletons here
 
   return (
     <React.Fragment>
@@ -83,7 +83,7 @@ export default async function Home() {
 
       <Container id="work">
         <Section.Title icon={Icons.Work} title="Featured Projects" />
-        <Projects data={projects.slice(0, 3)} className="mt-10" />
+        <Projects data={favProjects.slice(0, 3)} className="mt-10" />
 
         <SeeMore href="/projects" className="mt-12">
           See all projects
@@ -92,14 +92,14 @@ export default async function Home() {
 
       <Separator />
 
-      {!!articles.length && (
+      {!!favArticles.length && (
         <Container id="articles">
           <Section.Title icon={Icons.Article} title="Featured Articles" />
           <div
             role="list"
             className="mt-10 grid grid-cols-1 gap-x-16 gap-y-10 sm:grid-cols-2"
           >
-            {articles.map((article) => {
+            {favArticles.slice(0, 2).map((article) => {
               return (
                 <Article.Square
                   key={article._meta.slug}
@@ -120,7 +120,7 @@ export default async function Home() {
         </Container>
       )}
 
-      {!!articles.length && <Separator />}
+      {!!favArticles.length && <Separator />}
 
       <Container id="stack">
         <Section.Title icon={Icons.Stack} title="Favourite Stack" />
@@ -129,7 +129,7 @@ export default async function Home() {
           role="list"
           className="mt-10 grid grid-cols-1 gap-x-16 gap-y-8 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {favoriteUses.map((use, i) => {
+          {favoriteTools.slice(0, 6).map((use, i) => {
             return <FavoriteUse {...use} key={i} />;
           })}
         </ul>
@@ -142,7 +142,11 @@ export default async function Home() {
   );
 }
 
-type FavoriteUseProps = Use;
+type FavoriteUseProps = {
+  name: string;
+  oneLiner: string;
+  meta: string;
+};
 
 function FavoriteUse(props: FavoriteUseProps) {
   const { name, oneLiner, meta } = props;

@@ -1,7 +1,0 @@
-{
-  "name": "Mapbox SDK",
-  "meta": "Web API",
-  "oneLiner": "Maps and location for developers.",
-  "description": "I tried Mapbox when Google Maps API became too expensive for our use case. It's a great alternative and simpler to set up than Google Maps.",
-  "url": "https://www.mapbox.com/"
-}

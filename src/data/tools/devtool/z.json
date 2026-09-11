@@ -1,7 +1,0 @@
-{
-  "name": "Z - jump around",
-  "meta": "Shell Tool",
-  "oneLiner": "Shell script to move around the file system",
-  "description": "Z is a tiny shell script but such a cool one. It makes moving around the file system so much easier. I 'z' my way around directories instead of 'cd'ing like a caveman.",
-  "url": "https://github.com/rupa/z"
-}

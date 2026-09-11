@@ -1,0 +1,7 @@
+{
+  "name": "Vite",
+  "meta": "Bundler",
+  "type": "devtool",
+  "oneLiner": "Next-generation bundler for frontend projects.",
+  "url": "https://vitejs.dev/"
+}

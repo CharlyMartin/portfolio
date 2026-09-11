@@ -1,8 +1,0 @@
-{
-  "name": "XState",
-  "meta": "State Management",
-  "oneLiner": "Popular library for state machines and statecharts",
-  "description": "Like TypeScript, it took some time to understand XState and unleash its full potential. But once I did, I was hooked! Finite state machines are a mind shift from traditional state management libraries but a worthwhile investment for anyone building complex UIs. It simplifies the complexity like few other tools. Its author, David Khourshid, is an excellent teacher and demystified the world of state machines in a fun way. I recommend watching his videos.",
-  "url": "https://xstate.js.org/",
-  "favorite": true
-}
