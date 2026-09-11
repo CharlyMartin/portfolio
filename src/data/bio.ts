@@ -1,8 +1,7 @@
-import { parseFileContent } from "@/lib/parse-markdown";
-import type { Bio } from "@/types";
 import image from "@/images/avatar.jpeg";
+import { longBio, shortBio } from "@qino/bio";
 
-const data: Bio = {
+const data = {
   name: "Charly",
   headline: "Senior Software Developer, ex-Founder & UI Designer",
   // headline: "Software Engineer, ex-Founder & OSS Contributor",
@@ -15,15 +14,12 @@ const data: Bio = {
     src: image,
     alt: "Photo of Charly",
   },
-};
+} as const;
 
 export async function getBio() {
-  const short = await parseFileContent("bio", "short");
-  const long = await parseFileContent("bio", "long");
-
   return {
     ...data,
-    short: short.html,
-    long: long.html,
+    short: await shortBio.getData(),
+    long: await longBio.getData(),
   };
 }

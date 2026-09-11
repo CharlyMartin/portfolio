@@ -1,14 +1,17 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-import Project from "@/components/blocks/project";
-import type { ProjectPreview } from "@/types";
-
-import { ProjectDates } from "@qino/projects";
+import Project, {
+  type Props as ProjectProps,
+} from "@/components/blocks/project";
+import { ProjectDates, ProjectType } from "@qino/projects";
 
 type Props = {
   data: Array<
-    ProjectPreview & {
+    ProjectType & {
+      _meta: {
+        slug: string;
+      };
       luxonDates: ProjectDates;
     }
   >;
@@ -26,10 +29,17 @@ export default function Projects(props: Props) {
       )}
       {...rest}
     >
-      {data.map(function renderProjects(project, i) {
+      {data.map(function renderProjects(project) {
         return (
-          <li key={i}>
-            <Project {...project} />
+          <li key={project._meta.slug}>
+            <Project
+              title={project.title}
+              description={project.description}
+              dates={project.luxonDates}
+              area={project.area}
+              logo={project.logo}
+              slug={project._meta.slug}
+            />
           </li>
         );
       })}

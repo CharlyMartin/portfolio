@@ -3,7 +3,7 @@ import { z } from "zod";
 import qino from ".";
 
 import { rolesCollection } from "./roles";
-import { toolsTree } from "./tools";
+import { toolsCollection } from "./tools";
 import path from "node:path";
 import sharp from "sharp";
 import { peopleCollection } from "./people";
@@ -45,6 +45,8 @@ export const ProjectSchema = z.object({
   body: z.string(),
 });
 
+export type ProjectType = z.infer<typeof ProjectSchema>;
+
 export const projectsCollection = qino.createCollection({
   directory: "/projects",
   schema: ProjectSchema,
@@ -52,7 +54,7 @@ export const projectsCollection = qino.createCollection({
   relations: {
     // TS autocomplete should trigger here
     "roles[*]": rolesCollection,
-    "stack[*]": toolsTree,
+    "stack[*]": toolsCollection,
     "people[*].slug": peopleCollection,
     "people[*].role.slug": rolesCollection,
   },

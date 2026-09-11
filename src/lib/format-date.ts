@@ -1,14 +1,9 @@
+import { ProjectDates } from "@qino/projects";
 import { DateTime } from "luxon";
 
 type Options = Intl.DateTimeFormatOptions;
 
-export function formatProjectDates(
-  dates: {
-    start: DateTime;
-    end?: DateTime;
-  },
-  options?: Options
-) {
+export function formatProjectDates(dates: ProjectDates, options?: Options) {
   const { start, end } = dates;
   const opt = options || {};
 

@@ -1,13 +1,9 @@
 import React from "react";
 import type { Metadata } from "next";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypePrismPlus from "rehype-prism-plus";
-import rehypeExternalLinks from "rehype-external-links";
+import Markdown from "@/components/blocks/markdown";
 
 import Container from "@/components/blocks/container";
 import Back from "@/components/atoms/back";
-import { addUtmPlugin } from "@/lib/add-utm-plugin";
 import { DATE_FORMATS, formatArticleDate } from "@/lib/format-date";
 import PageTitle from "@/components/blocks/page-title";
 import { articleCollection } from "@qino/articles";
@@ -63,22 +59,7 @@ export default async function ArticlePage(props: Props) {
         <br />
         {/* To replace with a header picture later on */}
 
-        <div className="prose dark:prose-invert">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[
-              [rehypePrismPlus, { showLineNumbers: true }],
-              [
-                rehypeExternalLinks,
-                { rel: ["noopener", "noreferrer"], target: "_blank" },
-              ],
-              addUtmPlugin,
-            ]}
-            skipHtml
-          >
-            {body}
-          </ReactMarkdown>
-        </div>
+        <Markdown highlightCode>{body}</Markdown>
       </div>
     </Container>
   );

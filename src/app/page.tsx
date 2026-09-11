@@ -14,7 +14,6 @@ import Icons from "@/components/atoms/icons";
 import Availability from "@/components/blocks/availability";
 import Card from "@/components/blocks/card";
 import { getBio } from "@/data/bio";
-import Prose from "@/components/atoms/prose";
 import { META } from "@/data/config";
 import { metadata as globalMeta } from "@/app/layout";
 // import Photos from "@/components/sections/photos";
@@ -22,6 +21,7 @@ import Article from "@/components/blocks/article";
 import { projectsCollection } from "@qino/projects";
 import { articleCollection } from "@qino/articles";
 import { toolsCollection } from "@qino/tools";
+import Markdown from "@/components/blocks/markdown";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -35,7 +35,7 @@ export default async function Home() {
   const favoriteTools = await toolsCollection.getAll({ view: "highlight" });
   const favArticles = await articleCollection.getAll({ view: "highlight" });
 
-  const bio = await getBio(); // create singletons here
+  const bio = await getBio();
 
   return (
     <React.Fragment>
@@ -44,7 +44,10 @@ export default async function Home() {
           {/* <Interests short={bio.badge.short} long={bio.badge.long} /> */}
 
           <Title>{bio.headline}</Title>
-          <Prose html={bio.short} className="standalone mt-4 sm:mt-6" />
+
+          <Markdown className="standalone mt-4 sm:mt-6">
+            {bio.short.body}
+          </Markdown>
 
           <div className="hidden pt-4 sm:block">
             <SeeMore href="/about">Read full bio</SeeMore>

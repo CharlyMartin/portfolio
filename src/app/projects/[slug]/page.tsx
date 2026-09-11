@@ -12,10 +12,7 @@ import PageTitle from "@/components/blocks/page-title";
 import ProjectStatus from "@/components/blocks/project-status";
 import ImageGallery from "@/components/blocks/image-gallery";
 import { projectsCollection } from "@qino/projects";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypeExternalLinks from "rehype-external-links";
-import { addUtmPlugin } from "@/lib/add-utm-plugin";
+import Markdown from "@/components/blocks/markdown";
 
 export async function generateStaticParams() {
   const slugs = await projectsCollection.getAllSlugs();
@@ -104,21 +101,7 @@ export default async function ProjectPage(props: Props) {
           /> */}
           <ImageGallery images={imagesWithDimenstions} name={name} />
 
-          <div className="prose dark:prose-invert">
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              rehypePlugins={[
-                [
-                  rehypeExternalLinks,
-                  { rel: ["noopener", "noreferrer"], target: "_blank" },
-                ],
-                addUtmPlugin,
-              ]}
-              skipHtml
-            >
-              {body}
-            </ReactMarkdown>
-          </div>
+          <Markdown>{body}</Markdown>
         </div>
 
         {/* Right */}
@@ -185,31 +168,3 @@ function ListItem(props: ListItemProps) {
     </li>
   );
 }
-
-// function sortStack(stack: Array<Use>) {
-//   // Sort stack by the following order:
-//   // 1. Languages
-//   // 3. Libraries
-//   // 4. SDK
-//   // 5. Rest
-//   return stack.sort((a, b) => {
-//     const aType = a.type;
-//     const bType = b.type;
-
-//     if (aType == bType) return 0;
-
-//     if (aType == "language") return -1;
-//     if (bType == "language") return 1;
-
-//     if (aType == "framework") return -1;
-//     if (bType == "framework") return 1;
-
-//     if (aType == "library") return -1;
-//     if (bType == "library") return 1;
-
-//     if (aType == "sdk") return -1;
-//     if (bType == "sdk") return 1;
-
-//     return 0;
-//   });
-// }

@@ -2,10 +2,49 @@ import z from "zod";
 
 import qino from ".";
 
+const meta = z.enum([
+  "Programming Language",
+  "Web Language",
+  "Query Language",
+  "Web Framework",
+  "UI Library",
+  "Authentication Library",
+  "State Management",
+  "Component Library",
+  "CSS Framework",
+  "Code Editor",
+  "Version Control",
+  "Productivity Tool",
+  "Web Browser",
+  "Operating System",
+  "Hardware",
+  "Web API",
+  "Code Formatter",
+  "Code Linter",
+  "Container Platform",
+  "Database",
+  "ORM",
+  "Web API",
+  "Blockchain SDK",
+  "Animation Library",
+  "BigNum Library",
+  "Async State Management",
+  "Data Fetching",
+  "Form Management",
+  "Routing",
+  "Shell Tool",
+  "AI Tool",
+  "Bundler",
+  "Code Collaboration",
+  "Design Tool",
+  "Build System",
+  "Validation Library",
+]);
+
 const ToolsSchema = z
   .object({
     name: z.string().min(1),
-    meta: z.string().min(1),
+    meta: meta,
     type: z.enum([
       "language",
       "library",
@@ -29,6 +68,9 @@ export const toolsCollection = qino.createCollection({
   directory: "/tools",
   schema: ToolsSchema,
   extension: ".json",
+  sort: (a, b) =>
+    Number(Boolean(b.favorite || b.highlight)) -
+    Number(Boolean(a.favorite || a.highlight)),
   views: (view) => ({
     highlight: view({
       filter: (entry) => Boolean(entry.highlight),
