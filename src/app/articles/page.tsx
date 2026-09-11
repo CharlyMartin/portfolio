@@ -31,7 +31,7 @@ export default async function ArticlesPage() {
               created={new Date(article.created)}
               description={article.description}
               topic={article.topic}
-              wordCount={article._stats.wordCount}
+              wordCount={article.stats.wordCount}
             />
           );
         })}

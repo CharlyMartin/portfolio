@@ -2,7 +2,7 @@
 title: "The deception of rendering React children"
 description: All React developers learn early on that when a component re-renders, so do all of its children. But there's a nuance to this foundational concept that's not immediately obvious.
 created: 2024-02-22
-highlight: false
+highlight: true
 topic: "code"
 ---
 

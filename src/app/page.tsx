@@ -20,9 +20,9 @@ import Prose from "@/components/atoms/prose";
 import { META } from "@/data/config";
 import { metadata as globalMeta } from "@/app/layout";
 // import Photos from "@/components/sections/photos";
-import { getHighligthedArticles } from "@/data/articles";
 import Article from "@/components/blocks/article";
 import { projectsCollection } from "@qino/projects";
+import { articleCollection } from "@qino/articles";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 export default async function Home() {
   const projects = await projectsCollection.getAll({ view: "highlight" });
   const favoriteUses = getUses({ highlight: true });
-  const articles = await getHighligthedArticles();
+  const articles = await articleCollection.getAll({ view: "highlight" });
   const bio = await getBio();
 
   return (
@@ -102,13 +102,13 @@ export default async function Home() {
             {articles.map((article) => {
               return (
                 <Article.Square
+                  key={article._meta.slug}
+                  slug={article._meta.slug}
                   title={article.title}
                   description={article.description}
                   created={article.created}
-                  slug={article._meta.slug}
                   topic={article.topic}
-                  wordCount={article._stats.wordCount}
-                  key={article._meta.slug}
+                  wordCount={article.stats.wordCount}
                 />
               );
             })}

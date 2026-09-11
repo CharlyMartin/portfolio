@@ -2,7 +2,7 @@
 title: "Seeking new adventures? Get yourself some exposure"
 description: Whether you love your current path or wouldn’t mind a little change, it is always flattering to be offered to fly to new horizons. Unless you get yourself sufficient exposure, this is unlikely to happen.
 created: 2017-07-21
-highlight: false
+highlight: true
 topic: "life"
 ---
 

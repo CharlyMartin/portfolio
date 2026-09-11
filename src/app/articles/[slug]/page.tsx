@@ -31,7 +31,7 @@ type Props = {
 };
 
 export default async function ArticlePage(props: Props) {
-  const { title, body, topic, created, updated, _stats } =
+  const { title, body, topic, created, updated, stats } =
     await articleCollection.getOne(props.params.slug);
 
   const formattedCreated = formatArticleDate(
@@ -42,9 +42,7 @@ export default async function ArticlePage(props: Props) {
     updated,
     DATE_FORMATS.ARTICLE_LONG
   );
-  const formattedCount = new Intl.NumberFormat("en-US").format(
-    _stats.wordCount
-  );
+  const formattedCount = new Intl.NumberFormat("en-US").format(stats.wordCount);
 
   return (
     <Container>
