@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - Install: `npm install`
 - Dev server: `npm run dev` (http://localhost:3000)
-- Build: `npm run build` (also regenerates `public/sitemap.xml` via `scripts/generate-sitemap.js`, hooked into the Next.js webpack config)
+- Build: `npm run build` (Next.js generates `/sitemap.xml` from `src/app/sitemap.ts`, using qino collection slugs and static page discovery)
 - Start production build: `npm run start`
 - Lint: `npm run lint`
 - Typecheck: no dedicated script; run `npx tsc --noEmit`
