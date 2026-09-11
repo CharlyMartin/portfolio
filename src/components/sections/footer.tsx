@@ -1,6 +1,6 @@
 import Link, { LinkProps } from "next/link";
 
-import Container from "../../blocks/container";
+import Container from "../blocks/container";
 import Separator from "@/components/atoms/separator";
 import { routes } from "@/data/routes";
 import { META } from "@/data/config";

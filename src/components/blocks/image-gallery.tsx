@@ -4,7 +4,7 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 
-import Gallery from "./gallery";
+import Gallery from "./image-gallery/gallery";
 
 type Props = {
   images: Array<{ src: string; width: number; height: number }>;

@@ -1,5 +1,5 @@
 import { Props as IconProps } from "@/components/atoms/icons";
-import A from "../a";
+import A from "./a";
 
 // SocialLink
 type Props = {

@@ -1,10 +1,10 @@
 import React from "react";
 
-import Container from "../../blocks/container";
-import Avatar from "../../atoms/avatar";
-import ThemeToggle from "../../atoms/theme-toggle";
-import DesktopNavigation from "../../blocks/navigation/desktop";
-import MobileNavigation from "../../blocks/navigation/mobile";
+import Container from "../blocks/container";
+import Avatar from "../atoms/avatar";
+import ThemeToggle from "../atoms/theme-toggle";
+import DesktopNavigation from "../blocks/navigation/desktop";
+import MobileNavigation from "../blocks/navigation/mobile";
 
 export default function Header() {
   return (
