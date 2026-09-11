@@ -20,14 +20,14 @@ async function generateSitemap() {
 
   // Projects
   const projectFileNames = await glob(["*.md"], {
-    cwd: path.join(process.cwd(), "src/data/projects"),
+    cwd: path.join(process.cwd(), "src/content/projects"),
   });
 
   const xmlProjects = projectFileNames.map(addXMLProject).join("\n");
 
   // Articles
   const articleFileNames = await glob(["*.md"], {
-    cwd: path.join(process.cwd(), "src/data/articles"),
+    cwd: path.join(process.cwd(), "src/content/articles"),
   });
 
   const xmlArticles = articleFileNames.map(addXMLArticle).join("\n");

@@ -14,16 +14,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Architecture
 
-Next.js 13 App Router site (TypeScript, strict mode) with no CMS — content lives in the repo as TypeScript data files and Markdown files with frontmatter.
+Next.js 14 App Router site (TypeScript, strict mode) with no CMS — qino manages repo-local Markdown files with frontmatter and JSON content.
 
-**Content layer (`src/data/`)** — the part of this repo that changes most often:
+**Content layer (`src/content/`)** — configured by `contentFolder` in `qino/index.ts`, with schemas, relations, and views defined in `qino/`:
 
-- `articles.ts` — globs `src/data/articles/<slug>/index.md`, validates frontmatter with a `zod` schema (`title`, `description`, `created`, `updated?`, `highlight?`, `topic`), computes word count. `src/data/articles/_drafts/` and `_archive/` are gitignored (unpublished content).
-- `projects.ts` — a hardcoded array of project metadata; each entry cross-references `skills.ts`, `people.ts`, and `uses.ts` by numeric ID, and pairs with a long-form body at `src/data/projects/<slug>.md`.
-- `bio.ts` + `bio/short.md` / `bio/long.md` — bio content.
-- `config.ts` (site-wide `AVAILABILITY`, `BASE_URL`, `META`), `routes.ts` (nav).
+- `articles/<slug>.md` — article frontmatter and body, validated by `qino/articles.ts`, which also computes Markdown stats. `articles/_drafts/` and `articles/_archive/` are gitignored (unpublished content).
+- `projects/<slug>.md` — project metadata and body, with slug-based relations to the `roles/`, `tools/`, and `people/` JSON collections.
+- `bio/short.md` and `bio/long.md` — singleton bio content.
+- `people/`, `roles/`, and `tools/` — JSON content collections.
 
-**Markdown pipeline** (`src/lib/parse-markdown.ts`): reads a file from `src/data/<location>/<slug>.md` (`location` = `"projects" | "bio" | "articles"`), extracts frontmatter with `gray-matter`, then pipes through `unified`: `remark-parse` → `remark-gfm` → `remark-rehype` → `rehype-prism-plus` (code highlighting) → `rehype-external-links` → a custom UTM-injection plugin → `rehype-stringify`. This runs server-side inside Server Components at request/build time — there's no separate SSG data-fetching step.
+**Application data (`src/data/`)**: TypeScript modules remain here: `bio.ts` combines profile metadata with the qino bio singletons; `config.ts`, `contact.ts`, and `routes.ts` provide site configuration, contact details, and navigation. Public media stays in `public/`, configured by qino's `mediaFolder`.
 
 **Components** are organized in tiers under `src/components/`: `atoms/` (primitives), `blocks/` (composed components), `sections/` (page-level sections used by `src/app/*/page.tsx`).
 
