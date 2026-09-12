@@ -6,14 +6,19 @@ import qino from ".";
 export const ArticleSchema = z.object({
   title: z.string(),
   description: z.string(),
-  created: z.date(), // should be string
-  updated: z.date().optional(), // should be string
+  created: z.iso.date().transform((value) => new Date(value)),
+  updated: z.iso
+    .date()
+    .optional()
+    .transform((value) =>
+      typeof value == "string" ? new Date(value) : undefined
+    ),
   highlight: z.boolean().optional(),
   topic: z.enum(["code", "life", "startup"]),
   body: z.string(),
 });
 
-export type RawArticle = z.infer<typeof ArticleSchema>;
+export type RawArticle = z.output<typeof ArticleSchema>;
 
 export const articleCollection = qino.createCollection({
   directory: "/articles",

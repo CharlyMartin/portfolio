@@ -1,14 +1,12 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-import Project, {
-  type Props as ProjectProps,
-} from "@/components/blocks/project";
-import { ProjectDates, ProjectType } from "@qino/projects";
+import Project from "@/components/blocks/project";
+import type { ProjectDates, ProjectType } from "@qino/projects";
 
 type Props = {
   data: Array<
-    ProjectType & {
+    Pick<ProjectType, "title" | "description" | "area" | "logo"> & {
       _meta: {
         slug: string;
       };

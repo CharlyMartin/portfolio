@@ -2,7 +2,7 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 
 import Text from "@/components/atoms/text";
-import { Availability } from "@/types";
+import type { Availability } from "@/types";
 import { AVAILABILITY } from "@/data/config";
 
 const data: Record<Availability, any> = {

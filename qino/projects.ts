@@ -18,7 +18,7 @@ export const ProjectSchema = z.object({
   logo: z
     .object({
       src: z.string().startsWith("/"),
-      style: z.record(z.string()).optional(),
+      style: z.record(z.string(), z.string()).optional(),
     })
     .optional(),
   images: z.array(z.string().startsWith("/")).default([]),

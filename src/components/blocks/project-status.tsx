@@ -4,12 +4,12 @@ import { twMerge } from "tailwind-merge";
 import A from "@/components/atoms/a";
 import Button from "@/components/atoms/button";
 import Icons from "@/components/atoms/icons";
-import { Project } from "@/types";
+import type { ProjectType } from "@qino/projects";
 import { getHostname } from "@/lib/get-hostname";
 
 type Props = {
-  url: Project["url"];
-  status: Project["status"];
+  url: ProjectType["url"];
+  status: ProjectType["status"];
 };
 
 export default function ProjectStatus(props: Props) {
