@@ -18,8 +18,6 @@ export const ArticleSchema = z.object({
   body: z.string(),
 });
 
-export type RawArticle = z.output<typeof ArticleSchema>;
-
 export const articleCollection = qino.createCollection({
   directory: "/articles",
   schema: ArticleSchema,
@@ -39,7 +37,9 @@ export const articleCollection = qino.createCollection({
   }),
 });
 
-function sortDatesDesc(a: RawArticle, b: RawArticle) {
+type Article = z.output<typeof ArticleSchema>;
+
+function sortDatesDesc(a: Article, b: Article) {
   return (
     (b.updated ?? b.created).getTime() - (a.updated ?? a.created).getTime()
   );

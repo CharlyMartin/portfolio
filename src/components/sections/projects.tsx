@@ -2,17 +2,10 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 
 import Project from "@/components/blocks/project";
-import type { ProjectDates, ProjectType } from "@qino/projects";
+import type { IndexProject } from "@qino/projects";
 
 type Props = {
-  data: Array<
-    Pick<ProjectType, "title" | "description" | "area" | "logo"> & {
-      _meta: {
-        slug: string;
-      };
-      luxonDates: ProjectDates;
-    }
-  >;
+  data: Array<IndexProject>;
 } & React.ComponentProps<"ul">;
 
 export default function Projects(props: Props) {

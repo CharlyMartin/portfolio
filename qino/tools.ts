@@ -56,7 +56,7 @@ const ToolsSchema = z
     ]),
     oneLiner: z.string().min(1),
     description: z.string().min(1).optional(),
-    url: z.string().url(),
+    url: z.url(),
     highlight: z.boolean().optional(),
     favorite: z.boolean().optional(),
   })

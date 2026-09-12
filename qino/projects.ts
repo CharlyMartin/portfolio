@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { Infer } from "qino";
 
 import qino from ".";
 
@@ -10,6 +11,10 @@ import { peopleCollection } from "./people";
 import { DateTime } from "luxon";
 
 const yearMonth = z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/);
+
+export type ZodProjectType = z.infer<typeof ProjectSchema>;
+export type QinoProjectType = Infer<typeof projectsCollection>;
+export type IndexProject = QinoProjectType["views"]["index"];
 
 export const ProjectSchema = z.object({
   title: z.string().min(1),
@@ -26,7 +31,7 @@ export const ProjectSchema = z.object({
     start: yearMonth,
     end: yearMonth.optional(),
   }),
-  url: z.string().url(),
+  url: z.url(),
   display: z.boolean(),
   highlight: z.boolean(),
   roles: z.array(z.string()),
@@ -44,8 +49,6 @@ export const ProjectSchema = z.object({
   employment: z.enum(["contract", "permanent", "side"]),
   body: z.string(),
 });
-
-export type ProjectType = z.infer<typeof ProjectSchema>;
 
 export const projectsCollection = qino.createCollection({
   directory: "/projects",
@@ -103,19 +106,16 @@ async function withImageDimensions(src: string) {
   return { src, width, height };
 }
 
-function toLuxonDates(dates: { start: string; end?: string }) {
+function toLuxonDates(dates: Pick<ZodProjectType, "dates">["dates"]) {
   return {
     start: DateTime.fromISO(dates.start),
     end: dates.end ? DateTime.fromISO(dates.end) : undefined,
   };
 }
 
-export type ProjectDates = {
-  start: DateTime;
-  end?: DateTime;
-};
+type LuxonDates = { start: DateTime; end?: DateTime };
 
-function sortDatesDesc(a: ProjectDates, b: ProjectDates) {
+function sortDatesDesc(a: LuxonDates, b: LuxonDates) {
   if (!a.end) return -1;
   if (!b.end) return 1;
 

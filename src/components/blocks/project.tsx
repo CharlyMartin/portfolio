@@ -5,14 +5,14 @@ import Card from "@/components/blocks/card";
 import { DATE_FORMATS, formatProjectDates } from "@/lib/format-date";
 
 import Badge from "@/components/atoms/badge";
-import { ProjectDates, ProjectType } from "@qino/projects";
+import { IndexProject } from "@qino/projects";
 
 export type Props = {
   title: string;
-  logo: ProjectType["logo"];
+  logo: IndexProject["logo"];
   description: string;
-  dates: ProjectDates;
-  area: ProjectType["area"];
+  dates: IndexProject["luxonDates"];
+  area: IndexProject["area"];
   slug: string;
 };
 

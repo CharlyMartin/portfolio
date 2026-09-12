@@ -1,13 +1,15 @@
-import { ProjectDates } from "@qino/projects";
+import { IndexProject } from "@qino/projects";
 import { DateTime } from "luxon";
 
 type Options = Intl.DateTimeFormatOptions;
 
-export function formatProjectDates(dates: ProjectDates, options?: Options) {
+export function formatProjectDates(
+  dates: IndexProject["luxonDates"],
+  options?: Options
+) {
   const { start, end } = dates;
   const opt = options || {};
 
-  // If no end date, show "Present"
   if (!end) {
     return `${start.toLocaleString(opt)} to Present`;
   }
