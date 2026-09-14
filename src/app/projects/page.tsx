@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ProjectsPage() {
-  const projects = await projectsCollection.getAll({ view: "index" });
+  const projects = await projectsCollection.getAll();
 
   return (
     <PageHeading

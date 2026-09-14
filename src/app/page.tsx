@@ -22,6 +22,7 @@ import { projectsCollection } from "@qino/projects";
 import { articleCollection } from "@qino/articles";
 import { toolsCollection } from "@qino/tools";
 import Markdown from "@/components/blocks/markdown";
+import { markdown } from "qino/utils";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -111,7 +112,7 @@ export default async function Home() {
                   description={article.description}
                   created={article.created}
                   topic={article.topic}
-                  wordCount={article.stats.wordCount}
+                  wordCount={markdown.stats(article.body).wordCount}
                 />
               );
             })}

@@ -18,29 +18,25 @@ export const ArticleSchema = z.object({
   body: z.string(),
 });
 
+type ZodOutput = z.output<typeof ArticleSchema>;
+
 export const articleCollection = qino.createCollection({
   directory: "/articles",
   schema: ArticleSchema,
   extension: ".md",
-  augment: (article) => ({
-    stats: markdown.stats(article.body),
-  }),
-  sort: sortDatesDesc,
-  views: (view) => ({
-    highlight: view({
-      augment: (article) => ({
-        stats: markdown.stats(article.body),
-      }),
-      filter: (entry) => Boolean(entry.highlight),
-      sort: sortDatesDesc,
-    }),
-  }),
+  views: (view) => {
+    const base = view({
+      sort: (a: ZodOutput, b: ZodOutput) => {
+        return (
+          (b.updated ?? b.created).getTime() -
+          (a.updated ?? a.created).getTime()
+        );
+      },
+    });
+
+    return {
+      default: base,
+      highlight: view({ ...base, filter: (entry) => Boolean(entry.highlight) }),
+    };
+  },
 });
-
-type Article = z.output<typeof ArticleSchema>;
-
-function sortDatesDesc(a: Article, b: Article) {
-  return (
-    (b.updated ?? b.created).getTime() - (a.updated ?? a.created).getTime()
-  );
-}

@@ -68,10 +68,13 @@ export const toolsCollection = qino.createCollection({
   directory: "/tools",
   schema: ToolsSchema,
   extension: ".json",
-  sort: (a, b) =>
-    Number(Boolean(b.favorite || b.highlight)) -
-    Number(Boolean(a.favorite || a.highlight)),
+
   views: (view) => ({
+    default: view({
+      sort: (a, b) =>
+        Number(Boolean(b.favorite || b.highlight)) -
+        Number(Boolean(a.favorite || a.highlight)),
+    }),
     highlight: view({
       filter: (entry) => Boolean(entry.highlight),
     }),

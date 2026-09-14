@@ -14,7 +14,7 @@ const yearMonth = z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/);
 
 export type ZodProjectType = z.infer<typeof ProjectSchema>;
 export type QinoProjectType = Infer<typeof projectsCollection>;
-export type IndexProject = QinoProjectType["views"]["index"];
+export type IndexProject = QinoProjectType["output"];
 
 export const ProjectSchema = z.object({
   title: z.string().min(1),
@@ -66,27 +66,31 @@ export const projectsCollection = qino.createCollection({
     "people[*].slug": peopleCollection,
     "people[*].role.slug": rolesCollection,
   },
-  views: (view) => ({
-    index: view({
+  views: (view) => {
+    const base = view({
       resolveRelations: 1,
+      sort: (a, b) => sortDatesDesc(a.dates, b.dates),
       filter: (entry) => entry.display,
-      sort: (a, b) => sortDatesDesc(a.dates, b.dates),
-    }),
-    page: view({
-      resolveRelations: 2,
-      augment: async (project) => {
-        return {
-          imagesWithDimenstions: await Promise.all(
-            project.images.map((src) => withImageDimensions(src))
-          ),
-        };
-      },
-    }),
-    highlight: view({
-      filter: (entry) => entry.highlight,
-      sort: (a, b) => sortDatesDesc(a.dates, b.dates),
-    }),
-  }),
+    });
+
+    return {
+      default: base,
+      highlight: view({
+        ...base,
+        filter: (entry) => entry.highlight && entry.display,
+      }),
+      page: view({
+        resolveRelations: 2,
+        augment: async (project) => {
+          return {
+            imagesWithDimenstions: await Promise.all(
+              project.images.map((src) => withImageDimensions(src))
+            ),
+          };
+        },
+      }),
+    };
+  },
 });
 
 async function withImageDimensions(src: string) {

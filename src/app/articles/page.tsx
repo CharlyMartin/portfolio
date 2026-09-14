@@ -6,6 +6,7 @@ import { metadata as globalMeta } from "@/app/layout";
 import Article from "@/components/blocks/article";
 
 import { articleCollection } from "@qino/articles";
+import { markdown } from "qino/utils";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -31,7 +32,7 @@ export default async function ArticlesPage() {
               created={new Date(article.created)}
               description={article.description}
               topic={article.topic}
-              wordCount={article.stats.wordCount}
+              wordCount={markdown.stats(article.body).wordCount}
             />
           );
         })}
