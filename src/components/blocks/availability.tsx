@@ -39,7 +39,7 @@ export default function Availability(props: Props) {
         <span
           className={twMerge(
             "absolute inline-flex h-full w-full animate-ping rounded-full opacity-75",
-            ping
+            ping,
           )}
           style={{
             animationDuration: "1400ms",
@@ -48,7 +48,7 @@ export default function Availability(props: Props) {
         <span
           className={twMerge(
             "relative inline-flex h-3 w-3 rounded-full bg-sky-500",
-            color
+            color,
           )}
         />
       </span>
@@ -57,25 +57,3 @@ export default function Availability(props: Props) {
     </div>
   );
 }
-
-// function getToday() {
-//   const date = new Date();
-//   const str = date.toLocaleDateString("en-US", {
-//     day: "numeric",
-//     month: "short",
-//   });
-
-//   if (date.getDate() == 1 || date.getDate() == 21 || date.getDate() == 31) {
-//     return str + "st";
-//   }
-
-//   if (date.getDate() == 2 || date.getDate() == 22) {
-//     return str + "nd";
-//   }
-
-//   if (date.getDate() == 3 || date.getDate() == 23) {
-//     return str + "rd";
-//   }
-
-//   return str + "th";
-// }

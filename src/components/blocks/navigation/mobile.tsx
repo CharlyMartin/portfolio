@@ -15,7 +15,6 @@ import {
 import Icons from "@/components/atoms/icons";
 import { routes } from "@/data/routes";
 
-// MobileNavigation
 type Props = PopoverProps<"div">;
 
 export default function MobileNavigation(props: Props) {
@@ -77,7 +76,6 @@ export default function MobileNavigation(props: Props) {
   );
 }
 
-// MobileNavItem
 type MobileNavItemProps = {
   children?: React.ReactNode;
 } & LinkProps;

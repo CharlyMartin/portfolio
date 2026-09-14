@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 
 import PageHeading from "@/components/blocks/page-layout";
-// import { getArticlesMeta } from "@/data/articles";
 import { metadata as globalMeta } from "@/app/layout";
 import Article from "@/components/blocks/article";
 

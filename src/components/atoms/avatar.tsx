@@ -35,7 +35,6 @@ export default function Avatar(props: Props) {
 
 Avatar.Container = AvatarContainer;
 
-// AvatarContainer
 type ContainerProps = React.ComponentPropsWithoutRef<"div">;
 
 function AvatarContainer(props: ContainerProps) {

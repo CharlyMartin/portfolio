@@ -27,7 +27,7 @@ export default function Photos() {
           return (
             <div
               key={image.src}
-              className="image-ring relative aspect-[7/10] w-32 flex-none -rotate-1 overflow-hidden rounded-xl sm:aspect-[9/10] sm:w-48 lg:w-72 lg:rounded-2xl"
+              className="image-ring relative aspect-7/10 w-32 flex-none -rotate-1 overflow-hidden rounded-xl sm:aspect-9/10 sm:w-48 lg:w-72 lg:rounded-2xl"
               style={{
                 top: `${i % 2 ? "-" : "+"}8px`,
                 animationName: "fade-in",

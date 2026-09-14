@@ -46,7 +46,7 @@ export const ProjectSchema = z.object({
       z.object({
         slug: z.string(),
         role: z.object({ slug: z.string() }),
-      })
+      }),
     )
     .optional(),
   status: z.enum(["live", "archived", "wip"]),
@@ -60,7 +60,6 @@ export const projectsCollection = qino.createCollection({
   schema: ProjectSchema,
   extension: ".md",
   relations: {
-    // TS autocomplete should trigger here
     "roles[*]": rolesCollection,
     "stack[*]": toolsCollection,
     "people[*].slug": peopleCollection,
@@ -84,7 +83,7 @@ export const projectsCollection = qino.createCollection({
         augment: async (project) => {
           return {
             imagesWithDimenstions: await Promise.all(
-              project.images.map((src) => withImageDimensions(src))
+              project.images.map((src) => withImageDimensions(src)),
             ),
           };
         },

@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 
 import { routes } from "@/data/routes";
 
-// DesktopNavigation
 type Props = React.ComponentPropsWithoutRef<"nav">;
 
 export default function DesktopNavigation(props: Props) {
@@ -28,7 +27,6 @@ export default function DesktopNavigation(props: Props) {
   );
 }
 
-// NavItem
 type NavItemProps = {
   link: LinkProps;
   children: React.ReactNode;

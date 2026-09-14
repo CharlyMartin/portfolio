@@ -1,7 +1,6 @@
 import React from "react";
 import type { LinkProps } from "next/link";
 
-// INTERNAL USE
 export type Availability = "available" | "limited" | "busy";
 
 export type Route = {
