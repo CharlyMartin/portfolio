@@ -23,21 +23,32 @@ export default function ImageGallery(props: Props) {
 
   const [open, setOpen] = React.useState<boolean>(false);
 
+  const preview = (
+    <Image
+      {...image}
+      alt={image.alt}
+      className={twMerge(
+        "image-ring rounded-2xl",
+        galleryImages.length > 1 && "cursor-zoom-in",
+      )}
+      preload
+    />
+  );
+
   return (
     <React.Fragment>
-      <Image
-        {...image}
-        alt={image.alt}
-        className={twMerge(
-          "image-ring rounded-2xl",
-          galleryImages.length > 1 && "cursor-zoom-in"
-        )}
-        priority
-        onClick={() => {
-          if (!galleryImages.length) return;
-          setOpen(true);
-        }}
-      />
+      {galleryImages.length > 1 ? (
+        <button
+          type="button"
+          className="block w-full text-left"
+          aria-label={`Open ${name} image gallery`}
+          onClick={() => setOpen(true)}
+        >
+          {preview}
+        </button>
+      ) : (
+        preview
+      )}
 
       {galleryImages.length > 1 && (
         <Gallery open={open} setOpen={setOpen} images={galleryImages} />

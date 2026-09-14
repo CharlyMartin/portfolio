@@ -8,11 +8,12 @@ import OpenGitHub from "@/components/blocks/open-github";
 
 type Props = {
   children: React.ReactNode;
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export default function ArticlePageLayout(props: Props) {
-  const { children, params } = props;
+export default async function ArticlePageLayout(props: Props) {
+  const { children } = props;
+  const { slug } = await props.params;
 
   return (
     <React.Fragment>
@@ -27,7 +28,7 @@ export default function ArticlePageLayout(props: Props) {
           </Title>
 
           <div className="flex flex-wrap gap-3">
-            <OpenGitHub slug={`/src/content/articles/${params.slug}.md`} />
+            <OpenGitHub slug={`/src/content/articles/${slug}.md`} />
             <DmTelegram />
           </div>
         </div>

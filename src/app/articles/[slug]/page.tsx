@@ -15,7 +15,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
-  const article = await articleCollection.getOne(props.params.slug);
+  const { slug } = await props.params;
+  const article = await articleCollection.getOne(slug);
 
   return {
     title: article.title,
@@ -24,29 +25,30 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 }
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export default async function ArticlePage(props: Props) {
+  const { slug } = await props.params;
   const { title, body, topic, created, updated } =
-    await articleCollection.getOne(props.params.slug);
+    await articleCollection.getOne(slug);
 
   const formattedCreated = formatArticleDate(
     created,
-    DATE_FORMATS.ARTICLE_LONG
+    DATE_FORMATS.ARTICLE_LONG,
   );
   const formattedUpdated = formatArticleDate(
     updated,
-    DATE_FORMATS.ARTICLE_LONG
+    DATE_FORMATS.ARTICLE_LONG,
   );
   const formattedCount = new Intl.NumberFormat("en-US").format(
-    markdown.stats(body).wordCount
+    markdown.stats(body).wordCount,
   );
 
   return (
     <Container>
       <div className="mx-auto max-w-2xl">
-        <Back className="lg:-left-[102px] lg:top-1.5 xl:absolute" />
+        <Back className="lg:top-1.5 lg:-left-[102px] xl:absolute" />
         <PageTitle
           title={title}
           subtitle={[

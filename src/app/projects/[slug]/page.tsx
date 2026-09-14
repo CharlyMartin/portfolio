@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
-  const { params } = props;
+  const params = await props.params;
 
   const project = await projectsCollection.getOne(params.slug, {
     view: "page",
@@ -37,11 +37,11 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 }
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export default async function ProjectPage(props: Props) {
-  const { params } = props;
+  const params = await props.params;
 
   const project = await projectsCollection.getOne(params.slug, {
     view: "page",
@@ -64,7 +64,7 @@ export default async function ProjectPage(props: Props) {
   return (
     <Container>
       <Back
-        className="lg:-left-[102px] lg:top-1.5 xl:absolute"
+        className="lg:top-1.5 lg:-left-25.5 xl:absolute"
         href="/projects"
       />
 
@@ -83,7 +83,7 @@ export default async function ProjectPage(props: Props) {
         {roles.map((item, i) => {
           const { name } = item;
           return (
-            <Badge className="mb-2 mr-2 sm:mb-3 sm:mr-3" size="lg" key={i}>
+            <Badge className="mr-2 mb-2 sm:mr-3 sm:mb-3" size="lg" key={i}>
               {name}
             </Badge>
           );
@@ -97,9 +97,12 @@ export default async function ProjectPage(props: Props) {
             {...images[0]}
             placeholder="blur"
             className="image-ring rounded-2xl"
-            priority
+            preload
           /> */}
           <ImageGallery images={imagesWithDimenstions} name={name} />
+
+          <br />
+          <br />
 
           <Markdown>{body}</Markdown>
         </div>

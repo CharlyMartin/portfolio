@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@layer base {
+  body {
+    line-height: 1.65;
+  }
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -17,7 +19,11 @@
 }
 
 *::selection {
-  @apply bg-teal-100 dark:bg-teal-700/70;
+  background-color: var(--color-teal-100);
+}
+
+:where(.dark, .dark *)::selection {
+  background-color: color-mix(in srgb, var(--color-teal-700) 70%, transparent);
 }
 
 /* body {

@@ -40,7 +40,7 @@ export default function Photos() {
                 src={image}
                 alt=""
                 placeholder="blur"
-                priority
+                preload
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </div>

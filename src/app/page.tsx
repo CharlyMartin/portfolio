@@ -46,7 +46,7 @@ export default async function Home() {
 
           <Title>{bio.headline}</Title>
 
-          <Markdown className="standalone mt-4 sm:mt-6">
+          <Markdown className="mt-4 sm:mt-6">
             {bio.short.body}
           </Markdown>
 

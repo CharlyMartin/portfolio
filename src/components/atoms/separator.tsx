@@ -8,8 +8,8 @@ export default function Separator(props: Props) {
   return (
     <hr
       className={twMerge(
-        "container my-14 border-zinc-100 dark:border-zinc-700/40",
-        className
+        "site-container my-14 border-zinc-100 dark:border-zinc-700/40",
+        className,
       )}
       {...rest}
     />

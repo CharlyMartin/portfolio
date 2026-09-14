@@ -9,7 +9,7 @@ type Props<T extends React.ElementType> = {
 } & React.ComponentPropsWithoutRef<T>;
 
 export default function Card<T extends React.ElementType = "div">(
-  props: Props<T>
+  props: Props<T>,
 ) {
   const { as: Component = "div", className, children } = props;
 
@@ -35,7 +35,7 @@ type CardTitleProps<T extends React.ElementType> = {
 } & React.ComponentPropsWithoutRef<T>;
 
 function CardTitle<T extends React.ElementType = "h2">(
-  props: CardTitleProps<T>
+  props: CardTitleProps<T>,
 ) {
   const { as: Component = "h2", href, children, className } = props;
 
@@ -43,7 +43,7 @@ function CardTitle<T extends React.ElementType = "h2">(
     <Component
       className={twMerge(
         "text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100",
-        className
+        className,
       )}
     >
       {href ? <CardLink href={href}>{children}</CardLink> : children}
@@ -64,7 +64,7 @@ export function CardDescription(props: CardDescriptionProps) {
     <p
       className={twMerge(
         "relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400",
-        className
+        className,
       )}
     >
       {children}
@@ -82,7 +82,7 @@ function CardLink(props: CardLinkProps) {
 
   return (
     <React.Fragment>
-      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
+      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" />
       <Link {...rest}>
         <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
@@ -94,15 +94,19 @@ function CardLink(props: CardLinkProps) {
 // Card Cta
 type CardCtaProps = {
   children: React.ReactNode;
+  className?: string;
 };
 
 export function CardCta(props: CardCtaProps) {
-  const { children } = props;
+  const { children, className } = props;
 
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 mt-6 flex items-center text-sm font-medium text-zinc-400 transition-colors group-hover:text-teal-500 dark:text-zinc-500"
+      className={twMerge(
+        "relative z-10 mt-6 flex items-center text-sm font-medium text-zinc-400 transition-colors group-hover:text-teal-500 dark:text-zinc-500",
+        className,
+      )}
     >
       {children}
       <Icons.ChevronRight className="ml-1 h-3.5 w-3.5 stroke-current" />
@@ -118,7 +122,7 @@ type CardEyebrowProps<T extends React.ElementType> = {
 } & React.ComponentPropsWithoutRef<T>;
 
 export function CardEyebrow<T extends React.ElementType = "p">(
-  props: CardEyebrowProps<T>
+  props: CardEyebrowProps<T>,
 ) {
   const {
     as: Component = "p",
@@ -135,7 +139,7 @@ export function CardEyebrow<T extends React.ElementType = "p">(
         "relative z-10 flex items-center text-sm text-zinc-500/80 dark:text-zinc-400/80",
         top && "order-first mb-3",
         decorate && "pl-3.5",
-        className
+        className,
       )}
       {...rest}
     >

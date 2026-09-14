@@ -29,7 +29,12 @@ export default function Markdown({
   highlightCode = false,
 }: Props) {
   return (
-    <div className={twMerge("prose dark:prose-invert", className)}>
+    <div
+      className={twMerge(
+        "prose leading-[1.85] dark:prose-invert prose-a:text-teal-500 prose-a:hover:text-teal-600 dark:prose-a:text-teal-400 dark:prose-a:hover:text-teal-400",
+        className,
+      )}
+    >
       <ReactMarkdown
         remarkPlugins={remarkPlugins}
         rehypePlugins={highlightCode ? highlightedRehypePlugins : rehypePlugins}

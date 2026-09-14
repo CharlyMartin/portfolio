@@ -1,7 +1,24 @@
-@import url("./globals.css");
-@import url("./image.css");
-@import url("./container.css");
-@import url("./prism.css");
+@import "tailwindcss" source(none);
+@import "./globals.css";
+@import "./image.css";
+@import "./container.css";
+@import "./prism.css";
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --text-xs--line-height: 1.5;
+  --text-sm--line-height: 1.6;
+  --text-base--line-height: 1.65;
+  --text-lg--line-height: 1.65;
+  --text-xl--line-height: 1.5;
+}
+
+@source "../app";
+@source "../components";
+@source "../data";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* Animations */
 @keyframes fade-in {

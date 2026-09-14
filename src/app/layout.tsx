@@ -57,7 +57,7 @@ export default function RootLayout(props: Props) {
         <div className="w-full">
           {/* Background */}
           <div className={twJoin("fixed inset-0 flex justify-center", padding)}>
-            <div className="container flex">
+            <div className="site-container flex">
               <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
             </div>
           </div>

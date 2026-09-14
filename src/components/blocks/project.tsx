@@ -22,7 +22,7 @@ export default function Project(props: Props) {
   const formattedDates = formatProjectDates(dates, DATE_FORMATS.PROJECT_SHORT);
 
   return (
-    <Card className="space-y-5">
+    <Card className="gap-5">
       {/* Logo */}
       <div className="z-10 pb-2">
         {logo && (
@@ -68,10 +68,10 @@ export default function Project(props: Props) {
       </div>
 
       {/* Description */}
-      <Card.Description>{description}</Card.Description>
+      <Card.Description className="mt-0">{description}</Card.Description>
 
       {/* CTA */}
-      <Card.Cta>See project</Card.Cta>
+      <Card.Cta className="mt-0">See project</Card.Cta>
     </Card>
   );
 }
@@ -85,7 +85,7 @@ function ImageBackground(props: ImageCircleProps) {
     <div
       className={twMerge(
         className,
-        "flex h-12 w-12 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-2 ring-zinc-200/20 dark:ring-zinc-700"
+        "flex h-12 w-12 items-center justify-center rounded-full shadow-md ring-2 shadow-zinc-800/5 ring-zinc-200/20 dark:ring-zinc-700",
       )}
       {...rest}
     >
