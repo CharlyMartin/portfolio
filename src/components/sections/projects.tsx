@@ -26,7 +26,7 @@ export default function Projects(props: Props) {
             <Project
               title={project.title}
               description={project.description}
-              dates={project.luxonDates}
+              dates={project.dates}
               area={project.area}
               logo={project.logo}
               slug={project._meta.slug}

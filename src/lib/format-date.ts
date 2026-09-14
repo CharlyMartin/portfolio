@@ -4,7 +4,7 @@ import { DateTime } from "luxon";
 type Options = Intl.DateTimeFormatOptions;
 
 export function formatProjectDates(
-  dates: IndexProject["luxonDates"],
+  dates: IndexProject["dates"],
   options?: Options
 ) {
   const { start, end } = dates;

@@ -27,10 +27,15 @@ export const ProjectSchema = z.object({
     })
     .optional(),
   images: z.array(z.string().startsWith("/")).default([]),
-  dates: z.object({
-    start: yearMonth,
-    end: yearMonth.optional(),
-  }),
+  dates: z
+    .object({
+      start: yearMonth,
+      end: yearMonth.optional(),
+    })
+    .transform((dates) => ({
+      start: DateTime.fromISO(dates.start),
+      end: dates.end ? DateTime.fromISO(dates.end) : undefined,
+    })),
   url: z.url(),
   display: z.boolean(),
   highlight: z.boolean(),
@@ -64,13 +69,8 @@ export const projectsCollection = qino.createCollection({
   views: (view) => ({
     index: view({
       resolveRelations: 1,
-      augment: async (project) => {
-        return {
-          luxonDates: toLuxonDates(project.dates),
-        };
-      },
       filter: (entry) => entry.display,
-      sort: (a, b) => sortDatesDesc(a.luxonDates, b.luxonDates),
+      sort: (a, b) => sortDatesDesc(a.dates, b.dates),
     }),
     page: view({
       resolveRelations: 2,
@@ -79,18 +79,12 @@ export const projectsCollection = qino.createCollection({
           imagesWithDimenstions: await Promise.all(
             project.images.map((src) => withImageDimensions(src))
           ),
-          luxonDates: toLuxonDates(project.dates),
         };
       },
     }),
     highlight: view({
-      augment: async (project) => {
-        return {
-          luxonDates: toLuxonDates(project.dates),
-        };
-      },
       filter: (entry) => entry.highlight,
-      sort: (a, b) => sortDatesDesc(a.luxonDates, b.luxonDates),
+      sort: (a, b) => sortDatesDesc(a.dates, b.dates),
     }),
   }),
 });
@@ -104,13 +98,6 @@ async function withImageDimensions(src: string) {
   }
 
   return { src, width, height };
-}
-
-function toLuxonDates(dates: Pick<ZodProjectType, "dates">["dates"]) {
-  return {
-    start: DateTime.fromISO(dates.start),
-    end: dates.end ? DateTime.fromISO(dates.end) : undefined,
-  };
 }
 
 type LuxonDates = { start: DateTime; end?: DateTime };

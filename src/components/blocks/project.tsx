@@ -11,7 +11,7 @@ export type Props = {
   title: string;
   logo: IndexProject["logo"];
   description: string;
-  dates: IndexProject["luxonDates"];
+  dates: IndexProject["dates"];
   area: IndexProject["area"];
   slug: string;
 };

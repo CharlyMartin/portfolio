@@ -49,7 +49,7 @@ export default async function ProjectPage(props: Props) {
 
   const {
     title: name,
-    luxonDates,
+    dates,
     hq,
     roles,
     people,
@@ -71,7 +71,7 @@ export default async function ProjectPage(props: Props) {
       <PageTitle
         title={name}
         subtitle={[
-          formatProjectDates(luxonDates, DATE_FORMATS.PROJECT_LONG),
+          formatProjectDates(dates, DATE_FORMATS.PROJECT_LONG),
           employment == "contract" && "Contract",
           employment == "permanent" && "Permanent",
           employment == "side" && "Side Project",
