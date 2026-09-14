@@ -32,9 +32,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const favProjects = await projectsCollection.getAll({ view: "highlight" });
-  const favoriteTools = await toolsCollection.getAll({ view: "highlight" });
-  const favArticles = await articleCollection.getAll({ view: "highlight" });
+  const favProjects = await projectsCollection.getMany({ view: "highlight" });
+  const favoriteTools = await toolsCollection.getMany({ view: "highlight" });
+  const favArticles = await articleCollection.getMany({ view: "highlight" });
 
   const bio = await getBio();
 
