@@ -16,44 +16,46 @@ export type ZodProjectType = z.infer<typeof ProjectSchema>;
 export type QinoProjectType = Infer<typeof projectsCollection>;
 export type IndexProject = QinoProjectType["output"];
 
-export const ProjectSchema = z.object({
-  title: z.string().min(1),
-  description: z.string(),
-  hq: z.string(),
-  logo: z
-    .object({
-      src: z.string().startsWith("/"),
-      style: z.record(z.string(), z.string()).optional(),
-    })
-    .optional(),
-  images: z.array(z.string().startsWith("/")).default([]),
-  dates: z
-    .object({
-      start: yearMonth,
-      end: yearMonth.optional(),
-    })
-    .transform((dates) => ({
-      start: DateTime.fromISO(dates.start),
-      end: dates.end ? DateTime.fromISO(dates.end) : undefined,
-    })),
-  url: z.url(),
-  display: z.boolean(),
-  highlight: z.boolean(),
-  roles: z.array(z.string()),
-  stack: z.array(z.string()),
-  people: z
-    .array(
-      z.object({
-        slug: z.string(),
-        role: z.object({ slug: z.string() }),
-      }),
-    )
-    .optional(),
-  status: z.enum(["live", "archived", "wip"]),
-  area: z.enum(["ai", "web3", "web2"]),
-  employment: z.enum(["contract", "permanent", "side"]),
-  body: z.string(),
-});
+export const ProjectSchema = z
+  .object({
+    title: z.string().min(1),
+    description: z.string(),
+    hq: z.string(),
+    logo: z
+      .object({
+        src: z.string().startsWith("/"),
+        style: z.record(z.string(), z.string()).optional(),
+      })
+      .optional(),
+    images: z.array(z.string().startsWith("/")).default([]),
+    dates: z
+      .object({
+        start: yearMonth,
+        end: yearMonth.optional(),
+      })
+      .transform((dates) => ({
+        start: DateTime.fromISO(dates.start),
+        end: dates.end ? DateTime.fromISO(dates.end) : undefined,
+      })),
+    url: z.url(),
+    display: z.boolean(),
+    highlight: z.boolean(),
+    roles: z.array(z.string()),
+    stack: z.array(z.string()),
+    people: z
+      .array(
+        z.object({
+          slug: z.string(),
+          role: z.object({ slug: z.string() }),
+        }),
+      )
+      .optional(),
+    status: z.enum(["live", "archived", "wip"]),
+    area: z.enum(["ai", "web3", "web2"]),
+    employment: z.enum(["contract", "permanent", "side"]),
+    markdown: z.string(),
+  })
+  .strict();
 
 export const projectsCollection = qino.defineCollection({
   directory: "/projects",

@@ -22,7 +22,7 @@ import { projectsCollection } from "@qino/projects";
 import { articleCollection } from "@qino/articles";
 import { toolsCollection } from "@qino/tools";
 import Markdown from "@/components/blocks/markdown";
-import { markdown } from "qino/utils";
+import { getMarkdownStats } from "qino/utils";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -46,9 +46,7 @@ export default async function Home() {
 
           <Title>{bio.headline}</Title>
 
-          <Markdown className="mt-4 sm:mt-6">
-            {bio.short.body}
-          </Markdown>
+          <Markdown className="mt-4 sm:mt-6">{bio.short.markdown}</Markdown>
 
           <div className="hidden pt-4 sm:block">
             <SeeMore href="/about">Read full bio</SeeMore>
@@ -112,7 +110,7 @@ export default async function Home() {
                   description={article.description}
                   created={article.created}
                   topic={article.topic}
-                  wordCount={markdown.stats(article.body).wordCount}
+                  wordCount={getMarkdownStats(article.markdown).wordCount}
                 />
               );
             })}

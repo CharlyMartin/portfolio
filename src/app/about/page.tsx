@@ -33,7 +33,7 @@ export default async function About() {
             Hi, I’m Charly. I live in sunny Lisbon ☀️ where I design and build
             apps.
           </Title>
-          <Markdown>{bio.long.body}</Markdown>
+          <Markdown>{bio.long.markdown}</Markdown>
         </div>
         <div className="lg:pl-20">
           <ul role="list" className="lg:pt-4">

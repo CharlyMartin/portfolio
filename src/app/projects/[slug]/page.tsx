@@ -54,7 +54,7 @@ export default async function ProjectPage(props: Props) {
     roles,
     people,
     imagesWithDimenstions,
-    body,
+    markdown,
     stack,
     url,
     status,
@@ -63,10 +63,7 @@ export default async function ProjectPage(props: Props) {
 
   return (
     <Container>
-      <Back
-        className="lg:top-1.5 lg:-left-25.5 xl:absolute"
-        href="/projects"
-      />
+      <Back className="lg:top-1.5 lg:-left-25.5 xl:absolute" href="/projects" />
 
       <PageTitle
         title={name}
@@ -104,7 +101,7 @@ export default async function ProjectPage(props: Props) {
           <br />
           <br />
 
-          <Markdown>{body}</Markdown>
+          <Markdown>{markdown}</Markdown>
         </div>
 
         {/* Right */}

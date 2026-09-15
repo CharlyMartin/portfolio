@@ -2,9 +2,11 @@ import { z } from "zod";
 
 import qino from ".";
 
-const BioSchema = z.object({
-  body: z.string(),
-});
+const BioSchema = z
+  .object({
+    markdown: z.string(),
+  })
+  .strict();
 
 export const shortBio = qino.defineItem({
   file: "/bio/short.md",
