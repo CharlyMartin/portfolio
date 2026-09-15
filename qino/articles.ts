@@ -11,7 +11,7 @@ export const ArticleSchema = z.object({
     .date()
     .optional()
     .transform((value) =>
-      typeof value == "string" ? new Date(value) : undefined
+      typeof value == "string" ? new Date(value) : undefined,
     ),
   highlight: z.boolean().optional(),
   topic: z.enum(["code", "life", "startup"]),
@@ -20,7 +20,7 @@ export const ArticleSchema = z.object({
 
 type ZodOutput = z.output<typeof ArticleSchema>;
 
-export const articleCollection = qino.createCollection({
+export const articleCollection = qino.defineCollection({
   directory: "/articles",
   schema: ArticleSchema,
   extension: ".md",

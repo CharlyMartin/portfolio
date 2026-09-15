@@ -7,7 +7,7 @@ const RoleSchema = z.object({
   position: z.string().min(1),
 });
 
-export const rolesCollection = qino.createCollection({
+export const rolesCollection = qino.defineCollection({
   directory: "/roles",
   schema: RoleSchema,
   extension: ".json",

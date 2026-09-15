@@ -55,7 +55,7 @@ export const ProjectSchema = z.object({
   body: z.string(),
 });
 
-export const projectsCollection = qino.createCollection({
+export const projectsCollection = qino.defineCollection({
   directory: "/projects",
   schema: ProjectSchema,
   extension: ".md",

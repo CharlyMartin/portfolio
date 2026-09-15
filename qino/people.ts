@@ -10,7 +10,7 @@ const PersonSchema = z.object({
   skills: z.array(z.string()),
 });
 
-export const peopleCollection = qino.createCollection({
+export const peopleCollection = qino.defineCollection({
   directory: "/people",
   schema: PersonSchema,
   extension: ".json",
