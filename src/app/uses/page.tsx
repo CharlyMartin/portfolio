@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import PageLayout from "@/components/blocks/page-layout";
 import { slugify } from "@/lib/slugify";
 import { metadata as globalMeta } from "@/app/layout";
-import { toolsCollection, type Tool as ToolType } from "@qino/tools";
+import { toolsCollection, type Tool as ToolType } from "@/cms/tools";
 import { Tool } from "./components/tool";
 
 const toolSections = [

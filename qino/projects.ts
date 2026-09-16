@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Infer } from "qino";
+import type { Infer } from "@qino/cms";
 
 import qino from ".";
 

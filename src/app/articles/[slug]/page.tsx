@@ -5,8 +5,8 @@ import Container from "@/components/blocks/container";
 import Back from "@/components/atoms/back";
 import { DATE_FORMATS, formatArticleDate } from "@/lib/format-date";
 import PageTitle from "@/components/blocks/page-title";
-import { articleCollection } from "@qino/articles";
-import { getMarkdownStats } from "qino/utils";
+import { articleCollection } from "@/cms/articles";
+import { getMarkdownStats } from "@qino/cms/utils";
 
 export async function generateStaticParams() {
   const slugs = await articleCollection.getAllSlugs();

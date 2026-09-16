@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 import A from "@/components/atoms/a";
 import Icons from "@/components/atoms/icons";
 import { getHostname } from "@/lib/get-hostname";
-import { type Tool } from "@qino/tools";
+import { type Tool } from "@/cms/tools";
 
 export function Tool({
   name,
@@ -25,7 +25,7 @@ export function Tool({
           fav &&
             "bg-emerald-50/30 group-hover:bg-emerald-50 dark:bg-emerald-950/30 group-hover:dark:bg-emerald-950/60",
           !fav &&
-            "scale-95 bg-zinc-50 opacity-0 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50"
+            "scale-95 bg-zinc-50 opacity-0 group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50",
         )}
       />
       <A href={url}>
@@ -44,7 +44,7 @@ export function Tool({
               className={twMerge(
                 "text-base font-semibold tracking-tight",
                 !fav && "text-zinc-800 dark:text-zinc-100",
-                fav && "text-emerald-800 dark:text-emerald-100/90"
+                fav && "text-emerald-800 dark:text-emerald-100/90",
               )}
             >
               {name}
@@ -56,12 +56,12 @@ export function Tool({
             className={twMerge(
               "-mt-0.5 flex -translate-x-5 items-center pb-3 transition group-hover:translate-x-0",
               !fav && "text-zinc-400 dark:text-zinc-500/80",
-              fav && "text-emerald-600/50 dark:text-emerald-600/80"
+              fav && "text-emerald-600/50 dark:text-emerald-600/80",
             )}
           >
             <Icons.Link
               size={14}
-              className="mr-1.5 mt-0.5 opacity-0 transition group-hover:opacity-100"
+              className="mt-0.5 mr-1.5 opacity-0 transition group-hover:opacity-100"
             />
             <p className="relative z-10 text-sm">{getHostname(url)}</p>
           </div>
@@ -71,7 +71,7 @@ export function Tool({
             className={twMerge(
               "relative z-10 text-sm",
               !fav && "text-zinc-600 dark:text-zinc-400",
-              fav && "text-emerald-700 dark:text-emerald-300/80"
+              fav && "text-emerald-700 dark:text-emerald-300/80",
             )}
           >
             {text}

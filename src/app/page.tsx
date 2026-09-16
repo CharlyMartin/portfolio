@@ -18,11 +18,11 @@ import { META } from "@/data/config";
 import { metadata as globalMeta } from "@/app/layout";
 // import Photos from "@/components/sections/photos";
 import Article from "@/components/blocks/article";
-import { projectsCollection } from "@qino/projects";
-import { articleCollection } from "@qino/articles";
-import { toolsCollection } from "@qino/tools";
+import { projectsCollection } from "@/cms/projects";
+import { articleCollection } from "@/cms/articles";
+import { toolsCollection } from "@/cms/tools";
 import Markdown from "@/components/blocks/markdown";
-import { getMarkdownStats } from "qino/utils";
+import { getMarkdownStats } from "@qino/cms/utils";
 
 export const metadata: Metadata = {
   ...globalMeta,

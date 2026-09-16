@@ -4,8 +4,8 @@ import PageHeading from "@/components/blocks/page-layout";
 import { metadata as globalMeta } from "@/app/layout";
 import Article from "@/components/blocks/article";
 
-import { articleCollection } from "@qino/articles";
-import { getMarkdownStats } from "qino/utils";
+import { articleCollection } from "@/cms/articles";
+import { getMarkdownStats } from "@qino/cms/utils";
 
 export const metadata: Metadata = {
   ...globalMeta,

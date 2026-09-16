@@ -1,11 +1,11 @@
-import { IndexProject } from "@qino/projects";
+import { IndexProject } from "@/cms/projects";
 import { DateTime } from "luxon";
 
 type Options = Intl.DateTimeFormatOptions;
 
 export function formatProjectDates(
   dates: IndexProject["dates"],
-  options?: Options
+  options?: Options,
 ) {
   const { start, end } = dates;
   const opt = options || {};

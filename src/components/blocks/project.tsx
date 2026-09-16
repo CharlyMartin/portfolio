@@ -5,7 +5,7 @@ import Card from "@/components/blocks/card";
 import { DATE_FORMATS, formatProjectDates } from "@/lib/format-date";
 
 import Badge from "@/components/atoms/badge";
-import { IndexProject } from "@qino/projects";
+import { IndexProject } from "@/cms/projects";
 
 export type Props = {
   title: string;

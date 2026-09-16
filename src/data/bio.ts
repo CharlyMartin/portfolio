@@ -1,5 +1,5 @@
 import image from "@/images/avatar.jpeg";
-import { longBio, shortBio } from "@qino/bio";
+import { longBio, shortBio } from "@/cms/bio";
 
 const data = {
   name: "Charly",

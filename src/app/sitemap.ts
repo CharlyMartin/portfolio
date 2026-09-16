@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 import glob from "fast-glob";
 import path from "node:path";
 
-import { articleCollection } from "@qino/articles";
-import { projectsCollection } from "@qino/projects";
+import { articleCollection } from "@/cms/articles";
+import { projectsCollection } from "@/cms/projects";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [pages, projects, articles] = await Promise.all([

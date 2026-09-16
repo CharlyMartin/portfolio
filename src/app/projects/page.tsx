@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import PageHeading from "@/components/blocks/page-layout";
 import Projects from "@/components/sections/projects";
 import { metadata as globalMeta } from "@/app/layout";
-import { projectsCollection } from "@qino/projects";
+import { projectsCollection } from "@/cms/projects";
 
 export const metadata: Metadata = {
   ...globalMeta,

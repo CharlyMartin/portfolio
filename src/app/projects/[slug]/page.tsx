@@ -11,7 +11,7 @@ import Badge from "@/components/atoms/badge";
 import PageTitle from "@/components/blocks/page-title";
 import ProjectStatus from "@/components/blocks/project-status";
 import ImageGallery from "@/components/blocks/image-gallery";
-import { projectsCollection } from "@qino/projects";
+import { projectsCollection } from "@/cms/projects";
 import Markdown from "@/components/blocks/markdown";
 
 export async function generateStaticParams() {

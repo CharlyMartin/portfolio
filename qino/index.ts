@@ -1,4 +1,4 @@
-import { createQino } from "qino";
+import { createQino } from "@qino/cms";
 
 export default createQino({
   contentFolder: "src/content",
