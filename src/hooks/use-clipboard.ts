@@ -12,8 +12,8 @@ export function useClipboard(init: string, options: Options = {}) {
 
   const { timeout = 1600, format = "text" } = options;
 
-  const onCopy = React.useCallback(() => {
-    const didCopy = copy(value, { format });
+  const onCopy = React.useCallback(async () => {
+    const didCopy = await copy(value, { format });
     setHasCopied(didCopy);
   }, [value, format]);
 
