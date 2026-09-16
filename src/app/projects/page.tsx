@@ -2,8 +2,8 @@ import { Metadata } from "next";
 
 import PageHeading from "@/components/blocks/page-layout";
 import Projects from "@/components/sections/projects";
-import { getProjects } from "@/data/projects";
 import { metadata as globalMeta } from "@/app/layout";
+import { projectsCollection } from "@/cms/projects";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   description: "Things I’ve made and contributed to",
 };
 
-export default function ProjectsPage() {
-  const projects = getProjects();
+export default async function ProjectsPage() {
+  const projects = await projectsCollection.getMany();
 
   return (
     <PageHeading

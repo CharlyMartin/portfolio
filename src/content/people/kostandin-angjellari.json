@@ -1,0 +1,11 @@
+{
+  "name": "Kostandin Angjellari",
+  "url": "https://www.linkedin.com/in/kostandinang/",
+  "skills": [
+    "roles/frontend.json",
+    "roles/backend.json",
+    "roles/devops.json",
+    "roles/database-design.json",
+    "roles/machine-learning.json"
+  ]
+}

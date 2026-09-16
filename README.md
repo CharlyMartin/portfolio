@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Charly Martin's portfolio
 
-## Getting Started
+A Next.js 16 App Router site using React 19, Tailwind CSS 4, Headless UI 2, and Sharp. Content lives in repository-local Markdown and JSON collections managed by qino.
 
-First, run the development server:
+## Development
 
-```bash
+Use Node.js 22 (`nvm use`) and npm. The local `qino-0.0.13.tgz` package must be present before installation; it is intentionally gitignored.
+
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. Set `NEXT_PUBLIC_BASE_URL` in `.env` to the site's canonical URL so generated metadata and `/sitemap.xml` use the correct origin.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Checks and production
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```sh
+npm run lint
+npm run typecheck
+npm run build
+npm run start
+```
 
-## Learn More
+The build runs ESLint before Next.js compiles, checks types, and generates static pages. Development and production builds use Turbopack. Vercel should use Node.js 22.x and `npm run build`; public routes and the qino content structure are unchanged.
 
-To learn more about Next.js, take a look at the following resources:
+There is no automated browser test suite. For UI changes, check desktop and mobile layouts in light and dark mode, article typography/code blocks, mobile navigation dismissal and focus, and gallery opening, closing, keyboard navigation, and image loading.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Styling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+`src/css/index.css` is the Tailwind entrypoint and Prettier's class-sorting reference. It explicitly scans application, component, and data code, excluding content examples. The site uses Tailwind's default palette and type scale, plus the official `@tailwindcss/typography` plugin for Markdown prose. Syntax highlighting remains in `prism.css`.
 
-## Deploy on Vercel
+Dark mode uses the `.dark` class. The custom `site-container` utility retains the site's centered 72rem width without inheriting Tailwind's responsive container defaults.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Tailwind 4 requires Safari 16.4+, Chrome 111+, or Firefox 128+.

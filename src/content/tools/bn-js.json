@@ -1,0 +1,8 @@
+{
+  "name": "bn.js",
+  "meta": "BigNum Library",
+  "type": "library",
+  "oneLiner": "Popular math library",
+  "description": "JavaScript was not designed to handle precision math, but bn.js makes it possible. It's a non-negotiable dependency for projects with banking features.",
+  "url": "https://github.com/indutny/bn.js/"
+}

@@ -39,8 +39,8 @@ next-env.d.ts
 .vscode/*
 
 # Articles
-src/data/articles/_drafts
-src/data/articles/_archive
+src/content/articles/_drafts
+src/content/articles/_archive
 
-# Auto-generated
-public/sitemap.xml
+# Custom
+*.tgz

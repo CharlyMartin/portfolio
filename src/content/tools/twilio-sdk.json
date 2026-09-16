@@ -1,0 +1,8 @@
+{
+  "name": "Twilio SDK",
+  "meta": "Web API",
+  "type": "sdk",
+  "oneLiner": "Communication API for SMS and Voice.",
+  "description": "I used Twilio to create onboarding flows with SMS verification. They made that process a breeze.",
+  "url": "https://www.twilio.com/"
+}

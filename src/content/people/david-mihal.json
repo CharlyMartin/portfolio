@@ -1,0 +1,10 @@
+{
+  "name": "David Mihal",
+  "url": "https://twitter.com/dmihal",
+  "skills": [
+    "roles/frontend.json",
+    "roles/backend.json",
+    "roles/ui-design.json",
+    "roles/smart-contracts.json"
+  ]
+}

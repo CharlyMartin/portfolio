@@ -1,0 +1,8 @@
+{
+  "name": "React Query",
+  "meta": "Async State Management",
+  "type": "library",
+  "oneLiner": "The React async state management library.",
+  "description": "React Query is THE way to interact with any asynchronous state, usually a server. It takes care of all the complexity that goes into managing remote data, namely caching and refreshing. The amount of thinking that went into making React Query intuitive and easy to use is extraordinary. I can't imagine building a web application without it nowadays; it would feel primitive.",
+  "url": "https://tanstack.com/query/latest"
+}

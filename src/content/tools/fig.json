@@ -1,0 +1,8 @@
+{
+  "name": "Fig",
+  "meta": "Shell Tool",
+  "type": "devtool",
+  "oneLiner": "The terminal for developers",
+  "description": "Fig makes your terminal come alive with autocomplete and some AI magic. It's a great tool for productivity and learning new commands.",
+  "url": "https://fig.io/"
+}

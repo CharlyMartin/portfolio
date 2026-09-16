@@ -1,17 +1,21 @@
-import React from "react";
 import type { Metadata } from "next";
+import Markdown from "@/components/blocks/markdown";
 
 import Container from "@/components/blocks/container";
 import Back from "@/components/atoms/back";
-import { getArticle } from "@/data/articles";
-import Prose from "@/components/atoms/prose";
 import { DATE_FORMATS, formatArticleDate } from "@/lib/format-date";
 import PageTitle from "@/components/blocks/page-title";
+import { articleCollection } from "@/cms/articles";
+import { getMarkdownStats } from "@qino/cms/utils";
+
+export async function generateStaticParams() {
+  const slugs = await articleCollection.getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
-  const { params } = props;
-
-  const article = await getArticle(params.slug);
+  const { slug } = await props.params;
+  const article = await articleCollection.getOne(slug);
 
   return {
     title: article.title,
@@ -20,28 +24,35 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 }
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export default async function ArticlePage(props: Props) {
-  const { params } = props;
+  const { slug } = await props.params;
+  const { title, markdown, topic, created, updated } =
+    await articleCollection.getOne(slug);
 
-  const article = await getArticle(params.slug);
-  const { title, html, topic, wordCount } = article;
-
-  const created = formatArticleDate(article.created, DATE_FORMATS.ARTICLE_LONG);
-  const updated = formatArticleDate(article.updated, DATE_FORMATS.ARTICLE_LONG);
-  const formattedCount = new Intl.NumberFormat("en-US").format(wordCount);
+  const formattedCreated = formatArticleDate(
+    created,
+    DATE_FORMATS.ARTICLE_LONG,
+  );
+  const formattedUpdated = formatArticleDate(
+    updated,
+    DATE_FORMATS.ARTICLE_LONG,
+  );
+  const formattedCount = new Intl.NumberFormat("en-US").format(
+    getMarkdownStats(markdown).wordCount,
+  );
 
   return (
     <Container>
       <div className="mx-auto max-w-2xl">
-        <Back className="lg:-left-[102px] lg:top-1.5 xl:absolute" />
+        <Back className="lg:top-1.5 lg:-left-25.5 xl:absolute" />
         <PageTitle
           title={title}
           subtitle={[
-            `Published on ${created}`,
-            article.updated && `Updated on ${updated}`,
+            `Published on ${formattedCreated}`,
+            updated && `Updated on ${formattedUpdated}`,
             topic == "code" && "Code",
             topic == "life" && "Life",
             topic == "startup" && "Startups",
@@ -52,7 +63,7 @@ export default async function ArticlePage(props: Props) {
         <br />
         {/* To replace with a header picture later on */}
 
-        <Prose html={html} />
+        <Markdown highlightCode>{markdown}</Markdown>
       </div>
     </Container>
   );

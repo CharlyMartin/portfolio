@@ -1,7 +1,5 @@
-@tailwind components;
-
-@layer components {
-  .container {
-    @apply mx-auto w-full max-w-6xl;
-  }
+@utility site-container {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
 }

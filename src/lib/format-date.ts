@@ -1,14 +1,15 @@
+import { IndexProject } from "@/cms/projects";
 import { DateTime } from "luxon";
-
-import { Project } from "@/types";
 
 type Options = Intl.DateTimeFormatOptions;
 
-export function formatProjectDates(dates: Project["dates"], options?: Options) {
+export function formatProjectDates(
+  dates: IndexProject["dates"],
+  options?: Options,
+) {
   const { start, end } = dates;
   const opt = options || {};
 
-  // If no end date, show "Present"
   if (!end) {
     return `${start.toLocaleString(opt)} to Present`;
   }

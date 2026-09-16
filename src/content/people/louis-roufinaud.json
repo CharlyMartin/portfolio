@@ -1,0 +1,13 @@
+{
+  "name": "Louis Roufinaud",
+  "url": "https://twitter.com/LouisRouffineau",
+  "skills": [
+    "roles/frontend.json",
+    "roles/backend.json",
+    "roles/devops.json",
+    "roles/database-design.json",
+    "roles/product-design.json",
+    "roles/project-management.json",
+    "roles/eng-management.json"
+  ]
+}

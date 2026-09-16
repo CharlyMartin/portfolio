@@ -12,17 +12,17 @@ import DmTelegram from "@/components/blocks/dm-telegram";
 import BookCall from "@/components/blocks/book-call";
 import Icons from "@/components/atoms/icons";
 import Availability from "@/components/blocks/availability";
-import { getProjects } from "@/data/projects";
-import { getUses } from "@/data/uses";
 import Card from "@/components/blocks/card";
-import { Use } from "@/types";
 import { getBio } from "@/data/bio";
-import Prose from "@/components/atoms/prose";
 import { META } from "@/data/config";
 import { metadata as globalMeta } from "@/app/layout";
 // import Photos from "@/components/sections/photos";
-import { getArticlesMeta } from "@/data/articles";
 import Article from "@/components/blocks/article";
+import { projectsCollection } from "@/cms/projects";
+import { articleCollection } from "@/cms/articles";
+import { toolsCollection } from "@/cms/tools";
+import Markdown from "@/components/blocks/markdown";
+import { getMarkdownStats } from "@qino/cms/utils";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -32,9 +32,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const projects = getProjects({ highlight: true });
-  const favoriteUses = getUses({ highlight: true });
-  const articlesMeta = await getArticlesMeta({ highlight: true });
+  const favProjects = await projectsCollection.getMany({ view: "highlight" });
+  const favoriteTools = await toolsCollection.getMany({ view: "highlight" });
+  const favArticles = await articleCollection.getMany({ view: "highlight" });
+
   const bio = await getBio();
 
   return (
@@ -44,7 +45,8 @@ export default async function Home() {
           {/* <Interests short={bio.badge.short} long={bio.badge.long} /> */}
 
           <Title>{bio.headline}</Title>
-          <Prose html={bio.short} className="standalone mt-4 sm:mt-6" />
+
+          <Markdown className="mt-4 sm:mt-6">{bio.short.markdown}</Markdown>
 
           <div className="hidden pt-4 sm:block">
             <SeeMore href="/about">Read full bio</SeeMore>
@@ -83,7 +85,7 @@ export default async function Home() {
 
       <Container id="work">
         <Section.Title icon={Icons.Work} title="Featured Projects" />
-        <Projects data={projects.slice(0, 3)} className="mt-10" />
+        <Projects data={favProjects.slice(0, 3)} className="mt-10" />
 
         <SeeMore href="/projects" className="mt-12">
           See all projects
@@ -92,15 +94,25 @@ export default async function Home() {
 
       <Separator />
 
-      {!!articlesMeta.length && (
+      {!!favArticles.length && (
         <Container id="articles">
           <Section.Title icon={Icons.Article} title="Featured Articles" />
           <div
             role="list"
             className="mt-10 grid grid-cols-1 gap-x-16 gap-y-10 sm:grid-cols-2"
           >
-            {articlesMeta.map((article, i) => {
-              return <Article.Square {...article} key={i} />;
+            {favArticles.slice(0, 2).map((article) => {
+              return (
+                <Article.Square
+                  key={article._meta.slug}
+                  slug={article._meta.slug}
+                  title={article.title}
+                  description={article.description}
+                  created={article.created}
+                  topic={article.topic}
+                  wordCount={getMarkdownStats(article.markdown).wordCount}
+                />
+              );
             })}
           </div>
 
@@ -110,7 +122,7 @@ export default async function Home() {
         </Container>
       )}
 
-      {!!articlesMeta.length && <Separator />}
+      {!!favArticles.length && <Separator />}
 
       <Container id="stack">
         <Section.Title icon={Icons.Stack} title="Favourite Stack" />
@@ -119,7 +131,7 @@ export default async function Home() {
           role="list"
           className="mt-10 grid grid-cols-1 gap-x-16 gap-y-8 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {favoriteUses.map((use, i) => {
+          {favoriteTools.slice(0, 6).map((use, i) => {
             return <FavoriteUse {...use} key={i} />;
           })}
         </ul>
@@ -132,7 +144,11 @@ export default async function Home() {
   );
 }
 
-type FavoriteUseProps = Use;
+type FavoriteUseProps = {
+  name: string;
+  oneLiner: string;
+  meta: string;
+};
 
 function FavoriteUse(props: FavoriteUseProps) {
   const { name, oneLiner, meta } = props;

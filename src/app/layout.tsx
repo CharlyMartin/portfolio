@@ -1,5 +1,5 @@
 import React from "react";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -13,13 +13,16 @@ import "../css/index.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport: Viewport = {
+  colorScheme: "dark",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     default: META.name,
     template: `%s | ${META.name}`,
   },
-  colorScheme: "dark",
   creator: "Charly Martin",
   openGraph: {
     type: "website",
@@ -54,7 +57,7 @@ export default function RootLayout(props: Props) {
         <div className="w-full">
           {/* Background */}
           <div className={twJoin("fixed inset-0 flex justify-center", padding)}>
-            <div className="container flex">
+            <div className="site-container flex">
               <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
             </div>
           </div>

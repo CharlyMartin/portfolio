@@ -6,8 +6,8 @@ import Title from "@/components/atoms/title";
 import SocialLinkText from "@/components/blocks/social-link-text";
 import { getContacts } from "@/data/contact";
 import { getBio } from "@/data/bio";
-import Prose from "@/components/atoms/prose";
 import { metadata as globalMeta } from "@/app/layout";
+import Markdown from "@/components/blocks/markdown";
 
 export const metadata: Metadata = {
   ...globalMeta,
@@ -33,7 +33,7 @@ export default async function About() {
             Hi, I’m Charly. I live in sunny Lisbon ☀️ where I design and build
             apps.
           </Title>
-          <Prose html={bio.long} />
+          <Markdown>{bio.long.markdown}</Markdown>
         </div>
         <div className="lg:pl-20">
           <ul role="list" className="lg:pt-4">

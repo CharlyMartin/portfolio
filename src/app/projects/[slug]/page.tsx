@@ -5,45 +5,56 @@ import Container from "@/components/blocks/container";
 import Back from "@/components/atoms/back";
 import Section from "@/components/blocks/section";
 import Icons from "@/components/atoms/icons";
-import { getProject } from "@/data/projects";
+
 import { DATE_FORMATS, formatProjectDates } from "@/lib/format-date";
-import { Use } from "@/types";
 import Badge from "@/components/atoms/badge";
 import PageTitle from "@/components/blocks/page-title";
 import ProjectStatus from "@/components/blocks/project-status";
 import ImageGallery from "@/components/blocks/image-gallery";
+import { projectsCollection } from "@/cms/projects";
+import Markdown from "@/components/blocks/markdown";
+
+export async function generateStaticParams() {
+  const slugs = await projectsCollection.getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
-  const { params } = props;
+  const params = await props.params;
 
-  const project = await getProject(params.slug);
+  const project = await projectsCollection.getOne(params.slug, {
+    view: "page",
+  });
 
   return {
-    title: project.name,
+    title: project.title,
     description: `${
-      project.name
+      project.title
     } was done by Charly Martin along with ${project.people
-      ?.map((item) => item.name)
+      ?.map((item) => item.slug.name)
       ?.join(", ")}.`,
   };
 }
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export default async function ProjectPage(props: Props) {
-  const { params } = props;
+  const params = await props.params;
 
-  const project = await getProject(params.slug);
+  const project = await projectsCollection.getOne(params.slug, {
+    view: "page",
+  });
+
   const {
-    name,
+    title: name,
     dates,
     hq,
     roles,
     people,
-    images,
-    html,
+    imagesWithDimenstions,
+    markdown,
     stack,
     url,
     status,
@@ -52,10 +63,7 @@ export default async function ProjectPage(props: Props) {
 
   return (
     <Container>
-      <Back
-        className="lg:-left-[102px] lg:top-1.5 xl:absolute"
-        href="/projects"
-      />
+      <Back className="lg:top-1.5 lg:-left-25.5 xl:absolute" href="/projects" />
 
       <PageTitle
         title={name}
@@ -72,7 +80,7 @@ export default async function ProjectPage(props: Props) {
         {roles.map((item, i) => {
           const { name } = item;
           return (
-            <Badge className="mb-2 mr-2 sm:mb-3 sm:mr-3" size="lg" key={i}>
+            <Badge className="mr-2 mb-2 sm:mr-3 sm:mb-3" size="lg" key={i}>
               {name}
             </Badge>
           );
@@ -86,14 +94,14 @@ export default async function ProjectPage(props: Props) {
             {...images[0]}
             placeholder="blur"
             className="image-ring rounded-2xl"
-            priority
+            preload
           /> */}
-          <ImageGallery images={images} />
+          <ImageGallery images={imagesWithDimenstions} name={name} />
 
-          <div
-            className="prose dark:prose-invert"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          <br />
+          <br />
+
+          <Markdown>{markdown}</Markdown>
         </div>
 
         {/* Right */}
@@ -104,7 +112,7 @@ export default async function ProjectPage(props: Props) {
             subtitle="The technologies I worked with"
           >
             <ul className="space-y-1.5">
-              {sortStack(stack).map((item, i) => {
+              {stack.map((item, i) => {
                 const { name, meta } = item;
                 return <ListItem left={name} right={meta} key={i} />;
               })}
@@ -119,8 +127,14 @@ export default async function ProjectPage(props: Props) {
             >
               <ul className="space-y-1.5">
                 {people.map((item, i) => {
-                  const { name, role } = item;
-                  return <ListItem left={name} right={role.name} key={i} />;
+                  // Investigate how role is fetched here
+                  return (
+                    <ListItem
+                      left={item.slug.name}
+                      right={item.role.slug.name}
+                      key={i}
+                    />
+                  );
                 })}
               </ul>
             </Section>
@@ -153,32 +167,4 @@ function ListItem(props: ListItemProps) {
       )}
     </li>
   );
-}
-
-function sortStack(stack: Array<Use>) {
-  // Sort stack by the following order:
-  // 1. Languages
-  // 3. Libraries
-  // 4. SDK
-  // 5. Rest
-  return stack.sort((a, b) => {
-    const aType = a.type;
-    const bType = b.type;
-
-    if (aType == bType) return 0;
-
-    if (aType == "language") return -1;
-    if (bType == "language") return 1;
-
-    if (aType == "framework") return -1;
-    if (bType == "framework") return 1;
-
-    if (aType == "library") return -1;
-    if (bType == "library") return 1;
-
-    if (aType == "sdk") return -1;
-    if (bType == "sdk") return 1;
-
-    return 0;
-  });
 }

@@ -1,0 +1,8 @@
+{
+  "name": "Docker",
+  "meta": "Container Platform",
+  "type": "devtool",
+  "oneLiner": "Empowering App Development for Developers.",
+  "description": "I've barely scratched the surface of Docker. I've used it to run a few databases locally and it makes that process so much easier already.",
+  "url": "https://www.docker.com/"
+}
