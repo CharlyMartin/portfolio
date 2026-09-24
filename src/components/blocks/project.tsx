@@ -13,11 +13,12 @@ export type Props = {
   description: string;
   dates: IndexProject["dates"];
   area: IndexProject["area"];
+  employment: IndexProject["employment"];
   slug: string;
 };
 
 export default function Project(props: Props) {
-  const { title, logo, description, dates, area, slug } = props;
+  const { title, logo, description, dates, area, employment, slug } = props;
 
   const formattedDates = formatProjectDates(dates, DATE_FORMATS.PROJECT_SHORT);
 
@@ -53,17 +54,21 @@ export default function Project(props: Props) {
         )}
       </div>
 
-      {/* Title + badge + dates */}
+      {/* Title + badges + dates */}
       <div className="flex flex-col space-y-1">
         <Card.Title href={`/projects/${slug}`}>{title}</Card.Title>
 
-        <div className="flex items-center">
-          <Badge size="sm" className="z-10 mr-2.5">
+        <Card.Eyebrow as="time" dateTime={dates.end?.toLocaleString()}>
+          {formattedDates}
+        </Card.Eyebrow>
+
+        <div className="mt-1 -ml-1 flex flex-wrap items-center gap-1">
+          <Badge size="sm" className="z-10">
             {area}
           </Badge>
-          <Card.Eyebrow as="time" dateTime={dates.end?.toLocaleString()}>
-            {formattedDates}
-          </Card.Eyebrow>
+          <Badge size="sm" className="z-10">
+            {employment}
+          </Badge>
         </div>
       </div>
 

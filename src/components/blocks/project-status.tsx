@@ -26,6 +26,21 @@ export default function ProjectStatus(props: Props) {
     );
   }
 
+  if (status == "archived") {
+    return (
+      <Button
+        variant="unstyled"
+        title="Link no longer active"
+        className="w-full cursor-not-allowed bg-zinc-100 font-medium text-zinc-900 opacity-50 dark:bg-zinc-800/50 dark:text-zinc-300"
+        disabled
+      >
+        {getHostname(url)}
+        <span className="sr-only">(link no longer active)</span>
+        <Icons.Link className="mt-0.5 h-4 w-4" />
+      </Button>
+    );
+  }
+
   return (
     <Button
       variant="unstyled"
@@ -33,8 +48,7 @@ export default function ProjectStatus(props: Props) {
         "w-full cursor-not-allowed bg-zinc-50 font-medium text-zinc-400 dark:bg-zinc-800/50 dark:text-zinc-500",
       )}
     >
-      {status == "archived" && "link no longer available"}
-      {status == "wip" && "link not yet available"}
+      link not yet available
     </Button>
   );
 }

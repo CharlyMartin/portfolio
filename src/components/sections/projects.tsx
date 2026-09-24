@@ -28,6 +28,7 @@ export default function Projects(props: Props) {
               description={project.description}
               dates={project.dates}
               area={project.area}
+              employment={project.employment}
               logo={project.logo}
               slug={project._meta.slug}
             />
