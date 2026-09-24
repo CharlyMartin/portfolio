@@ -34,11 +34,7 @@ area: web2
 employment: contract
 ---
 
-## Context
-
 Relief is a Canadian FinTech startup that helps people pay off their debt faster. They built an app that navigates users through financial hurdles in the simplest manner, so they can return to enjoying life.
-
-## Contribution
 
 The branding and design of the app were done by [Orizon](https://orizon.co/), a leading branding agency in Montreal. They wanted to add a phone verification step to the signup flow using Twilio, but Webflow didn't allow them to do that out of the box. So they reached out to me for help!
 
