@@ -11,7 +11,7 @@ images:
 dates:
   start: "2020-04"
   end: "2021-04"
-url: "https://www.openwork.co/"
+url: "https://www.openwork.fr/"
 display: true
 highlight: false
 roles:

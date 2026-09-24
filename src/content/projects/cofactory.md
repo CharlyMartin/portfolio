@@ -52,7 +52,7 @@ people:
   - slug: "people/chappy-asel.json"
     role:
       slug: "roles/product-management.json"
-status: live
+status: archived
 area: ai
 employment: contract
 ---

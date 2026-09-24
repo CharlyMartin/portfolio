@@ -1,6 +1,6 @@
 ---
 title: Hubsy
-description: "TODO"
+description: "One of the first independant coworking cafés in Paris"
 hq: "Paris, France"
 logo:
   src: /images/projects/hubsy-logo.png
@@ -12,7 +12,7 @@ dates:
   start: "2018-08"
   end: "2018-12"
 url: "https://www.hubsy.fr/"
-display: false
+display: true
 highlight: false
 roles:
   - "roles/frontend.json"

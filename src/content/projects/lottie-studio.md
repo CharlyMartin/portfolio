@@ -12,7 +12,7 @@ images:
 dates:
   start: "2019-09"
   end: "2020-02"
-url: "https://lottiestudio.com/"
+url: "https://lottie-studio.netlify.app/"
 display: true
 highlight: true
 roles:
