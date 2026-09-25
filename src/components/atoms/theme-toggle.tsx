@@ -1,12 +1,24 @@
 "use client";
 
+import React from "react";
+
 import Icons from "@/components/atoms/icons";
 
 export default function ThemeToggle() {
+  const isDark = React.useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot,
+  );
+
+  // React resets <html> attributes on the dev Strict Mode remount; re-apply. No-op in production.
+  React.useLayoutEffect(applyStoredTheme, []);
+
   return (
     <button
       type="button"
-      aria-label="Toggle dark mode"
+      aria-label="Dark mode"
+      aria-pressed={isDark}
       className="group rounded-full bg-white/90 px-3 py-2 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={toggleMode}
     >
@@ -19,9 +31,8 @@ export default function ThemeToggle() {
 function toggleMode() {
   disableTransitionsTemporarily();
 
-  let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  let isSystemDarkMode = darkModeMediaQuery.matches;
-  let isDarkMode = document.documentElement.classList.toggle("dark");
+  const isSystemDarkMode = isSystemDark();
+  const isDarkMode = document.documentElement.classList.toggle("dark");
 
   if (isDarkMode === isSystemDarkMode) {
     delete window.localStorage.isDarkMode;
@@ -35,4 +46,31 @@ function disableTransitionsTemporarily() {
   window.setTimeout(() => {
     document.documentElement.classList.remove("[&_*]:transition-none!");
   }, 0);
+}
+
+function isSystemDark() {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+}
+
+function applyStoredTheme() {
+  const stored = window.localStorage.isDarkMode;
+  const isDark = stored === undefined ? isSystemDark() : stored === "true";
+  document.documentElement.classList.toggle("dark", isDark);
+}
+
+function subscribe(callback: () => void) {
+  const observer = new MutationObserver(callback);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+  return () => observer.disconnect();
+}
+
+function getSnapshot() {
+  return document.documentElement.classList.contains("dark");
+}
+
+function getServerSnapshot() {
+  return undefined;
 }

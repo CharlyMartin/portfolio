@@ -27,7 +27,7 @@ const satoshi = localFont({
 });
 
 export const viewport: Viewport = {
-  colorScheme: "dark",
+  colorScheme: "light dark",
 };
 
 export const metadata: Metadata = {
@@ -59,14 +59,26 @@ type Props = {
 
 const padding = "sm:px-6 md:px-10 lg:px-14 xl:px-20";
 
+// Applies the saved theme (or the system one) before first paint.
+const themeScript = `(function(){try{var s=localStorage.isDarkMode;var d=s===undefined?matchMedia("(prefers-color-scheme: dark)").matches:s==="true";document.documentElement.classList.toggle("dark",d)}catch(e){}})()`;
+
 export default function RootLayout(props: Props) {
   const { children } = props;
 
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body
         className={twJoin("h-full bg-zinc-50 dark:bg-black", satoshi.className)}
       >
+        <a
+          href="#content"
+          className="sr-only z-50 rounded-md bg-white text-sm font-medium text-zinc-900 shadow-lg ring-1 ring-zinc-900/10 focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:px-4 focus:py-2 dark:bg-zinc-800 dark:text-zinc-100"
+        >
+          Skip to content
+        </a>
         <div className="w-full">
           {/* Background */}
           <div className={twJoin("fixed inset-0 flex justify-center", padding)}>
@@ -78,7 +90,9 @@ export default function RootLayout(props: Props) {
           {/* Content */}
           <div className={twJoin("relative w-full overflow-x-hidden", padding)}>
             <Header />
-            <main>{children}</main>
+            <main id="content" tabIndex={-1} className="outline-none">
+              {children}
+            </main>
             <Footer />
             <br />
             <br />
