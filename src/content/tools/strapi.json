@@ -2,7 +2,6 @@
   "name": "Strapi",
   "meta": "Web Framework",
   "type": "framework",
-  "oneLiner": "The leading open-source headless CMS.",
-  "description": "Strapi is one of those tools so flexible that it can fit many use cases. I've used it as a backend, admin panel and web API for my previous company. It's a great tool! A TypeScript support would be nice though.",
+  "description": "A flexible headless CMS I've used as a backend, admin panel and web API.",
   "url": "https://strapi.io/"
 }

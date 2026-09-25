@@ -2,7 +2,6 @@
   "name": "Firebase SDK",
   "meta": "Web API",
   "type": "sdk",
-  "oneLiner": "Backend as a service.",
-  "description": "Like most Google APIS, Firebase can be a bit tricky to work with but covers a lot of use cases.",
+  "description": "Backend as a service that can be tricky to work with but covers a lot of use cases.",
   "url": "https://firebase.google.com/"
 }

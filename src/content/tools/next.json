@@ -2,8 +2,7 @@
   "name": "Next.js",
   "meta": "Web Framework",
   "type": "framework",
-  "oneLiner": "The React Framework for Production.",
-  "description": "After using standalone React for a while and running into the same configuration and optimisation hurdles (routing, code splitting, lazy loading, SSR, ...), I discovered Next.js v9 back in the day and was hooked by its simplicity. I've been using it ever since. Every new major version manages to make the tool even simpler to use, which is not always the case in the JavaScript ecosystem. Next.js is my go-to choice for any web project, my new Ruby on Rails.",
-  "highlight": true,
-  "url": "https://nextjs.org/"
+  "description": "I discovered Next.js v9 after hitting the same routing, code-splitting and SSR hurdles with plain React, and got hooked on its simplicity. Every major version makes it simpler still. It's my go-to for any web project, my new Ruby on Rails.",
+  "url": "https://nextjs.org/",
+  "highlight": true
 }

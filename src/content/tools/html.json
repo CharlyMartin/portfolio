@@ -2,7 +2,6 @@
   "name": "HTML",
   "meta": "Web Language",
   "type": "language",
-  "oneLiner": "The markup language for the web.",
-  "description": "Writing clean and accessible HTML is still a useful skill in 2023. I made the mistake of neglecting it when JavaScript frameworks were all the rage, but not anymore.",
+  "description": "Writing clean, accessible HTML is still a useful skill, one I no longer neglect.",
   "url": "https://developer.mozilla.org/en-US/docs/Web/HTML"
 }

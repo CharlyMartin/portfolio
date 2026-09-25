@@ -1,0 +1,7 @@
+{
+  "name": "TanStack Start",
+  "meta": "Web Framework",
+  "type": "framework",
+  "description": "Full-stack React framework powered by TanStack Router.",
+  "url": "https://tanstack.com/start/"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Nitro",
+  "meta": "Web Framework",
+  "type": "framework",
+  "description": "Write your server once and deploy it anywhere: Node, serverless, or the edge. Zero config, and a joy to build APIs with.",
+  "url": "https://nitro.build/",
+  "favorite": true,
+  "highlight": true
+}

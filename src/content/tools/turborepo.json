@@ -1,8 +1,9 @@
 {
   "name": "Turborepo",
   "meta": "Build System",
-  "type": "devtool",
-  "oneLiner": "High-performance monorepo build system for JavaScript and TypeScript codebases.",
-  "description": "Turborepo is a great tool for managing monorepos. It makes it easy to build and deploy multiple packages in a single repository.",
-  "url": "https://turborepo.dev/"
+  "type": "tooling",
+  "description": "Turborepo makes monorepos painless. It builds and deploys multiple packages from a single repository, and its caching keeps builds fast.",
+  "url": "https://turborepo.dev/",
+  "favorite": true,
+  "highlight": true
 }

@@ -2,7 +2,6 @@
   "name": "Headless UI",
   "meta": "Component Library",
   "type": "library",
-  "oneLiner": "A set of completely unstyled, fully accessible UI components",
-  "description": "Headless UI is made by the same team behind Tailwind CSS, hence both tools work together like magic, pretty neat! It's my go-to component library for Tailwind projects.",
+  "description": "Made by the Tailwind CSS team, it's my go-to component library for Tailwind projects.",
   "url": "https://headlessui.dev/"
 }

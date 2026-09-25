@@ -2,6 +2,6 @@
   "name": "Ethers",
   "meta": "Blockchain SDK",
   "type": "sdk",
-  "oneLiner": "The library for interacting with the Ethereum blockchain.",
+  "description": "The library for interacting with the Ethereum blockchain.",
   "url": "https://docs.ethers.io/"
 }

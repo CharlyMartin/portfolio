@@ -12,7 +12,9 @@ const toolSections = [
   { type: "library", title: "Libraries" },
   { type: "language", title: "Languages" },
   { type: "sdk", title: "SDKs" },
-  { type: "devtool", title: "Dev Tools" },
+  { type: "editor", title: "Editor & Terminal" },
+  { type: "tooling", title: "Build & Code Quality" },
+  { type: "utility", title: "Dev Utilities" },
   { type: "productivity", title: "Productivity" },
   { type: "workspace", title: "Workstation" },
 ] satisfies Array<{ type: ToolType["type"]; title: string }>;
@@ -29,9 +31,9 @@ export default async function UsesPage() {
   return (
     <PageLayout
       title="Software I use and gadgets I love"
-      text="Here’s a big list of all the tools, software, and hardware I use (or used to use) to stay productive and build great things."
+      text="The list of all the tools, software, and hardware I use (or used to use) to stay productive and ship great things."
     >
-      <div className="space-y-24">
+      <div className="space-y-16">
         {toolSections.map(({ type, title }) => {
           const items = tools.filter((tool) => tool.type == type);
 
@@ -72,7 +74,7 @@ function ToolsSection({ title, children }: SectionProps) {
           {title}
         </h2>
         <div className="md:col-span-3">
-          <ul role="list" className="space-y-12">
+          <ul role="list" className="space-y-8">
             {children}
           </ul>
         </div>

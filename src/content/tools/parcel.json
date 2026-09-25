@@ -1,7 +1,7 @@
 {
   "name": "Parcel",
   "meta": "Bundler",
-  "type": "devtool",
-  "oneLiner": "A zero-configuration bundler for the rest of us",
+  "type": "tooling",
+  "description": "A zero-configuration bundler for the rest of us.",
   "url": "https://parceljs.org/"
 }

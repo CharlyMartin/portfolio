@@ -2,7 +2,6 @@
   "name": "CSS",
   "meta": "Web Language",
   "type": "language",
-  "oneLiner": "The styling language for the web.",
-  "description": "CSS has become incredibly powerful over the years. Advanced layouts and animations can be achieved with little CSS when understood properly.",
+  "description": "CSS has become incredibly powerful, advanced layouts and animations take little code when understood properly.",
   "url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
 }

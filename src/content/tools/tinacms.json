@@ -1,7 +1,7 @@
 {
   "name": "TinaCMS",
   "meta": "CMS",
-  "type": "framework",
-  "oneLiner": "The open-source, Git-backed headless CMS for Markdown and JSON content.",
+  "type": "sdk",
+  "description": "The open-source, Git-backed headless CMS for Markdown and JSON content.",
   "url": "https://tina.io/"
 }

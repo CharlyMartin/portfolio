@@ -2,7 +2,7 @@
   "name": "Raycast",
   "meta": "Productivity Tool",
   "type": "productivity",
-  "oneLiner": "The extensible launcher for Mac.",
   "description": "Replaced Spotlight and half my dock in one go. I live in Raycast now.",
-  "url": "https://www.raycast.com/"
+  "url": "https://www.raycast.com/",
+  "favorite": true
 }

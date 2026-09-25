@@ -1,0 +1,7 @@
+{
+  "name": "Orca",
+  "meta": "AI Tool",
+  "type": "editor",
+  "description": "The agent IDE for running coding agents in parallel.",
+  "url": "https://www.onorca.dev/"
+}

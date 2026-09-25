@@ -2,7 +2,6 @@
   "name": "SWR",
   "meta": "Async State Management",
   "type": "library",
-  "oneLiner": "Popular  async state management library, by the team behind Next.js.",
-  "description": "I found out about SWR as I was browsing the Next.js docs. I was impressed by all the features of the tool and the simplicity of the API.",
+  "description": "Async state management by the Next.js team, with lots of features behind a simple API.",
   "url": "https://swr.vercel.app/"
 }

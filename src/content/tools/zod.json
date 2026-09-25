@@ -2,7 +2,7 @@
   "name": "Zod",
   "meta": "Validation Library",
   "type": "library",
-  "oneLiner": "The most popular validation library",
-  "description": "Zod has been my go-to validation library for years, the TypeScript native integration is grandiose.",
-  "url": "https://zod.dev/"
+  "description": "Zod has been my go-to validation library for years. Its native TypeScript integration is grandiose: define a schema once and get the types for free.",
+  "url": "https://zod.dev/",
+  "favorite": true
 }

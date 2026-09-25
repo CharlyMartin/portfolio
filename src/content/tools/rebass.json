@@ -2,7 +2,6 @@
   "name": "Rebass",
   "meta": "Component Library",
   "type": "library",
-  "oneLiner": "Primitive UI components built with styled-system.",
-  "description": "Rebass was one of the first component libraries I used. Its themeable and constraint-based design principles was exactly what I needed at the time, when I started building larger frontend apps.",
+  "description": "One of the first component libraries I used, its constraint-based design was exactly what I needed at the time.",
   "url": "https://rebassjs.org/"
 }

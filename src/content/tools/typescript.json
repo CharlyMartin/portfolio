@@ -2,8 +2,7 @@
   "name": "TypeScript",
   "meta": "Programming Language",
   "type": "language",
-  "oneLiner": "A typed superset of JavaScript.",
-  "description": "Unlike some of my favourite tools, TypeScript didn't impress me at first when I first used it in 2019. I felt like it was getting in the way of my development, as JavaScript is very flexible. But as I worked on increasingly bigger codebases, I got to love TypeScript. Getting the types right initially takes some time, but it always pays off as the project grows. It's my go-to language for all projects now.",
-  "highlight": true,
-  "url": "https://www.typescriptlang.org/"
+  "description": "TypeScript didn't impress me at first; it felt like it was getting in the way. As codebases grew, getting the types right always paid off. It's now my go-to language for every project.",
+  "url": "https://www.typescriptlang.org/",
+  "highlight": true
 }

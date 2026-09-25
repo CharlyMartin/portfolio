@@ -1,0 +1,8 @@
+{
+  "name": "Biome",
+  "meta": "Code Linter",
+  "type": "tooling",
+  "description": "Formatting and linting in one fast toolchain, with a single config. It's so fast I barely notice it running.",
+  "url": "https://biomejs.dev/",
+  "favorite": true
+}

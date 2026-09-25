@@ -2,6 +2,6 @@
   "name": "GraphQL",
   "meta": "Query Language",
   "type": "language",
-  "oneLiner": "Query language for your API.",
+  "description": "Query language for your API.",
   "url": "https://graphql.org/"
 }

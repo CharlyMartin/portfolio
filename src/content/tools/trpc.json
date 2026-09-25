@@ -1,9 +1,8 @@
 {
   "name": "tRPC",
-  "highlight": true,
   "meta": "Data Fetching",
   "type": "library",
-  "oneLiner": "End-to-end typesafe APIs made easy.",
-  "description": "I thought nothing could beat React Query at working with APIs. I was wrong. I believe tRPC is the latest frontier of developer experience on that front. I had a big wow moment when I first tried it. Data fetching is usually where type safety ends in frontend projects. tRPC not only makes it possible but incredibly fast.",
-  "url": "https://trpc.io/"
+  "description": "I thought nothing could beat React Query for working with APIs. tRPC brings type safety to data fetching, where it usually ends in frontend projects. A big wow moment.",
+  "url": "https://trpc.io/",
+  "highlight": true
 }

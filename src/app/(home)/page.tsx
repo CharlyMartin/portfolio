@@ -129,9 +129,9 @@ export default async function Home() {
 
         <ul
           role="list"
-          className="mt-10 grid grid-cols-1 gap-x-16 gap-y-8 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-10 grid grid-cols-1 gap-x-16 gap-y-8 sm:grid-cols-2 lg:grid-cols-4"
         >
-          {favoriteTools.slice(0, 6).map((use, i) => {
+          {favoriteTools.slice(0, 8).map((use, i) => {
             return <FavoriteUse {...use} key={i} />;
           })}
         </ul>
@@ -146,19 +146,16 @@ export default async function Home() {
 
 type FavoriteUseProps = {
   name: string;
-  oneLiner: string;
   meta: string;
 };
 
 function FavoriteUse(props: FavoriteUseProps) {
-  const { name, oneLiner, meta } = props;
+  const { name, meta } = props;
 
   return (
     <Card as="li">
       <Card.Title>{name}</Card.Title>
       {meta && <Card.Eyebrow className="mb-1.5">{meta}</Card.Eyebrow>}
-
-      <Card.Description>{oneLiner}</Card.Description>
     </Card>
   );
 }

@@ -1,8 +1,7 @@
 {
   "name": "Docker",
   "meta": "Container Platform",
-  "type": "devtool",
-  "oneLiner": "Empowering App Development for Developers.",
-  "description": "I've barely scratched the surface of Docker. I've used it to run a few databases locally and it makes that process so much easier already.",
+  "type": "utility",
+  "description": "I've barely scratched the surface, but it makes running databases locally so much easier.",
   "url": "https://www.docker.com/"
 }

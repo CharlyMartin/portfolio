@@ -1,0 +1,9 @@
+{
+  "name": "shadcn/ui",
+  "meta": "Component Library",
+  "type": "library",
+  "description": "My go-to way to build UIs today. Accessible components styled with Tailwind CSS, copied into my codebase so I own every line.",
+  "url": "https://ui.shadcn.com/",
+  "favorite": true,
+  "highlight": true
+}

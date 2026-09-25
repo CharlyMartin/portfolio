@@ -6,22 +6,14 @@ import Icons from "@/components/atoms/icons";
 import { getHostname } from "@/lib/get-hostname";
 import { type Tool } from "@/cms/tools";
 
-export function Tool({
-  name,
-  url,
-  description,
-  oneLiner,
-  highlight,
-  favorite,
-}: Tool) {
-  const text = description || oneLiner;
+export function Tool({ name, url, description, highlight, favorite }: Tool) {
   const fav = highlight || favorite;
 
   return (
     <li className="group relative">
       <div
         className={twMerge(
-          "absolute -inset-x-4 -inset-y-6 z-0 transition sm:-inset-x-6 sm:m-0.5 sm:rounded-2xl",
+          "absolute -inset-x-4 -inset-y-3 z-0 transition sm:-inset-x-6 sm:m-0.5 sm:rounded-2xl",
           fav &&
             "bg-emerald-50/30 group-hover:bg-emerald-50 dark:bg-emerald-950/30 group-hover:dark:bg-emerald-950/60",
           !fav &&
@@ -54,7 +46,7 @@ export function Tool({
           {/* Link */}
           <div
             className={twMerge(
-              "-mt-0.5 flex -translate-x-5 items-center pb-3 transition group-hover:translate-x-0",
+              "-mt-0.5 flex -translate-x-5 items-center transition group-hover:translate-x-0",
               !fav && "text-zinc-400 dark:text-zinc-500/80",
               fav && "text-emerald-600/50 dark:text-emerald-600/80",
             )}
@@ -69,12 +61,12 @@ export function Tool({
           {/* Description */}
           <p
             className={twMerge(
-              "relative z-10 text-sm",
+              "relative z-10 pt-3 text-sm",
               !fav && "text-zinc-600 dark:text-zinc-400",
               fav && "text-emerald-700 dark:text-emerald-300/80",
             )}
           >
-            {text}
+            {description}
           </p>
         </span>
       </A>

@@ -50,13 +50,14 @@ const ToolsSchema = z
       "language",
       "library",
       "framework",
-      "devtool",
+      "editor",
+      "tooling",
+      "utility",
       "productivity",
       "workspace",
       "sdk",
     ]),
-    oneLiner: z.string().min(1),
-    description: z.string().min(1).optional(),
+    description: z.string().min(1),
     url: z.url(),
     highlight: z.boolean().optional(),
     favorite: z.boolean().optional(),
@@ -73,8 +74,7 @@ export const toolsCollection = qino.defineCollection({
   views: (view) => ({
     default: view({
       sort: (a, b) =>
-        Number(Boolean(b.favorite || b.highlight)) -
-        Number(Boolean(a.favorite || a.highlight)),
+        a.name.localeCompare(b.name, "en", { sensitivity: "base" }),
     }),
     highlight: view({
       filter: (entry) => Boolean(entry.highlight),

@@ -2,6 +2,6 @@
   "name": "Viem",
   "meta": "Blockchain SDK",
   "type": "sdk",
-  "oneLiner": "The TypeScript interface for interacting with Ethereum.",
+  "description": "The TypeScript interface for interacting with Ethereum.",
   "url": "https://viem.sh/"
 }

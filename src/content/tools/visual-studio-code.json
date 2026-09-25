@@ -1,8 +1,7 @@
 {
   "name": "Visual Studio Code",
   "meta": "Code Editor",
-  "type": "devtool",
-  "oneLiner": "Code editing. Redefined.",
-  "description": "I was a Sublime Text lover for years. It was a sad moment when I could no longer lie to myself and admit that VS Code was the best code editor out there. It's such a pleasure to use.",
+  "type": "editor",
+  "description": "A Sublime Text lover for years, I had to admit VS Code became the best code editor out there.",
   "url": "https://code.visualstudio.com/"
 }

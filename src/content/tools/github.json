@@ -1,8 +1,7 @@
 {
   "name": "Github",
   "meta": "Code Collaboration",
-  "type": "devtool",
-  "oneLiner": "The most popular code hosting & collaboration platform",
-  "description": "The most popular code hosting & collaboration platform",
+  "type": "utility",
+  "description": "The most popular code hosting and collaboration platform.",
   "url": "https://www.github.com/"
 }

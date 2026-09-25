@@ -2,6 +2,6 @@
   "name": "React Final Form",
   "meta": "Form Management",
   "type": "library",
-  "oneLiner": "The react adapter for the popular final-form library.",
+  "description": "The React adapter for the popular final-form library.",
   "url": "https://final-form.org/react"
 }

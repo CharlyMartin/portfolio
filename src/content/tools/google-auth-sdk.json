@@ -2,6 +2,6 @@
   "name": "Google Auth SDK",
   "meta": "Web API",
   "type": "sdk",
-  "oneLiner": "The gateway to Google's API ecosystem.",
+  "description": "The gateway to Google's API ecosystem.",
   "url": "https://developers.google.com/identity/protocols/oauth2"
 }

@@ -2,7 +2,6 @@
   "name": "Vercel AI SDK",
   "meta": "AI Tool",
   "type": "sdk",
-  "oneLiner": "The library for streaming AI responses and chat UIs",
-  "description": "It would be much harder to build a snappy chat UI without Vercel AI SDK. It's a great tool that work with a wide variety of AI providers. And the SDK works on the frontend and backend, which is pretty neat!",
+  "description": "Makes snappy chat UIs easy, across AI providers, on the frontend and backend.",
   "url": "https://sdk.vercel.ai/docs"
 }

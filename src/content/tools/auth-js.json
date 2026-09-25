@@ -2,7 +2,6 @@
   "name": "Auth.js",
   "meta": "Authentication Library",
   "type": "library",
-  "oneLiner": "Authentication for the Web",
-  "description": "Auth.js - previously NextAuth.js - is incredibly intuitive and covers most, if not all, authentication use cases. It's not my go to authentication library for my Next.js projects.",
+  "description": "Auth.js (previously NextAuth.js) is intuitive, covers most authentication use cases, and is now my go-to for Next.js projects.",
   "url": "https://authjs.dev/"
 }

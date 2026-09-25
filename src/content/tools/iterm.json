@@ -1,8 +1,0 @@
-{
-  "name": "iTerm",
-  "meta": "Shell Tool",
-  "type": "devtool",
-  "oneLiner": "MacOs terminal replacement",
-  "description": "I've never used the default MacOs terminal, but whenever I see someone's screen with it, I feel like I am looking at a computer from the 80s. iTerm feels like the way to go.",
-  "url": "https://iterm2.com/"
-}

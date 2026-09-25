@@ -2,7 +2,6 @@
   "name": "JavaScript",
   "meta": "Web Language",
   "type": "language",
-  "oneLiner": "The programming language for the web.",
-  "description": "Coming from Ruby, learning JavaScript came with its set of challenges. The language is extremely flexible and can fit multiple programming paradigms. It's a beautiful language when used properly.",
+  "description": "Coming from Ruby, it took some getting used to, but it's a beautiful language when used properly.",
   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
 }

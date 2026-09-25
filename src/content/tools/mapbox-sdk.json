@@ -2,7 +2,6 @@
   "name": "Mapbox SDK",
   "meta": "Web API",
   "type": "sdk",
-  "oneLiner": "Maps and location for developers.",
-  "description": "I tried Mapbox when Google Maps API became too expensive for our use case. It's a great alternative and simpler to set up than Google Maps.",
+  "description": "A great alternative to Google Maps, and simpler to set up.",
   "url": "https://www.mapbox.com/"
 }

@@ -2,8 +2,7 @@
   "name": "Stripe SDK",
   "meta": "Web API",
   "type": "sdk",
-  "oneLiner": "The most popular payment API.",
-  "description": "It would be hard to imagine a world where Stripe doesn't exist. Their web API documentation is the gold standard of developer experience. I started using their API in 2018, and I remember being impressed by how much I could do as a one-person show. It's one of the products with the most significant effort/reward ratio... Imagine building a payment portal from scratch, a developer's nightmare. Whenever I come back to Stripe for new clients' projects, they somehow manage to make their service even more enjoyable and intuitive to use. Bravo, Stripe!",
-  "favorite": true,
-  "url": "https://stripe.com/"
+  "description": "Their API docs are the gold standard of developer experience. Since 2018, Stripe has let me build payment flows as a one-person show. Every time I come back, it's even more enjoyable to use.",
+  "url": "https://stripe.com/",
+  "favorite": true
 }

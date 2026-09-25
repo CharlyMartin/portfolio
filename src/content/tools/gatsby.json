@@ -2,7 +2,6 @@
   "name": "Gatsby.js",
   "meta": "Web Framework",
   "type": "framework",
-  "oneLiner": "Powerful framework and static site generator.",
-  "description": "I used Gatsby as a static site generator for a few projects back in 2018. The built-in lazy-loading and image optimization features felt like magic at the time. It was indeed blazing fast!",
+  "description": "My static site generator back in 2018, with built-in lazy-loading and image optimization that felt like magic.",
   "url": "https://www.gatsbyjs.com/"
 }

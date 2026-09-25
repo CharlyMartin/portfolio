@@ -1,0 +1,8 @@
+{
+  "name": "Terax",
+  "meta": "Shell Tool",
+  "type": "editor",
+  "description": "My terminal of choice. Editor, AI agents, and web preview in one lightweight, open-source app, without leaving the shell.",
+  "url": "https://terax.app/",
+  "favorite": true
+}
