@@ -104,7 +104,7 @@ export function CardCta(props: CardCtaProps) {
     <div
       aria-hidden="true"
       className={twMerge(
-        "relative z-10 mt-6 flex items-center text-sm font-medium text-zinc-400 transition-colors group-hover:text-teal-500 dark:text-zinc-500",
+        "relative z-10 mt-6 flex items-center text-sm font-medium text-zinc-500 transition-colors group-hover:text-teal-700 dark:text-zinc-400 dark:group-hover:text-teal-400",
         className,
       )}
     >
@@ -136,7 +136,7 @@ export function CardEyebrow<T extends React.ElementType = "p">(
   return (
     <Component
       className={twMerge(
-        "relative z-10 flex items-center text-sm font-medium text-zinc-500/70 dark:text-zinc-400/70",
+        "relative z-10 flex items-center text-sm font-medium text-zinc-500 dark:text-zinc-400",
         top && "order-first mb-3",
         decorate && "pl-3.5",
         className,

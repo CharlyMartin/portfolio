@@ -1,6 +1,36 @@
 @layer base {
+  /* Match native UI (scrollbars, default text) to the active theme, not the system one */
+  :root {
+    color-scheme: light;
+  }
+
+  :root.dark {
+    color-scheme: dark;
+  }
+
   body {
     font-weight: 500;
+  }
+
+  /* Consistent keyboard focus indicator */
+  :focus-visible {
+    outline: 2px solid var(--color-teal-600);
+    outline-offset: 2px;
+  }
+
+  :where(.dark, .dark *):focus-visible {
+    outline-color: var(--color-teal-400);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
@@ -22,9 +52,9 @@
 .prose {
   --tw-prose-body: var(--color-zinc-500);
   --tw-prose-invert-body: var(--color-zinc-400);
-  --tw-prose-links: var(--color-teal-500);
+  --tw-prose-links: var(--color-teal-700);
   --tw-prose-invert-links: var(--color-teal-400);
-  --prose-links-hover: var(--color-teal-600);
+  --prose-links-hover: var(--color-teal-800);
 }
 
 /* Equivalent of `dark:prose-invert` */
