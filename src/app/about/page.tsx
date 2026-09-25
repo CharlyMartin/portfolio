@@ -25,7 +25,7 @@ export default async function About() {
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-3">
         <div className="lg:pl-20">
           <div className="image-ring mx-auto aspect-square w-full max-w-md rotate-1 overflow-hidden rounded-2xl">
-            <Image {...bio.avatar} alt="Avatar of the author" />
+            <Image {...bio.avatar} alt="Portrait of Charly Martin" />
           </div>
         </div>
         <div className="w-full lg:order-first lg:row-span-2">

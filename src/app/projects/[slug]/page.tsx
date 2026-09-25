@@ -63,7 +63,11 @@ export default async function ProjectPage(props: Props) {
 
   return (
     <Container>
-      <Back className="lg:top-1.5 lg:-left-25.5 xl:absolute" href="/projects" />
+      <Back
+        href="/projects"
+        label="Back to projects"
+        className="lg:top-1.5 lg:-left-25.5 xl:absolute"
+      />
 
       <PageTitle
         title={name}
@@ -165,8 +169,9 @@ function ListItem(props: ListItemProps) {
       </span>
 
       {right && (
-        <span className="text-sm text-zinc-400 dark:text-zinc-500">
-          / {right}
+        <span className="text-sm text-zinc-500 dark:text-zinc-400">
+          <span aria-hidden="true">/ </span>
+          {right}
         </span>
       )}
     </li>

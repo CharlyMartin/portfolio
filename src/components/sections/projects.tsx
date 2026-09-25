@@ -6,10 +6,11 @@ import type { IndexProject } from "@/cms/projects";
 
 type Props = {
   data: Array<IndexProject>;
+  headingLevel?: "h2" | "h3";
 } & React.ComponentProps<"ul">;
 
 export default function Projects(props: Props) {
-  const { data, className, ...rest } = props;
+  const { data, headingLevel, className, ...rest } = props;
 
   return (
     <ul
@@ -31,6 +32,7 @@ export default function Projects(props: Props) {
               employment={project.employment}
               logo={project.logo}
               slug={project._meta.slug}
+              headingLevel={headingLevel}
             />
           </li>
         );

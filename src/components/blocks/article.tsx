@@ -15,11 +15,14 @@ function ArticlePreviewSquare(props: Props) {
   const { title, slug, created, description } = props;
 
   const date = formatArticleDate(created, DATE_FORMATS.ARTICLE_SHORT);
+  const isoDate = created.toISOString().slice(0, 10);
 
   return (
     <Card as="article">
-      <Card.Title href={`/articles/${slug}`}>{title}</Card.Title>
-      <Card.Eyebrow as="time" dateTime={date} decorate top>
+      <Card.Title as="h3" href={`/articles/${slug}`}>
+        {title}
+      </Card.Title>
+      <Card.Eyebrow as="time" dateTime={isoDate} decorate top>
         {date}
       </Card.Eyebrow>
       <Card.Description>{description}</Card.Description>
@@ -32,6 +35,7 @@ function ArticlePreviewLine(props: Props) {
   const { slug, title, created, description, topic, wordCount } = props;
 
   const date = formatArticleDate(created, DATE_FORMATS.ARTICLE_LONG);
+  const isoDate = created.toISOString().slice(0, 10);
   const formattedCount = new Intl.NumberFormat("en-US").format(wordCount);
 
   return (
@@ -40,7 +44,7 @@ function ArticlePreviewLine(props: Props) {
         <Card.Title href={`/articles/${slug}`}>{title}</Card.Title>
         <Card.Eyebrow
           as="time"
-          dateTime={date}
+          dateTime={isoDate}
           className="md:hidden"
           decorate
           top
@@ -49,7 +53,7 @@ function ArticlePreviewLine(props: Props) {
         </Card.Eyebrow>
         <Card.Description>{description}</Card.Description>
 
-        <div className="mb-1.5 mt-2.5 flex items-center">
+        <div className="mt-2.5 mb-1.5 flex items-center">
           <Badge size="sm" className="z-10 mr-2.5">
             {topic}
           </Badge>
@@ -62,7 +66,7 @@ function ArticlePreviewLine(props: Props) {
       {/* Item on the left on md+ */}
       <Card.Eyebrow
         as="time"
-        dateTime={date}
+        dateTime={isoDate}
         className="mt-0.5 hidden md:block"
         top
       >

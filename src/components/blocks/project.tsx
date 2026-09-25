@@ -15,10 +15,20 @@ export type Props = {
   area: IndexProject["area"];
   employment: IndexProject["employment"];
   slug: string;
+  headingLevel?: "h2" | "h3";
 };
 
 export default function Project(props: Props) {
-  const { title, logo, description, dates, area, employment, slug } = props;
+  const {
+    title,
+    logo,
+    description,
+    dates,
+    area,
+    employment,
+    slug,
+    headingLevel = "h2",
+  } = props;
 
   const formattedDates = formatProjectDates(dates, DATE_FORMATS.PROJECT_SHORT);
 
@@ -27,7 +37,7 @@ export default function Project(props: Props) {
       {/* Logo */}
       <div className="z-10 pb-2">
         {logo ? (
-          <ProjectLogo logo={logo} title={title} />
+          <ProjectLogo logo={logo} />
         ) : (
           <ProjectLogoPlaceholder title={title} />
         )}
@@ -35,11 +45,11 @@ export default function Project(props: Props) {
 
       {/* Title + badges + dates */}
       <div className="flex flex-col space-y-1">
-        <Card.Title href={`/projects/${slug}`}>{title}</Card.Title>
+        <Card.Title as={headingLevel} href={`/projects/${slug}`}>
+          {title}
+        </Card.Title>
 
-        <Card.Eyebrow as="time" dateTime={dates.end?.toLocaleString()}>
-          {formattedDates}
-        </Card.Eyebrow>
+        <Card.Eyebrow>{formattedDates}</Card.Eyebrow>
 
         <div className="mt-1 -ml-1 flex flex-wrap items-center gap-1">
           <Badge size="sm" className="z-10">

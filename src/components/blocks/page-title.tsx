@@ -17,8 +17,8 @@ export default function PageTitle(props: Props) {
 
   return (
     <React.Fragment>
-      <Title className="!mb-1.5 ">{title}</Title>
-      <p className="text-sm text-zinc-500 dark:text-zinc-400 sm:text-base">
+      <Title className="!mb-1.5">{title}</Title>
+      <p className="text-sm text-zinc-500 sm:text-base dark:text-zinc-400">
         {renderSubtitle(truthyList)}
       </p>
     </React.Fragment>
@@ -31,9 +31,15 @@ function renderSubtitle(subtitle: Array<V>) {
       <React.Fragment key={i}>
         {item}
         {i != subtitle.length - 1 && (
-          <span className="inline-block px-2 text-zinc-200 dark:text-zinc-700/80">
-            •
-          </span>
+          <React.Fragment>
+            <span className="sr-only">, </span>
+            <span
+              aria-hidden="true"
+              className="inline-block px-2 text-zinc-200 dark:text-zinc-700/80"
+            >
+              •
+            </span>
+          </React.Fragment>
         )}
       </React.Fragment>
     );

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link, { LinkProps } from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Popover,
   PopoverBackdrop,
@@ -18,6 +19,8 @@ import { routes } from "@/data/routes";
 type Props = PopoverProps<"div">;
 
 export default function MobileNavigation(props: Props) {
+  const pathname = usePathname();
+
   return (
     <Popover {...props}>
       <PopoverButton className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
@@ -57,12 +60,16 @@ export default function MobileNavigation(props: Props) {
                 Navigation
               </h2>
             </div>
-            <nav className="mt-6">
+            <nav aria-label="Main" className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                 {routes.map((route, i) => {
-                  const { link, label } = route;
+                  const { link, label, isCurrent } = route;
                   return (
-                    <MobileNavItem key={i} {...link}>
+                    <MobileNavItem
+                      key={i}
+                      {...link}
+                      isActive={isCurrent(pathname)}
+                    >
                       {label}
                     </MobileNavItem>
                   );
@@ -78,14 +85,20 @@ export default function MobileNavigation(props: Props) {
 
 type MobileNavItemProps = {
   children?: React.ReactNode;
+  isActive: boolean;
 } & LinkProps;
 
 function MobileNavItem(props: MobileNavItemProps) {
-  const { href, children } = props;
+  const { href, children, isActive } = props;
 
   return (
     <li>
-      <PopoverButton as={Link} href={href} className="block py-2">
+      <PopoverButton
+        as={Link}
+        href={href}
+        aria-current={isActive ? "page" : undefined}
+        className="block py-2 aria-[current=page]:text-teal-700 dark:aria-[current=page]:text-teal-400"
+      >
         {children}
       </PopoverButton>
     </li>
