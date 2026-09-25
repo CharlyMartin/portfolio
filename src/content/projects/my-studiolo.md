@@ -2,14 +2,11 @@
 title: My Studiolo
 description: "The modern management tool for art collectors."
 hq: "Paris, France"
-logo:
-  src: /images/projects/my-studiolo-logo.webp
-  style:
-    padding: "12px"
+logo: /images/logos/my-studiolo-logo.webp
 images:
-  - /images/projects/my-studiolo-1.webp
-  - /images/projects/my-studiolo-2.webp
-  - /images/projects/my-studiolo-3.webp
+  - /images/projects/my-studiolo/my-studiolo-1.webp
+  - /images/projects/my-studiolo/my-studiolo-2.webp
+  - /images/projects/my-studiolo/my-studiolo-3.webp
 dates:
   start: "2019-03"
   end: "2019-09"

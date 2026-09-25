@@ -21,12 +21,7 @@ export const ProjectSchema = z
     title: z.string().min(1),
     description: z.string(),
     hq: z.string(),
-    logo: z
-      .object({
-        src: z.string().startsWith("/"),
-        style: z.record(z.string(), z.string()).optional(),
-      })
-      .optional(),
+    logo: z.string().startsWith("/").optional(),
     images: z.array(z.string().startsWith("/")).default([]),
     dates: z
       .object({

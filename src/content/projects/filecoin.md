@@ -2,18 +2,15 @@
 title: Filecoin
 description: "The decentralized storage network securing the world's most important data."
 hq: "San Francisco, USA"
-logo:
-  src: /images/projects/filecoin-logo.webp
-  style:
-    padding: "1px"
+logo: /images/logos/filecoin-logo.webp
 images:
-  - /images/projects/filecoin-1.webp
-  - /images/projects/filecoin-2.webp
-  - /images/projects/filecoin-3.webp
-  - /images/projects/filecoin-4.webp
-  - /images/projects/filecoin-5.webp
-  - /images/projects/filecoin-6.webp
-  - /images/projects/filecoin-7.webp
+  - /images/projects/filecoin/filecoin-1.webp
+  - /images/projects/filecoin/filecoin-2.webp
+  - /images/projects/filecoin/filecoin-3.webp
+  - /images/projects/filecoin/filecoin-4.webp
+  - /images/projects/filecoin/filecoin-5.webp
+  - /images/projects/filecoin/filecoin-6.webp
+  - /images/projects/filecoin/filecoin-7.webp
 dates:
   start: "2025-06"
   end: "2026-03"

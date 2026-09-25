@@ -1,10 +1,10 @@
-import { twMerge } from "tailwind-merge";
-import Image from "next/image";
-
 import Card from "@/components/blocks/card";
 import { DATE_FORMATS, formatProjectDates } from "@/lib/format-date";
 
 import Badge from "@/components/atoms/badge";
+import ProjectLogo, {
+  ProjectLogoPlaceholder,
+} from "@/components/atoms/project-logo";
 import { IndexProject } from "@/cms/projects";
 
 export type Props = {
@@ -26,31 +26,10 @@ export default function Project(props: Props) {
     <Card className="gap-5">
       {/* Logo */}
       <div className="z-10 pb-2">
-        {logo && (
-          <ImageBackground
-            style={{
-              backgroundColor: "#fff",
-              padding: "14px",
-              ...logo.style,
-            }}
-          >
-            <div className="relative h-full w-full">
-              <Image
-                src={logo.src}
-                fill={true}
-                alt={`${title}'s Logo`}
-                unoptimized
-              />
-            </div>
-          </ImageBackground>
-        )}
-
-        {!logo && (
-          <ImageBackground className="bg-teal-50">
-            <span className="text-2xl font-medium text-teal-600">
-              {title[0]}
-            </span>
-          </ImageBackground>
+        {logo ? (
+          <ProjectLogo logo={logo} title={title} />
+        ) : (
+          <ProjectLogoPlaceholder title={title} />
         )}
       </div>
 
@@ -78,23 +57,5 @@ export default function Project(props: Props) {
       {/* CTA */}
       <Card.Cta className="mt-0">See project</Card.Cta>
     </Card>
-  );
-}
-
-type ImageCircleProps = React.ComponentProps<"div">;
-
-function ImageBackground(props: ImageCircleProps) {
-  const { children, className, ...rest } = props;
-
-  return (
-    <div
-      className={twMerge(
-        className,
-        "flex h-12 w-12 items-center justify-center rounded-full shadow-md ring-2 shadow-zinc-800/5 ring-zinc-200/20 dark:ring-zinc-700",
-      )}
-      {...rest}
-    >
-      {children}
-    </div>
   );
 }

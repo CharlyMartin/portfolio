@@ -2,12 +2,11 @@
 title: Immunefi
 description: "The leading bug bounty platform in Web3, protecting billions in user funds."
 hq: "Lisbon, Portugal"
-logo:
-  src: /images/projects/immunefi-logo.webp
+logo: /images/logos/immunefi-logo.webp
 images:
-  - /images/projects/immunefi-1.webp
-  - /images/projects/immunefi-2.webp
-  - /images/projects/immunefi-3.webp
+  - /images/projects/immunefi/immunefi-1.webp
+  - /images/projects/immunefi/immunefi-2.webp
+  - /images/projects/immunefi/immunefi-3.webp
 dates:
   start: "2021-11"
   end: "2022-05"
