@@ -39,6 +39,7 @@ const meta = z.enum([
   "Design Tool",
   "Build System",
   "Validation Library",
+  "CMS",
 ]);
 
 const ToolsSchema = z
