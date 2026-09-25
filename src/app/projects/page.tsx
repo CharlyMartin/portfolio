@@ -16,7 +16,7 @@ export default async function ProjectsPage() {
 
   return (
     <PageHeading
-      title="Things I’ve made and contributed to 💻"
+      title="Things I’ve made and contributed to"
       text="I’ve worked on countless projects over the years, with startups spanning all industries. These are the ones that has made me grow the most."
     >
       <Projects data={projects} />

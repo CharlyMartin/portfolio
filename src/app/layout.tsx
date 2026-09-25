@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { twJoin } from "tailwind-merge";
@@ -11,7 +11,20 @@ import ScreenSizeIndicator from "@/components/atoms/screen-size-indicator";
 import { BASE_URL, META } from "@/data/config";
 import "../css/index.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const satoshi = localFont({
+  src: [
+    {
+      path: "../fonts/Satoshi-Variable.woff2",
+      weight: "300 900",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Satoshi-VariableItalic.woff2",
+      weight: "300 900",
+      style: "italic",
+    },
+  ],
+});
 
 export const viewport: Viewport = {
   colorScheme: "dark",
@@ -52,7 +65,7 @@ export default function RootLayout(props: Props) {
   return (
     <html lang="en" className="h-full antialiased">
       <body
-        className={twJoin("h-full bg-zinc-50 dark:bg-black", inter.className)}
+        className={twJoin("h-full bg-zinc-50 dark:bg-black", satoshi.className)}
       >
         <div className="w-full">
           {/* Background */}

@@ -30,10 +30,7 @@ export default function Markdown({
 }: Props) {
   return (
     <div
-      className={twMerge(
-        "prose leading-[1.85] dark:prose-invert prose-a:text-teal-500 prose-a:hover:text-teal-600 dark:prose-a:text-teal-400 dark:prose-a:hover:text-teal-400",
-        className,
-      )}
+      className={twMerge("prose", className)}
     >
       <ReactMarkdown
         remarkPlugins={remarkPlugins}

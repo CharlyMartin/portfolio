@@ -8,7 +8,7 @@ const data: Array<Contact> = [
     id: "telegram",
     name: "Telegram",
     url: "https://t.me/charlymartin",
-    action: "DM on Telegram",
+    action: "Message on Telegram",
     icon: Icons.Telegram,
   },
   {
@@ -29,7 +29,7 @@ const data: Array<Contact> = [
     id: "email",
     name: "Email",
     url: `mailto:${EMAIL}?subject=${encodeURIComponent(
-      "Contact from your Portfolio"
+      "Contact from your Portfolio",
     )}&body=${encodeURIComponent("Hi Charly,")}`,
     action: "Open email app",
     icon: Icons.Email,

@@ -3,9 +3,7 @@ import { longBio, shortBio } from "@/cms/bio";
 
 const data = {
   name: "Charly",
-  headline: "Senior Software Developer, ex-Founder & UI Designer",
-  // headline: "Software Engineer, ex-Founder & OSS Contributor",
-  // headline: "Senior Software Developer 🧑‍💻, ex-Founder ⚙️ and UI Designer 💅",
+  headline: "Software Engineer, Builder, OSS contributor",
   badge: {
     long: "Projects in the sustainability or music space",
     short: "Earth re-gen / Music tech",

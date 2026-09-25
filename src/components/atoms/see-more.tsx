@@ -15,8 +15,8 @@ export default function SeeMore(props: Props) {
     <Link
       {...rest}
       className={twMerge(
-        "relative left-0 inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-2.5 py-2 text-xs font-medium leading-none tracking-wide text-zinc-800 transition hover:bg-teal-50 hover:text-teal-600 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:text-teal-500 sm:-left-2.5",
-        className
+        "relative left-0 inline-flex items-center gap-1.5 rounded-full bg-zinc-100 px-2.5 py-2 text-sm leading-none font-medium tracking-wide text-zinc-800 transition hover:bg-teal-50 hover:text-teal-700 sm:-left-2.5 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-teal-950 dark:hover:text-teal-400",
+        className,
       )}
     >
       <span>{children}</span>

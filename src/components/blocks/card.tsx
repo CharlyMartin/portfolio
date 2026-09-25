@@ -42,7 +42,7 @@ function CardTitle<T extends React.ElementType = "h2">(
   return (
     <Component
       className={twMerge(
-        "text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100",
+        "text-base font-bold tracking-tight text-zinc-800 dark:text-zinc-100",
         className,
       )}
     >
@@ -136,7 +136,7 @@ export function CardEyebrow<T extends React.ElementType = "p">(
   return (
     <Component
       className={twMerge(
-        "relative z-10 flex items-center text-sm text-zinc-500/80 dark:text-zinc-400/80",
+        "relative z-10 flex items-center text-sm font-medium text-zinc-500/70 dark:text-zinc-400/70",
         top && "order-first mb-3",
         decorate && "pl-3.5",
         className,

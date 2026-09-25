@@ -15,8 +15,9 @@ export default function GetEmail(props: Props) {
 
   return (
     <Button
-      className={twMerge("w-full sm:w-[148px]", className)}
+      className={twMerge("w-full cursor-pointer sm:w-37", className)}
       onClick={onCopy}
+      type="button"
       {...rest}
     >
       {hasCopied && "Copied!"}

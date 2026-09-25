@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   ...globalMeta,
   title: "About",
   description:
-    "Hi, I’m Charly. I live in sunny Lisbon where I design and build apps",
+    "Hi, I’m Charly. I live in sunny Lisbon  where I design and build apps",
 };
 
 export default async function About() {
@@ -24,13 +24,13 @@ export default async function About() {
     <Container>
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-3">
         <div className="lg:pl-20">
-          <div className="image-ring mx-auto aspect-square w-full max-w-md overflow-hidden rounded-2xl">
+          <div className="image-ring mx-auto aspect-square w-full max-w-md rotate-1 overflow-hidden rounded-2xl">
             <Image {...bio.avatar} alt="Avatar of the author" />
           </div>
         </div>
         <div className="w-full lg:order-first lg:row-span-2">
           <Title>
-            Hi, I’m Charly. I live in sunny Lisbon ☀️ where I design and build
+            Hi, I’m Charly. I live in sunny Lisbon 🇵🇹 where I design and build
             apps.
           </Title>
           <Markdown>{bio.long.markdown}</Markdown>

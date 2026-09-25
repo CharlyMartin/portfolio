@@ -35,9 +35,9 @@ function SectionTitle(props: TitleProps) {
   const { icon: Icon, title } = props;
 
   return (
-    <h2 className="flex items-center text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+    <h2 className="flex items-center text-sm font-bold text-zinc-900 dark:text-zinc-100">
       <Icon className="h-6 w-6 flex-none fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500" />
-      <span className="ml-2.5 mt-0.5">{title}</span>
+      <span className="mt-0.5 ml-2.5">{title}</span>
     </h2>
   );
 }
@@ -51,7 +51,7 @@ function SectionOutline(props: OutlineProps) {
     <div
       className={twMerge(
         "rounded-2xl border border-zinc-200/60 p-6 dark:border-zinc-700/50",
-        className
+        className,
       )}
       {...rest}
     >

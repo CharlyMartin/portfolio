@@ -28,7 +28,7 @@ export default async function UsesPage() {
 
   return (
     <PageLayout
-      title="Software I use and gadgets I love ✨"
+      title="Software I use and gadgets I love"
       text="Here’s a big list of all the tools, software, and hardware I use (or used to use) to stay productive and build great things."
     >
       <div className="space-y-24">

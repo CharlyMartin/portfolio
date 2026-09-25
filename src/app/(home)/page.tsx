@@ -155,9 +155,7 @@ function FavoriteUse(props: FavoriteUseProps) {
 
   return (
     <Card as="li">
-      <h2 className="text-base font-semibold text-zinc-800 dark:text-zinc-100">
-        {name}
-      </h2>
+      <Card.Title>{name}</Card.Title>
       {meta && <Card.Eyebrow className="mb-1.5">{meta}</Card.Eyebrow>}
 
       <Card.Description>{oneLiner}</Card.Description>
