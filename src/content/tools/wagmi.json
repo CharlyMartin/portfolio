@@ -1,0 +1,7 @@
+{
+  "name": "Wagmi",
+  "meta": "Blockchain SDK",
+  "type": "sdk",
+  "oneLiner": "Reactive primitives for building Ethereum apps with React.",
+  "url": "https://wagmi.sh/"
+}

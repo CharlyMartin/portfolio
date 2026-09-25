@@ -19,7 +19,7 @@ dates:
   end: "2025-05"
 url: "https://fil.org/"
 display: true
-highlight: true
+highlight: false
 roles:
   - "roles/frontend.json"
   - "roles/backend.json"

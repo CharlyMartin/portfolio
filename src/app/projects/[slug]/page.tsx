@@ -96,10 +96,14 @@ export default async function ProjectPage(props: Props) {
             className="image-ring rounded-2xl"
             preload
           /> */}
-          <ImageGallery images={imagesWithDimenstions} name={name} />
+          {imagesWithDimenstions.length > 0 && (
+            <React.Fragment>
+              <ImageGallery images={imagesWithDimenstions} name={name} />
 
-          <br />
-          <br />
+              <br />
+              <br />
+            </React.Fragment>
+          )}
 
           <Markdown>{markdown}</Markdown>
         </div>
