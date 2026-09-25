@@ -44,12 +44,12 @@ export const metadata: Metadata = {
     siteName: META.name,
     title: META.title,
     description: META.name + " | Portfolio",
-    images: ["/home-dark.png", "/home-light.png"],
+    images: ["/home-screenshot.png"],
   },
   twitter: {
     title: META.title,
     description: META.name + " | Portfolio",
-    images: ["/home-dark.png", "/home-light.png"],
+    images: ["/home-screenshot.png"],
   },
 };
 
