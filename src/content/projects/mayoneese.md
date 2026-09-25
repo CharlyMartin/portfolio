@@ -2,11 +2,7 @@
 title: Mayoneese
 description: "The curated music newsletter that makes you come alive."
 hq: "Paris, France"
-logo:
-  src: /images/logos/mayoneese-logo.webp
-  style:
-    backgroundColor: "#EDBA2F"
-    padding: "8px"
+logo: /images/logos/mayoneese-logo.webp
 images:
   - /images/projects/mayoneese/mayoneese-1.webp
 dates:

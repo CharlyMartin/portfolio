@@ -2,11 +2,7 @@
 title: Cofactory
 description: "The future of value creation in an AI-based economy."
 hq: "San Francisco, USA"
-logo:
-  src: /images/logos/cofactory-logo.webp
-  style:
-    backgroundColor: "#000"
-    padding: "10px"
+logo: /images/logos/cofactory-logo.webp
 images:
   - /images/projects/cofactory/cofactory-1.webp
   - /images/projects/cofactory/cofactory-2.webp

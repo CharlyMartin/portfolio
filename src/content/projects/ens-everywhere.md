@@ -2,11 +2,7 @@
 title: ENS Everywhere
 description: "Register your native L2 ENS domain for a fraction of the cost."
 hq: "Lisbon, Portugal"
-logo:
-  src: /images/logos/ens-everywhere-logo.webp
-  style:
-    backgroundColor: "#F7FAFC"
-    padding: "12px"
+logo: /images/logos/ens-everywhere-logo.webp
 images:
   - /images/projects/ens-everywhere/ens-everywhere-1.webp
 dates:

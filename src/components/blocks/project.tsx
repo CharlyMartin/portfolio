@@ -27,16 +27,10 @@ export default function Project(props: Props) {
       {/* Logo */}
       <div className="z-10 pb-2">
         {logo && (
-          <ImageBackground
-            style={{
-              backgroundColor: "#fff",
-              padding: "14px",
-              ...logo.style,
-            }}
-          >
+          <ImageBackground>
             <div className="relative h-full w-full">
               <Image
-                src={logo.src}
+                src={logo}
                 fill={true}
                 alt={`${title}'s Logo`}
                 unoptimized
@@ -90,7 +84,7 @@ function ImageBackground(props: ImageCircleProps) {
     <div
       className={twMerge(
         className,
-        "flex h-12 w-12 items-center justify-center rounded-full shadow-md ring-2 shadow-zinc-800/5 ring-zinc-200/20 dark:ring-zinc-700",
+        "size-13 rounded-full p-0.5 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:ring-white/10",
       )}
       {...rest}
     >

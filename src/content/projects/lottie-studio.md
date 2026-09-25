@@ -2,10 +2,7 @@
 title: Lottie Studio
 description: "The design studio for high-quality web and native animations."
 hq: "Montreal, Canada"
-logo:
-  src: /images/logos/lottie-studio-logo.webp
-  style:
-    backgroundColor: "#1b2126"
+logo: /images/logos/lottie-studio-logo.webp
 images:
   - /images/projects/lottie-studio/lottie-studio-1.webp
   - /images/projects/lottie-studio/lottie-studio-2.webp

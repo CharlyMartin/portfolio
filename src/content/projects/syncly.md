@@ -2,10 +2,7 @@
 title: Syncly
 description: "The real-time booking engine designed to boost meeting room sales."
 hq: "Paris, France"
-logo:
-  src: /images/logos/syncly-logo.webp
-  style:
-    backgroundColor: "#f3f3ff"
+logo: /images/logos/syncly-logo.webp
 images:
   - /images/projects/syncly/syncly-1.webp
   - /images/projects/syncly/syncly-2.webp
