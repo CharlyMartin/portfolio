@@ -1,8 +1,6 @@
-"use client";
-
 import { twMerge } from "tailwind-merge";
 
-import Button from "@/components/atoms/button";
+import { buttonClasses } from "@/components/atoms/button";
 import Icons from "@/components/atoms/icons";
 import A from "@/components/atoms/a";
 import { getContact } from "@/data/contact";
@@ -19,13 +17,13 @@ export default function OpenGitHub(props: Props) {
   return (
     <A
       href={`${github.url}/portfolio/tree/main${slug}`}
-      className={twMerge("w-full sm:w-auto", className)}
+      className={buttonClasses({
+        className: twMerge("w-full sm:w-auto", className),
+      })}
       {...rest}
     >
-      <Button className="w-full">
-        View on GitHub
-        <Icons.GitHub size={18} />
-      </Button>
+      View on GitHub
+      <Icons.GitHub size={18} />
     </A>
   );
 }
