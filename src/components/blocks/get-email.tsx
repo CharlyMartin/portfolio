@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { twMerge } from "tailwind-merge";
 
 import Button, { Props as ButtonProps } from "@/components/atoms/button";
@@ -14,16 +15,21 @@ export default function GetEmail(props: Props) {
   const { onCopy, hasCopied } = useClipboard(EMAIL);
 
   return (
-    <Button
-      className={twMerge("w-full cursor-pointer sm:w-37", className)}
-      onClick={onCopy}
-      type="button"
-      {...rest}
-    >
-      {hasCopied && "Copied!"}
-      {!hasCopied && "Copy email"}
-      {hasCopied && <Icons.Check size={18} />}
-      {!hasCopied && <Icons.Clipboard size={18} />}
-    </Button>
+    <React.Fragment>
+      <Button
+        className={twMerge("w-full cursor-pointer sm:w-37", className)}
+        onClick={onCopy}
+        type="button"
+        {...rest}
+      >
+        {hasCopied && "Copied!"}
+        {!hasCopied && "Copy email"}
+        {hasCopied && <Icons.Check size={18} />}
+        {!hasCopied && <Icons.Clipboard size={18} />}
+      </Button>
+      <span role="status" className="sr-only">
+        {hasCopied && "Email copied to clipboard"}
+      </span>
+    </React.Fragment>
   );
 }

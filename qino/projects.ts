@@ -22,7 +22,16 @@ export const ProjectSchema = z
     description: z.string(),
     hq: z.string(),
     logo: z.string().startsWith("/").optional(),
-    images: z.array(z.string().startsWith("/")).default([]),
+    images: z
+      .array(
+        z.union([
+          z.string().startsWith("/"),
+          z
+            .object({ src: z.string().startsWith("/"), alt: z.string() })
+            .strict(),
+        ]),
+      )
+      .default([]),
     dates: z
       .object({
         start: yearMonth,
@@ -80,7 +89,7 @@ export const projectsCollection = qino.defineCollection({
         augment: async (project) => {
           return {
             imagesWithDimenstions: await Promise.all(
-              project.images.map((src) => withImageDimensions(src)),
+              project.images.map((image) => withImageDimensions(image)),
             ),
           };
         },
@@ -89,7 +98,10 @@ export const projectsCollection = qino.defineCollection({
   },
 });
 
-async function withImageDimensions(src: string) {
+type ProjectImage = string | { src: string; alt: string };
+
+async function withImageDimensions(image: ProjectImage) {
+  const { src, alt } = typeof image == "string" ? { src: image } : image;
   const filePath = path.join(process.cwd(), "public", src);
   const { width, height } = await sharp(filePath).metadata();
 
@@ -97,7 +109,7 @@ async function withImageDimensions(src: string) {
     throw new Error(`Could not read dimensions for image: ${src}`);
   }
 
-  return { src, width, height };
+  return { src, width, height, alt };
 }
 
 type LuxonDates = { start: DateTime; end?: DateTime };

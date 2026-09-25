@@ -6,11 +6,13 @@ import { twMerge } from "tailwind-merge";
 import type { PluggableList } from "unified";
 
 import { addUtmPlugin } from "@/lib/add-utm-plugin";
+import { focusableCodePlugin } from "@/lib/focusable-code-plugin";
 
 const remarkPlugins: PluggableList = [remarkGfm];
 const rehypePlugins: PluggableList = [
   [rehypeExternalLinks, { rel: ["noopener", "noreferrer"], target: "_blank" }],
   addUtmPlugin,
+  focusableCodePlugin,
 ];
 const highlightedRehypePlugins: PluggableList = [
   [rehypePrismPlus, { showLineNumbers: true }],
@@ -29,9 +31,7 @@ export default function Markdown({
   highlightCode = false,
 }: Props) {
   return (
-    <div
-      className={twMerge("prose", className)}
-    >
+    <div className={twMerge("prose", className)}>
       <ReactMarkdown
         remarkPlugins={remarkPlugins}
         rehypePlugins={highlightCode ? highlightedRehypePlugins : rehypePlugins}
