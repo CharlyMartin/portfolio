@@ -3,21 +3,21 @@ title: Syncly
 description: "The real-time booking engine designed to boost meeting room sales."
 hq: "Paris, France"
 logo:
-  src: /images/projects/syncly-logo.png
+  src: /images/projects/syncly-logo.webp
   style:
     backgroundColor: "#f3f3ff"
 images:
-  - /images/projects/syncly-1.png
-  - /images/projects/syncly-2.png
-  - /images/projects/syncly-3.png
-  - /images/projects/syncly-4.png
-  - /images/projects/syncly-5.png
-  - /images/projects/syncly-6.png
-  - /images/projects/syncly-7.png
-  - /images/projects/syncly-8.png
-  - /images/projects/syncly-9.png
-  - /images/projects/syncly-10.png
-  - /images/projects/syncly-11.png
+  - /images/projects/syncly-1.webp
+  - /images/projects/syncly-2.webp
+  - /images/projects/syncly-3.webp
+  - /images/projects/syncly-4.webp
+  - /images/projects/syncly-5.webp
+  - /images/projects/syncly-6.webp
+  - /images/projects/syncly-7.webp
+  - /images/projects/syncly-8.webp
+  - /images/projects/syncly-9.webp
+  - /images/projects/syncly-10.webp
+  - /images/projects/syncly-11.webp
 dates:
   start: "2019-10"
   end: "2021-10"

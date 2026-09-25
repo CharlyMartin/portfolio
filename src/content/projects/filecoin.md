@@ -3,7 +3,7 @@ title: Filecoin
 description: "The decentralized storage network securing the world's most important data."
 hq: "San Francisco, USA"
 logo:
-  src: /images/projects/filecoin-logo.png
+  src: /images/projects/filecoin-logo.webp
   style:
     padding: "1px"
 images:

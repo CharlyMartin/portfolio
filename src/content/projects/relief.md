@@ -3,13 +3,13 @@ title: Relief
 description: "The app navigating you through financial hurdles in a simple way."
 hq: "Miami, USA"
 logo:
-  src: /images/projects/relief-logo.png
+  src: /images/projects/relief-logo.webp
   style:
     padding: "12px"
 images:
-  - /images/projects/relief-1.png
-  - /images/projects/relief-2.png
-  - /images/projects/relief-3.png
+  - /images/projects/relief-1.webp
+  - /images/projects/relief-2.webp
+  - /images/projects/relief-3.webp
 dates:
   start: "2021-03"
   end: "2021-04"

@@ -3,7 +3,7 @@ title: Motolangage
 description: "A language learning experiment by the French National Institute Research."
 hq: "Paris, France"
 images:
-  - /images/projects/motolangage-1.png
+  - /images/projects/motolangage-1.webp
 dates:
   start: "2019-07"
   end: "2019-11"

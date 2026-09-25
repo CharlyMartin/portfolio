@@ -3,11 +3,11 @@ title: OpenWork
 description: "The payroll company that protects freelancers anywhere."
 hq: "Paris, France"
 logo:
-  src: /images/projects/openwork-logo.png
+  src: /images/projects/openwork-logo.webp
   style:
     padding: "10px"
 images:
-  - /images/projects/openwork-1.png
+  - /images/projects/openwork-1.webp
 dates:
   start: "2020-04"
   end: "2021-04"

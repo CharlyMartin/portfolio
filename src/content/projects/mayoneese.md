@@ -3,17 +3,17 @@ title: Mayoneese
 description: "The curated music newsletter that makes you come alive."
 hq: "Paris, France"
 logo:
-  src: /images/projects/mayoneese-logo.png
+  src: /images/projects/mayoneese-logo.webp
   style:
     backgroundColor: "#EDBA2F"
     padding: "8px"
 images:
-  - /images/projects/mayoneese-1.png
+  - /images/projects/mayoneese-1.webp
 dates:
   start: "2018-08"
   end: "2019-05"
 url: "https://mayoneese.netlify.app/"
-display: true
+display: false
 highlight: false
 roles:
   - "roles/frontend.json"

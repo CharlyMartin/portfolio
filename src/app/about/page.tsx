@@ -33,6 +33,9 @@ export default async function About() {
             Hi, I’m Charly. I live in sunny Lisbon 🇵🇹 where I design and build
             apps.
           </Title>
+
+          <br />
+
           <Markdown>{bio.long.markdown}</Markdown>
         </div>
         <div className="lg:pl-20">

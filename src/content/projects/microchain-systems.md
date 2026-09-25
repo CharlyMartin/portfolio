@@ -3,12 +3,12 @@ title: Microchain Systems
 description: "The first open-source DEX on the Fuel Network"
 hq: "Lisbon, Portugal"
 logo:
-  src: /images/projects/microchain-systems-logo.png
+  src: /images/projects/microchain-systems-logo.webp
   style:
     backgroundColor: "#EEECE7"
 images:
-  - /images/projects/microchain-systems-1.png
-  - /images/projects/microchain-systems-2.png
+  - /images/projects/microchain-systems-1.webp
+  - /images/projects/microchain-systems-2.webp
 dates:
   start: "2022-07"
   end: "2023-07"
