@@ -3,21 +3,21 @@ title: Cofactory
 description: "The future of value creation in an AI-based economy."
 hq: "San Francisco, USA"
 logo:
-  src: /images/projects/cofactory-logo.webp
+  src: /images/logos/cofactory-logo.webp
   style:
     backgroundColor: "#000"
     padding: "10px"
 images:
-  - /images/projects/cofactory-1.webp
-  - /images/projects/cofactory-2.webp
-  - /images/projects/cofactory-3.webp
-  - /images/projects/cofactory-4.webp
-  - /images/projects/cofactory-5.webp
-  - /images/projects/cofactory-6.webp
-  - /images/projects/cofactory-7.webp
-  - /images/projects/cofactory-8.webp
-  - /images/projects/cofactory-9.webp
-  - /images/projects/cofactory-10.webp
+  - /images/projects/cofactory/cofactory-1.webp
+  - /images/projects/cofactory/cofactory-2.webp
+  - /images/projects/cofactory/cofactory-3.webp
+  - /images/projects/cofactory/cofactory-4.webp
+  - /images/projects/cofactory/cofactory-5.webp
+  - /images/projects/cofactory/cofactory-6.webp
+  - /images/projects/cofactory/cofactory-7.webp
+  - /images/projects/cofactory/cofactory-8.webp
+  - /images/projects/cofactory/cofactory-9.webp
+  - /images/projects/cofactory/cofactory-10.webp
 dates:
   start: "2023-09"
   end: "2023-12"

@@ -3,17 +3,17 @@ title: Filecoin Foundation
 description: "The nonprofit working to grow Filecoin, the decentralized storage network."
 hq: "San Francisco, USA"
 logo:
-  src: /images/projects/filecoin-foundation-logo.webp
+  src: /images/logos/filecoin-foundation-logo.webp
   style:
     padding: "0px"
     backgroundColor: "#08072e"
 images:
-  - /images/projects/filecoin-foundation-1.webp
-  - /images/projects/filecoin-foundation-2.webp
-  - /images/projects/filecoin-foundation-3.webp
-  - /images/projects/filecoin-foundation-4.webp
-  - /images/projects/filecoin-foundation-5.webp
-  - /images/projects/filecoin-foundation-6.webp
+  - /images/projects/filecoin-foundation/filecoin-foundation-1.webp
+  - /images/projects/filecoin-foundation/filecoin-foundation-2.webp
+  - /images/projects/filecoin-foundation/filecoin-foundation-3.webp
+  - /images/projects/filecoin-foundation/filecoin-foundation-4.webp
+  - /images/projects/filecoin-foundation/filecoin-foundation-5.webp
+  - /images/projects/filecoin-foundation/filecoin-foundation-6.webp
 dates:
   start: "2024-04"
   end: "2025-05"
