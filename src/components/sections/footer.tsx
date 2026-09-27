@@ -46,7 +46,7 @@ function NavLink(props: NavLinkProps) {
   return (
     <Link
       {...link}
-      className="transition hover:text-teal-700 dark:hover:text-teal-400"
+      className="transition hover:text-teal-700 focus-visible:text-teal-700 dark:hover:text-teal-400 dark:focus-visible:text-teal-400"
     >
       {children}
     </Link>

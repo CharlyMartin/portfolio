@@ -1,3 +1,20 @@
+/* Keyboard focus indicator. Use without a variant: the color is set at rest so
+   `transition` doesn't animate it from `currentColor` when focus enters. */
+@utility focus-ring {
+  --focus-ring-color: var(--color-teal-600);
+  outline-color: var(--focus-ring-color);
+
+  &:where(.dark, .dark *) {
+    --focus-ring-color: var(--color-teal-400);
+  }
+
+  /* Color repeated here to beat Firefox's `:-moz-focusring { outline: auto }`
+     from preflight, which resets it to `currentColor` */
+  &:focus-visible {
+    outline: 2px solid var(--focus-ring-color);
+  }
+}
+
 @layer base {
   /* Match native UI (scrollbars, default text) to the active theme, not the system one */
   :root {
@@ -13,13 +30,12 @@
   }
 
   /* Consistent keyboard focus indicator */
-  :focus-visible {
-    outline: 2px solid var(--color-teal-600);
-    outline-offset: 2px;
+  * {
+    @apply focus-ring;
   }
 
-  :where(.dark, .dark *):focus-visible {
-    outline-color: var(--color-teal-400);
+  :focus-visible {
+    outline-offset: 1px;
   }
 }
 
@@ -52,9 +68,9 @@
 .prose {
   --tw-prose-body: var(--color-zinc-500);
   --tw-prose-invert-body: var(--color-zinc-400);
-  --tw-prose-links: var(--color-teal-700);
+  --tw-prose-links: var(--color-teal-600);
   --tw-prose-invert-links: var(--color-teal-400);
-  --prose-links-hover: var(--color-teal-800);
+  --prose-links-hover: var(--color-teal-700);
 }
 
 /* Equivalent of `dark:prose-invert` */

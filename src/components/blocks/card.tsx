@@ -82,9 +82,10 @@ function CardLink(props: CardLinkProps) {
 
   return (
     <React.Fragment>
-      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" />
-      <Link {...rest}>
-        <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
+      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 group-has-focus-visible:scale-100 group-has-focus-visible:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" />
+      {/* Outline the whole card (overlay span) instead of the title text */}
+      <Link {...rest} className="group/link outline-hidden">
+        <span className="absolute -inset-x-4 -inset-y-6 z-20 group-focus-visible/link:outline-2 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
       </Link>
     </React.Fragment>
@@ -104,7 +105,7 @@ export function CardCta(props: CardCtaProps) {
     <div
       aria-hidden="true"
       className={twMerge(
-        "relative z-10 mt-6 flex items-center text-sm font-medium text-zinc-500 transition-colors group-hover:text-teal-700 dark:text-zinc-400 dark:group-hover:text-teal-400",
+        "relative z-10 mt-6 flex items-center text-sm font-medium text-zinc-500 transition-colors group-hover:text-teal-700 group-has-focus-visible:text-teal-700 dark:text-zinc-400 dark:group-hover:text-teal-400 dark:group-has-focus-visible:text-teal-400",
         className,
       )}
     >

@@ -42,10 +42,10 @@ function NavItem(props: NavItemProps) {
         {...link}
         aria-current={isActive ? "page" : undefined}
         className={twMerge(
-          "relative block px-3 py-2 transition",
+          "relative block rounded-full px-3 py-2 transition focus:focus-ring focus:outline-offset-0",
           isActive
             ? "text-teal-700 dark:text-teal-400"
-            : "hover:text-teal-700 dark:hover:text-teal-400",
+            : "hover:text-teal-700 focus-visible:text-teal-700 dark:hover:text-teal-400 dark:focus-visible:text-teal-400",
         )}
       >
         {children}
