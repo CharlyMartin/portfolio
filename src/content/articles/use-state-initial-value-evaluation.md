@@ -1,12 +1,12 @@
 ---
-title: "React evaluates the initial value of useState more than I realised"
-description: As I was browsing the React documentation a few days ago, I stumbled upon a line about useState and its initialState, React's way to initialise a local state, which made me pause for a second
+title: "React evaluates the initial value of useState more than I realized"
+description: As I was browsing the React documentation a few days ago, I stumbled upon a line about useState and its initialState, React's way to initialize a local state, which made me pause for a second.
 created: 2024-01-11
 highlight: false
 topic: "code"
 ---
 
-As I was browsing the React documentation a few days ago, I stumbled upon [this line](https://react.dev/reference/react/useState#parameters) about `useState` and its `initialState`, React's way to initialise a local state. The line read:
+As I was browsing the React documentation a few days ago, I stumbled upon [this line](https://react.dev/reference/react/useState#parameters) about `useState` and its `initialState`, React's way to initialize a local state. The line read:
 
 > It can be a value of any type, but there is a special behavior for functions. This argument is ignored after the initial render.
 
@@ -18,9 +18,9 @@ I decided to run a little experiment to see for myself how `useState` treats its
 
 ## Experiment 1 - Triggering re-renders locally
 
-For this [first experiment](https://stackblitz.com/edit/stackblitz-starters-cgfzdv?file=src%2Fapp.tsx), I've created two similar components rendering a single text input within a form. Nothing fancy. Both components render the same React elements, and both rely on `useState` to control the text input's value. They only differ in the way their state is initialised.
+For this [first experiment](https://stackblitz.com/edit/stackblitz-starters-cgfzdv?file=src%2Fapp.tsx), I've created two similar components rendering a single text input within a form. Nothing fancy. Both components render the same React elements, and both rely on `useState` to control the text input's value. They only differ in the way their state is initialized.
 
-The first one uses a primitive value, a string, and the second one, a function declaration. I've added console logs alongside each initialiser to see how often they are called. To "attach" a logger to a primitive value, I've used the [OR logical operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR), written as `||`. It evaluates expressions from left to right and returns the first truthy value. The first expression, `console.log`, evaluates to `undefined`, which is falsy, so the second expression is evaluated, and the operator returns `"Charly"`.
+The first one uses a primitive value, a string, and the second one, a function declaration. I've added console logs alongside each initializer to see how often they are called. To "attach" a logger to a primitive value, I've used the [OR logical operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR), written as `||`. It evaluates expressions from left to right and returns the first truthy value. The first expression, `console.log`, evaluates to `undefined`, which is falsy, so the second expression is evaluated, and the operator returns `"Charly"`.
 
 ```jsx {18, 31-32}
 import React from "react";
@@ -76,9 +76,9 @@ I've expanded on the experiment to find out.
 
 ## Experiment 2 - Triggering re-renders globally
 
-For the [second experiment](https://stackblitz.com/edit/stackblitz-starters-uhht8a?file=src%2Fapp.tsx), I have made the initial value of the state dynamic using `Math.random()`. I've also added a button in the `App` component to trigger a re-render in both children components. Finally, I turned the text inputs into paragraph tags to simplify the code.
+For the [second experiment](https://stackblitz.com/edit/stackblitz-starters-uhht8a?file=src%2Fapp.tsx), I have made the initial value of the state dynamic using `Math.random()`. I've also added a button in the `App` component to trigger a re-render in both child components. Finally, I turned the text inputs into paragraph tags to simplify the code.
 
-The goal is to see how the state reacts when it gets a new initial value on re-renders. And with a randomised value, we are guaranteed to get a new value on each function call. Passing a dynamically generated value to `useState` is uncommon in React applications. It might be my first time trying it, so perhaps I've overlooked it and missed an important detail.
+The goal is to see how the state reacts when it gets a new initial value on re-renders. And with a randomized value, we are guaranteed to get a new value on each function call. Passing a dynamically generated value to `useState` is uncommon in React applications. It might be my first time trying it, so perhaps I've overlooked it and missed an important detail.
 
 So let's run the experiment!
 
@@ -142,13 +142,13 @@ On the first render, the values logged in the console match the respective value
 
 The React documentation is correct, as expected. My mind jumped to conclusions regarding the evaluation concept. When it comes to function arguments, evaluating means retrieving the value associated with a variable or allocating memory for a value. **But evaluating does not mean assigning.** The ONLY way to update a given state is by calling its associated setter function. If the setter function is never called, React guarantees that the value of the state remains the same. All is well. The internet will not fall apart overnight; we can sleep tight.
 
-In hindsight, this behaviour makes sense. React components are just JavaScript functions. Apart from some exotic JSX syntax, they abide by the same rules as any other function. When React re-renders a component, the JavaScript function gets called again, and the code in the function body is executed again.
+In hindsight, this behavior makes sense. React components are just JavaScript functions. Apart from some exotic JSX syntax, they abide by the same rules as any other function. When React re-renders a component, the JavaScript function gets called again, and the code in the function body is executed again.
 
 The JavaScript engine treats primitive values and function declarations differently. At runtime, primitives are executed immediately; that's why we see the logs in our first component every time it renders. Function declarations, on the other hand, only get executed when they are called. The JavaScript compiler "sees" them but only allocates memory and assigns values if the function is ever called.
 
 When we pass a function to `useState`, it's not up to us, the code authors, to call it. It's React's job. We delegate the call responsibility to the hook. This is why it's able to call it only on mount and then stop. React simply cannot do that with primitive values because JavaScript doesn't work like that.
 
-It's worth noting that the same mechanism happens with `useEffect`. The callback function might not run on every render, but the values in the dependency array do. React must evaluate the whole dependency array on every render to assess whether the callback function should run. We can optimise the callback function all we want, if we include expensive evaluations in the dependency array, performance will be impacted.
+It's worth noting that the same mechanism happens with `useEffect`. The callback function might not run on every render, but the values in the dependency array do. React must evaluate the whole dependency array on every render to assess whether the callback function should run. We can optimize the callback function all we want, if we include expensive evaluations in the dependency array, performance will be impacted.
 
 <!-- It's like when we have to wrap `window.addEventListener` in a function delcaration and pass it to `useEffect`, for server-side rendering. The `window` object doesn't exist on the server, so we have to delegate the call to the hook once the code hits the browser. -->
 
@@ -156,7 +156,7 @@ It's worth noting that the same mechanism happens with `useEffect`. The callback
 
 So, now I (we?) understand these concepts better, how can we use this knowledge to write better React code?
 
-First off, a little tangent. I never manage the state directly with `useState` in production React applications. I rely on robust state managers like [React Query](https://tanstack.com/query/latest), or [Redux](https://redux.js.org/) a few years back, to manage this complexity for me. Hence, I never have to think much about how these tools initialise state. I trust the authors behind it, and the various open-source contributors, to do the right thing.
+First off, a little tangent. I never manage the state directly with `useState` in production React applications. I rely on robust state managers like [React Query](https://tanstack.com/query/latest), or [Redux](https://redux.js.org/) a few years back, to manage this complexity for me. Hence, I never have to think much about how these tools initialize state. I trust the authors behind it, and the various open-source contributors, to do the right thing.
 
 I usually only reach for `useState` to manage local UI states, like opening and closing modals or sliders. In these cases, performance is rarely a concern. Evaluating a boolean on every render will not slow down the app, even on a low-end device. Painting the UI is much more CPU expensive compared to it. End of tangent.
 
@@ -188,7 +188,7 @@ function Component(props) {
 
 <!-- HERE -->
 
-Alternatively, we could move the expensive evaluation outside the hook parameter by lifting it up to the parent component and then passing the result down via a prop. This way, only the value makes it to the state's initialiser, not the operation itself.
+Alternatively, we could move the expensive evaluation outside the hook parameter by lifting it up to the parent component and then passing the result down via a prop. This way, only the value makes it to the state's initializer, not the operation itself.
 
 In the example below, the `App` component reads from `localStorage` on mount and passes the result, a string, to the `Child` component via a prop. On each re-render, the `Child` component re-evaluates the string, which is a cheap operation, but it doesn't read from `localStorage` ever again, provided that `App` doesn't re-render obviously.
 
@@ -213,7 +213,7 @@ function Child(props) {
 
 ## That's it, folks!
 
-Thank you for following my little, unsual experiment in the world of React states and JavaScript runtime. I hope you learned something, or at least you got a refresher on the fundamentals of React. I know I did!
+Thank you for following my little, unusual experiment in the world of React states and JavaScript runtime. I hope you learned something, or at least you got a refresher on the fundamentals of React. I know I did!
 
 <!-- > The initial value of `useState` is evaluated on every re-render if it's a non-function value like a primitive, an object or an array.
 

@@ -1,6 +1,6 @@
 ---
 title: Motolangage
-description: "A language learning experiment by the French National Institute Research."
+description: "A language learning experiment by the French National Institute of Health and Medical Research."
 hq: "Paris, France"
 images:
   - /images/projects/motolangage/motolangage-1.webp
@@ -33,6 +33,6 @@ The app is a game where the user has to guess whether a sentence in a fictional 
 
 Researchers can then analyze the user's performance and tweak the game's parameters (duration, cycles, sentence complexity, etc.) to see how it affects learning.
 
-I built the interface of the app with React and Redux. Each time a user answered, or failed to answer, a sentence, the frontend would send their answer along with a bunch of behavioural metadata for researchers to analyze.
+I built the interface of the app with React and Redux. Each time a user answered, or failed to answer, a sentence, the frontend would send their answer along with a bunch of behavioral metadata for researchers to analyze.
 
 Unlike most projects I work on, the React app lives in a monolithic Laravel app. It was a brief dive into the PHP world, which reminded me of my Ruby on Rails days.

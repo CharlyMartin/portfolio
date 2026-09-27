@@ -8,7 +8,7 @@ topic: "code"
 
 I understand why impostor syndrome runs wild among programmers. Behind each language's high-level concepts hide endless implementation details and technicalities. And we, programmers, work with half a dozen of them on a weekly basis. So, naturally, we tend to learn as we go and let our intuition fill the gaps. We create cognitive shortcuts and leave the details out, lest our brains explode. We overly simplify what is, in reality, more nuanced.
 
-Then, one day, we discover that something we assumed to be unquestionably true is not. This article is a story about one of those times. It's scary to think back on all the code I've written with an incorrect mental model. And it's equally remarkable to realise that it's never stopped me from contributing quality code to many projects. A beautiful metaphor for life.
+Then, one day, we discover that something we assumed to be unquestionably true is not. This article is a story about one of those times. It's scary to think back on all the code I've written with an incorrect mental model. And it's equally remarkable to realize that it's never stopped me from contributing quality code to many projects. A beautiful metaphor for life.
 
 So, let's dive into the topic of the day: React components. More specifically, component composition. I was today years old when I learned that components passed as children don't re-render when their parent does. Let me say that again because it's a bit of a mind-bender, to stay polite: **A React component passed via the children prop does not re-render when its parent does.** If you feel caught off guard or dizzy after reading this statement, you know how I felt a few days ago. Welcome to the Matrix, Neo.
 
@@ -18,7 +18,7 @@ So, let's dive into the topic of the day: React components. More specifically, c
 
 The [React documentation](https://react.dev/learn/render-and-commit) clearly states that a component re-renders when the state of one of its ancestors changes. [Josh Comeau](https://twitter.com/JoshWComeau) also explains this foundational concept in his excellent article [Why React Re-Renders](https://www.joshwcomeau.com/react/why-react-re-renders/): _when a component re-renders, it also re-renders all of its descendants._ This is React 101: The user clicks a button, some data gets fetched or updated, the component's state changes, it gets re-rendered, and so do all of its children.
 
-All of the above is absolutely true, but there's a nuance. The call site of the component decides whether it will re-render with its parent, and the visual hierarchy of JSX can be misleading in that regard. It's easy to assume a parent-child relationship between components where there is none. React introduced JSX, I imagine, to make front-end developers coming from HTML feel at home. But, as I just discovered, this familiarity can create false assumptions when composing components.
+All of the above is absolutely true, but there's a nuance. The call site of the component decides whether it will re-render with its parent, and the visual hierarchy of JSX can be misleading in that regard. It's easy to assume a parent-child relationship between components where there is none. React introduced JSX, I imagine, to make frontend developers coming from HTML feel at home. But, as I just discovered, this familiarity can create false assumptions when composing components.
 
 React allows components to be composed in a number of ways, and depending on the one you choose, they may or may not re-render with their parents. So, let's explore this nuance together. I can think of three ways to compose components in React, meaning passing components to other components.
 
@@ -38,7 +38,7 @@ import Child from "@/components/child";
 export default function App() {
   return (
     <div>
-      <Child />;
+      <Child />
     </div>
   );
 }
@@ -117,7 +117,7 @@ export default function Parent(props) {
 
 The third way is the one we all know and love, the children prop. It's what makes composing components a breeze and React so great at building scalable UIs.
 
-When we look at the code example below, it's obvious that `Child` is a descendant of `Parent`; one is visually inside the other. And If you pop open the React devtools and inspect the component tree, you will see the same thing. `Parent` is responsible for rendering `Child`. If `Parent` were to unmount - meaning to be removed from the React tree - then `Child` and all its descendants would also be removed.
+When we look at the code example below, it's obvious that `Child` is a descendant of `Parent`; one is visually inside the other. And if you pop open the React devtools and inspect the component tree, you will see the same thing. `Parent` is responsible for rendering `Child`. If `Parent` were to unmount - meaning to be removed from the React tree - then `Child` and all its descendants would also be removed.
 
 So we have all the reasons to assume that when `Parent` re-renders, `Child` also does. But that's not the case, and where the deception happens. Let's look at the call site. `Child` is not called inside `Parent`, it's called inside `App` and then passed as a prop to `Parent`. So it will re-render when `App` does, not `Parent`. I've put together a [demo sandbox](https://stackblitz.com/edit/stackblitz-starters-uhht8a?file=src%2Fapp.tsx) if you want to see it in action.
 
@@ -176,7 +176,7 @@ parent(child()); // output
 
 After learning about this non-negligible detail, I looked closely at how I had used the `children` prop in my last few projects. The good news is that I didn't find an instance where it could have introduced a bug. It's probably why I never paid close attention to it before.
 
-I identified two categories of components that rely on the children prop. The first category is what I call the "leaves" of the react tree, the components at the very end of the component tree. Their children are usually text values and do not render anything else. We don't have to worry about breaking the re-rendering chain because nothing is below them.
+I identified two categories of components that rely on the children prop. The first category is what I call the "leaves" of the React tree, the components at the very end of the component tree. Their children are usually text values and do not render anything else. We don't have to worry about breaking the re-rendering chain because nothing is below them.
 
 ```tsx
 export default function PageTitle(props: Props) {
