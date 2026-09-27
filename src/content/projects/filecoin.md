@@ -53,7 +53,7 @@ employment: contract
 
 After the Filecoin Foundation contract, I moved on to Filecoin's own flagship site, [filecoin.io](https://filecoin.io). The scope also got bigger. Rebuilding one site wasn't the whole job anymore: we wanted to build something other Filecoin teams could reuse, so each of them wouldn't have to rebuild their UI from scratch.
 
-We rebuilt filecoin.io as a new app inside the same Turborepo monorepo that already hosted fil.org. It shares configuration, utilities and components with the other Foundation sites, and it's [open source](https://github.com/FilecoinFoundationWeb/filecoin-foundation/tree/main/apps/filecoin-site). We migrated the some of the content from the old site and configuted TinaCMS, so the team can publish without going through code.
+We rebuilt filecoin.io as a new app inside the same Turborepo monorepo that already hosted fil.org. It shares configuration, utilities and components with the other Foundation sites, and it's [open source](https://github.com/FilecoinFoundationWeb/filecoin-foundation/tree/main/apps/filecoin-site). We migrated some of the content from the old site and configured TinaCMS, so the team can publish without going through code.
 
 Alongside the site, we published [`@filecoin-foundation/ui-filecoin`](https://www.npmjs.com/package/@filecoin-foundation/ui-filecoin) on npm. It's a Filecoin-branded UI library extracted from the site work, for the rest of the ecosystem to build on. Other teams picked it up quickly. It let us contribute to two new Filecoin products, [filecoin.cloud](https://filecoin.cloud/) and [pay.filecoin.cloud](https://pay.filecoin.cloud/mainnet), which were built directly on the package instead of starting their own design system.
 

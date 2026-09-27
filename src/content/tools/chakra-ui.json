@@ -2,6 +2,6 @@
   "name": "Chakra UI",
   "meta": "Component Library",
   "type": "library",
-  "description": "When I don't use Tailwind CSS, Chakra UI is my favourite React component library: well designed, accessible, themeable and composable.",
+  "description": "Before Tailwind CSS, Chakra UI was one of my favorite React component libraries: well designed, accessible, themeable and composable.",
   "url": "https://chakra-ui.com/"
 }

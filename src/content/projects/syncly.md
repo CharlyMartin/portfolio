@@ -59,7 +59,7 @@ I co-founded Syncly, my second company, in 2019 with my long-time friend Jeremy 
 
 The idea for Syncly came from his growing frustration with meeting room booking requests. He was getting many of them by email, phone, or in person. He would spend more and more time daily to manually check rooms' availability and send confirmations. As his coworking business grew, it became increasingly time-consuming and error-prone.
 
-He called me to see if I could help automate this tedious process. As we started reflecting on what a solution could look like, we realised that we could solve this problem for all venues with similar issues, not only his. Syncly was born.
+He called me to see if I could help automate this tedious process. As we started reflecting on what a solution could look like, we realized that we could solve this problem for all venues with similar issues, not only his. Syncly was born.
 
 As the CTO of Syncly, I built the product's first version and brought it to our first customers. Hence, I took care of every step of the product development process: UX research, database design, branding, UI design, frontend development, backend development, deployment, and monitoring.
 
@@ -67,7 +67,7 @@ This first iteration took about 6 months on my own, after which we hired a few f
 
 We ran into countless challenges with Syncly, most unrelated to the product, but building our vision was undoubtedly challenging. We wanted users to be able to book meeting rooms like they shopped online: in a few clicks, with real-time availability and an integrated checkout.
 
-During customer interviews, we realised that most independent coworking venues, our target market, used Google Calendar to manage their meeting rooms' availabilities, so we needed to integrate Syncly into their current tools to maximise adoption.
+During customer interviews, we realized that most independent coworking venues, our target market, used Google Calendar to manage their meeting rooms' availabilities, so we needed to integrate Syncly into their current tools to maximize adoption.
 
 To make Syncly's vision come true and provide customers with an easy and fast booking experience, we had to find a way to connect and sync with our clients' calendars to read and write events from our app in real time. This way, we could book a slot and capture the payment instantly instead of in a few hours.
 

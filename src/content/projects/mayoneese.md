@@ -34,7 +34,7 @@ Twice a week for about six months, I sent an email highlighting one piece of mus
 
 The promise behind Mayoneese was to deliver music that "makes you come alive." I focused on curating upbeat, happy, funky music to make people smile and dance. I tried to recreate the exquisite feeling of listening to a great track for the first time for my audience, a feeling I was chasing daily.
 
-I created Mayoneese's branding, designed the landing page using Figma, and built it with Gatsby.js. Clients' projects usually looked serious and professional, so it was a fun sandbox for exploring playful and colourful visual identities. I also integrated with Mailchimp to manage my audience.
+I created Mayoneese's branding, designed the landing page using Figma, and built it with Gatsby.js. Clients' projects usually looked serious and professional, so it was a fun sandbox for exploring playful and colorful visual identities. I also integrated with Mailchimp to manage my audience.
 
 I was the only one working on the project, though I received a decent amount of music suggestions from subscribers. Thank you all for that!
 

@@ -1,6 +1,6 @@
 ---
 title: Hubsy
-description: "One of the first independant coworking cafés in Paris"
+description: "One of the first independent coworking cafés in Paris"
 hq: "Paris, France"
 logo: /images/logos/hubsy-logo.webp
 images:

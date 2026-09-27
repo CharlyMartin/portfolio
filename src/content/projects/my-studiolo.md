@@ -60,4 +60,4 @@ It was also our first time working together as a team. Most of us were solo free
 
 Finally, I integrated the Stripe API for the first time, which opened my eyes to what a clean and well-documented API can bring to a project. Stripe made implementing a subscription feature in the app easy, even though I had never done it.
 
-In the end, we were pleased with the final results, and so was the client. My Studiolo launched in September 2019 during a release party they organised in Paris with people from the art world.
+In the end, we were pleased with the final results, and so was the client. My Studiolo launched in September 2019 during a release party they organized in Paris with people from the art world.

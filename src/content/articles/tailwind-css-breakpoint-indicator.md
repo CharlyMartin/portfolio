@@ -8,7 +8,7 @@ topic: "code"
 
 Tailwind CSS makes my life easy when it comes to building responsive user interfaces. But, I often find myself wondering which breakpoint is currently active and which CSS rules are being applied to the current screen size. Is my laptop screen `lg` or `xl`? Is `sm` for mobile or tablet? I can never remember.
 
-This can lead to guesswork, which can lead to unexpected visual behaviours. So, I created this simple component below to solve this problem for myself. And hopefully for you too. It renders a tiny badge in the bottom left corner of the screen that shows the current breakpoint. One could even colour code each breakpoint for an even more intuitive dev experience, but I'm happy with the simplicity of this solution.
+This can lead to guesswork, which can lead to unexpected visual behaviors. So, I created this simple component below to solve this problem for myself. And hopefully for you too. It renders a tiny badge in the bottom left corner of the screen that shows the current breakpoint. One could even color code each breakpoint for an even more intuitive dev experience, but I'm happy with the simplicity of this solution.
 
 ```tsx
 // src/components/screen-size-indicator.tsx
@@ -61,6 +61,6 @@ export default function AppLayout(props: Props) {
 }
 ```
 
-Now, when I use a preset device size in Firefox's devtools, I know instantly which breakpoint is active without comparing the current width in pixel against Tailwind's breakpoints. I can immediately see that an iPhone 13 mini is `xs`; an iPad is `md` but `lg` in landscape; and and my 13" MacBook Air is `xl`. No guesswork required, no documentation to look up, it just works.
+Now, when I use a preset device size in Firefox's devtools, I know instantly which breakpoint is active without comparing the current width in pixels against Tailwind's breakpoints. I can immediately see that an iPhone 13 mini is `xs`; an iPad is `md` but `lg` in landscape; and my 13" MacBook Air is `xl`. No guesswork required, no documentation to look up, it just works.
 
 <!-- https://medium.com/@davidkelley87/stop-using-return-null-in-react-a2ebf08fc9cd -->
