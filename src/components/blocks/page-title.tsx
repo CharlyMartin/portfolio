@@ -17,7 +17,7 @@ export default function PageTitle(props: Props) {
 
   return (
     <React.Fragment>
-      <Title className="!mb-1.5">{title}</Title>
+      <Title className="mb-1.5!">{title}</Title>
       <p className="text-sm text-zinc-500 sm:text-base dark:text-zinc-400">
         {renderSubtitle(truthyList)}
       </p>
