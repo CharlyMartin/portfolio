@@ -11,12 +11,15 @@ export default function SocialLinkText(props: Props) {
 
   return (
     <li className={className}>
-      <A href={href} className="group inline-flex items-center p-2.5 lg:p-2">
+      <A
+        href={href}
+        className="group inline-flex items-center rounded-lg p-3 lg:px-3 lg:py-2"
+      >
         <Icon
           size={17}
-          className="text-zinc-500 transition group-hover:text-emerald-500"
+          className="text-zinc-500 transition group-hover:text-teal-500 group-focus-visible:text-teal-500"
         />
-        <span className="pl-3.5 text-sm font-medium text-zinc-700 transition group-hover:text-emerald-600 dark:text-zinc-100/80 dark:group-hover:text-emerald-400">
+        <span className="pl-3.5 text-sm font-medium text-zinc-700 transition group-hover:text-teal-600 group-focus-visible:text-teal-600 dark:text-zinc-100/80 dark:group-hover:text-teal-400 dark:group-focus-visible:text-teal-400">
           {action}
         </span>
       </A>
