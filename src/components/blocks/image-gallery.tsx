@@ -7,7 +7,7 @@ import Image from "next/image";
 import Gallery from "./image-gallery/gallery";
 
 type Props = {
-  images: Array<{ src: string; width: number; height: number }>;
+  images: Array<{ src: string; width: number; height: number; alt?: string }>;
   name: string;
 };
 
@@ -16,7 +16,7 @@ export default function ImageGallery(props: Props) {
 
   const galleryImages = images.map((image, i) => ({
     ...image,
-    alt: `${name} Image ${i + 1}`,
+    alt: image.alt ?? `${name} screenshot ${i + 1}`,
   }));
 
   const image = galleryImages[0];
@@ -40,7 +40,7 @@ export default function ImageGallery(props: Props) {
       {galleryImages.length > 1 ? (
         <button
           type="button"
-          className="block w-full text-left"
+          className="block w-full rounded-2xl text-left"
           aria-label={`Open ${name} image gallery`}
           onClick={() => setOpen(true)}
         >

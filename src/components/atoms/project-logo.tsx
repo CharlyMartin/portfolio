@@ -3,14 +3,13 @@ import { twMerge } from "tailwind-merge";
 
 type Props = {
   logo: string;
-  title: string;
 };
 
-export default function ProjectLogo({ logo, title }: Props) {
+export default function ProjectLogo({ logo }: Props) {
   return (
     <ImageBackground>
       <div className="relative h-full w-full">
-        <Image src={logo} fill={true} alt={`${title}'s Logo`} unoptimized />
+        <Image src={logo} fill={true} alt="" unoptimized />
       </div>
     </ImageBackground>
   );
@@ -19,7 +18,9 @@ export default function ProjectLogo({ logo, title }: Props) {
 export function ProjectLogoPlaceholder({ title }: { title: string }) {
   return (
     <ImageBackground className="bg-teal-50">
-      <span className="text-2xl font-medium text-teal-600">{title[0]}</span>
+      <span aria-hidden="true" className="text-2xl font-medium text-teal-600">
+        {title[0]}
+      </span>
     </ImageBackground>
   );
 }

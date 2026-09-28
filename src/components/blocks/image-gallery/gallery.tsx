@@ -99,6 +99,9 @@ export default function Gallery(props: Props) {
             </div>
             <div className="flex min-h-full items-center justify-center">
               <DialogPanel className="relative h-full w-full transform px-4 md:px-12 lg:px-16 xl:max-w-4xl xl:px-0 2xl:max-w-6xl">
+                <p aria-live="polite" className="sr-only">
+                  Image {active + 1} of {images.length}
+                </p>
                 <div
                   id="arrows"
                   className="absolute inset-0 z-10 hidden xl:block"

@@ -82,9 +82,10 @@ function CardLink(props: CardLinkProps) {
 
   return (
     <React.Fragment>
-      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" />
-      <Link {...rest}>
-        <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
+      <div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 group-has-focus-visible:scale-100 group-has-focus-visible:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50" />
+      {/* Outline the whole card (overlay span) instead of the title text */}
+      <Link {...rest} className="group/link outline-hidden">
+        <span className="absolute -inset-x-4 -inset-y-6 z-20 group-focus-visible/link:outline-2 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
       </Link>
     </React.Fragment>
@@ -104,12 +105,12 @@ export function CardCta(props: CardCtaProps) {
     <div
       aria-hidden="true"
       className={twMerge(
-        "relative z-10 mt-6 flex items-center text-sm font-medium text-zinc-400 transition-colors group-hover:text-teal-500 dark:text-zinc-500",
+        "relative z-10 mt-6 flex items-center text-sm font-semibold text-zinc-500 transition-colors group-hover:text-teal-700 group-has-focus-visible:text-teal-700 dark:text-zinc-400 dark:group-hover:text-teal-400 dark:group-has-focus-visible:text-teal-400",
         className,
       )}
     >
       {children}
-      <Icons.ChevronRight className="ml-1 h-3.5 w-3.5 stroke-current" />
+      <Icons.ChevronRight className="mt-0.5 ml-1 size-4 stroke-current stroke-[1.1]" />
     </div>
   );
 }
@@ -136,7 +137,7 @@ export function CardEyebrow<T extends React.ElementType = "p">(
   return (
     <Component
       className={twMerge(
-        "relative z-10 flex items-center text-sm font-medium text-zinc-500/70 dark:text-zinc-400/70",
+        "relative z-10 flex items-center text-sm font-normal text-zinc-500 dark:text-zinc-400",
         top && "order-first mb-3",
         decorate && "pl-3.5",
         className,

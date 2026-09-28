@@ -12,7 +12,7 @@ const data: Record<Availability, any> = {
     ping: "bg-teal-400",
   },
   limited: {
-    text: "part-time availability for opportunities",
+    text: "part-time availability for new opportunities",
     color: "bg-orange-500",
     ping: "bg-orange-400",
   },
@@ -38,11 +38,13 @@ export default function Availability(props: Props) {
       <span className="relative mr-2.5 flex h-3 w-3">
         <span
           className={twMerge(
-            "absolute inline-flex h-full w-full animate-ping rounded-full opacity-75",
+            "absolute inline-flex h-full w-full rounded-full opacity-75 motion-safe:animate-ping",
             ping,
           )}
           style={{
             animationDuration: "1400ms",
+            // Stop before 5s (WCAG 2.2.2)
+            animationIterationCount: 3,
           }}
         />
         <span

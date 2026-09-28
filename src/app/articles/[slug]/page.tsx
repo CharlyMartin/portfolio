@@ -47,7 +47,11 @@ export default async function ArticlePage(props: Props) {
   return (
     <Container>
       <div className="mx-auto max-w-2xl">
-        <Back className="lg:top-1.5 lg:-left-25.5 xl:absolute" />
+        <Back
+          href="/articles"
+          label="Back to articles"
+          className="lg:top-1.5 lg:-left-25.5 xl:absolute"
+        />
         <PageTitle
           title={title}
           subtitle={[

@@ -85,7 +85,11 @@ export default async function Home() {
 
       <Container id="work">
         <Section.Title icon={Icons.Work} title="Featured Projects" />
-        <Projects data={favProjects.slice(0, 3)} className="mt-10" />
+        <Projects
+          data={favProjects.slice(0, 3)}
+          headingLevel="h3"
+          className="mt-10"
+        />
 
         <SeeMore href="/projects" className="mt-12">
           See all projects
@@ -97,24 +101,25 @@ export default async function Home() {
       {!!favArticles.length && (
         <Container id="articles">
           <Section.Title icon={Icons.Article} title="Featured Articles" />
-          <div
+          <ul
             role="list"
             className="mt-10 grid grid-cols-1 gap-x-16 gap-y-10 sm:grid-cols-2"
           >
             {favArticles.slice(0, 2).map((article) => {
               return (
-                <Article.Square
-                  key={article._meta.slug}
-                  slug={article._meta.slug}
-                  title={article.title}
-                  description={article.description}
-                  created={article.created}
-                  topic={article.topic}
-                  wordCount={getMarkdownStats(article.markdown).wordCount}
-                />
+                <li key={article._meta.slug}>
+                  <Article.Square
+                    slug={article._meta.slug}
+                    title={article.title}
+                    description={article.description}
+                    created={article.created}
+                    topic={article.topic}
+                    wordCount={getMarkdownStats(article.markdown).wordCount}
+                  />
+                </li>
               );
             })}
-          </div>
+          </ul>
 
           <SeeMore href="/articles" className="mt-12">
             See all articles
@@ -154,7 +159,7 @@ function FavoriteUse(props: FavoriteUseProps) {
 
   return (
     <Card as="li">
-      <Card.Title>{name}</Card.Title>
+      <Card.Title as="h3">{name}</Card.Title>
       {meta && <Card.Eyebrow className="mb-1.5">{meta}</Card.Eyebrow>}
     </Card>
   );
