@@ -169,7 +169,7 @@ function ListItem(props: ListItemProps) {
       </span>
 
       {right && (
-        <span className="text-sm text-zinc-500 dark:text-zinc-400">
+        <span className="text-sm font-normal text-zinc-500 dark:text-zinc-400">
           <span aria-hidden="true">/ </span>
           {right}
         </span>
