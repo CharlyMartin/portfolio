@@ -69,8 +69,8 @@
   --tw-prose-body: var(--color-zinc-500);
   --tw-prose-invert-body: var(--color-zinc-400);
   --tw-prose-links: var(--color-teal-600);
-  --tw-prose-invert-links: var(--color-teal-400);
-  --prose-links-hover: var(--color-teal-700);
+  --tw-prose-invert-links: var(--color-teal-500);
+  --prose-links-hover: var(--color-teal-500);
 }
 
 /* Equivalent of `dark:prose-invert` */
