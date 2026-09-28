@@ -40,7 +40,7 @@ export default function ImageGallery(props: Props) {
       {galleryImages.length > 1 ? (
         <button
           type="button"
-          className="block w-full text-left"
+          className="block w-full rounded-2xl text-left"
           aria-label={`Open ${name} image gallery`}
           onClick={() => setOpen(true)}
         >
