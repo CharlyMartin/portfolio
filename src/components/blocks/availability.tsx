@@ -12,7 +12,7 @@ const data: Record<Availability, any> = {
     ping: "bg-teal-400",
   },
   limited: {
-    text: "part-time availability for opportunities",
+    text: "part-time availability for new opportunities",
     color: "bg-orange-500",
     ping: "bg-orange-400",
   },
