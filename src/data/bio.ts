@@ -17,7 +17,7 @@ const data = {
 export async function getBio() {
   return {
     ...data,
-    short: await shortBio.getData(),
-    long: await longBio.getData(),
+    short: await shortBio.getEntry(),
+    long: await longBio.getEntry(),
   };
 }

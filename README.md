@@ -4,7 +4,7 @@ A Next.js 16 App Router site using React 19, Tailwind CSS 4, Headless UI 2, and 
 
 ## Development
 
-Use Node.js 22 (`nvm use`) and npm. The local `qino-0.0.13.tgz` package must be present before installation; it is intentionally gitignored.
+Use Node.js 22 (`nvm use`) and npm. qino is installed from npm with the other dependencies.
 
 ```sh
 npm ci

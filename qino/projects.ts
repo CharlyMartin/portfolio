@@ -57,12 +57,11 @@ export const ProjectSchema = z
     status: z.enum(["live", "archived", "wip"]),
     area: z.enum(["ai", "web3", "web2"]),
     employment: z.enum(["contract", "permanent", "side"]),
-    markdown: z.string(),
   })
   .strict();
 
 export const projectsCollection = qino.defineCollection({
-  directory: "/projects",
+  directory: "projects",
   schema: ProjectSchema,
   extension: ".md",
   relations: {

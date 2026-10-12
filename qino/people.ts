@@ -11,7 +11,7 @@ const PersonSchema = z.object({
 });
 
 export const peopleCollection = qino.defineCollection({
-  directory: "/people",
+  directory: "people",
   schema: PersonSchema,
   extension: ".json",
   relations: {

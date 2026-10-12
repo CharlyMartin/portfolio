@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 export default async function UsesPage() {
-  const tools = await toolsCollection.getMany();
+  const tools = await toolsCollection.getEntries();
 
   return (
     <PageLayout

@@ -23,7 +23,7 @@ Next.js 14 App Router site (TypeScript, strict mode) with no CMS — qino manage
 - `bio/short.md` and `bio/long.md` — singleton bio content.
 - `people/`, `roles/`, and `tools/` — JSON content collections.
 
-**Application data (`src/data/`)**: TypeScript modules remain here: `bio.ts` combines profile metadata with the qino bio singletons; `config.ts`, `contact.ts`, and `routes.ts` provide site configuration, contact details, and navigation. Public media stays in `public/`, configured by qino's `mediaFolder`.
+**Application data (`src/data/`)**: TypeScript modules remain here: `bio.ts` combines profile metadata with the qino bio singletons; `config.ts`, `contact.ts`, and `routes.ts` provide site configuration, contact details, and navigation. Public media stays in `public/`, configured by qino's `media.folder`.
 
 **Components** are organized in tiers under `src/components/`: `atoms/` (primitives), `blocks/` (composed components), `sections/` (page-level sections used by `src/app/*/page.tsx`).
 

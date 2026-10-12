@@ -15,14 +15,13 @@ export const ArticleSchema = z
       ),
     highlight: z.boolean().optional(),
     topic: z.enum(["code", "life", "startup"]),
-    markdown: z.string(),
   })
   .strict();
 
 type ZodOutput = z.output<typeof ArticleSchema>;
 
 export const articleCollection = qino.defineCollection({
-  directory: "/articles",
+  directory: "articles",
   schema: ArticleSchema,
   extension: ".md",
   views: (view) => {

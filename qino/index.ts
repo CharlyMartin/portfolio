@@ -1,6 +1,6 @@
-import { createQino } from "@qino/cms";
+import { initQino } from "@qino/cms";
 
-export default createQino({
+export default initQino({
   contentFolder: "src/content",
-  mediaFolder: "public",
+  media: { folder: "public" },
 });

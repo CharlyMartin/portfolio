@@ -22,7 +22,7 @@ export async function generateStaticParams() {
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
 
-  const project = await projectsCollection.getOne(params.slug, {
+  const project = await projectsCollection.getEntry(params.slug, {
     view: "page",
   });
 
@@ -43,7 +43,7 @@ type Props = {
 export default async function ProjectPage(props: Props) {
   const params = await props.params;
 
-  const project = await projectsCollection.getOne(params.slug, {
+  const project = await projectsCollection.getEntry(params.slug, {
     view: "page",
   });
 

@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const { slug } = await props.params;
-  const article = await articleCollection.getOne(slug);
+  const article = await articleCollection.getEntry(slug);
 
   return {
     title: article.title,
@@ -30,7 +30,7 @@ type Props = {
 export default async function ArticlePage(props: Props) {
   const { slug } = await props.params;
   const { title, markdown, topic, created, updated } =
-    await articleCollection.getOne(slug);
+    await articleCollection.getEntry(slug);
 
   const formattedCreated = formatArticleDate(
     created,

@@ -67,7 +67,7 @@ const ToolsSchema = z
 export type Tool = z.infer<typeof ToolsSchema>;
 
 export const toolsCollection = qino.defineCollection({
-  directory: "/tools",
+  directory: "tools",
   schema: ToolsSchema,
   extension: ".json",
 
