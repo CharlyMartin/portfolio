@@ -1,15 +1,18 @@
 import Image from "next/image";
+import type { QinoImage } from "@qino/cms";
 import { twMerge } from "tailwind-merge";
 
 type Props = {
-  logo: string;
+  logo: QinoImage;
 };
+
+const LOGO_SIZE = 48;
 
 export default function ProjectLogo({ logo }: Props) {
   return (
     <ImageBackground>
-      <div className="relative h-full w-full">
-        <Image src={logo} fill={true} alt="" unoptimized />
+      <div className="h-full w-full">
+        <Image src={logo.src} width={LOGO_SIZE} height={LOGO_SIZE} alt="" />
       </div>
     </ImageBackground>
   );
@@ -32,7 +35,7 @@ function ImageBackground(props: React.ComponentProps<"div">) {
     <div
       className={twMerge(
         className,
-        "size-13 rounded-full p-0.5 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:ring-white/10",
+        "size-12 rounded-full p-0.5 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:ring-white/10",
       )}
       {...rest}
     >

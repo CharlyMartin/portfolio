@@ -5,8 +5,6 @@ import qino from ".";
 
 import { rolesCollection } from "./roles";
 import { toolsCollection } from "./tools";
-import path from "node:path";
-import sharp from "sharp";
 import { peopleCollection } from "./people";
 import { DateTime } from "luxon";
 
@@ -22,16 +20,7 @@ export const ProjectSchema = z
     description: z.string(),
     hq: z.string(),
     logo: z.string().startsWith("/").optional(),
-    images: z
-      .array(
-        z.union([
-          z.string().startsWith("/"),
-          z
-            .object({ src: z.string().startsWith("/"), alt: z.string() })
-            .strict(),
-        ]),
-      )
-      .default([]),
+    images: z.array(z.string().startsWith("/")).default([]),
     dates: z
       .object({
         start: yearMonth,
@@ -64,6 +53,10 @@ export const projectsCollection = qino.defineCollection({
   directory: "projects",
   schema: ProjectSchema,
   extension: ".md",
+  media: {
+    logo: { accepted: "image/webp", maxSize: "200KB" },
+    "images[*]": { accepted: "image/webp", maxSize: "400KB" },
+  },
   relations: {
     "roles[*]": rolesCollection,
     "stack[*]": toolsCollection,
@@ -83,33 +76,10 @@ export const projectsCollection = qino.defineCollection({
         ...base,
         filter: (entry) => entry.highlight && entry.display,
       }),
-      page: view({
-        resolveRelations: 2,
-        augment: async (project) => {
-          return {
-            imagesWithDimenstions: await Promise.all(
-              project.images.map((image) => withImageDimensions(image)),
-            ),
-          };
-        },
-      }),
+      page: view({ resolveRelations: 2 }),
     };
   },
 });
-
-type ProjectImage = string | { src: string; alt: string };
-
-async function withImageDimensions(image: ProjectImage) {
-  const { src, alt } = typeof image == "string" ? { src: image } : image;
-  const filePath = path.join(process.cwd(), "public", src);
-  const { width, height } = await sharp(filePath).metadata();
-
-  if (!width || !height) {
-    throw new Error(`Could not read dimensions for image: ${src}`);
-  }
-
-  return { src, width, height, alt };
-}
 
 type LuxonDates = { start: DateTime; end?: DateTime };
 

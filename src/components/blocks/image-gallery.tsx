@@ -3,11 +3,12 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 import Image from "next/image";
+import type { QinoImage } from "@qino/cms";
 
 import Gallery from "./image-gallery/gallery";
 
 type Props = {
-  images: Array<{ src: string; width: number; height: number; alt?: string }>;
+  images: Array<QinoImage>;
   name: string;
 };
 
@@ -15,8 +16,12 @@ export default function ImageGallery(props: Props) {
   const { images, name } = props;
 
   const galleryImages = images.map((image, i) => ({
-    ...image,
-    alt: image.alt ?? `${name} screenshot ${i + 1}`,
+    src: image.src,
+    width: image.width,
+    height: image.height,
+    blurDataURL: image.blurDataURL,
+    placeholder: image.blurDataURL ? ("blur" as const) : ("empty" as const),
+    alt: `${name} screenshot ${i + 1}`,
   }));
 
   const image = galleryImages[0];
