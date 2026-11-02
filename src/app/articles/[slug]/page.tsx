@@ -6,7 +6,6 @@ import Back from "@/components/atoms/back";
 import { DATE_FORMATS, formatArticleDate } from "@/lib/format-date";
 import PageTitle from "@/components/blocks/page-title";
 import { articleCollection } from "@/cms/articles";
-import { getMarkdownStats } from "@qino/cms/utils";
 
 export async function generateStaticParams() {
   const slugs = await articleCollection.getAllSlugs();
@@ -29,7 +28,7 @@ type Props = {
 
 export default async function ArticlePage(props: Props) {
   const { slug } = await props.params;
-  const { title, markdown, topic, created, updated } =
+  const { title, markdown, topic, created, updated, _stats } =
     await articleCollection.getEntry(slug);
 
   const formattedCreated = formatArticleDate(
@@ -41,7 +40,7 @@ export default async function ArticlePage(props: Props) {
     DATE_FORMATS.ARTICLE_LONG,
   );
   const formattedCount = new Intl.NumberFormat("en-US").format(
-    getMarkdownStats(markdown).wordCount,
+    _stats.wordCount,
   );
 
   return (
