@@ -8,3 +8,7 @@ updates:
       all-dependencies:
         patterns:
           - "*"
+    ignore:
+      # typescript-eslint (via eslint-config-next) doesn't support TS 7 yet
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]

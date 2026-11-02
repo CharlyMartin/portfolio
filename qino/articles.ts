@@ -24,6 +24,7 @@ export const articleCollection = qino.defineCollection({
   directory: "articles",
   schema: ArticleSchema,
   extension: ".md",
+  markdownStats: true,
   views: (view) => {
     const base = view({
       sort: (a: ZodOutput, b: ZodOutput) => {
