@@ -7,6 +7,9 @@ import { DATE_FORMATS, formatArticleDate } from "@/lib/format-date";
 import PageTitle from "@/components/blocks/page-title";
 import { articleCollection } from "@/cms/articles";
 
+// Unknown slugs 404 instead of reaching the file system.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const slugs = await articleCollection.getAllSlugs();
   return slugs.map((slug) => ({ slug }));
@@ -19,6 +22,9 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   return {
     title: article.title,
     description: article.description,
+    alternates: {
+      types: { "text/markdown": articleCollection.getMarkdownUrl(slug) },
+    },
   };
 }
 

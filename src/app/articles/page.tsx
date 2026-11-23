@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   ...globalMeta,
   title: "Articles",
   description: "Articles I've written about life and tech",
+  alternates: {
+    types: { "text/markdown": articleCollection.getMarkdownUrl() },
+  },
 };
 
 export default async function ArticlesPage() {

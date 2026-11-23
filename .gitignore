@@ -44,3 +44,14 @@ src/content/articles/_archive
 
 # Custom
 *.tgz
+
+# qino
+qino/_generated/
+/src/content/.qino/
+
+# llms.txt files, written by `qino build`
+/public/llms.txt
+/public/llms-full.txt
+/public/index.md
+/public/articles/llms.txt
+/public/projects/llms.txt

@@ -63,9 +63,9 @@ export const projectsCollection = qino.defineCollection({
     "people[*].slug": peopleCollection,
     "people[*].role.slug": rolesCollection,
   },
+  pages: { index: "/projects", entry: "/projects/{slug}", title: "Projects" },
   views: (view) => {
     const base = view({
-      resolveRelations: 1,
       sort: (a, b) => sortDatesDesc(a.dates, b.dates),
       filter: (entry) => entry.display,
     });
@@ -76,7 +76,7 @@ export const projectsCollection = qino.defineCollection({
         ...base,
         filter: (entry) => entry.highlight && entry.display,
       }),
-      page: view({ resolveRelations: 2 }),
+      page: view({ resolveDepth: { "people[*].slug": 2 } }),
     };
   },
 });

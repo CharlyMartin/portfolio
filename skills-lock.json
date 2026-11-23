@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "set-up-qino-cms": {
+      "source": "CharlyMartin/qino",
+      "sourceType": "github",
+      "skillPath": "skills/set-up-qino-cms/SKILL.md",
+      "computedHash": "4b3385d6d798e9bc645d655b0366f4f296c6e1b493c9141c0a8e56774e897acf"
+    }
+  }
+}
