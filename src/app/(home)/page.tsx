@@ -28,6 +28,8 @@ export const metadata: Metadata = {
   title: META.title + " | " + META.name,
   description:
     "Senior software developer with nearly a decade of experience working with startups and entrepreneurs.",
+  // Written by `qino build` from `src/content/llms.md`.
+  alternates: { types: { "text/markdown": "/index.md" } },
 };
 
 export default async function Home() {

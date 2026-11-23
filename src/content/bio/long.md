@@ -1,3 +1,8 @@
+---
+title: About
+description: Hi, I’m Charly. I live in sunny Lisbon where I design and build apps.
+---
+
 I fell into web development in 2015, just as I was about to graduate with my Master's in Management. At the time, software was slowly but surely eating the world, and I was curious about how all of it was even happening. So I started playing and experimenting with basic HTML and CSS in my free time, quietly wondering if I'd chosen the right path. But I couldn't justify throwing away five years of studies for a field I barely understood, so I left it at that.
 
 Fast-forward a few months. I was getting ready to move to Paris to look for my first corporate job when my dad told me he had been diagnosed with cancer. A bad one. I canceled the move, put the job hunt on hold, and moved back to my hometown to be closer to my family and help him through his treatment.

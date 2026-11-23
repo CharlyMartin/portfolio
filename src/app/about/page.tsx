@@ -6,6 +6,7 @@ import Title from "@/components/atoms/title";
 import SocialLinkText from "@/components/blocks/social-link-text";
 import { getContacts } from "@/data/contact";
 import { getBio } from "@/data/bio";
+import { longBio } from "@/cms/bio";
 import { metadata as globalMeta } from "@/app/layout";
 import Markdown from "@/components/blocks/markdown";
 
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Hi, I’m Charly. I live in sunny Lisbon  where I design and build apps",
+  alternates: { types: { "text/markdown": longBio.getMarkdownUrl() } },
 };
 
 export default async function About() {

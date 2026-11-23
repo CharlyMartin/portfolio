@@ -14,6 +14,9 @@ import ImageGallery from "@/components/blocks/image-gallery";
 import { projectsCollection } from "@/cms/projects";
 import Markdown from "@/components/blocks/markdown";
 
+// Unknown slugs 404 instead of reaching the file system.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const slugs = await projectsCollection.getAllSlugs();
   return slugs.map((slug) => ({ slug }));
@@ -33,6 +36,11 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     } was done by Charly Martin along with ${project.people
       ?.map((item) => item.slug.name)
       ?.join(", ")}.`,
+    alternates: {
+      types: {
+        "text/markdown": projectsCollection.getMarkdownUrl(params.slug),
+      },
+    },
   };
 }
 

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   ...globalMeta,
   title: "Projects",
   description: "Things I’ve made and contributed to",
+  alternates: {
+    types: { "text/markdown": projectsCollection.getMarkdownUrl() },
+  },
 };
 
 export default async function ProjectsPage() {
